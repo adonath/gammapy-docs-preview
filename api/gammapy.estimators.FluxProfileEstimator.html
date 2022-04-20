@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FluxProfileEstimator &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>FluxProfileEstimator &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -200,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -378,6 +378,11 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.FoVAlignment.html">
      FoVAlignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.IRFMap.html">
+     IRFMap
     </a>
    </li>
    <li class="toctree-l2">
@@ -1843,7 +1848,7 @@ function checkPageExistsAndRedirect(event) {
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>regions</strong><span class="classifier">list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev12+g61bf3aa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>regions to use</p>
+<dt><strong>regions</strong><span class="classifier">list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>regions to use</p>
 </dd>
 <dt><strong>spectrum</strong><span class="classifier"><a class="reference internal" href="gammapy.modeling.models.SpectralModel.html#gammapy.modeling.models.SpectralModel" title="gammapy.modeling.models.SpectralModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectralModel</span></code></a> (optional)</span></dt><dd><p>Spectral model to compute the fluxes or brightness.
 Default is power-law with spectral index of 2.</p>

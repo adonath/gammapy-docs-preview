@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.irf.core &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>gammapy.irf.core &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -198,7 +198,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -819,7 +819,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">IRFMap</span><span class="p">:</span>
+<div class="viewcode-block" id="IRFMap"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap">[docs]</a><span class="k">class</span> <span class="nc">IRFMap</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;IRF map base class for DL4 instrument response functions&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="p">):</span>
@@ -844,7 +844,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mask</span><span class="o">.</span><span class="n">reduce_over_axes</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">to_region_nd_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.to_region_nd_map"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.to_region_nd_map">[docs]</a>    <span class="k">def</span> <span class="nf">to_region_nd_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Extract IRFMap in a given region or position</span>
 
 <span class="sd">        If a region is given a mean IRF is computed, if a position is given the</span>
@@ -876,7 +876,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="n">exposure_map</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">_get_nearest_valid_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get nearest valid position&quot;&quot;&quot;</span>
@@ -891,7 +891,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="n">position</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask_safe_image</span><span class="o">.</span><span class="n">mask_nearest_position</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">position</span>
 
-    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="IRFMap.from_hdulist"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.from_hdulist">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_hdulist</span><span class="p">(</span>
         <span class="bp">cls</span><span class="p">,</span>
         <span class="n">hdulist</span><span class="p">,</span>
@@ -961,9 +961,9 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Format </span><span class="si">{</span><span class="nb">format</span><span class="si">}</span><span class="s2"> not supported&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="p">)</span></div>
 
-    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="IRFMap.read"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.read">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gadf&quot;</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Read an IRF_map from file and create corresponding object&quot;</span>
 
@@ -984,9 +984,9 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">filename</span> <span class="o">=</span> <span class="n">make_path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">memmap</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdulist</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_hdulist</span><span class="p">(</span><span class="n">hdulist</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="n">hdu</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_hdulist</span><span class="p">(</span><span class="n">hdulist</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="n">hdu</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">to_hdulist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gadf&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.to_hdulist"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.to_hdulist">[docs]</a>    <span class="k">def</span> <span class="nf">to_hdulist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gadf&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert to `~astropy.io.fits.HDUList`.</span>
 
 <span class="sd">        Parameters</span>
@@ -1026,9 +1026,9 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Format </span><span class="si">{</span><span class="nb">format</span><span class="si">}</span><span class="s2"> not supported&quot;</span><span class="p">)</span>
 
-        <span class="k">return</span> <span class="n">hdulist</span>
+        <span class="k">return</span> <span class="n">hdulist</span></div>
 
-    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gadf&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.write"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.write">[docs]</a>    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;gadf&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Write IRF map to fits</span>
 
 <span class="sd">        Parameters</span>
@@ -1041,9 +1041,9 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">            File format</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">hdulist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_hdulist</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span>
-        <span class="n">hdulist</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span>
+        <span class="n">hdulist</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">),</span> <span class="n">overwrite</span><span class="o">=</span><span class="n">overwrite</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.stack"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.stack">[docs]</a>    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nan_to_num</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Stack IRF map with another one in place.</span>
 
 <span class="sd">        Parameters</span>
@@ -1086,13 +1086,13 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="k">with</span> <span class="n">np</span><span class="o">.</span><span class="n">errstate</span><span class="p">(</span><span class="n">invalid</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">parent_slices</span><span class="p">]</span> <span class="o">/=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exposure_map</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">parent_slices</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan_to_num</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_irf_map</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.copy"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Copy IRF map&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">cutout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;trim&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.cutout"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.cutout">[docs]</a>    <span class="k">def</span> <span class="nf">cutout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;trim&quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Cutout IRF map.</span>
 
 <span class="sd">        Parameters</span>
@@ -1115,9 +1115,9 @@ function checkPageExistsAndRedirect(event) {
             <span class="n">exposure_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exposure_map</span><span class="o">.</span><span class="n">cutout</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">exposure_map</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">axis_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.downsample"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.downsample">[docs]</a>    <span class="k">def</span> <span class="nf">downsample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">axis_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Downsample the spatial dimension by a given factor.</span>
 
 <span class="sd">        Parameters</span>
@@ -1144,9 +1144,9 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="n">exposure_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exposure_map</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">slice_by_idx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
+<div class="viewcode-block" id="IRFMap.slice_by_idx"><a class="viewcode-back" href="../../../api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.slice_by_idx">[docs]</a>    <span class="k">def</span> <span class="nf">slice_by_idx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Slice sub dataset.</span>
 
 <span class="sd">        The slicing only applies to the maps that define the corresponding axes.</span>
@@ -1171,7 +1171,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="n">exposure_map</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exposure_map</span>
 
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">(</span><span class="n">irf_map</span><span class="p">,</span> <span class="n">exposure_map</span><span class="o">=</span><span class="n">exposure_map</span><span class="p">)</span></div></div>
 </pre></div>
 
               </div>

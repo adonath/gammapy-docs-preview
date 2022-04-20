@@ -116,7 +116,7 @@ Here is an example YAML file using the model:
             -   name: alpha
                 value: -2.0
             -   name: t_ref
-                value: 59688.51181527028
+                value: 59689.54167008269
                 unit: d
                 frozen: true
             -   name: t0

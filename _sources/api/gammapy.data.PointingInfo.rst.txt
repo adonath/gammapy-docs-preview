@@ -24,6 +24,8 @@ PointingInfo
    .. autosummary::
 
       ~PointingInfo.altaz_interpolate
+      ~PointingInfo.get_altaz
+      ~PointingInfo.get_icrs
       ~PointingInfo.read
 
    .. rubric:: Attributes Documentation
@@ -40,4 +42,6 @@ PointingInfo
    .. rubric:: Methods Documentation
 
    .. automethod:: altaz_interpolate
+   .. automethod:: get_altaz
+   .. automethod:: get_icrs
    .. automethod:: read

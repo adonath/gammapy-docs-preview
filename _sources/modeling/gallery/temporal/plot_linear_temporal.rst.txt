@@ -120,7 +120,7 @@ Here is an example YAML file using the model:
                 value: 0.5
                 unit: d-1
             -   name: t_ref
-                value: 59688.51181403694
+                value: 59689.541668849226
                 unit: d
                 frozen: true
 

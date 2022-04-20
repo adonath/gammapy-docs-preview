@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How To &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>How To &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -49,8 +49,8 @@
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Glossary and references" href="references.html" />
-    <link rel="prev" title="Utility functions" href="utils.html" />
+    <link rel="next" title="Model gallery" href="../modeling/gallery/index.html" />
+    <link rel="prev" title="Survey map" href="../tutorials/survey_map.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -200,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -249,13 +249,13 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="package.html">
-   Overview &amp; Data Levels
+  <a class="reference internal" href="analysis.html">
+   Gamma-ray data analysis
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="dl3.html">
-   Data access and selection (DL3)
+  <a class="reference internal" href="package.html">
+   Package structure
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -263,6 +263,88 @@ function checkPageExistsAndRedirect(event) {
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dl3.html">
+     Data access and selection (DL3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="makers.html">
+     Data reduction (DL3 to DL4)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dl4.html">
+     Datasets (DL4)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="modeling.html">
+     Modeling and Fitting (DL4 to DL5)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hli.html">
+     High Level Analysis Interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="catalog.html">
+     Source catalogs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="astro.html">
+     Astrophysics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="stats.html">
+     Statistical utility functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="cli.html">
+     Command line tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="visualization.html">
+     Plotting features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="utils.html">
+     Utility functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/index.html">
+   Tutorials
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/analysis_1.html">
+     High level interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/analysis_2.html">
+     Low level API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/overview.html">
+     Data structures
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/data/cta.html">
      CTA with Gammapy
@@ -279,107 +361,13 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../irf/theory.html">
-     IRF Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/aeff.html">
-     Effective area
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/edisp.html">
-     Energy Dispersion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/psf.html">
-     Point Spread Function
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/bkg.html">
-     Background
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="makers.html">
-   Data reduction (DL3 to DL4)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/fov.html">
-     FoV background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/reflected.html">
-     Reflected regions background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/ring.html">
-     Ring background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/makers.html">
-     Makers - Data reduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/analysis_2.html">
-     Low level API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/simulate_3d.html">
-     3D map simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
      Spectral analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectrum_simulation.html">
-     1D spectrum simulation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="dl4.html">
-   Datasets (DL4)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/datasets.html">
-     Datasets - Reduced data, IRFs, models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/model_management.html">
-     Modelling
+    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis_rad_max.html">
+     Spectral analysis with energy-dependent directional cuts
     </a>
    </li>
    <li class="toctree-l2">
@@ -388,8 +376,38 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/maps.html">
-     Maps
+    <a class="reference internal" href="../tutorials/analysis/1D/extended_source_spectral_analysis.html">
+     Spectral analysis of extended sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/1D/spectrum_simulation.html">
+     1D spectrum simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/1D/cta_sensitivity.html">
+     Point source sensitivity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/ring_background.html">
+     Ring background map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/modeling_2D.html">
+     2D map fitting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/detect.html">
+     Source detection and significance maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/3D/cta_data_analysis.html">
+     Basic image exploration and fitting
     </a>
    </li>
    <li class="toctree-l2">
@@ -403,55 +421,23 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/data/fermi_lat.html">
-     Fermi-LAT with Gammapy
+    <a class="reference internal" href="../tutorials/analysis/3D/analysis_mwl.html">
+     Multi instrument joint 3D and 1D analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../maps/hpxmap.html">
-     HEALPix-based maps
+    <a class="reference internal" href="../tutorials/analysis/3D/event_sampling.html">
+     Event sampling
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../maps/regionmap.html">
-     RegionGeom and RegionNDMap
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="modeling.html">
-   Modeling and Fitting (DL4 to DL5)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/models.html">
-     Models
+    <a class="reference internal" href="../tutorials/analysis/3D/flux_profiles.html">
+     Flux Profile Estimation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/fitting.html">
-     Fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/model_management.html">
-     Modelling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
-     Spectral analysis
+    <a class="reference internal" href="../tutorials/analysis/time/light_curve_simulation.html">
+     Simulating and fitting a time varying source
     </a>
    </li>
    <li class="toctree-l2">
@@ -465,33 +451,73 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/2D/detect.html">
-     Source detection and significance maps
+    <a class="reference internal" href="../tutorials/analysis/time/pulsar_analysis.html">
+     Pulsar analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
-     Spectral analysis
+    <a class="reference internal" href="../tutorials/api/makers.html">
+     Makers - Data reduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
+    <a class="reference internal" href="../tutorials/api/catalog.html">
+     Source catalogs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/flux_profiles.html">
-     Flux Profile Estimation
+    <a class="reference internal" href="../tutorials/api/models.html">
+     Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/model_management.html">
+     Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/fitting.html">
+     Fitting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/maps.html">
+     Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/mask_maps.html">
+     Mask maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/astro_dark_matter.html">
+     Dark matter spatial and spectral models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/datasets.html">
+     Datasets - Reduced data, IRFs, models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/survey_map.html">
+     Survey map
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   How To
+  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../modeling/gallery/index.html">
    Model gallery
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -663,117 +689,9 @@ function checkPageExistsAndRedirect(event) {
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="hli.html">
-   High Level Analysis Interface
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/analysis_1.html">
-     High level interface
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="cli.html">
-   Command line tools
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="catalog.html">
-   Source catalogs
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/overview.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/sed_fitting.html">
-     Flux point fitting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="astro.html">
-   Astrophysics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/source/index.html">
-     Astrophysical source models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/population/index.html">
-     Astrophysical source population models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/darkmatter/index.html">
-     Dark matter
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="stats.html">
-   Statistical utility functions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../stats/fit_statistics.html">
-     Fit statistics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../stats/wstat_derivation.html">
-     Derivation of the WStat formula
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="visualization.html">
-   Plotting &amp; Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="utils.html">
-   Utility functions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   How To
+  <a class="reference external" href="https://gammapy.github.io/gammapy-recipes">
+   Gammapy recipes
   </a>
  </li>
  <li class="toctree-l1">
@@ -832,7 +750,7 @@ it’s not a complete list of how to do everything in Gammapy.</p>
 
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseOne">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToOne">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -842,7 +760,7 @@ it’s not a complete list of how to do everything in Gammapy.</p>
 
                 </div>
             </div>
-            <div id="collapseOne" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToOne" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>The recommended spelling is “Gammapy” as proper name. The recommended
 pronunciation is [ɡæməpaɪ] where the syllable “py” is pronounced like
@@ -855,7 +773,7 @@ the english word “pie”. You can listen to it <a class="reference external" h
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseThree">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToTwo">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -869,7 +787,7 @@ the english word “pie”. You can listen to it <a class="reference external" h
 
                 </div>
             </div>
-            <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToTwo" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>The <a class="reference internal" href="../api/gammapy.data.DataStore.html#gammapy.data.DataStore" title="gammapy.data.DataStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataStore</span></code></a> provides access to a summary table of all observations available.
 It can be used to select observations with various criterion. You can for instance apply a cone search
@@ -882,7 +800,7 @@ or also select observations based on other information available using the <a cl
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFour">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToThree">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -896,7 +814,7 @@ or also select observations based on other information available using the <a cl
 
                 </div>
             </div>
-            <div id="collapseFour" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToThree" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>The <a class="reference internal" href="../api/gammapy.data.DataStore.html#gammapy.data.DataStore" title="gammapy.data.DataStore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataStore</span></code></a> provides access to a summary table of all observations available.
 It can be used to select observations with various criterion. You can for instance apply a cone search
@@ -909,7 +827,7 @@ or also select observations based on other information available using the <a cl
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFive">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToFour">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -923,7 +841,7 @@ or also select observations based on other information available using the <a cl
 
                 </div>
             </div>
-            <div id="collapseFive" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToFour" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy offers a number of methods to explore the content of the various IRFs
 contained in an observation. This is usually done thanks to their <code class="docutils literal notranslate"><span class="pre">peek()</span></code>
@@ -936,7 +854,7 @@ methods.</p>
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseNine">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToFive">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -946,7 +864,7 @@ methods.</p>
 
                 </div>
             </div>
-            <div id="collapseNine" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToFive" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Units for plotting are handled with a combination of <a class="reference external" href="https://matplotlib.org/stable/index.html#module-matplotlib" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib</span></code></a> and <a class="reference external" href="https://docs.astropy.org/en/latest/units/index.html#module-astropy.units" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.units</span></code></a>.
 For most plotting methods Gammapy forwards additional keywords to the corresponding
@@ -968,7 +886,7 @@ you to define the x and y axis units using <a class="reference external" href="h
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseTen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToSix">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -978,7 +896,7 @@ you to define the x and y axis units using <a class="reference external" href="h
 
                 </div>
             </div>
-            <div id="collapseTen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToSix" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Estimate the significance of a source, or more generally of an additional model
 component (such as e.g. a spectral line on top of a power-law spectrum), is done
@@ -989,7 +907,7 @@ significance or p-value. To obtain the test statistic, call
 hypotheses (or take this value from the print output when running the fit), and
 take the difference. Note that in Gammapy, the fit statistic is defined as <code class="docutils literal notranslate"><span class="pre">S</span> <span class="pre">=</span>
 <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">log(L)</span></code> for likelihood <code class="docutils literal notranslate"><span class="pre">L</span></code>, such that <code class="docutils literal notranslate"><span class="pre">TS</span> <span class="pre">=</span> <span class="pre">S_0</span> <span class="pre">-</span> <span class="pre">S_1</span></code>. See
-<span class="xref std std-ref">overview_datasets</span> for an overview of fit statistics used.</p>
+<a class="reference internal" href="package.html#overview-datasets"><span class="std std-ref">Datasets (DL4)</span></a> for an overview of fit statistics used.</p>
 
                     </div>
                 </div>
@@ -998,7 +916,7 @@ take the difference. Note that in Gammapy, the fit statistic is defined as <code
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseEleven">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToSeven">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1012,7 +930,7 @@ take the difference. Note that in Gammapy, the fit statistic is defined as <code
 
                 </div>
             </div>
-            <div id="collapseEleven" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToSeven" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>A classical plot in gamma-ray astronomy is the cumulative significance of a
 source as a function of observing time. In Gammapy, you can produce it with 1D
@@ -1027,7 +945,7 @@ access the total statistics with the <code class="docutils literal notranslate">
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFourteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToEight">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1041,7 +959,7 @@ access the total statistics with the <code class="docutils literal notranslate">
 
                 </div>
             </div>
-            <div id="collapseFourteen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToEight" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy allows the flexibility of using user-defined models for analysis.</p>
 
@@ -1052,7 +970,7 @@ access the total statistics with the <code class="docutils literal notranslate">
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFifteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToNine">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1066,7 +984,7 @@ access the total statistics with the <code class="docutils literal notranslate">
 
                 </div>
             </div>
-            <div id="collapseFifteen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToNine" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>While Gammapy does not ship energy dependent spatial models, it is possible to define
 such models within the modeling framework.</p>
@@ -1078,7 +996,7 @@ such models within the modeling framework.</p>
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseThirteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToTen">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1088,7 +1006,7 @@ such models within the modeling framework.</p>
 
                 </div>
             </div>
-            <div id="collapseThirteen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToTen" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>It is possible to combine Gammapy with astrophysical modeling codes, if they
 provide a Python interface. Usually this requires some glue code to be written,
@@ -1104,7 +1022,7 @@ H.E.S.S. or Fermi-LAT data).</p>
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSixteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSHowToEleven">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1114,7 +1032,7 @@ H.E.S.S. or Fermi-LAT data).</p>
 
                 </div>
             </div>
-            <div id="collapseSixteen" class="collapse" data-parent="#accordion">
+            <div id="collapseSHowToEleven" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>When dealing with surveys and large sky regions, the amount of memory required might become
 problematic, in particular because of the default settings of the IRF maps stored in the
@@ -1136,7 +1054,7 @@ by removing it from the list of options passed to the <a class="reference intern
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSeventeen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToTwelve">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1146,7 +1064,7 @@ by removing it from the list of options passed to the <a class="reference intern
 
                 </div>
             </div>
-            <div id="collapseSeventeen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToTwelve" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>To share specific data from a database, it might be necessary to create a new data storage with
 a limited set of observations and summary files following the scheme described in <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/">gadf</a>.
@@ -1161,7 +1079,7 @@ and build the associated observation and HDU tables.</p>
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseEighteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToThirteen">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1175,7 +1093,7 @@ and build the associated observation and HDU tables.</p>
 
                 </div>
             </div>
-            <div id="collapseEighteen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToThirteen" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>To interpolate maps onto a different geometry use <a class="reference internal" href="../api/gammapy.maps.Map.html#gammapy.maps.Map.interp_to_geom" title="gammapy.maps.Map.interp_to_geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_to_geom</span></code></a>.</p>
 
@@ -1186,7 +1104,7 @@ and build the associated observation and HDU tables.</p>
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseNineteen">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseHowToFourteen">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -1196,7 +1114,7 @@ and build the associated observation and HDU tables.</p>
 
                 </div>
             </div>
-            <div id="collapseNineteen" class="collapse" data-parent="#accordion">
+            <div id="collapseHowToFourteen" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>In general it is not recommended to suppress warnings from code because they
 might point to potential issues or help debugging a non-working script. However
@@ -1224,17 +1142,17 @@ warning like so:</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="utils.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../tutorials/survey_map.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Utility functions</p>
+            <p class="prev-next-title">Survey map</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="references.html" title="next page">
+    <a class='right-next' id="next-link" href="../modeling/gallery/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Glossary and references</p>
+        <p class="prev-next-title">Model gallery</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

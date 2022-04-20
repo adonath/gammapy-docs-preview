@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PointingInfo &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>PointingInfo &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -45,6 +45,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -199,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -377,6 +378,11 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.FoVAlignment.html">
      FoVAlignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.IRFMap.html">
+     IRFMap
     </a>
    </li>
    <li class="toctree-l2">
@@ -1922,6 +1928,12 @@ You may download it with the command
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.PointingInfo.altaz_interpolate" title="gammapy.data.PointingInfo.altaz_interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">altaz_interpolate</span></code></a>(time)</p></td>
 <td><p>Interpolate pointing for a given time.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.PointingInfo.get_altaz" title="gammapy.data.PointingInfo.get_altaz"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_altaz</span></code></a>(obstime)</p></td>
+<td><p>Get the pointing position in AltAz frame for a given time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.PointingInfo.get_icrs" title="gammapy.data.PointingInfo.get_icrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_icrs</span></code></a>(obstime)</p></td>
+<td><p>Get the pointing position in ICRS frame for a given time.</p></td>
+</tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.PointingInfo.read" title="gammapy.data.PointingInfo.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename[, hdu])</p></td>
 <td><p>Read <a class="reference internal" href="#gammapy.data.PointingInfo" title="gammapy.data.PointingInfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PointingInfo</span></code></a> table from file.</p></td>
 </tr>
@@ -1982,6 +1994,39 @@ You may download it with the command
 <dt class="sig sig-object py" id="gammapy.data.PointingInfo.altaz_interpolate">
 <span class="sig-name descname"><span class="pre">altaz_interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/pointing.html#PointingInfo.altaz_interpolate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.PointingInfo.altaz_interpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate pointing for a given time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gammapy.data.PointingInfo.get_altaz">
+<span class="sig-name descname"><span class="pre">get_altaz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstime</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/pointing.html#PointingInfo.get_altaz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.PointingInfo.get_altaz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the pointing position in AltAz frame for a given time.</p>
+<p>If the observation was performed tracking a fixed position in ICRS,
+the icrs pointing is transformed at the given time using the location
+of the observation.</p>
+<p>If the observation was performed in drift mode,
+the fixed altaz coordinate is returned with <code class="xref py py-obj docutils literal notranslate"><span class="pre">obstime</span></code> attached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obstime: `astropy.time.Time`</strong></dt><dd><p>Time for which to get the pointing position in AltAz frame</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gammapy.data.PointingInfo.get_icrs">
+<span class="sig-name descname"><span class="pre">get_icrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstime</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/pointing.html#PointingInfo.get_icrs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.PointingInfo.get_icrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the pointing position in ICRS frame for a given time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>obstime: `astropy.time.Time`</strong></dt><dd><p>Time for which to get the pointing position in ICRS frame</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">

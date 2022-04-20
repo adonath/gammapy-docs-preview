@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>Index &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -45,6 +45,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -197,7 +198,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -3397,6 +3398,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.fixed">(gammapy.astro.population.YusifovKucuk2004B attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.fixed_altaz">fixed_altaz (gammapy.data.FixedPointingInfo attribute)</a>
+</li>
+      <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.fixed_icrs">fixed_icrs (gammapy.data.FixedPointingInfo attribute)</a>
+</li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.fixed_pointing_info">fixed_pointing_info (gammapy.data.Observation attribute)</a>
 </li>
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo">FixedPointingInfo (class in gammapy.data)</a>
@@ -4613,8 +4618,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.geom">(gammapy.maps.WcsNDMap attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.geoms">geoms (gammapy.datasets.MapDataset attribute)</a>
 
       <ul>
@@ -4625,8 +4628,16 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.geoms">(gammapy.datasets.SpectrumDatasetOnOff attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.get">get() (gammapy.maps.Maps method)</a>
 </li>
+      <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.get_altaz">get_altaz() (gammapy.data.FixedPointingInfo method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_altaz">(gammapy.data.PointingInfo method)</a>
+</li>
+      </ul></li>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.get_bias">get_bias() (gammapy.irf.EDispKernel method)</a>
 </li>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.get_bias_energy">get_bias_energy() (gammapy.irf.EDispKernel method)</a>
@@ -4727,6 +4738,12 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.utils.fits.HDULocation.html#gammapy.utils.fits.HDULocation.get_hdu">get_hdu() (gammapy.utils.fits.HDULocation method)</a>
 </li>
+      <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.get_icrs">get_icrs() (gammapy.data.FixedPointingInfo method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_icrs">(gammapy.data.PointingInfo method)</a>
+</li>
+      </ul></li>
       <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.get_idx">get_idx() (gammapy.maps.Geom method)</a>
 
       <ul>
@@ -5763,6 +5780,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.is_aligned">(gammapy.maps.WcsGeom method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.is_all_point_sky_regions">is_all_point_sky_regions (gammapy.maps.RegionGeom attribute)</a>
+</li>
       <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.is_all_same_energy_shape">is_all_same_energy_shape (gammapy.datasets.Datasets attribute)</a>
 </li>
       <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.is_all_same_shape">is_all_same_shape (gammapy.datasets.Datasets attribute)</a>
@@ -6524,6 +6543,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
       </ul></li>
       <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.minuit">minuit (gammapy.modeling.Fit attribute)</a>
+</li>
+      <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.mode">mode (gammapy.data.FixedPointingInfo attribute)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.Model.html#gammapy.modeling.models.Model">Model (class in gammapy.modeling.models)</a>
 </li>

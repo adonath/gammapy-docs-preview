@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fit statistics &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>Fit statistics &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -202,7 +202,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -251,20 +251,102 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../userguide/package.html">
-   Overview &amp; Data Levels
+  <a class="reference internal" href="../userguide/analysis.html">
+   Gamma-ray data analysis
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/dl3.html">
-   Data access and selection (DL3)
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../userguide/package.html">
+   Package structure
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/dl3.html">
+     Data access and selection (DL3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/makers.html">
+     Data reduction (DL3 to DL4)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/dl4.html">
+     Datasets (DL4)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/modeling.html">
+     Modeling and Fitting (DL4 to DL5)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/hli.html">
+     High Level Analysis Interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/catalog.html">
+     Source catalogs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/astro.html">
+     Astrophysics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="reference internal" href="../userguide/stats.html">
+     Statistical utility functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/cli.html">
+     Command line tools
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/visualization.html">
+     Plotting features
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../userguide/utils.html">
+     Utility functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tutorials/index.html">
+   Tutorials
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/analysis_1.html">
+     High level interface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/analysis_2.html">
+     Low level API
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/starting/overview.html">
+     Data structures
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/data/cta.html">
      CTA with Gammapy
@@ -281,107 +363,13 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../irf/theory.html">
-     IRF Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/aeff.html">
-     Effective area
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/edisp.html">
-     Energy Dispersion
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/psf.html">
-     Point Spread Function
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../irf/bkg.html">
-     Background
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/makers.html">
-   Data reduction (DL3 to DL4)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/fov.html">
-     FoV background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/reflected.html">
-     Reflected regions background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../makers/ring.html">
-     Ring background
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/makers.html">
-     Makers - Data reduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/analysis_2.html">
-     Low level API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/simulate_3d.html">
-     3D map simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
      Spectral analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectrum_simulation.html">
-     1D spectrum simulation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/dl4.html">
-   Datasets (DL4)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/datasets.html">
-     Datasets - Reduced data, IRFs, models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/model_management.html">
-     Modelling
+    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis_rad_max.html">
+     Spectral analysis with energy-dependent directional cuts
     </a>
    </li>
    <li class="toctree-l2">
@@ -390,8 +378,38 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/maps.html">
-     Maps
+    <a class="reference internal" href="../tutorials/analysis/1D/extended_source_spectral_analysis.html">
+     Spectral analysis of extended sources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/1D/spectrum_simulation.html">
+     1D spectrum simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/1D/cta_sensitivity.html">
+     Point source sensitivity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/ring_background.html">
+     Ring background map
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/modeling_2D.html">
+     2D map fitting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/2D/detect.html">
+     Source detection and significance maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/analysis/3D/cta_data_analysis.html">
+     Basic image exploration and fitting
     </a>
    </li>
    <li class="toctree-l2">
@@ -405,55 +423,23 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/data/fermi_lat.html">
-     Fermi-LAT with Gammapy
+    <a class="reference internal" href="../tutorials/analysis/3D/analysis_mwl.html">
+     Multi instrument joint 3D and 1D analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../maps/hpxmap.html">
-     HEALPix-based maps
+    <a class="reference internal" href="../tutorials/analysis/3D/event_sampling.html">
+     Event sampling
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../maps/regionmap.html">
-     RegionGeom and RegionNDMap
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/modeling.html">
-   Modeling and Fitting (DL4 to DL5)
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/models.html">
-     Models
+    <a class="reference internal" href="../tutorials/analysis/3D/flux_profiles.html">
+     Flux Profile Estimation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/fitting.html">
-     Fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/model_management.html">
-     Modelling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
-     Spectral analysis
+    <a class="reference internal" href="../tutorials/analysis/time/light_curve_simulation.html">
+     Simulating and fitting a time varying source
     </a>
    </li>
    <li class="toctree-l2">
@@ -467,33 +453,73 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/2D/detect.html">
-     Source detection and significance maps
+    <a class="reference internal" href="../tutorials/analysis/time/pulsar_analysis.html">
+     Pulsar analysis
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/spectral_analysis.html">
-     Spectral analysis
+    <a class="reference internal" href="../tutorials/api/makers.html">
+     Makers - Data reduction
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/analysis_3d.html">
-     3D detailed analysis
+    <a class="reference internal" href="../tutorials/api/catalog.html">
+     Source catalogs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/3D/flux_profiles.html">
-     Flux Profile Estimation
+    <a class="reference internal" href="../tutorials/api/models.html">
+     Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/model_management.html">
+     Modelling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/fitting.html">
+     Fitting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/maps.html">
+     Maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/mask_maps.html">
+     Mask maps
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/astro_dark_matter.html">
+     Dark matter spatial and spectral models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/api/datasets.html">
+     Datasets - Reduced data, IRFs, models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/survey_map.html">
+     Survey map
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../userguide/howto.html">
+   How To
+  </a>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../modeling/gallery/index.html">
    Model gallery
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -665,117 +691,9 @@ function checkPageExistsAndRedirect(event) {
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/hli.html">
-   High Level Analysis Interface
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/analysis_1.html">
-     High level interface
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../userguide/cli.html">
-   Command line tools
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/catalog.html">
-   Source catalogs
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/api/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/starting/overview.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tutorials/analysis/1D/sed_fitting.html">
-     Flux point fitting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../userguide/astro.html">
-   Astrophysics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/source/index.html">
-     Astrophysical source models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/population/index.html">
-     Astrophysical source population models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../astro/darkmatter/index.html">
-     Dark matter
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../userguide/stats.html">
-   Statistical utility functions
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Fit statistics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="wstat_derivation.html">
-     Derivation of the WStat formula
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../userguide/visualization.html">
-   Plotting &amp; Visualization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../userguide/utils.html">
-   Utility functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../userguide/howto.html">
-   How To
+  <a class="reference external" href="https://gammapy.github.io/gammapy-recipes">
+   Gammapy recipes
   </a>
  </li>
  <li class="toctree-l1">

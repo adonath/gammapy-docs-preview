@@ -13,7 +13,10 @@ FixedPointingInfo
       ~FixedPointingInfo.altaz
       ~FixedPointingInfo.altaz_frame
       ~FixedPointingInfo.duration
+      ~FixedPointingInfo.fixed_altaz
+      ~FixedPointingInfo.fixed_icrs
       ~FixedPointingInfo.location
+      ~FixedPointingInfo.mode
       ~FixedPointingInfo.obstime
       ~FixedPointingInfo.radec
       ~FixedPointingInfo.time_ref
@@ -24,6 +27,8 @@ FixedPointingInfo
 
    .. autosummary::
 
+      ~FixedPointingInfo.get_altaz
+      ~FixedPointingInfo.get_icrs
       ~FixedPointingInfo.read
 
    .. rubric:: Attributes Documentation
@@ -31,7 +36,10 @@ FixedPointingInfo
    .. autoattribute:: altaz
    .. autoattribute:: altaz_frame
    .. autoattribute:: duration
+   .. autoattribute:: fixed_altaz
+   .. autoattribute:: fixed_icrs
    .. autoattribute:: location
+   .. autoattribute:: mode
    .. autoattribute:: obstime
    .. autoattribute:: radec
    .. autoattribute:: time_ref
@@ -40,4 +48,6 @@ FixedPointingInfo
 
    .. rubric:: Methods Documentation
 
+   .. automethod:: get_altaz
+   .. automethod:: get_icrs
    .. automethod:: read

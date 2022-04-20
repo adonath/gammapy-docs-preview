@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting started &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>Getting started &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -45,6 +45,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -199,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -398,7 +399,7 @@ On Windows, you should set the <code class="docutils literal notranslate"><span 
 
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseTwo">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseOne">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -412,7 +413,7 @@ On Windows, you should set the <code class="docutils literal notranslate"><span 
 
                 </div>
             </div>
-            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div id="collapseOne" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy can read and access data from multiple gamma-ray instruments. Data from
 Imaging Atmospheric Cherenkov Telescopes, such as <a class="reference external" href="https://www.cta-observatory.org/">CTA</a>, <a class="reference external" href="https://www.mpi-hd.mpg.de/hfm/HESS/">H.E.S.S.</a>, <a class="reference external" href="https://magic.mpp.mpg.de/">MAGIC</a>
@@ -433,7 +434,7 @@ Water Cherenkov Observatories. This data can be read directly using the
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSeven">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseTwo">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -447,7 +448,7 @@ Water Cherenkov Observatories. This data can be read directly using the
 
                 </div>
             </div>
-            <div id="collapseSeven" class="collapse" data-parent="#accordion">
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy lets you create a 1D spectrum by defining an analysis region in
 the sky and energy binning using  <a class="reference internal" href="../api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom" title="gammapy.maps.RegionGeom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegionGeom</span></code></a> object.
@@ -470,7 +471,7 @@ Flux points can be computed using the <a class="reference internal" href="../api
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSix">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseThree">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -484,7 +485,7 @@ Flux points can be computed using the <a class="reference internal" href="../api
 
                 </div>
             </div>
-            <div id="collapseSix" class="collapse" data-parent="#accordion">
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy treats 2D maps as 3D cubes with one bin in energy. Sometimes, you might want to use previously
 obtained images lacking an energy axis (eg: reduced using traditional IACT tools) for modeling and fitting
@@ -503,7 +504,7 @@ inside Gammapy. In this case, it is necessary to attach an <code class="xref py 
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseTwelve">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFour">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -517,7 +518,7 @@ inside Gammapy. In this case, it is necessary to attach an <code class="xref py 
 
                 </div>
             </div>
-            <div id="collapseTwelve" class="collapse" data-parent="#accordion">
+            <div id="collapseFour" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy lets you perform a combined spectral and spatial analysis as well.
 This is sometimes called in jargon a “cube analysis”. Based on the 3D data reduction
@@ -537,7 +538,7 @@ Gammapy can also simulate events. Flux points can be computed using the
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseEight">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseFive">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -551,7 +552,7 @@ Gammapy can also simulate events. Flux points can be computed using the
 
                 </div>
             </div>
-            <div id="collapseEight" class="collapse" data-parent="#accordion">
+            <div id="collapseFive" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy allows you to compute light curves in various ways. Light curves
 can be computed for a <strong>1D or 3D analysis scenario</strong> (see above) by either
@@ -570,7 +571,7 @@ curve is computed using the <a class="reference internal" href="../api/gammapy.e
         
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
-            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseTwenty">
+            <div class="card-header collapsed card-link" data-toggle="collapse" data-target="#collapseSix">
                 <div class="d-flex flex-row tutorial-card-header-1">
                     <div class="d-flex flex-row tutorial-card-header-2">
                         <button class="btn btn-dark btn-sm"></button>
@@ -584,7 +585,7 @@ curve is computed using the <a class="reference internal" href="../api/gammapy.e
 
                 </div>
             </div>
-            <div id="collapseTwenty" class="collapse" data-parent="#accordion">
+            <div id="collapseSix" class="collapse" data-parent="#accordion">
                 <div class="card-body">
         <p>Gammapy offers the possibility to <strong>combine data from multiple instruments</strong>
 in a “joint-likelihood” fit. This can be done at <strong>multiple data levels</strong> and

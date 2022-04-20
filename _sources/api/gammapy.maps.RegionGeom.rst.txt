@@ -21,6 +21,7 @@ RegionGeom
       ~RegionGeom.data_shape_axes
       ~RegionGeom.frame
       ~RegionGeom.has_energy_axis
+      ~RegionGeom.is_all_point_sky_regions
       ~RegionGeom.is_allsky
       ~RegionGeom.is_flat
       ~RegionGeom.is_hpx
@@ -88,6 +89,7 @@ RegionGeom
    .. autoattribute:: data_shape_axes
    .. autoattribute:: frame
    .. autoattribute:: has_energy_axis
+   .. autoattribute:: is_all_point_sky_regions
    .. autoattribute:: is_allsky
    .. autoattribute:: is_flat
    .. autoattribute:: is_hpx

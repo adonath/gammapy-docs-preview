@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DatasetModels &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>DatasetModels &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -200,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -378,6 +378,11 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.FoVAlignment.html">
      FoVAlignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.IRFMap.html">
+     IRFMap
     </a>
    </li>
    <li class="toctree-l2">
@@ -2222,7 +2227,7 @@ Used to take into account PSF width.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>regions</strong><span class="classifier">str, <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.Region.html#regions.Region" title="(in regions v0.7.dev12+g61bf3aa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code></a> or list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.Region.html#regions.Region" title="(in regions v0.7.dev12+g61bf3aa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code></a></span></dt><dd><p>Region or list of regions (pixel or sky regions accepted).
+<dt><strong>regions</strong><span class="classifier">str, <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.Region.html#regions.Region" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code></a> or list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.Region.html#regions.Region" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Region</span></code></a></span></dt><dd><p>Region or list of regions (pixel or sky regions accepted).
 A region can be defined as a string ind DS9 format as well.
 See <a class="reference external" href="http://ds9.si.edu/doc/ref/region.html">http://ds9.si.edu/doc/ref/region.html</a> for details.</p>
 </dd>
@@ -2310,7 +2315,7 @@ See <a class="reference external" href="http://ds9.si.edu/doc/ref/region.html">h
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>regions: list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev12+g61bf3aa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></dt><dd><p>Regions</p>
+<dt>regions: list of <a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></dt><dd><p>Regions</p>
 </dd>
 </dl>
 </dd>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PSFMap &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>PSFMap &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -200,7 +200,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -378,6 +378,11 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.FoVAlignment.html">
      FoVAlignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.IRFMap.html">
+     IRFMap
     </a>
    </li>
    <li class="toctree-l2">
@@ -1838,7 +1843,7 @@ function checkPageExistsAndRedirect(event) {
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.irf.PSFMap">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.irf.</span></span><span class="sig-name descname"><span class="pre">PSFMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psf_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/psf/map.html#PSFMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.PSFMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.irf.core.IRFMap</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.core.IRFMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.irf.core.IRFMap</span></code></a></p>
 <p>Class containing the Map of PSFs and allowing to interact with it.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2093,7 +2098,7 @@ If only one value is passed, a square region is extracted.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>cutout</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>Cutout IRF map.</p>
+<dt><strong>cutout</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>Cutout IRF map.</p>
 </dd>
 </dl>
 </dd>
@@ -2117,7 +2122,7 @@ If only one value is passed, a square region is extracted.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>map</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>Downsampled irf map.</p>
+<dt><strong>map</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>Downsampled irf map.</p>
 </dd>
 </dl>
 </dd>
@@ -2197,7 +2202,7 @@ It does not depend on position.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>irf_map</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>IRF map.</p>
+<dt><strong>irf_map</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>IRF map.</p>
 </dd>
 </dl>
 </dd>
@@ -2356,7 +2361,7 @@ dict are kept unchanged.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>map_out</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>Sliced irf map object.</p>
+<dt><strong>map_out</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>Sliced irf map object.</p>
 </dd>
 </dl>
 </dd>
@@ -2370,7 +2375,7 @@ dict are kept unchanged.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>other</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>IRF map to be stacked with this one.</p>
+<dt><strong>other</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>IRF map to be stacked with this one.</p>
 </dd>
 <dt><strong>weights</strong><span class="classifier"><a class="reference internal" href="gammapy.maps.Map.html#gammapy.maps.Map" title="gammapy.maps.Map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code></a></span></dt><dd><p>Map with stacking weights.</p>
 </dd>
@@ -2435,13 +2440,13 @@ IRF is interpolated.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev12+g61bf3aa)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Region or position where to get the map.</p>
+<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Region or position where to get the map.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>irf</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></span></dt><dd><p>IRF map with region geometry.</p>
+<dt><strong>irf</strong><span class="classifier"><a class="reference internal" href="gammapy.irf.IRFMap.html#gammapy.irf.IRFMap" title="gammapy.irf.IRFMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRFMap</span></code></a></span></dt><dd><p>IRF map with region geometry.</p>
 </dd>
 </dl>
 </dd>

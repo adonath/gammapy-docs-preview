@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.data.pointing &#8212; gammapy v0.20.dev682+gb5d95b76a.d20220419</title>
+    <title>gammapy.data.pointing &#8212; gammapy v0.20.dev703+gba08bf709</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -45,6 +45,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -197,7 +198,7 @@ function checkPageExistsAndRedirect(event) {
             node.onclick = checkPageExistsAndRedirect;
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev682+gb5d95b76a.d20220419 variable.
+            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
@@ -502,7 +503,7 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radec</span>
 
-    <span class="k">def</span> <span class="nf">get_icrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
+<div class="viewcode-block" id="FixedPointingInfo.get_icrs"><a class="viewcode-back" href="../../../api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.get_icrs">[docs]</a>    <span class="k">def</span> <span class="nf">get_icrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pointing position in ICRS frame for a given time.</span>
 
@@ -525,9 +526,9 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="n">PointingMode</span><span class="o">.</span><span class="n">DRIFT</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_altaz</span><span class="p">(</span><span class="n">obstime</span><span class="p">)</span><span class="o">.</span><span class="n">icrs</span>
 
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported pointing mode: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported pointing mode: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_altaz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
+<div class="viewcode-block" id="FixedPointingInfo.get_altaz"><a class="viewcode-back" href="../../../api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.get_altaz">[docs]</a>    <span class="k">def</span> <span class="nf">get_altaz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pointing position in AltAz frame for a given time.</span>
 
@@ -556,7 +557,7 @@ function checkPageExistsAndRedirect(event) {
                 <span class="n">frame</span><span class="o">=</span><span class="n">frame</span><span class="p">,</span>
             <span class="p">)</span>
 
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported pointing mode: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported pointing mode: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="PointingInfo"><a class="viewcode-back" href="../../../api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo">[docs]</a><span class="k">class</span> <span class="nc">PointingInfo</span><span class="p">:</span>
@@ -718,7 +719,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="n">frame</span><span class="o">=</span><span class="n">altaz_frame</span><span class="p">,</span>
         <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_icrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
+<div class="viewcode-block" id="PointingInfo.get_icrs"><a class="viewcode-back" href="../../../api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_icrs">[docs]</a>    <span class="k">def</span> <span class="nf">get_icrs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pointing position in ICRS frame for a given time.</span>
 
@@ -731,9 +732,9 @@ function checkPageExistsAndRedirect(event) {
             <span class="bp">self</span><span class="o">.</span><span class="n">_interpolate_cartesian</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">mjd</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radec</span><span class="p">,</span> <span class="n">obstime</span><span class="o">.</span><span class="n">mjd</span><span class="p">),</span>
             <span class="n">obstime</span><span class="o">=</span><span class="n">obstime</span><span class="p">,</span>
             <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;icrs&#39;</span><span class="p">,</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_altaz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
+<div class="viewcode-block" id="PointingInfo.get_altaz"><a class="viewcode-back" href="../../../api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_altaz">[docs]</a>    <span class="k">def</span> <span class="nf">get_altaz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstime</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the pointing position in AltAz frame for a given time.</span>
 
@@ -759,7 +760,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="p">)</span>
 
         <span class="c1"># fallback to transformation from required ICRS if not</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">altaz_interpolate</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">obstime</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">altaz_interpolate</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">obstime</span><span class="p">)</span></div></div>
 </pre></div>
 
               </div>
