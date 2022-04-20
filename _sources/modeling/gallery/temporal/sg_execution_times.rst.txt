@@ -1,0 +1,26 @@
+
+:orphan:
+
+.. _sphx_glr_modeling_gallery_temporal_sg_execution_times:
+
+Computation times
+=================
+**00:00.364** total execution time for **modeling_gallery_temporal** files:
+
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_powerlaw_temporal.py` (``plot_powerlaw_temporal.py``)                         | 00:00.075 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_generalized_gaussian_temporal.py` (``plot_generalized_gaussian_temporal.py``) | 00:00.047 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_template_temporal.py` (``plot_template_temporal.py``)                         | 00:00.043 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_sine_temporal.py` (``plot_sine_temporal.py``)                                 | 00:00.042 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_linear_temporal.py` (``plot_linear_temporal.py``)                             | 00:00.041 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_expdecay_temporal.py` (``plot_expdecay_temporal.py``)                         | 00:00.041 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_gaussian_temporal.py` (``plot_gaussian_temporal.py``)                         | 00:00.040 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_modeling_gallery_temporal_plot_constant_temporal.py` (``plot_constant_temporal.py``)                         | 00:00.036 | 0.0 MB |
++-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
