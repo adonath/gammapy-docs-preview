@@ -65,6 +65,7 @@ YusifovKucuk2004B
       ~YusifovKucuk2004B.get_bounding_box
       ~YusifovKucuk2004B.has_inverse
       ~YusifovKucuk2004B.input_shape
+      ~YusifovKucuk2004B.output_units
       ~YusifovKucuk2004B.prepare_inputs
       ~YusifovKucuk2004B.prepare_outputs
       ~YusifovKucuk2004B.rename
@@ -130,6 +131,7 @@ YusifovKucuk2004B
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

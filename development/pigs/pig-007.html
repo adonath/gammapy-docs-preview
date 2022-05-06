@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 7 - Models &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 7 - Models &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-007 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-007 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -563,8 +562,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-7-models">
-<span id="pig-007"></span><h1>PIG 7 - Models<a class="headerlink" href="#pig-7-models" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-7-models">
+<span id="pig-007"></span><h1>PIG 7 - Models<a class="headerlink" href="#pig-7-models" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: Axel Donath, Christoph Deil &amp; Regis Terrier</p></li>
 <li><p>Created: Dec 17, 2018</p></li>
@@ -572,8 +571,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: withdrawn</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/1971">GH 1971</a></p></li>
 </ul>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p>One of the most important features of Gammapy is the modeling of gamma-ray data
 by parametric models. This includes the modeling of source spectra by spectral
 models, the modeling of source morphologies by spatial models, the modeling of
@@ -587,11 +586,11 @@ allow to combine existing models using limited arithmetic and offer the
 possibility for users to easily implement custom models. A lot of development
 work has already put into the modeling framework of Gammapy. This PIG outlines
 the missing development work on the model framework for Gammapy v1.0.</p>
-</div>
-<div class="section" id="proposal">
-<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="introduce-naming-scheme-for-models">
-<h3>Introduce naming scheme for models<a class="headerlink" href="#introduce-naming-scheme-for-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="proposal">
+<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h2>
+<section id="introduce-naming-scheme-for-models">
+<h3>Introduce naming scheme for models<a class="headerlink" href="#introduce-naming-scheme-for-models" title="Permalink to this headline">#</a></h3>
 <p>Currently Gammapy implements mainly four categories of models: spectral models,
 morphology or spatial models, combined spectral and spatial models
 (<code class="docutils literal notranslate"><span class="pre">SkyModel</span></code>) and lightcurve or phase models. We propose a uniform naming
@@ -657,9 +656,9 @@ spatial model, the corresponding prefix should be used, such as
 <code class="docutils literal notranslate"><span class="pre">SpectralConstant</span></code>).</p>
 <p>In addition there is the <code class="docutils literal notranslate"><span class="pre">SourceModels</span></code>  class to represent a sum of
 <code class="docutils literal notranslate"><span class="pre">SourceModel</span></code> objects.</p>
-</div>
-<div class="section" id="unify-calling-interface-for-models">
-<h3>Unify calling interface for models<a class="headerlink" href="#unify-calling-interface-for-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unify-calling-interface-for-models">
+<h3>Unify calling interface for models<a class="headerlink" href="#unify-calling-interface-for-models" title="Permalink to this headline">#</a></h3>
 <p>For model evaluation we would like to have a nice user interface, that supports
 <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> and <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> objects on the one hand and a performance oriented
 and flexible interface for efficient evaluation for model fitting. The latter We
@@ -707,21 +706,21 @@ interface. In case we find performance issue related to <code class="docutils li
 <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> handling or need auto differentiation tools such as <code class="docutils literal notranslate"><span class="pre">autograd</span></code>,
 we can later implement a more efficient interface relying directly on
 <code class="docutils literal notranslate"><span class="pre">Model.evaluate()</span></code>.</p>
-</div>
-<div class="section" id="introduction-of-background-models">
-<h3>Introduction of background models<a class="headerlink" href="#introduction-of-background-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="introduction-of-background-models">
+<h3>Introduction of background models<a class="headerlink" href="#introduction-of-background-models" title="Permalink to this headline">#</a></h3>
 <p>For any kind of IACTs analysis hadronic background models are required, which
 model the residual hadronic (gamma-like) background emission from templates
 provided by DL3 or by generic parametric models. The background template differ
 from source templates, because they are defined in reconstructed spatial and
 energy coordinates. We propose the introduction of the following two model
 classes:</p>
-<div class="section" id="backgroundmodel">
-<h4>BackgroundModel<a class="headerlink" href="#backgroundmodel" title="Permalink to this headline">¶</a></h4>
+<section id="backgroundmodel">
+<h4>BackgroundModel<a class="headerlink" href="#backgroundmodel" title="Permalink to this headline">#</a></h4>
 <p>Base class for all background models.</p>
-</div>
-<div class="section" id="backgroundirfmodel">
-<h4>BackgroundIRFModel<a class="headerlink" href="#backgroundirfmodel" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="backgroundirfmodel">
+<h4>BackgroundIRFModel<a class="headerlink" href="#backgroundirfmodel" title="Permalink to this headline">#</a></h4>
 <p>Class to represent a template background model. It is initialized with a
 background map template and introduces additional background parameters to
 adjust the spectral shape and amplitude. This model can only be evaluated on a
@@ -734,18 +733,18 @@ preparation step. No IRFs are applied.</p>
 <span class="n">npred</span> <span class="o">=</span> <span class="n">background</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="introduction-of-forward-folded-models">
-<h3>Introduction of “forward folded” models<a class="headerlink" href="#introduction-of-forward-folded-models" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="introduction-of-forward-folded-models">
+<h3>Introduction of “forward folded” models<a class="headerlink" href="#introduction-of-forward-folded-models" title="Permalink to this headline">#</a></h3>
 <p>To combine parametric model components with their corresponding instrument response
 functions, such as PSF, energy dispersion and exposure, we propose the introduction
 of “forward folded” models. These take a fixed data grid, typically defined by the
 exposure map, on which the model is evaluated. After application of instrument
 response functions, the number of prediced counts is returned by the <code class="docutils literal notranslate"><span class="pre">.evaluate()</span></code>
 method. We propose to introduce the following classes:</p>
-<div class="section" id="spectralirfmodel">
-<h4>SpectralIRFModel<a class="headerlink" href="#spectralirfmodel" title="Permalink to this headline">¶</a></h4>
+<section id="spectralirfmodel">
+<h4>SpectralIRFModel<a class="headerlink" href="#spectralirfmodel" title="Permalink to this headline">#</a></h4>
 <p>A “forward folded” spectral model, that applies energy dispersion and effective
 area to a <code class="docutils literal notranslate"><span class="pre">SpectralModel</span></code>. It corresponds in functionality to the current
 <code class="docutils literal notranslate"><span class="pre">CountsPredictor</span></code>.</p>
@@ -756,15 +755,15 @@ area to a <code class="docutils literal notranslate"><span class="pre">SpectralM
 <span class="n">npred</span> <span class="o">=</span> <span class="n">spectral_irf_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="spatialirfmodel">
-<h4>SpatialIRFModel<a class="headerlink" href="#spatialirfmodel" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="spatialirfmodel">
+<h4>SpatialIRFModel<a class="headerlink" href="#spatialirfmodel" title="Permalink to this headline">#</a></h4>
 <p>A convolved model, that applies the PSF and exposure to a <code class="docutils literal notranslate"><span class="pre">SpatialModel</span></code>. The
 need for this model is not clear, as we might solve the use case of morphology
 fitting by a combined spatial and spectral analysis with one energy bin.</p>
-</div>
-<div class="section" id="sourceirfmodel">
-<h4>SourceIRFModel<a class="headerlink" href="#sourceirfmodel" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="sourceirfmodel">
+<h4>SourceIRFModel<a class="headerlink" href="#sourceirfmodel" title="Permalink to this headline">#</a></h4>
 <p>A “forward folded” source model, that applies IRFs to a <code class="docutils literal notranslate"><span class="pre">SourceModel</span></code> instance
 and returns an integrated quantity corresponding to predicted counts. It can
 only be evaluated on a fixed grid, which is defined on initialization by the
@@ -780,10 +779,10 @@ This class will replace the current <code class="docutils literal notranslate"><
 <span class="n">npred</span> <span class="o">=</span> <span class="n">source_irf_model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="improve-sourcemodels-class">
-<h3>Improve SourceModels class<a class="headerlink" href="#improve-sourcemodels-class" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="improve-sourcemodels-class">
+<h3>Improve SourceModels class<a class="headerlink" href="#improve-sourcemodels-class" title="Permalink to this headline">#</a></h3>
 <p>The existing <code class="docutils literal notranslate"><span class="pre">CompoundSkyModel</span></code> is a nice very generic abstraction to support
 any kind of arithmetic between <code class="docutils literal notranslate"><span class="pre">SkyModel</span></code> objects, but the number of use
 cases for other operators, except for “+” is very limited and can always be
@@ -808,9 +807,9 @@ operator using the <code class="docutils literal notranslate"><span class="pre">
 </pre></div>
 </div>
 <p>Possibly remove the <code class="docutils literal notranslate"><span class="pre">SpectralCompoundModel</span></code> for consistency.</p>
-</div>
-<div class="section" id="introduction-of-model-name-attributes">
-<h3>Introduction of model name attributes<a class="headerlink" href="#introduction-of-model-name-attributes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="introduction-of-model-name-attributes">
+<h3>Introduction of model name attributes<a class="headerlink" href="#introduction-of-model-name-attributes" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">SourceModel</span></code> class should be improved to support model component names.
 This way the <code class="docutils literal notranslate"><span class="pre">SourceModels</span></code> object can be improved to access model components
 by name, as well as the XML serialization (which supports names) becomes
@@ -837,9 +836,9 @@ parameter names become unique. E.g. no need for cryptic <code class="docutils li
 names in the minuit backend, which simplifies debugging and interaction by the
 user with methods such as <code class="docutils literal notranslate"><span class="pre">Fit.likelihood_profile()</span></code> or <code class="docutils literal notranslate"><span class="pre">Fit.confidence()</span></code>,
 where parameter identifiers must be given.</p>
-</div>
-<div class="section" id="improve-and-implement-model-serilization">
-<h3>Improve and implement model serilization<a class="headerlink" href="#improve-and-implement-model-serilization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="improve-and-implement-model-serilization">
+<h3>Improve and implement model serilization<a class="headerlink" href="#improve-and-implement-model-serilization" title="Permalink to this headline">#</a></h3>
 <p>Serialization of models is an important feature for standard analyses. In
 <code class="docutils literal notranslate"><span class="pre">gammapy.utils.serialization</span></code> there is a prototype implementation of XML
 serialization for <code class="docutils literal notranslate"><span class="pre">SourceModels</span></code>, We propose to fix this existing XML
@@ -863,11 +862,11 @@ YAML format should be the preferred serialization:</p>
 </div>
 <p>The two file formats should be handled automatically in <code class="docutils literal notranslate"><span class="pre">SourceModel.read()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">SourceModel.write()</span></code>.</p>
-</div>
-<div class="section" id="improve-spatial-models">
-<h3>Improve spatial models<a class="headerlink" href="#improve-spatial-models" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="implement-sky-coordinate-handling">
-<h4>Implement sky coordinate handling<a class="headerlink" href="#implement-sky-coordinate-handling" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="improve-spatial-models">
+<h3>Improve spatial models<a class="headerlink" href="#improve-spatial-models" title="Permalink to this headline">#</a></h3>
+<section id="implement-sky-coordinate-handling">
+<h4>Implement sky coordinate handling<a class="headerlink" href="#implement-sky-coordinate-handling" title="Permalink to this headline">#</a></h4>
 <p>Implement support for coordinate systems. Add an interface for <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code>, by
 introducing a <code class="docutils literal notranslate"><span class="pre">SpatialModel.skycood</span></code> attribute.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
@@ -889,9 +888,9 @@ introducing a <code class="docutils literal notranslate"><span class="pre">Spati
 <span class="n">values</span> <span class="o">=</span> <span class="n">point_source</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="implement-default-parameters">
-<h4>Implement default parameters<a class="headerlink" href="#implement-default-parameters" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="implement-default-parameters">
+<h4>Implement default parameters<a class="headerlink" href="#implement-default-parameters" title="Permalink to this headline">#</a></h4>
 <p>For spectral models Gammapy has defined default parameters, which simplifes the
 interactive usage of the models. From this experience we propose to introduce
 default parameters for <code class="docutils literal notranslate"><span class="pre">SpatialModel</span></code> as well as <code class="docutils literal notranslate"><span class="pre">SourceModel</span></code>.</p>
@@ -902,9 +901,9 @@ default parameters for <code class="docutils literal notranslate"><span class="p
 <span class="nb">print</span><span class="p">(</span><span class="n">shell</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="implement-evaluation-region-specifications">
-<h4>Implement evaluation region specifications<a class="headerlink" href="#implement-evaluation-region-specifications" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="implement-evaluation-region-specifications">
+<h4>Implement evaluation region specifications<a class="headerlink" href="#implement-evaluation-region-specifications" title="Permalink to this headline">#</a></h4>
 <p>For efficient evaluation of model components, we propose that <code class="docutils literal notranslate"><span class="pre">SpatialModel</span></code>
 classes declare a circular region <code class="docutils literal notranslate"><span class="pre">.evaluation_radius</span></code>, they are evaluated on.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gammapy.image.models</span> <span class="kn">import</span> <span class="n">Shell</span>
@@ -918,10 +917,10 @@ depending of the model parameter, that determines the spatial extension of the
 model. The handling of <code class="docutils literal notranslate"><span class="pre">PointSource</span></code> and additional evaluation margins, which
 depend on the pixel size, is done in the step, where the model component is
 evaluated.</p>
-</div>
-</div>
-<div class="section" id="expose-model-parameters-as-attributes">
-<h3>Expose model parameters as attributes<a class="headerlink" href="#expose-model-parameters-as-attributes" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="expose-model-parameters-as-attributes">
+<h3>Expose model parameters as attributes<a class="headerlink" href="#expose-model-parameters-as-attributes" title="Permalink to this headline">#</a></h3>
 <p>To simplify the interactive handling of model instances, model parameters should
 be exposed as attributes on the model, so that the following works:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gammapy.spectrum.models</span> <span class="kn">import</span> <span class="n">Powerlaw</span>
@@ -936,19 +935,19 @@ be exposed as attributes on the model, so that the following works:</p>
 </div>
 <p>The attributes should be auto-generated in the <code class="docutils literal notranslate"><span class="pre">Model</span></code> base class, based on the
 list of parameters defined by the model.</p>
-</div>
-<div class="section" id="add-new-parametric-models">
-<h3>Add new parametric models<a class="headerlink" href="#add-new-parametric-models" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="add-new-parametric-models">
+<h3>Add new parametric models<a class="headerlink" href="#add-new-parametric-models" title="Permalink to this headline">#</a></h3>
 <p>We propose to implement the following parametric models:</p>
 <ul class="simple">
 <li><p>SkyGaussianElongated: Non radial-symmetric Gaussian. In planar approximation…</p></li>
 <li><p>SkyDiskElongated: Non radial-symmetric disk. In planar approximation…</p></li>
 <li><p>SpectralGaussian: Spectral Gaussian model. <code class="docutils literal notranslate"><span class="pre">LogGaussian</span></code>?</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="task-list">
-<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="task-list">
+<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">#</a></h2>
 <p>This is a proposal for a list of pull requests implementing the proposed
 changes, ordered by priority:</p>
 <ol class="arabic simple">
@@ -978,9 +977,9 @@ Temporarily move the background handling to the <code class="docutils literal no
 <li><p>Rename existing <code class="docutils literal notranslate"><span class="pre">CountsPredictor</span></code> to <code class="docutils literal notranslate"><span class="pre">SpectralIRFModel</span></code> and unify API with
 <code class="docutils literal notranslate"><span class="pre">SourceIRFModel</span></code> as much as possible. (<strong>v0.XX</strong>)</p></li>
 </ol>
-</div>
-<div class="section" id="alternatives">
-<h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="alternatives">
+<h2>Alternatives<a class="headerlink" href="#alternatives" title="Permalink to this headline">#</a></h2>
 <p>The proposed model names are open for discussion. Instead of <code class="docutils literal notranslate"><span class="pre">Spectral...</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Spatial...</span></code> and <code class="docutils literal notranslate"><span class="pre">Source...</span></code> one could also use the suffixes <code class="docutils literal notranslate"><span class="pre">...1D</span></code>,
 <code class="docutils literal notranslate"><span class="pre">...2D</span></code> or <code class="docutils literal notranslate"><span class="pre">...3D</span></code>. Instead of <code class="docutils literal notranslate"><span class="pre">...Template</span></code> one could use
@@ -990,35 +989,17 @@ grids and correspond in functionality to the current <code class="docutils liter
 scheme based on <code class="docutils literal notranslate"><span class="pre">ModelEvaluator</span></code> seems a good alternative proposal. This would
 include a <code class="docutils literal notranslate"><span class="pre">SpectralEvaluator</span></code> and a <code class="docutils literal notranslate"><span class="pre">SourceEvaluator</span></code> and
 <code class="docutils literal notranslate"><span class="pre">BackgroundEvaluator</span></code> class.</p>
-</div>
-<div class="section" id="decision">
-<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h2>
 <p>The authors decided to withdraw the PIG. Most of the proposed changes have been
 discussed and implemented independently.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-006.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 6 - CTA observation handling</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-008.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 8 - Datasets</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -1026,8 +1007,9 @@ discussed and implemented independently.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1038,7 +1020,7 @@ discussed and implemented independently.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

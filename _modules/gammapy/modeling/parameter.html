@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.modeling.parameter &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.modeling.parameter &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
+ <a class="reference internal nav-link" href="../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/modeling/parameter and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/modeling/parameter and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -314,7 +307,7 @@ function checkPageExistsAndRedirect(event) {
     <span class="k">return</span> <span class="n">str_</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="n">tabsize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="Parameter"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter">[docs]</a><span class="k">class</span> <span class="nc">Parameter</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Parameter</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A model parameter.</span>
 
 <span class="sd">    Note that the parameter value has been split into</span>
@@ -363,7 +356,8 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        Method used to set ``factor`` and ``scale``</span>
 <span class="sd">    interp : {&quot;lin&quot;, &quot;sqrt&quot;, &quot;log&quot;}</span>
 <span class="sd">        Parameter scaling to use for the scan.</span>
-
+<span class="sd">    is_norm : bool</span>
+<span class="sd">        Whether the parameter represents the flux norm of the model.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
@@ -383,6 +377,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">scan_values</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">scale_method</span><span class="o">=</span><span class="s2">&quot;scale10&quot;</span><span class="p">,</span>
         <span class="n">interp</span><span class="o">=</span><span class="s2">&quot;lin&quot;</span><span class="p">,</span>
+        <span class="n">is_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name must be string, got &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39; instead&quot;</span><span class="p">)</span>
@@ -394,6 +389,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="nb">max</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="n">frozen</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_error</span> <span class="o">=</span> <span class="n">error</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_norm</span> <span class="o">=</span> <span class="n">is_norm</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># TODO: move this to a setter method that can be called from `__set__` also!</span>
@@ -417,6 +413,7 @@ function checkPageExistsAndRedirect(event) {
     <span class="k">def</span> <span class="fm">__get__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">owner</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span>
+
         <span class="n">par</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
         <span class="n">par</span><span class="o">.</span><span class="n">_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">par</span>
@@ -427,6 +424,15 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="n">par</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot assign </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2"> to parameter </span><span class="si">{</span><span class="n">par</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__set_name__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">owner</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="n">name</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected parameter name &#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;, got </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">is_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Whether the parameter represents the norm of the model&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_norm</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -640,7 +646,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="sd">&quot;&quot;&quot;Set scan values&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scan_values</span> <span class="o">=</span> <span class="n">values</span>
 
-<div class="viewcode-block" id="Parameter.check_limits"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.check_limits">[docs]</a>    <span class="k">def</span> <span class="nf">check_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">check_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Emit a warning or error if value is outside the min/max range&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">frozen</span><span class="p">:</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span>
@@ -648,7 +654,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="p">):</span>
                 <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
                     <span class="sa">f</span><span class="s2">&quot;Value </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is outside bounds [</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="si">}</span><span class="s2">] for parameter &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-                <span class="p">)</span></div>
+                <span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">(</span>
@@ -657,18 +663,18 @@ function checkPageExistsAndRedirect(event) {
             <span class="sa">f</span><span class="s2">&quot;min=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">min</span><span class="si">!r}</span><span class="s2">, max=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="si">!r}</span><span class="s2">, frozen=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">frozen</span><span class="si">!r}</span><span class="s2">, id=</span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="p">)</span>
 
-<div class="viewcode-block" id="Parameter.copy"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A deep copy&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Parameter.update_from_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.update_from_dict">[docs]</a>    <span class="k">def</span> <span class="nf">update_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">update_from_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update parameters from a dict.</span>
 <span class="sd">        Protection against changing parameter model, type, name.&quot;&quot;&quot;</span>
         <span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;value&quot;</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;frozen&quot;</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">])</span></div>
+            <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
 
-<div class="viewcode-block" id="Parameter.to_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert to dict.&quot;&quot;&quot;</span>
         <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
@@ -680,13 +686,15 @@ function checkPageExistsAndRedirect(event) {
             <span class="s2">&quot;frozen&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">frozen</span><span class="p">,</span>
             <span class="s2">&quot;interp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">interp</span><span class="p">,</span>
             <span class="s2">&quot;scale_method&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_method</span><span class="p">,</span>
+            <span class="s2">&quot;is_norm&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_norm</span><span class="p">,</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_label_io</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">output</span><span class="p">[</span><span class="s2">&quot;link&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_link_label_io</span>
-        <span class="k">return</span> <span class="n">output</span></div>
 
-<div class="viewcode-block" id="Parameter.autoscale"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.autoscale">[docs]</a>    <span class="k">def</span> <span class="nf">autoscale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">output</span>
+
+    <span class="k">def</span> <span class="nf">autoscale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Autoscale the parameters.</span>
 
 <span class="sd">        Set ``factor`` and ``scale`` according to ``scale_method`` attribute</span>
@@ -709,11 +717,12 @@ function checkPageExistsAndRedirect(event) {
                 <span class="n">scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">exponent</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="n">scale</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="n">scale</span>
+
         <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_method</span> <span class="o">==</span> <span class="s2">&quot;factor1&quot;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">factor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span></div></div>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value</span>
 
 
-<div class="viewcode-block" id="Parameters"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters">[docs]</a><span class="k">class</span> <span class="nc">Parameters</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters">[docs]</a><span class="k">class</span> <span class="nc">Parameters</span><span class="p">(</span><span class="n">collections</span><span class="o">.</span><span class="n">abc</span><span class="o">.</span><span class="n">Sequence</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Parameters container.</span>
 
 <span class="sd">    - List of `Parameter` objects.</span>
@@ -733,7 +742,7 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span> <span class="o">=</span> <span class="n">parameters</span>
 
-<div class="viewcode-block" id="Parameters.check_limits"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.check_limits">[docs]</a>    <span class="k">def</span> <span class="nf">check_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.check_limits"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.check_limits">[docs]</a>    <span class="k">def</span> <span class="nf">check_limits</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Check parameter limits and emit a warning&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
             <span class="n">par</span><span class="o">.</span><span class="n">check_limits</span><span class="p">()</span></div>
@@ -785,7 +794,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">for</span> <span class="n">value</span><span class="p">,</span> <span class="n">par</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="bp">self</span><span class="p">):</span>
             <span class="n">par</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
 
-<div class="viewcode-block" id="Parameters.from_stack"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.from_stack">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Parameters.from_stack"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.from_stack">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_stack</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">parameters_list</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create `Parameters` by stacking a list of other `Parameters` objects.</span>
 
@@ -797,7 +806,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">pars</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">parameters_list</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">pars</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Parameters.copy"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.copy"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;A deep copy&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
@@ -816,7 +825,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="sd">&quot;&quot;&quot;List of parameter names&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">par</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">]</span>
 
-<div class="viewcode-block" id="Parameters.index"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.index">[docs]</a>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.index"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.index">[docs]</a>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get position index for a given parameter.</span>
 
 <span class="sd">        The input can be a parameter object, parameter name (str)</span>
@@ -851,7 +860,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid type: </span><span class="si">{</span><span class="n">other</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Parameters.to_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.to_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.to_dict">[docs]</a>    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">:</span>
@@ -859,7 +868,7 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="Parameters.to_table"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.to_table">[docs]</a>    <span class="k">def</span> <span class="nf">to_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.to_table"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.to_table">[docs]</a>    <span class="k">def</span> <span class="nf">to_table</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert parameter attributes to `~astropy.table.Table`.&quot;&quot;&quot;</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">:</span>
@@ -882,17 +891,19 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">all_equal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">p</span> <span class="ow">is</span> <span class="n">p_new</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">p_new</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)])</span>
         <span class="k">return</span> <span class="n">all_equal</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Parameters.from_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
+<div class="viewcode-block" id="Parameters.from_dict"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.from_dict">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">from_dict</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
         <span class="n">parameters</span> <span class="o">=</span> <span class="p">[]</span>
+
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
             <span class="n">link_label</span> <span class="o">=</span> <span class="n">par</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;link&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
             <span class="n">parameter</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="o">**</span><span class="n">par</span><span class="p">)</span>
             <span class="n">parameter</span><span class="o">.</span><span class="n">_link_label_io</span> <span class="o">=</span> <span class="n">link_label</span>
             <span class="n">parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">parameters</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Parameters.set_parameter_factors"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.set_parameter_factors">[docs]</a>    <span class="k">def</span> <span class="nf">set_parameter_factors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factors</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.set_parameter_factors"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.set_parameter_factors">[docs]</a>    <span class="k">def</span> <span class="nf">set_parameter_factors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factors</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set factor of all parameters.</span>
 
 <span class="sd">        Used in the optimizer interface.</span>
@@ -903,7 +914,7 @@ function checkPageExistsAndRedirect(event) {
                 <span class="n">parameter</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="n">factors</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
                 <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="Parameters.autoscale"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.autoscale">[docs]</a>    <span class="k">def</span> <span class="nf">autoscale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.autoscale"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.autoscale">[docs]</a>    <span class="k">def</span> <span class="nf">autoscale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Autoscale all parameters.</span>
 
 <span class="sd">        See :func:`~gammapy.modeling.Parameter.autoscale`</span>
@@ -912,7 +923,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">:</span>
             <span class="n">par</span><span class="o">.</span><span class="n">autoscale</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Parameters.select"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span>
+<div class="viewcode-block" id="Parameters.select"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.select">[docs]</a>    <span class="k">def</span> <span class="nf">select</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -954,17 +965,17 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="Parameters.freeze_all"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.freeze_all">[docs]</a>    <span class="k">def</span> <span class="nf">freeze_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.freeze_all"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.freeze_all">[docs]</a>    <span class="k">def</span> <span class="nf">freeze_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Freeze all parameters&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">:</span>
             <span class="n">par</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="Parameters.unfreeze_all"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.unfreeze_all">[docs]</a>    <span class="k">def</span> <span class="nf">unfreeze_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.unfreeze_all"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.unfreeze_all">[docs]</a>    <span class="k">def</span> <span class="nf">unfreeze_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Unfreeze all parameters (even those frozen by default)&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameters</span><span class="p">:</span>
             <span class="n">par</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Parameters.restore_status"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.restore_status">[docs]</a>    <span class="k">def</span> <span class="nf">restore_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">restore_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Parameters.restore_status"><a class="viewcode-back" href="../../../api/gammapy.modeling.Parameters.html#gammapy.astro.darkmatter.Parameters.restore_status">[docs]</a>    <span class="k">def</span> <span class="nf">restore_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">restore_values</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Context manager to restore status.</span>
 
 <span class="sd">        A copy of the values is made on enter,</span>
@@ -1008,18 +1019,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1030,7 +1038,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

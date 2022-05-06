@@ -49,8 +49,11 @@ RegionNDMap
       ~RegionNDMap.interp_by_coord
       ~RegionNDMap.interp_by_pix
       ~RegionNDMap.interp_to_geom
+      ~RegionNDMap.is_allclose
       ~RegionNDMap.iter_by_axis
+      ~RegionNDMap.iter_by_axis_data
       ~RegionNDMap.iter_by_image
+      ~RegionNDMap.iter_by_image_data
       ~RegionNDMap.mask_nearest_position
       ~RegionNDMap.normalize
       ~RegionNDMap.pad
@@ -63,11 +66,15 @@ RegionNDMap
       ~RegionNDMap.read
       ~RegionNDMap.reduce
       ~RegionNDMap.reduce_over_axes
+      ~RegionNDMap.rename_axes
+      ~RegionNDMap.resample
       ~RegionNDMap.resample_axis
+      ~RegionNDMap.sample_coord
       ~RegionNDMap.set_by_coord
       ~RegionNDMap.set_by_idx
       ~RegionNDMap.set_by_pix
       ~RegionNDMap.slice_by_idx
+      ~RegionNDMap.split_by_axis
       ~RegionNDMap.stack
       ~RegionNDMap.sum_over_axes
       ~RegionNDMap.to_cube
@@ -117,8 +124,11 @@ RegionNDMap
    .. automethod:: interp_by_coord
    .. automethod:: interp_by_pix
    .. automethod:: interp_to_geom
+   .. automethod:: is_allclose
    .. automethod:: iter_by_axis
+   .. automethod:: iter_by_axis_data
    .. automethod:: iter_by_image
+   .. automethod:: iter_by_image_data
    .. automethod:: mask_nearest_position
    .. automethod:: normalize
    .. automethod:: pad
@@ -131,11 +141,15 @@ RegionNDMap
    .. automethod:: read
    .. automethod:: reduce
    .. automethod:: reduce_over_axes
+   .. automethod:: rename_axes
+   .. automethod:: resample
    .. automethod:: resample_axis
+   .. automethod:: sample_coord
    .. automethod:: set_by_coord
    .. automethod:: set_by_idx
    .. automethod:: set_by_pix
    .. automethod:: slice_by_idx
+   .. automethod:: split_by_axis
    .. automethod:: stack
    .. automethod:: sum_over_axes
    .. automethod:: to_cube

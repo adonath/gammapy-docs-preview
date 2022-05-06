@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.makers.background.reflected &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.makers.background.reflected &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../api.html">
+ <a class="reference internal nav-link" href="../../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/makers/background/reflected and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/makers/background/reflected and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -272,13 +265,12 @@ function checkPageExistsAndRedirect(event) {
   <h1>Source code for gammapy.makers.background.reflected</h1><div class="highlight"><pre>
 <span></span><span class="c1"># Licensed under a 3-clause BSD style license - see LICENSE.rst</span>
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABCMeta</span><span class="p">,</span> <span class="n">abstractmethod</span>
-
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
 <span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">Angle</span>
-<span class="kn">from</span> <span class="nn">regions</span> <span class="kn">import</span> <span class="n">PixCoord</span><span class="p">,</span> <span class="n">PointSkyRegion</span>
+<span class="kn">from</span> <span class="nn">regions</span> <span class="kn">import</span> <span class="n">CircleSkyRegion</span><span class="p">,</span> <span class="n">PixCoord</span><span class="p">,</span> <span class="n">PointSkyRegion</span>
 <span class="kn">from</span> <span class="nn">gammapy.datasets</span> <span class="kn">import</span> <span class="n">SpectrumDatasetOnOff</span>
 <span class="kn">from</span> <span class="nn">gammapy.maps</span> <span class="kn">import</span> <span class="n">RegionGeom</span><span class="p">,</span> <span class="n">RegionNDMap</span><span class="p">,</span> <span class="n">WcsGeom</span><span class="p">,</span> <span class="n">WcsNDMap</span>
 <span class="kn">from</span> <span class="nn">..core</span> <span class="kn">import</span> <span class="n">Maker</span>
@@ -315,6 +307,40 @@ function checkPageExistsAndRedirect(event) {
     <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">edges_max</span> <span class="o">&gt;=</span> <span class="n">e_min</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">edges_min</span> <span class="o">&lt;=</span> <span class="n">e_max</span><span class="p">)</span>
     <span class="n">rad_max_at_offset</span> <span class="o">=</span> <span class="n">rad_max_at_offset</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">separations</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span> <span class="p">:]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">rad_max_at_offset</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">is_rad_max_compatible_region_geom</span><span class="p">(</span><span class="n">rad_max</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Check if input RegionGeom is compatible with rad_max for point-like analysis.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    geom : `~gammapy.maps.RegionGeom`</span>
+<span class="sd">        input RegionGeom.</span>
+<span class="sd">    rtol : float</span>
+<span class="sd">        relative tolerance</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    valid : bool</span>
+<span class="sd">        True if rad_max is fixed and region is a CircleSkyRegion with compatible radius</span>
+<span class="sd">        True if region is a PointSkyRegion</span>
+<span class="sd">        False otherwise.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">geom</span><span class="o">.</span><span class="n">is_all_point_sky_regions</span><span class="p">:</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="n">CircleSkyRegion</span><span class="p">)</span> <span class="ow">and</span> <span class="n">rad_max</span><span class="o">.</span><span class="n">is_fixed_rad_max</span><span class="p">:</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span> <span class="n">rad_max</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">rtol</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;CircleSkyRegion radius must be equal to RADMAX &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;for point-like IRFs with fixed RADMAX. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="si">{</span><span class="n">rad_max</span><span class="o">.</span><span class="n">quantity</span><span class="si">}</span><span class="s2"> got </span><span class="si">{</span><span class="n">geom</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">radius</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">return</span> <span class="n">valid</span>
 
 
 <div class="viewcode-block" id="RegionsFinder"><a class="viewcode-back" href="../../../../api/gammapy.makers.RegionsFinder.html#gammapy.makers.RegionsFinder">[docs]</a><span class="k">class</span> <span class="nc">RegionsFinder</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">ABCMeta</span><span class="p">):</span>
@@ -622,12 +648,6 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        wcs: `~astropy.wcs.WCS`</span>
 <span class="sd">            WCS for the determined regions</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">PointSkyRegion</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-                <span class="s2">&quot;`ReflectedRegionsFinder` does not work for `PointSkyRegion`&quot;</span>
-                <span class="s2">&quot;, use `WobbleRegionsFinder` instead&quot;</span>
-            <span class="p">)</span>
-
         <span class="n">regions</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="n">reference_geom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_reference_geometry</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span>
@@ -665,7 +685,7 @@ function checkPageExistsAndRedirect(event) {
 
 <span class="sd">    Attributes</span>
 <span class="sd">    ----------</span>
-<span class="sd">    regions_finder: RegionsFinder</span>
+<span class="sd">    region_finder: RegionsFinder</span>
 <span class="sd">        if not given, a `ReflectedRegionsFinder` will be created and</span>
 <span class="sd">        any of the ``**kwargs`` will be forwarded to the `ReflectedRegionsFinder`.</span>
 <span class="sd">    exclusion_mask : `~gammapy.maps.WcsNDMap`, optional</span>
@@ -738,12 +758,15 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">geom</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">counts</span><span class="o">.</span><span class="n">geom</span>
         <span class="n">energy_axis</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="s2">&quot;energy&quot;</span><span class="p">]</span>
         <span class="n">events</span> <span class="o">=</span> <span class="n">observation</span><span class="o">.</span><span class="n">events</span>
+        <span class="n">rad_max</span> <span class="o">=</span> <span class="n">observation</span><span class="o">.</span><span class="n">rad_max</span>
 
-        <span class="n">is_point_like</span> <span class="o">=</span> <span class="n">observation</span><span class="o">.</span><span class="n">rad_max</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">is_point_sky_region</span> <span class="o">=</span> <span class="n">geom</span><span class="o">.</span><span class="n">is_all_point_sky_regions</span>
 
-        <span class="k">if</span> <span class="n">is_point_like</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">geom</span><span class="o">.</span><span class="n">is_all_point_sky_regions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rad_max</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_rad_max_compatible_region_geom</span><span class="p">(</span>
+            <span class="n">rad_max</span><span class="o">=</span><span class="n">rad_max</span><span class="p">,</span> <span class="n">geom</span><span class="o">=</span><span class="n">geom</span>
+        <span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;Must use PointSkyRegion on region in point-like analysis,&quot;</span>
+                <span class="s2">&quot;Must use `PointSkyRegion` or `CircleSkyRegion` with rad max equivalent radius in point-like analysis,&quot;</span>
                 <span class="sa">f</span><span class="s2">&quot; got </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">geom</span><span class="o">.</span><span class="n">region</span><span class="p">)</span><span class="si">}</span><span class="s2"> instead&quot;</span>
             <span class="p">)</span>
 
@@ -753,7 +776,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="n">exclusion_mask</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">exclusion_mask</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">is_point_like</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions_off</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">geom</span><span class="o">.</span><span class="n">is_all_point_sky_regions</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions_off</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">regions_off</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filter_regions_off_rad_max</span><span class="p">(</span>
                 <span class="n">regions_off</span><span class="p">,</span> <span class="n">energy_axis</span><span class="p">,</span> <span class="n">geom</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">observation</span><span class="o">.</span><span class="n">rad_max</span>
             <span class="p">)</span>
@@ -771,7 +794,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="n">wcs</span><span class="o">=</span><span class="n">wcs</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">is_point_like</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">is_point_sky_region</span><span class="p">:</span>
             <span class="n">counts_off</span> <span class="o">=</span> <span class="n">make_counts_off_rad_max</span><span class="p">(</span>
                 <span class="n">geom_off</span><span class="o">=</span><span class="n">geom_off</span><span class="p">,</span>
                 <span class="n">rad_max</span><span class="o">=</span><span class="n">observation</span><span class="o">.</span><span class="n">rad_max</span><span class="p">,</span>
@@ -822,18 +845,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -844,7 +864,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

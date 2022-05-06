@@ -17,6 +17,7 @@ Parameter
       ~Parameter.factor_max
       ~Parameter.factor_min
       ~Parameter.frozen
+      ~Parameter.is_norm
       ~Parameter.max
       ~Parameter.min
       ~Parameter.name
@@ -50,6 +51,7 @@ Parameter
    .. autoattribute:: factor_max
    .. autoattribute:: factor_min
    .. autoattribute:: frozen
+   .. autoattribute:: is_norm
    .. autoattribute:: max
    .. autoattribute:: min
    .. autoattribute:: name

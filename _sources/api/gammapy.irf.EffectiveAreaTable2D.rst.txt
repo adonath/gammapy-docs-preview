@@ -34,6 +34,7 @@ EffectiveAreaTable2D
       ~EffectiveAreaTable2D.integral
       ~EffectiveAreaTable2D.integrate_log_log
       ~EffectiveAreaTable2D.interp_missing_data
+      ~EffectiveAreaTable2D.is_allclose
       ~EffectiveAreaTable2D.normalize
       ~EffectiveAreaTable2D.pad
       ~EffectiveAreaTable2D.peek
@@ -41,6 +42,7 @@ EffectiveAreaTable2D
       ~EffectiveAreaTable2D.plot_energy_dependence
       ~EffectiveAreaTable2D.plot_offset_dependence
       ~EffectiveAreaTable2D.read
+      ~EffectiveAreaTable2D.slice_by_idx
       ~EffectiveAreaTable2D.to_hdulist
       ~EffectiveAreaTable2D.to_table
       ~EffectiveAreaTable2D.to_table_hdu
@@ -71,6 +73,7 @@ EffectiveAreaTable2D
    .. automethod:: integral
    .. automethod:: integrate_log_log
    .. automethod:: interp_missing_data
+   .. automethod:: is_allclose
    .. automethod:: normalize
    .. automethod:: pad
    .. automethod:: peek
@@ -78,6 +81,7 @@ EffectiveAreaTable2D
    .. automethod:: plot_energy_dependence
    .. automethod:: plot_offset_dependence
    .. automethod:: read
+   .. automethod:: slice_by_idx
    .. automethod:: to_hdulist
    .. automethod:: to_table
    .. automethod:: to_table_hdu

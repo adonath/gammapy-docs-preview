@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FluxMaps &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>FluxMaps &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
@@ -60,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -96,7 +93,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -108,19 +105,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -146,17 +143,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.estimators.FluxMaps and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.estimators.FluxMaps and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +182,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -251,7 +245,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -273,11 +267,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -318,7 +307,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -413,6 +402,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -420,7 +414,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -537,7 +531,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -582,6 +576,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -599,7 +603,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -691,7 +695,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1018,7 +1022,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1110,7 +1114,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1132,7 +1136,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1249,7 +1253,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1411,7 +1415,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1473,12 +1477,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1530,7 +1534,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1685,11 +1689,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1840,11 +1839,11 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="fluxmaps">
-<h1>FluxMaps<a class="headerlink" href="#fluxmaps" title="Permalink to this headline">¶</a></h1>
+  <section id="fluxmaps">
+<h1>FluxMaps<a class="headerlink" href="#fluxmaps" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.estimators.</span></span><span class="sig-name descname"><span class="pre">FluxMaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_success_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.estimators.</span></span><span class="sig-name descname"><span class="pre">FluxMaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_success_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>A flux map / points container.</p>
 <p>It contains a set of <a class="reference internal" href="gammapy.maps.Map.html#gammapy.maps.Map" title="gammapy.maps.Map"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code></a> objects that store the estimated
@@ -1887,7 +1886,7 @@ If None, a model consisting of a point source with a power law spectrum of index
 </dd>
 </dl>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -2097,7 +2096,7 @@ If None, a model consisting of a point source with a power law spectrum of index
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -2118,19 +2117,22 @@ If None, a model consisting of a point source with a power law spectrum of index
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.get_flux_points" title="gammapy.estimators.FluxMaps.get_flux_points"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_flux_points</span></code></a>([position])</p></td>
 <td><p>Extract flux point at a given position.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.read" title="gammapy.estimators.FluxMaps.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.iter_by_axis" title="gammapy.estimators.FluxMaps.iter_by_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_by_axis</span></code></a>(axis_name[, keepdims])</p></td>
+<td><p>Create a set of FluxMaps by splitting along an axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.read" title="gammapy.estimators.FluxMaps.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename)</p></td>
 <td><p>Read map dataset from file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.slice_by_idx" title="gammapy.estimators.FluxMaps.slice_by_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_by_idx</span></code></a>(slices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.slice_by_idx" title="gammapy.estimators.FluxMaps.slice_by_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_by_idx</span></code></a>(slices)</p></td>
 <td><p>Slice flux maps by idx</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.to_hdulist" title="gammapy.estimators.FluxMaps.to_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdulist</span></code></a>([sed_type, hdu_bands])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.to_hdulist" title="gammapy.estimators.FluxMaps.to_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdulist</span></code></a>([sed_type, hdu_bands])</p></td>
 <td><p>Convert flux map to list of HDUs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.to_maps" title="gammapy.estimators.FluxMaps.to_maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_maps</span></code></a>([sed_type])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.to_maps" title="gammapy.estimators.FluxMaps.to_maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_maps</span></code></a>([sed_type])</p></td>
 <td><p>Return maps in a given SED type.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.write" title="gammapy.estimators.FluxMaps.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(filename[, filename_model, overwrite, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.estimators.FluxMaps.write" title="gammapy.estimators.FluxMaps.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(filename[, filename_model, overwrite, ...])</p></td>
 <td><p>Write flux map to file.</p></td>
 </tr>
 </tbody>
@@ -2138,138 +2140,138 @@ If None, a model consisting of a point source with a power law spectrum of index
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.available_quantities">
-<span class="sig-name descname"><span class="pre">available_quantities</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.available_quantities" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">available_quantities</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.available_quantities" title="Permalink to this definition">#</a></dt>
 <dd><p>Available quantities</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.counts">
-<span class="sig-name descname"><span class="pre">counts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.counts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">counts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.counts" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted counts null hypothesis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde">
-<span class="sig-name descname"><span class="pre">dnde</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential flux (dnde) SED values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde_err">
-<span class="sig-name descname"><span class="pre">dnde_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential flux (dnde) SED errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde_errn">
-<span class="sig-name descname"><span class="pre">dnde_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential flux (dnde) SED negative errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde_errp">
-<span class="sig-name descname"><span class="pre">dnde_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential flux (dnde) SED positive errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde_ref">
-<span class="sig-name descname"><span class="pre">dnde_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference differential flux</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.dnde_ul">
-<span class="sig-name descname"><span class="pre">dnde_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dnde_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.dnde_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential flux (dnde) SED upper limit.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde">
-<span class="sig-name descname"><span class="pre">e2dnde</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential energy flux (e2dnde) SED values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde_err">
-<span class="sig-name descname"><span class="pre">e2dnde_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential energy flux (e2dnde) SED errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde_errn">
-<span class="sig-name descname"><span class="pre">e2dnde_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential energy flux (e2dnde) SED negative errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde_errp">
-<span class="sig-name descname"><span class="pre">e2dnde_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential energy flux (e2dnde) SED positive errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde_ref">
-<span class="sig-name descname"><span class="pre">e2dnde_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference differential flux * energy ** 2</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.e2dnde_ul">
-<span class="sig-name descname"><span class="pre">e2dnde_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e2dnde_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.e2dnde_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Return differential energy flux (e2dnde) SED upper limit.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux">
-<span class="sig-name descname"><span class="pre">eflux</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux" title="Permalink to this definition">#</a></dt>
 <dd><p>Return energy flux (eflux) SED values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux_err">
-<span class="sig-name descname"><span class="pre">eflux_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Return energy flux (eflux) SED errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux_errn">
-<span class="sig-name descname"><span class="pre">eflux_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Return energy flux (eflux) SED negative errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux_errp">
-<span class="sig-name descname"><span class="pre">eflux_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Return energy flux (eflux) SED positive errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux_ref">
-<span class="sig-name descname"><span class="pre">eflux_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference energy flux</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.eflux_ul">
-<span class="sig-name descname"><span class="pre">eflux_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">eflux_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.eflux_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Return energy flux (eflux) SED upper limits.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.energy_axis">
-<span class="sig-name descname"><span class="pre">energy_axis</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_axis</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy axis (<code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxis</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.energy_max">
-<span class="sig-name descname"><span class="pre">energy_max</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_max" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_max</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_max" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy max</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Upper bound of energy bin.</p>
+<dt><strong>energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Upper bound of energy bin.</p>
 </dd>
 </dl>
 </dd>
@@ -2278,12 +2280,12 @@ If None, a model consisting of a point source with a power law spectrum of index
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.energy_min">
-<span class="sig-name descname"><span class="pre">energy_min</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_min" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_min</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_min" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy min</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_min</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Lower bound of energy bin.</p>
+<dt><strong>energy_min</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Lower bound of energy bin.</p>
 </dd>
 </dl>
 </dd>
@@ -2292,14 +2294,14 @@ If None, a model consisting of a point source with a power law spectrum of index
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.energy_ref">
-<span class="sig-name descname"><span class="pre">energy_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.energy_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference energy.</p>
 <p>Defined by <a class="reference internal" href="#gammapy.estimators.FluxMaps.energy_ref" title="gammapy.estimators.FluxMaps.energy_ref"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_ref</span></code></a> column in <code class="xref py py-obj docutils literal notranslate"><span class="pre">FluxPoints.table</span></code> or computed as log
 center, if <a class="reference internal" href="#gammapy.estimators.FluxMaps.energy_min" title="gammapy.estimators.FluxMaps.energy_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_min</span></code></a> and <a class="reference internal" href="#gammapy.estimators.FluxMaps.energy_max" title="gammapy.estimators.FluxMaps.energy_max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_max</span></code></a> columns are present in <code class="xref py py-obj docutils literal notranslate"><span class="pre">FluxEstimate.data</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_ref</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Reference energy.</p>
+<dt><strong>energy_ref</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Reference energy.</p>
 </dd>
 </dl>
 </dd>
@@ -2308,216 +2310,216 @@ center, if <a class="reference internal" href="#gammapy.estimators.FluxMaps.ener
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.filter_success_nan">
-<span class="sig-name descname"><span class="pre">filter_success_nan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.filter_success_nan" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">filter_success_nan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.filter_success_nan" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux">
-<span class="sig-name descname"><span class="pre">flux</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux" title="Permalink to this definition">#</a></dt>
 <dd><p>Return integral flux (flux) SED values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux_err">
-<span class="sig-name descname"><span class="pre">flux_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Return integral flux (flux) SED values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux_errn">
-<span class="sig-name descname"><span class="pre">flux_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Return integral flux (flux) SED negative errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux_errp">
-<span class="sig-name descname"><span class="pre">flux_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Return integral flux (flux) SED positive errors.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux_ref">
-<span class="sig-name descname"><span class="pre">flux_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference integral flux</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.flux_ul">
-<span class="sig-name descname"><span class="pre">flux_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">flux_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.flux_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Return integral flux (flux) SED upper limits.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.geom">
-<span class="sig-name descname"><span class="pre">geom</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.geom" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">geom</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.geom" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference map geometry (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Geom</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.has_any_ts">
-<span class="sig-name descname"><span class="pre">has_any_ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_any_ts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_any_ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_any_ts" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the flux estimate has either sqrt(ts) or ts defined</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.has_stat_profiles">
-<span class="sig-name descname"><span class="pre">has_stat_profiles</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_stat_profiles" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_stat_profiles</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_stat_profiles" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the flux estimate has stat profiles</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.has_success">
-<span class="sig-name descname"><span class="pre">has_success</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_success" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_success</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_success" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the flux estimate has the fit status</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.has_ul">
-<span class="sig-name descname"><span class="pre">has_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.has_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the flux estimate has norm_ul defined</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.is_convertible_to_flux_sed_type">
-<span class="sig-name descname"><span class="pre">is_convertible_to_flux_sed_type</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.is_convertible_to_flux_sed_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_convertible_to_flux_sed_type</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.is_convertible_to_flux_sed_type" title="Permalink to this definition">#</a></dt>
 <dd><p>Check whether differential sed type is convertable to integral sed type</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.is_ul">
-<span class="sig-name descname"><span class="pre">is_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.is_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.is_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether data is an upper limit</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.n_sigma">
-<span class="sig-name descname"><span class="pre">n_sigma</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.n_sigma" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">n_sigma</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.n_sigma" title="Permalink to this definition">#</a></dt>
 <dd><p>n sigma</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.n_sigma_ul">
-<span class="sig-name descname"><span class="pre">n_sigma_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.n_sigma_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">n_sigma_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.n_sigma_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>n sigma UL</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.niter">
-<span class="sig-name descname"><span class="pre">niter</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.niter" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">niter</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.niter" title="Permalink to this definition">#</a></dt>
 <dd><p>Number of iterations of fit</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.norm">
-<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">norm</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm" title="Permalink to this definition">#</a></dt>
 <dd><p>Norm values</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.norm_err">
-<span class="sig-name descname"><span class="pre">norm_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">norm_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Norm error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.norm_errn">
-<span class="sig-name descname"><span class="pre">norm_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">norm_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Negative norm error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.norm_errp">
-<span class="sig-name descname"><span class="pre">norm_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">norm_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Positive norm error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.norm_ul">
-<span class="sig-name descname"><span class="pre">norm_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">norm_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.norm_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Norm upper limit</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred">
-<span class="sig-name descname"><span class="pre">npred</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted counts from best fit hypothesis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_background">
-<span class="sig-name descname"><span class="pre">npred_background</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_background" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_background</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_background" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted background counts from best fit hypothesis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess">
-<span class="sig-name descname"><span class="pre">npred_excess</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess count  rom best fit hypothesis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess_err">
-<span class="sig-name descname"><span class="pre">npred_excess_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_err" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess_err</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_err" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess counts error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess_errn">
-<span class="sig-name descname"><span class="pre">npred_excess_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_errn" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess_errn</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_errn" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess counts negative error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess_errp">
-<span class="sig-name descname"><span class="pre">npred_excess_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_errp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess_errp</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_errp" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess counts positive error</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess_ref">
-<span class="sig-name descname"><span class="pre">npred_excess_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_ref" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess_ref</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_ref" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess reference counts</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.npred_excess_ul">
-<span class="sig-name descname"><span class="pre">npred_excess_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_excess_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.npred_excess_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted excess counts upper limits</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.reference_model">
-<span class="sig-name descname"><span class="pre">reference_model</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_model" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reference_model</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_model" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference model (<code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyModel</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.reference_model_default">
-<span class="sig-name descname"><span class="pre">reference_model_default</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_model_default" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reference_model_default</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_model_default" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference model default (<code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyModel</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.reference_spectral_model">
-<span class="sig-name descname"><span class="pre">reference_spectral_model</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_spectral_model" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reference_spectral_model</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.reference_spectral_model" title="Permalink to this definition">#</a></dt>
 <dd><p>Reference spectral model (<code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectralModel</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.sed_type_init">
-<span class="sig-name descname"><span class="pre">sed_type_init</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sed_type_init" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sed_type_init</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sed_type_init" title="Permalink to this definition">#</a></dt>
 <dd><p>Initial sed type</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.sed_type_plot_default">
-<span class="sig-name descname"><span class="pre">sed_type_plot_default</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sed_type_plot_default" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sed_type_plot_default</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sed_type_plot_default" title="Permalink to this definition">#</a></dt>
 <dd><p>Initial sed type</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.sqrt_ts">
-<span class="sig-name descname"><span class="pre">sqrt_ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sqrt_ts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sqrt_ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sqrt_ts" title="Permalink to this definition">#</a></dt>
 <dd><p>sqrt(TS) as defined by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\sqrt{TS} = \left \{
@@ -2538,50 +2540,50 @@ center, if <a class="reference internal" href="#gammapy.estimators.FluxMaps.ener
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.sqrt_ts_threshold_ul">
-<span class="sig-name descname"><span class="pre">sqrt_ts_threshold_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sqrt_ts_threshold_ul" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sqrt_ts_threshold_ul</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.sqrt_ts_threshold_ul" title="Permalink to this definition">#</a></dt>
 <dd><p>sqrt(TS) threshold for upper limits</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.stat">
-<span class="sig-name descname"><span class="pre">stat</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit statistic value</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.stat_null">
-<span class="sig-name descname"><span class="pre">stat_null</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat_null" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_null</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat_null" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit statistic value for the null hypothesis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.stat_scan">
-<span class="sig-name descname"><span class="pre">stat_scan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat_scan" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_scan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.stat_scan" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit statistic scan value</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.success">
-<span class="sig-name descname"><span class="pre">success</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.success" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">success</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.success" title="Permalink to this definition">#</a></dt>
 <dd><p>Fit success flag</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.ts">
-<span class="sig-name descname"><span class="pre">ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.ts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.ts" title="Permalink to this definition">#</a></dt>
 <dd><p>ts map (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.ts_scan">
-<span class="sig-name descname"><span class="pre">ts_scan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.ts_scan" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ts_scan</span></span><a class="headerlink" href="#gammapy.estimators.FluxMaps.ts_scan" title="Permalink to this definition">#</a></dt>
 <dd><p>ts scan (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Map</span></code>)</p>
 </dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.all_quantities">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">all_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.all_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.all_quantities" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">all_quantities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.all_quantities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.all_quantities" title="Permalink to this definition">#</a></dt>
 <dd><p>All quantities allowed for a given sed type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2601,12 +2603,12 @@ center, if <a class="reference internal" href="#gammapy.estimators.FluxMaps.ener
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.from_hdulist">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdulist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_hdulist" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdulist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_hdulist" title="Permalink to this definition">#</a></dt>
 <dd><p>Create flux map dataset from list of HDUs.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>List of HDUs.</p>
+<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>List of HDUs.</p>
 </dd>
 <dt><strong>hdu_bands</strong><span class="classifier">str</span></dt><dd><p>Name of the HDU with the BANDS table. Default is ‘BANDS’
 If set to None, each map should have its own hdu_band</p>
@@ -2626,7 +2628,7 @@ If set to None, each map should have its own hdu_band</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.from_maps">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_maps" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_maps" title="Permalink to this definition">#</a></dt>
 <dd><p>Create FluxMaps from a dictionary of maps.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2656,7 +2658,7 @@ law spectrum of index 2 is assumed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.from_stack">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_stack" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.from_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.from_stack" title="Permalink to this definition">#</a></dt>
 <dd><p>Create flux points by stacking list of flux points.</p>
 <p>The first <a class="reference internal" href="gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints" title="gammapy.estimators.FluxPoints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FluxPoints</span></code></a> object in the list is taken as a reference to infer
 column names and units for the stacked object.</p>
@@ -2680,12 +2682,12 @@ column names and units for the stacked object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.get_flux_points">
-<span class="sig-name descname"><span class="pre">get_flux_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.get_flux_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.get_flux_points" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_flux_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.get_flux_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.get_flux_points" title="Permalink to this definition">#</a></dt>
 <dd><p>Extract flux point at a given position.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Position where the flux points are extracted.</p>
+<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Position where the flux points are extracted.</p>
 </dd>
 </dl>
 </dd>
@@ -2699,8 +2701,30 @@ column names and units for the stacked object.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.iter_by_axis">
+<span class="sig-name descname"><span class="pre">iter_by_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keepdims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.iter_by_axis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.iter_by_axis" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a set of FluxMaps by splitting along an axis.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>axis_name</strong><span class="classifier">str</span></dt><dd><p>Name of the axis to split on</p>
+</dd>
+<dt><strong>keepdims</strong><span class="classifier">bool</span></dt><dd><p>Whether to keep the split axis with a single bin</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>flux_maps</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FluxMap</span></code></span></dt><dd><p>FluxMap iteration</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.read">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.read" title="Permalink to this definition">#</a></dt>
 <dd><p>Read map dataset from file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2720,7 +2744,7 @@ column names and units for the stacked object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.slice_by_idx">
-<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.slice_by_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.slice_by_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.slice_by_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.slice_by_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Slice flux maps by idx</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2743,7 +2767,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.to_hdulist">
-<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.to_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.to_hdulist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.to_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.to_hdulist" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert flux map to list of HDUs.</p>
 <p>For now, one cannot export the reference model.</p>
 <dl class="field-list">
@@ -2758,7 +2782,7 @@ If set to None, each map will have its own hdu_band</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>Map dataset list of HDUs.</p>
+<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>Map dataset list of HDUs.</p>
 </dd>
 </dl>
 </dd>
@@ -2767,7 +2791,7 @@ If set to None, each map will have its own hdu_band</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.to_maps">
-<span class="sig-name descname"><span class="pre">to_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.to_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.to_maps" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_maps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.to_maps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.to_maps" title="Permalink to this definition">#</a></dt>
 <dd><p>Return maps in a given SED type.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2787,7 +2811,7 @@ If set to None, each map will have its own hdu_band</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.estimators.FluxMaps.write">
-<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.write" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sed_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/estimators/map/core.html#FluxMaps.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.estimators.FluxMaps.write" title="Permalink to this definition">#</a></dt>
 <dd><p>Write flux map to file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2808,29 +2832,11 @@ If None, keep string before ‘.’ and add ‘_model.yaml’ suffix</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.estimators.ExcessMapEstimator.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">ExcessMapEstimator</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.estimators.FluxPoints.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FluxPoints</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2838,8 +2844,9 @@ If None, keep string before ‘.’ and add ‘_model.yaml’ suffix</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2850,7 +2857,7 @@ If None, keep string before ‘.’ and add ‘_model.yaml’ suffix</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

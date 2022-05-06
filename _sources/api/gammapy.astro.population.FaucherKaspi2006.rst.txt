@@ -65,6 +65,7 @@ FaucherKaspi2006
       ~FaucherKaspi2006.get_bounding_box
       ~FaucherKaspi2006.has_inverse
       ~FaucherKaspi2006.input_shape
+      ~FaucherKaspi2006.output_units
       ~FaucherKaspi2006.prepare_inputs
       ~FaucherKaspi2006.prepare_outputs
       ~FaucherKaspi2006.rename
@@ -130,6 +131,7 @@ FaucherKaspi2006
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

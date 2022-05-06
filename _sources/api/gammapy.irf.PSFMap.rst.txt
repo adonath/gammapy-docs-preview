@@ -30,6 +30,7 @@ PSFMap
       ~PSFMap.from_hdulist
       ~PSFMap.get_psf_kernel
       ~PSFMap.normalize
+      ~PSFMap.peek
       ~PSFMap.plot_containment_radius_vs_energy
       ~PSFMap.plot_psf_vs_rad
       ~PSFMap.read
@@ -61,6 +62,7 @@ PSFMap
    .. automethod:: from_hdulist
    .. automethod:: get_psf_kernel
    .. automethod:: normalize
+   .. automethod:: peek
    .. automethod:: plot_containment_radius_vs_energy
    .. automethod:: plot_psf_vs_rad
    .. automethod:: read

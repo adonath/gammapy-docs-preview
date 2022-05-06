@@ -63,6 +63,7 @@ FaucherKaspi2006VelocityMaxwellian
       ~FaucherKaspi2006VelocityMaxwellian.get_bounding_box
       ~FaucherKaspi2006VelocityMaxwellian.has_inverse
       ~FaucherKaspi2006VelocityMaxwellian.input_shape
+      ~FaucherKaspi2006VelocityMaxwellian.output_units
       ~FaucherKaspi2006VelocityMaxwellian.prepare_inputs
       ~FaucherKaspi2006VelocityMaxwellian.prepare_outputs
       ~FaucherKaspi2006VelocityMaxwellian.rename
@@ -126,6 +127,7 @@ FaucherKaspi2006VelocityMaxwellian
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

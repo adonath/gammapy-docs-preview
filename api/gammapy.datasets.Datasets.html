@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datasets &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Datasets &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.datasets.Datasets and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.datasets.Datasets and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,7 +243,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -271,11 +265,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -316,7 +305,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -411,6 +400,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -418,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -535,7 +529,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -580,6 +574,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -597,7 +601,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -689,7 +693,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1016,7 +1020,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1108,7 +1112,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1130,7 +1134,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1247,7 +1251,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1409,7 +1413,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1471,12 +1475,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1528,7 +1532,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1683,11 +1687,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1838,11 +1837,11 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="datasets">
-<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
+  <section id="datasets">
+<h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.datasets.</span></span><span class="sig-name descname"><span class="pre">Datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.datasets.</span></span><span class="sig-name descname"><span class="pre">Datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.MutableSequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.MutableSequence</span></code></a></p>
 <p>Dataset collection.</p>
 <dl class="field-list">
@@ -1854,7 +1853,7 @@ function checkPageExistsAndRedirect(event) {
 </dd>
 </dl>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1896,7 +1895,7 @@ function checkPageExistsAndRedirect(event) {
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1961,12 +1960,12 @@ function checkPageExistsAndRedirect(event) {
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.contributes_to_stat">
-<span class="sig-name descname"><span class="pre">contributes_to_stat</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.contributes_to_stat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">contributes_to_stat</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.contributes_to_stat" title="Permalink to this definition">#</a></dt>
 <dd><p>Stat contributions</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>contributions</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Array indicating which dataset contributes to the likelihood.</p>
+<dt><strong>contributions</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Array indicating which dataset contributes to the likelihood.</p>
 </dd>
 </dl>
 </dd>
@@ -1975,20 +1974,20 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.energy_axes_are_aligned">
-<span class="sig-name descname"><span class="pre">energy_axes_are_aligned</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.energy_axes_are_aligned" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_axes_are_aligned</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.energy_axes_are_aligned" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether all contained datasets have aligned energy axis</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.energy_ranges">
-<span class="sig-name descname"><span class="pre">energy_ranges</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.energy_ranges" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_ranges</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.energy_ranges" title="Permalink to this definition">#</a></dt>
 <dd><p>Get global energy range of datasets.</p>
 <p>The energy range is derived as the minimum / maximum of the energy
 ranges of all datasets.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy range.</p>
+<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy range.</p>
 </dd>
 </dl>
 </dd>
@@ -1997,37 +1996,37 @@ ranges of all datasets.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.gti">
-<span class="sig-name descname"><span class="pre">gti</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.gti" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gti</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.gti" title="Permalink to this definition">#</a></dt>
 <dd><p>GTI table</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.is_all_same_energy_shape">
-<span class="sig-name descname"><span class="pre">is_all_same_energy_shape</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_energy_shape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_all_same_energy_shape</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_energy_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether all contained datasets have the same data shape</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.is_all_same_shape">
-<span class="sig-name descname"><span class="pre">is_all_same_shape</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_shape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_all_same_shape</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether all contained datasets have the same data shape</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.is_all_same_type">
-<span class="sig-name descname"><span class="pre">is_all_same_type</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_all_same_type</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.is_all_same_type" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether all contained datasets are of the same type</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.meta_table">
-<span class="sig-name descname"><span class="pre">meta_table</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.meta_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">meta_table</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.meta_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Meta table</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.models">
-<span class="sig-name descname"><span class="pre">models</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.models" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">models</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.models" title="Permalink to this definition">#</a></dt>
 <dd><p>Unique models (<code class="xref py py-obj docutils literal notranslate"><span class="pre">Models</span></code>).</p>
 <p>Duplicate model objects have been removed.
 The order of the unique models remains.</p>
@@ -2035,12 +2034,12 @@ The order of the unique models remains.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.names">
-<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.names" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.parameters">
-<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.parameters" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.datasets.Datasets.parameters" title="Permalink to this definition">#</a></dt>
 <dd><p>Unique parameters (<a class="reference internal" href="gammapy.modeling.Parameters.html#gammapy.modeling.Parameters" title="gammapy.modeling.Parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameters</span></code></a>).</p>
 <p>Duplicate parameter objects have been removed.
 The order of the unique parameters remains.</p>
@@ -2049,35 +2048,35 @@ The order of the unique parameters remains.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.append" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.append" title="Permalink to this definition">#</a></dt>
 <dd><p>S.append(value) – append value to the end of the sequence</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">--</span> <span class="pre">remove</span> <span class="pre">all</span> <span class="pre">items</span> <span class="pre">from</span> <span class="pre">S</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.clear" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span> <span class="pre">--</span> <span class="pre">remove</span> <span class="pre">all</span> <span class="pre">items</span> <span class="pre">from</span> <span class="pre">S</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.clear" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>A deep copy.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">value</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">value</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.count" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.extend">
-<span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.extend" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">extend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.extend" title="Permalink to this definition">#</a></dt>
 <dd><p>S.extend(iterable) – extend sequence by appending elements from the iterable</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">first</span> <span class="pre">index</span> <span class="pre">of</span> <span class="pre">value.</span></span></span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.index" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">first</span> <span class="pre">index</span> <span class="pre">of</span> <span class="pre">value.</span></span></span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.index" title="Permalink to this definition">#</a></dt>
 <dd><p>Raises ValueError if the value is not present.</p>
 <p>Supporting start and stop arguments is optional, but
 recommended.</p>
@@ -2085,7 +2084,7 @@ recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.info_table">
-<span class="sig-name descname"><span class="pre">info_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.info_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.info_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">info_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cumulative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.info_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.info_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Get info table for datasets.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2096,7 +2095,7 @@ recommended.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>info_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Info table.</p>
+<dt><strong>info_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Info table.</p>
 </dd>
 </dl>
 </dd>
@@ -2105,19 +2104,19 @@ recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.insert">
-<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.insert" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.insert" title="Permalink to this definition">#</a></dt>
 <dd><p>S.insert(index, value) – insert value before index</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.pop">
-<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">item</span> <span class="pre">--</span> <span class="pre">remove</span> <span class="pre">and</span> <span class="pre">return</span> <span class="pre">item</span> <span class="pre">at</span> <span class="pre">index</span> <span class="pre">(default</span> <span class="pre">last).</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.pop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">item</span> <span class="pre">--</span> <span class="pre">remove</span> <span class="pre">and</span> <span class="pre">return</span> <span class="pre">item</span> <span class="pre">at</span> <span class="pre">index</span> <span class="pre">(default</span> <span class="pre">last).</span></span></span><a class="headerlink" href="#gammapy.datasets.Datasets.pop" title="Permalink to this definition">#</a></dt>
 <dd><p>Raise IndexError if list is empty or index is out of range.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.read">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lazy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.read" title="Permalink to this definition">#</a></dt>
 <dd><p>De-serialize datasets from YAML and FITS files.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2143,27 +2142,27 @@ recommended.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.remove">
-<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.remove" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.remove" title="Permalink to this definition">#</a></dt>
 <dd><p>S.remove(value) – remove first occurrence of value.
 Raise ValueError if the value is not present.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.reverse">
-<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.reverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.Datasets.reverse" title="Permalink to this definition">#</a></dt>
 <dd><p>S.reverse() – reverse <em>IN PLACE</em></p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.select_time">
-<span class="sig-name descname"><span class="pre">select_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1e-6</span> <span class="pre">s'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.select_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.select_time" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">select_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1e-6</span> <span class="pre">s'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.select_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.select_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Select datasets in a given time interval.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>time_min, time_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Time interval</p>
+<dt><strong>time_min, time_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Time interval</p>
 </dd>
-<dt><strong>atol</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Tolerance value for time comparison with different scale. Default 1e-6 sec.</p>
+<dt><strong>atol</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Tolerance value for time comparison with different scale. Default 1e-6 sec.</p>
 </dd>
 </dl>
 </dd>
@@ -2178,14 +2177,14 @@ Raise ValueError if the value is not present.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.slice_by_energy">
-<span class="sig-name descname"><span class="pre">slice_by_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.slice_by_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.slice_by_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice_by_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.slice_by_energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.slice_by_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Select and slice datasets in energy range</p>
 <p>The method keeps the current dataset names. Datasets, that do not
 contribute to the selected energy range are dismissed.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy bounds to compute the flux point for.</p>
+<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy bounds to compute the flux point for.</p>
 </dd>
 </dl>
 </dd>
@@ -2200,7 +2199,7 @@ contribute to the selected energy range are dismissed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.stack_reduce">
-<span class="sig-name descname"><span class="pre">stack_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.stack_reduce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.stack_reduce" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stack_reduce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.stack_reduce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.stack_reduce" title="Permalink to this definition">#</a></dt>
 <dd><p>Reduce the Datasets to a unique Dataset by stacking them together.</p>
 <p>This works only if all Dataset are of the same type and if a proper
 in-place stack method exists for the Dataset type.</p>
@@ -2224,18 +2223,18 @@ in-place stack method exists for the Dataset type.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.stat_sum">
-<span class="sig-name descname"><span class="pre">stat_sum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.stat_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.stat_sum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_sum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.stat_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.stat_sum" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute joint likelihood</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.to_spectrum_datasets">
-<span class="sig-name descname"><span class="pre">to_spectrum_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.to_spectrum_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.to_spectrum_datasets" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_spectrum_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.to_spectrum_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.to_spectrum_datasets" title="Permalink to this definition">#</a></dt>
 <dd><p>Extract spectrum datasets for the given region.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>Region definition.</p>
+<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>Region definition.</p>
 </dd>
 </dl>
 </dd>
@@ -2250,7 +2249,7 @@ in-place stack method exists for the Dataset type.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.Datasets.write">
-<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_covariance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.write" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_covariance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/core.html#Datasets.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.Datasets.write" title="Permalink to this definition">#</a></dt>
 <dd><p>Serialize datasets to YAML and FITS files.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2270,29 +2269,11 @@ in-place stack method exists for the Dataset type.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.datasets.Dataset.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Dataset</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.datasets.FluxPointsDataset.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FluxPointsDataset</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2300,8 +2281,9 @@ in-place stack method exists for the Dataset type.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2312,7 +2294,7 @@ in-place stack method exists for the Dataset type.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

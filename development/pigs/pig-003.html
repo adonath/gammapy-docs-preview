@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 3 - Plan for dropping Python 2.7 support &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 3 - Plan for dropping Python 2.7 support &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-003 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-003 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -465,8 +464,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-3-plan-for-dropping-python-2-7-support">
-<span id="pig-003"></span><h1>PIG 3 - Plan for dropping Python 2.7 support<a class="headerlink" href="#pig-3-plan-for-dropping-python-2-7-support" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-3-plan-for-dropping-python-2-7-support">
+<span id="pig-003"></span><h1>PIG 3 - Plan for dropping Python 2.7 support<a class="headerlink" href="#pig-3-plan-for-dropping-python-2-7-support" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: Christoph Deil &amp; Matthew Wood</p></li>
 <li><p>Created: Feb 1, 2018</p></li>
@@ -474,8 +473,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: accepted</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/1278">GH 1278</a></p></li>
 </ul>
-<div class="section" id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
 <p>We propose to drop Python 2.7 support in Gammapy v0.11 in March 2019.</p>
 <p>All earlier Gammapy versions, up to Gammapy v0.10, support Python 2.7 and of
 course will remain available indefinitely.</p>
@@ -492,9 +491,9 @@ new features of the Python 3 language available for Gammapy.</p>
 <p>Support for Python 3 will remain as-is (Python 3.5 or later) for now, whether to
 require Python 3.6 or later for Gammapy v1.0 in fall 2019 or later will be
 discussed separately.</p>
-</div>
-<div class="section" id="user-perspective">
-<h2>User perspective<a class="headerlink" href="#user-perspective" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="user-perspective">
+<h2>User perspective<a class="headerlink" href="#user-perspective" title="Permalink to this headline">#</a></h2>
 <p>Most Gammapy users are already using Python 3.</p>
 <p>We did a “Gammapy installation questionnaire” on the Gammapy mailing list and
 Gammapy Slack in Feb 2018 which resulted in only 12 responses. Only 2 people
@@ -520,9 +519,9 @@ automatically.</p>
 update your scripts to run on Python 3 (preferred, usually trivial changes) or
 backport fixes to older Gammapy versions that still support Python 2.7 (if
 really needed).</p>
-</div>
-<div class="section" id="maintainer-and-developer-perspective">
-<h2>Maintainer and developer perspective<a class="headerlink" href="#maintainer-and-developer-perspective" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="maintainer-and-developer-perspective">
+<h2>Maintainer and developer perspective<a class="headerlink" href="#maintainer-and-developer-perspective" title="Permalink to this headline">#</a></h2>
 <p>This change will have a big positive impact on Gammapy maintenance and
 development. It is an important step to allow for developments in 2019 towards
 the Gammapy 1.0 release that is planned for fall 2019 (see <a class="reference internal" href="pig-005.html#pig-005"><span class="std std-ref">PIG 5 - Gammapy 1.0 roadmap</span></a>).</p>
@@ -553,9 +552,9 @@ Python 3 from the start and are using Python 3 only features.</p>
 Gammapy in 2019 would be significant and also slow down the work on
 <code class="docutils literal notranslate"><span class="pre">astropy-healpix</span></code> and <code class="docutils literal notranslate"><span class="pre">astropy-regions</span></code>. Moving to Python 3 only make life
 better for all Gammapy maintainers and developers.</p>
-</div>
-<div class="section" id="detailed-plan">
-<h2>Detailed plan<a class="headerlink" href="#detailed-plan" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="detailed-plan">
+<h2>Detailed plan<a class="headerlink" href="#detailed-plan" title="Permalink to this headline">#</a></h2>
 <p>There are two ways to execute this. When dropping Python 2 support from the git
 master branch, one can either remove the Python 2 shims directly, or keep them
 in place and do as few code changes as possible for the time period where one
@@ -571,37 +570,19 @@ fall 2019 (see <a class="reference internal" href="pig-005.html#pig-005"><span c
 would work at all to backport bugfixes. Instead, the strategy would be to
 manually re-apply important bug fixes (mostly to <code class="docutils literal notranslate"><span class="pre">gammapy.maps</span></code>, hopefully not
 many) in the <code class="docutils literal notranslate"><span class="pre">v0.10.x</span></code> branch.</p>
-</div>
-<div class="section" id="decision">
-<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h2>
 <p>This suggestion was extensively discussed in 2017 and 2018 with Gammapy users
 and developers. This proposal and PIG was widely announced (mailing list, Slack)
 and we didn’t get a single request to extend Python 2 support longer than
 mentioned here. Approved on Nov 30, 2018 by Gammapy coordination committee.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-002.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 2 - Organization of low level analysis code</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-004.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 4 - Setup for tutorial notebooks and data</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -609,8 +590,9 @@ mentioned here. Approved on Nov 30, 2018 by Gammapy coordination committee.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -621,7 +603,7 @@ mentioned here. Approved on Nov 30, 2018 by Gammapy coordination committee.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

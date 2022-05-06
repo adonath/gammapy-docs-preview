@@ -52,7 +52,10 @@ WcsNDMap
       ~WcsNDMap.interp_by_coord
       ~WcsNDMap.interp_by_pix
       ~WcsNDMap.interp_to_geom
+      ~WcsNDMap.is_allclose
+      ~WcsNDMap.iter_by_axis
       ~WcsNDMap.iter_by_image
+      ~WcsNDMap.iter_by_image_data
       ~WcsNDMap.mask_contains_region
       ~WcsNDMap.mask_nearest_position
       ~WcsNDMap.normalize
@@ -64,6 +67,8 @@ WcsNDMap
       ~WcsNDMap.read
       ~WcsNDMap.reduce
       ~WcsNDMap.reduce_over_axes
+      ~WcsNDMap.rename_axes
+      ~WcsNDMap.resample
       ~WcsNDMap.resample_axis
       ~WcsNDMap.sample_coord
       ~WcsNDMap.set_by_coord
@@ -71,6 +76,7 @@ WcsNDMap
       ~WcsNDMap.set_by_pix
       ~WcsNDMap.slice_by_idx
       ~WcsNDMap.smooth
+      ~WcsNDMap.split_by_axis
       ~WcsNDMap.stack
       ~WcsNDMap.sum_over_axes
       ~WcsNDMap.to_cube
@@ -123,7 +129,10 @@ WcsNDMap
    .. automethod:: interp_by_coord
    .. automethod:: interp_by_pix
    .. automethod:: interp_to_geom
+   .. automethod:: is_allclose
+   .. automethod:: iter_by_axis
    .. automethod:: iter_by_image
+   .. automethod:: iter_by_image_data
    .. automethod:: mask_contains_region
    .. automethod:: mask_nearest_position
    .. automethod:: normalize
@@ -135,6 +144,8 @@ WcsNDMap
    .. automethod:: read
    .. automethod:: reduce
    .. automethod:: reduce_over_axes
+   .. automethod:: rename_axes
+   .. automethod:: resample
    .. automethod:: resample_axis
    .. automethod:: sample_coord
    .. automethod:: set_by_coord
@@ -142,6 +153,7 @@ WcsNDMap
    .. automethod:: set_by_pix
    .. automethod:: slice_by_idx
    .. automethod:: smooth
+   .. automethod:: split_by_axis
    .. automethod:: stack
    .. automethod:: sum_over_axes
    .. automethod:: to_cube

@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 8 - Datasets &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 8 - Datasets &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-008 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-008 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -529,8 +528,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-8-datasets">
-<span id="pig-008"></span><h1>PIG 8 - Datasets<a class="headerlink" href="#pig-8-datasets" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-8-datasets">
+<span id="pig-008"></span><h1>PIG 8 - Datasets<a class="headerlink" href="#pig-8-datasets" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: Axel Donath, Christoph Deil, Regis Terrier &amp; Atreyee Sinha</p></li>
 <li><p>Created: Jan 4th, 2019</p></li>
@@ -538,8 +537,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: withdrawn</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/1986">GH 1986</a></p></li>
 </ul>
-<div class="section" id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
 <p>An essential analysis feature of Gammapy will be the possibility to fit models
 to gamma-ray data. This includes the simple use-case of fitting spectral,
 spatial and combined models to binned datasets, but also includes more advanced
@@ -556,9 +555,9 @@ This approach allows to introduce a uniform fitting interface represented by a s
 addition Datasets can be combined by adding their log-likelihood values, linking
 and concatenating their model parameters. This enables all combinations
 of a joint-likelihood analyses described above.</p>
-</div>
-<div class="section" id="proposal">
-<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="proposal">
+<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h2>
 <p>In general the proposal includes three basic types of classes: <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">Datasets</span></code>
 and <code class="docutils literal notranslate"><span class="pre">Fit</span> <span class="pre">``.</span> <span class="pre">The</span> <span class="pre">``Dataset</span></code> bundles the model and data, the <code class="docutils literal notranslate"><span class="pre">Datasets</span></code> class combines
 multiple datasets for joint-likelhood fitting and the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> class represents the
@@ -587,8 +586,8 @@ Here is an illustration of the proposed API:</p>
 </div>
 <p>To enabled the different analysis use-cases we propose to introduce a <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code>,
 <code class="docutils literal notranslate"><span class="pre">SpectrumDataset</span></code>, <code class="docutils literal notranslate"><span class="pre">SpectrumDatasetOnOff</span></code> and <code class="docutils literal notranslate"><span class="pre">FluxPointsDataset</span></code>.</p>
-<div class="section" id="dataset">
-<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h3>
+<section id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> class is the abstract base class for all datasets. It defines the minimal required
 interface for a dataset to work with the <code class="docutils literal notranslate"><span class="pre">Fit</span></code> class and basic user API. It serves
 as a base class for all built-in datasets, as well as for user defined ones:</p>
@@ -615,9 +614,9 @@ The main purpose is that safe data range defined by <code class="docutils litera
 e.g. during data reduction and not modified later, while the <code class="docutils literal notranslate"><span class="pre">mask_fit</span></code> can be
 modified by users to manually define the fit range or by algorithms e.g. flux point computation.
 For likelihood evaluation both mask are combined by the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> base class.</p>
-</div>
-<div class="section" id="datasets">
-<h3>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="datasets">
+<h3>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">#</a></h3>
 <p>To combine multiple datasets in a joint-likelihood analysis we propose to introduce
 a <code class="docutils literal notranslate"><span class="pre">Datasets</span></code> class. Its responsibility is to add up the log-likelihood values of
 the individual datasets and join the parameter lists. The <code class="docutils literal notranslate"><span class="pre">Datasets</span></code> class
@@ -671,9 +670,9 @@ background model is created for every dataset separately.</p>
 <span class="n">fit</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="mapdataset">
-<h3>MapDataset<a class="headerlink" href="#mapdataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="mapdataset">
+<h3>MapDataset<a class="headerlink" href="#mapdataset" title="Permalink to this headline">#</a></h3>
 <p>To enable the standard combined spectral and spatial analysis we propose to
 introduce a <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code> class. A <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code> bundles the counts data, source model,
 IRFs, background model corresponding to a given event selection.</p>
@@ -718,9 +717,9 @@ existing <code class="docutils literal notranslate"><span class="pre">MapEvaluat
 <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code> and used later to efficiently compute the predicted number of counts.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">stat</span></code> argument allows to choose between built-in fit statistics
 such as <code class="docutils literal notranslate"><span class="pre">cash</span></code> or <code class="docutils literal notranslate"><span class="pre">cstat</span></code> for convenience.</p>
-</div>
-<div class="section" id="mapdatasetonoff">
-<h3>MapDatasetOnOff<a class="headerlink" href="#mapdatasetonoff" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="mapdatasetonoff">
+<h3>MapDatasetOnOff<a class="headerlink" href="#mapdatasetonoff" title="Permalink to this headline">#</a></h3>
 <p>For on-off based analyses a <code class="docutils literal notranslate"><span class="pre">MapDatasetOnOff</span></code> will be introduced. It inherits
 most of its functionality from the <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code>, but implements in addition the
 handling of <code class="docutils literal notranslate"><span class="pre">counts_off</span></code> and <code class="docutils literal notranslate"><span class="pre">acceptance</span></code> and <code class="docutils literal notranslate"><span class="pre">acceptance_off</span></code> information:</p>
@@ -768,9 +767,9 @@ needed for the evaluation of the fit statistic:</p>
 <span class="n">dataset</span><span class="o">.</span><span class="n">npred_sig</span><span class="p">()</span>  <span class="c1"># defined by npred - background</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="spectrumdataset">
-<h3>SpectrumDataset<a class="headerlink" href="#spectrumdataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="spectrumdataset">
+<h3>SpectrumDataset<a class="headerlink" href="#spectrumdataset" title="Permalink to this headline">#</a></h3>
 <p>For spectral analysis we propose to introduce a <code class="docutils literal notranslate"><span class="pre">SpectrumDataset</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gammapy.spectrum</span> <span class="kn">import</span> <span class="n">SpectrumDataset</span>
 
@@ -797,9 +796,9 @@ needed for the evaluation of the fit statistic:</p>
 <span class="n">dataset</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="spectrumdatasetonoff">
-<h3>SpectrumDatasetOnOff<a class="headerlink" href="#spectrumdatasetonoff" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="spectrumdatasetonoff">
+<h3>SpectrumDatasetOnOff<a class="headerlink" href="#spectrumdatasetonoff" title="Permalink to this headline">#</a></h3>
 <p>For on-off based spectral analysis we propose to introduce a <code class="docutils literal notranslate"><span class="pre">SpectrumDatasetOnOff</span></code>
 class which again inherits from <code class="docutils literal notranslate"><span class="pre">SpectrumDataset</span></code> and handles the additional information
 accordingly:</p>
@@ -832,9 +831,9 @@ accordingly:</p>
 </div>
 <p>We propose to refactor the existing <code class="docutils literal notranslate"><span class="pre">SpectrumObservation</span></code> object into the
 <code class="docutils literal notranslate"><span class="pre">SpectrumDatasetsOnOff</span></code> class.</p>
-</div>
-<div class="section" id="fluxpointsdataset">
-<h3>FluxPointsDataset<a class="headerlink" href="#fluxpointsdataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="fluxpointsdataset">
+<h3>FluxPointsDataset<a class="headerlink" href="#fluxpointsdataset" title="Permalink to this headline">#</a></h3>
 <p>For fitting of flux points we propose to introduce a <code class="docutils literal notranslate"><span class="pre">FluxPointsDataset</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gammapy.spectrum</span> <span class="kn">import</span> <span class="n">FluxPointsDataset</span>
 
@@ -857,9 +856,9 @@ in a special way in the <code class="docutils literal notranslate"><span class="
 likelihood of the flux point, depending on energy and amplitude. Given a predicted
 flux by the spectral model the likelihood can be directly interpolated. This could
 be supported by a specific option <code class="docutils literal notranslate"><span class="pre">FluxPointsDataset(stat=&quot;likelihood&quot;)</span></code> or similar.</p>
-</div>
-<div class="section" id="dataset-helper-convenience-methods">
-<h3>Dataset helper / convenience methods<a class="headerlink" href="#dataset-helper-convenience-methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dataset-helper-convenience-methods">
+<h3>Dataset helper / convenience methods<a class="headerlink" href="#dataset-helper-convenience-methods" title="Permalink to this headline">#</a></h3>
 <p>We propose to implement a few convenience methods on all datasets. E.g.
 a <code class="docutils literal notranslate"><span class="pre">.residuals()</span></code> method, which computes the residual for the given data
 and state of the model:</p>
@@ -882,9 +881,9 @@ fit statistics is printed.</p>
 </div>
 <p>In an interactive environment this will show a default visualisation of the
 dataset including model, data, IRFs and residuals.</p>
-</div>
-<div class="section" id="simulation-of-mapdataset-and-spectrumdataset">
-<h3>Simulation of MapDataset and SpectrumDataset<a class="headerlink" href="#simulation-of-mapdataset-and-spectrumdataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="simulation-of-mapdataset-and-spectrumdataset">
+<h3>Simulation of MapDataset and SpectrumDataset<a class="headerlink" href="#simulation-of-mapdataset-and-spectrumdataset" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code> and <code class="docutils literal notranslate"><span class="pre">SpectrumDataset</span></code> classes will be the central classes
 for map and spectrum based analyses. In many cases it’s useful to simulate
 counts from a predicted number of counts model. The direct sampling of
@@ -905,9 +904,9 @@ the resulting map. This works equivalently for the <code class="docutils literal
 <code class="docutils literal notranslate"><span class="pre">SpectrumDatasetOnOff</span></code> and <code class="docutils literal notranslate"><span class="pre">MapDatasetOnOff</span></code>. The on-off dataset require
 a background model for this to work.</p>
 <p>Unbinned simulation (sampling of event lists) is addressed in a separate PIG.</p>
-</div>
-<div class="section" id="dataset-serialization">
-<h3>Dataset serialization<a class="headerlink" href="#dataset-serialization" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dataset-serialization">
+<h3>Dataset serialization<a class="headerlink" href="#dataset-serialization" title="Permalink to this headline">#</a></h3>
 <p>For convenience all dataset classes should support serialization, implemented
 via <code class="docutils literal notranslate"><span class="pre">.read()</span></code> and <code class="docutils literal notranslate"><span class="pre">.write()</span></code> methods. For now we only consider the serialization
 of the data of the datasets and not the of the model, which might always stay
@@ -966,10 +965,10 @@ OGIP format described on the <a class="reference external" href="https://gamma-a
     <span class="n">likelihood</span><span class="p">:</span> <span class="s2">&quot;template&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="task-list">
-<h2>Task List<a class="headerlink" href="#task-list" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="task-list">
+<h2>Task List<a class="headerlink" href="#task-list" title="Permalink to this headline">#</a></h2>
 <p>This is a proposal for a list of pull requests implementing the proposed changes,
 ordered by priority:</p>
 <p>1. Refactor the current <code class="docutils literal notranslate"><span class="pre">FluxPointFit</span></code> into a <code class="docutils literal notranslate"><span class="pre">FluxPointsDataset</span></code> class
@@ -1009,11 +1008,11 @@ interpolating flux point likelihood profiles (<strong>v0.14</strong>).</p>
 </ol>
 <p>14. Implement convenience helper methods <code class="docutils literal notranslate"><span class="pre">.residuals()</span></code>, <code class="docutils literal notranslate"><span class="pre">.peek()</span></code> and <code class="docutils literal notranslate"><span class="pre">.__str__</span></code> for
 all datasets (<strong>v0.14</strong>).</p>
-</div>
-<div class="section" id="outlook">
-<h2>Outlook<a class="headerlink" href="#outlook" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="parallel-evaluation-of-datasets">
-<h3>Parallel evaluation of datasets<a class="headerlink" href="#parallel-evaluation-of-datasets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="outlook">
+<h2>Outlook<a class="headerlink" href="#outlook" title="Permalink to this headline">#</a></h2>
+<section id="parallel-evaluation-of-datasets">
+<h3>Parallel evaluation of datasets<a class="headerlink" href="#parallel-evaluation-of-datasets" title="Permalink to this headline">#</a></h3>
 <p>For efficient joint-likelihood fits of multiple observations, parallel processing
 should be used. The obvious entry point is to evaluate one dataset per process and
 join the likelihoods at the end. The current handling of model references
@@ -1022,43 +1021,25 @@ parameter linking by updating the model parameters in place), sets a limitation
 on the parallel evaluation, because Python objects can’t easily be shared between
 multiple processes. We are aware of this issue, but propose to solve it later,
 because it does not affect the proposed API for datasets.</p>
-</div>
-<div class="section" id="lazy-loading-of-datasets">
-<h3>Lazy loading of Datasets<a class="headerlink" href="#lazy-loading-of-datasets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lazy-loading-of-datasets">
+<h3>Lazy loading of Datasets<a class="headerlink" href="#lazy-loading-of-datasets" title="Permalink to this headline">#</a></h3>
 <p>For the use-case of inspecting or stacking individual datasets (e.g. MapDataset per observation)
 it could be advantegeous to implement a lazy-loading or generator interface for
 <code class="docutils literal notranslate"><span class="pre">Datasets.read()</span></code>. Such that the individual datasets are only read from disk on
 requests and are not loaded in memory when calling <code class="docutils literal notranslate"><span class="pre">.read()</span></code>. We leave this question
 un-addressed in this PR but mention it for completeness.</p>
-</div>
-</div>
-<div class="section" id="decision">
-<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h2>
 <p>The authors decided to withdraw the PIG. Most of the proposed changes are implemented.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-007.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 7 - Models</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-009.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 9 - Event sampling</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -1066,8 +1047,9 @@ un-addressed in this PR but mention it for completeness.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1078,7 +1060,7 @@ un-addressed in this PR but mention it for completeness.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

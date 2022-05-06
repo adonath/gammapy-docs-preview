@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TemporalModel &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>TemporalModel &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.modeling.models.TemporalModel and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.modeling.models.TemporalModel and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,7 +243,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -271,11 +265,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -316,7 +305,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -411,6 +400,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -418,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -535,7 +529,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -580,6 +574,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -597,7 +601,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -689,7 +693,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1016,7 +1020,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1108,7 +1112,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1130,7 +1134,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1247,7 +1251,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1409,7 +1413,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1471,12 +1475,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1528,7 +1532,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1683,11 +1687,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1838,16 +1837,16 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="temporalmodel">
-<h1>TemporalModel<a class="headerlink" href="#temporalmodel" title="Permalink to this headline">¶</a></h1>
+  <section id="temporalmodel">
+<h1>TemporalModel<a class="headerlink" href="#temporalmodel" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.modeling.models.</span></span><span class="sig-name descname"><span class="pre">TemporalModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.modeling.models.</span></span><span class="sig-name descname"><span class="pre">TemporalModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gammapy.modeling.models.ModelBase.html#gammapy.modeling.models.ModelBase" title="gammapy.modeling.models.core.ModelBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.modeling.models.core.ModelBase</span></code></a></p>
 <p>Temporal model base class.
 evaluates on  astropy.time.Time objects</p>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1871,7 +1870,7 @@ evaluates on  astropy.time.Time objects</p>
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1880,8 +1879,8 @@ evaluates on  astropy.time.Time objects</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.__call__" title="gammapy.modeling.models.TemporalModel.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(time)</p></td>
 <td><p>Evaluate model</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.copy" title="gammapy.modeling.models.TemporalModel.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
-<td><p>A deep copy.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.copy" title="gammapy.modeling.models.TemporalModel.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(**kwargs)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.freeze" title="gammapy.modeling.models.TemporalModel.freeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freeze</span></code></a>()</p></td>
 <td><p>Freeze all parameters</p></td>
@@ -1892,22 +1891,25 @@ evaluates on  astropy.time.Time objects</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.from_parameters" title="gammapy.modeling.models.TemporalModel.from_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_parameters</span></code></a>(parameters, **kwargs)</p></td>
 <td><p>Create model from parameter list</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.plot" title="gammapy.modeling.models.TemporalModel.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(time_range[, ax])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.integral" title="gammapy.modeling.models.TemporalModel.integral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integral</span></code></a>(t_min, t_max[, oversampling_factor])</p></td>
+<td><p>Evaluate the integrated flux within the given time intervals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.plot" title="gammapy.modeling.models.TemporalModel.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(time_range[, ax])</p></td>
 <td><p>Plot Temporal Model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.reassign" title="gammapy.modeling.models.TemporalModel.reassign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reassign</span></code></a>(datasets_names, new_datasets_names)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.reassign" title="gammapy.modeling.models.TemporalModel.reassign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reassign</span></code></a>(datasets_names, new_datasets_names)</p></td>
 <td><p>Reassign a model from one dataset to another</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.sample_time" title="gammapy.modeling.models.TemporalModel.sample_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_time</span></code></a>(n_events, t_min, t_max[, ...])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.sample_time" title="gammapy.modeling.models.TemporalModel.sample_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_time</span></code></a>(n_events, t_min, t_max[, ...])</p></td>
 <td><p>Sample arrival times of events.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.time_sum" title="gammapy.modeling.models.TemporalModel.time_sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_sum</span></code></a>(t_min, t_max)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.time_sum" title="gammapy.modeling.models.TemporalModel.time_sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_sum</span></code></a>(t_min, t_max)</p></td>
 <td><p>Total time between t_min and t_max</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.to_dict" title="gammapy.modeling.models.TemporalModel.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>([full_output])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.to_dict" title="gammapy.modeling.models.TemporalModel.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>([full_output])</p></td>
 <td><p>Create dict for YAML serialisation</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.unfreeze" title="gammapy.modeling.models.TemporalModel.unfreeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfreeze</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.TemporalModel.unfreeze" title="gammapy.modeling.models.TemporalModel.unfreeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfreeze</span></code></a>()</p></td>
 <td><p>Restore parameters frozen status to default</p></td>
 </tr>
 </tbody>
@@ -1915,40 +1917,40 @@ evaluates on  astropy.time.Time objects</p>
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.covariance">
-<span class="sig-name descname"><span class="pre">covariance</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.covariance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">covariance</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.covariance" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.default_parameters">
-<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;gammapy.modeling.parameter.Parameters</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.default_parameters" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;gammapy.modeling.parameter.Parameters</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.default_parameters" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.frozen">
-<span class="sig-name descname"><span class="pre">frozen</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.frozen" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">frozen</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.frozen" title="Permalink to this definition">#</a></dt>
 <dd><p>Frozen status of a model, True if all parameters are frozen</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.parameters">
-<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.parameters" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.parameters" title="Permalink to this definition">#</a></dt>
 <dd><p>Parameters (<a class="reference internal" href="gammapy.modeling.Parameters.html#gammapy.modeling.Parameters" title="gammapy.modeling.Parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameters</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.type" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.__call__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.__call__" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluate model</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Time object</p>
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Time object</p>
 </dd>
 </dl>
 </dd>
@@ -1957,24 +1959,23 @@ evaluates on  astropy.time.Time objects</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>A deep copy.</p>
-</dd></dl>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.copy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.freeze">
-<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.freeze" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.freeze" title="Permalink to this definition">#</a></dt>
 <dd><p>Freeze all parameters</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.from_dict">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.from_dict" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.from_parameters">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.from_parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.from_parameters" title="Permalink to this definition">#</a></dt>
 <dd><p>Create model from parameter list</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -1993,23 +1994,47 @@ evaluates on  astropy.time.Time objects</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.integral">
+<span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oversampling_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.integral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.integral" title="Permalink to this definition">#</a></dt>
+<dd><p>Evaluate the integrated flux within the given time intervals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>t_min: `~astropy.time.Time`</strong></dt><dd><p>Start times of observation</p>
+</dd>
+<dt><strong>t_max: `~astropy.time.Time`</strong></dt><dd><p>Stop times of observation</p>
+</dd>
+<dt><strong>oversampling_factor</strong><span class="classifier">int</span></dt><dd><p>Oversampling factor to be used for numerical integration.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>norm</strong><span class="classifier">float</span></dt><dd><p>Integrated flux norm on the given time intervals</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot Temporal Model.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>time_range</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>times to plot the model</p>
+<dt><strong>time_range</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>times to plot the model</p>
 </dd>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis to plot on</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis to plot on</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keywords forwarded to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html#matplotlib.pyplot.errorbar" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a></p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keywords forwarded to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html#matplotlib.pyplot.errorbar" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a></p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>axis</p>
 </dd>
 </dl>
 </dd>
@@ -2018,7 +2043,7 @@ evaluates on  astropy.time.Time objects</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.reassign">
-<span class="sig-name descname"><span class="pre">reassign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_datasets_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.reassign" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reassign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_datasets_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.reassign" title="Permalink to this definition">#</a></dt>
 <dd><p>Reassign a model from one dataset to another</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2042,27 +2067,27 @@ as the reassignment is element-wise.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.sample_time">
-<span class="sig-name descname"><span class="pre">sample_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_events</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1</span> <span class="pre">s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.sample_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.sample_time" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sample_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_events</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1</span> <span class="pre">s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.sample_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.sample_time" title="Permalink to this definition">#</a></dt>
 <dd><p>Sample arrival times of events.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>n_events</strong><span class="classifier">int</span></dt><dd><p>Number of events to sample.</p>
 </dd>
-<dt><strong>t_min</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Start time of the sampling.</p>
+<dt><strong>t_min</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Start time of the sampling.</p>
 </dd>
-<dt><strong>t_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Stop time of the sampling.</p>
+<dt><strong>t_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Stop time of the sampling.</p>
 </dd>
-<dt><strong>t_delta</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Time step used for sampling of the temporal model.</p>
+<dt><strong>t_delta</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Time step used for sampling of the temporal model.</p>
 </dd>
-<dt><strong>random_state</strong><span class="classifier">{int, ‘random-seed’, ‘global-rng’, <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>}</span></dt><dd><p>Defines random number generator initialisation.
+<dt><strong>random_state</strong><span class="classifier">{int, ‘random-seed’, ‘global-rng’, <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>}</span></dt><dd><p>Defines random number generator initialisation.
 Passed to <a class="reference internal" href="gammapy.utils.random.get_random_state.html#gammapy.utils.random.get_random_state" title="gammapy.utils.random.get_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_random_state</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Array with times of the sampled events.</p>
+<dt><strong>time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Array with times of the sampled events.</p>
 </dd>
 </dl>
 </dd>
@@ -2071,18 +2096,18 @@ Passed to <a class="reference internal" href="gammapy.utils.random.get_random_st
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.time_sum">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.time_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.time_sum" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">time_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/temporal.html#TemporalModel.time_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.time_sum" title="Permalink to this definition">#</a></dt>
 <dd><p>Total time between t_min and t_max</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>t_min, t_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Lower and upper bound of integration range</p>
+<dt><strong>t_min, t_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>Lower and upper bound of integration range</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>time_sum</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.TimeDelta.html#astropy.time.TimeDelta" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeDelta</span></code></a></span></dt><dd><p>Summed time in the intervals.</p>
+<dt><strong>time_sum</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.TimeDelta.html#astropy.time.TimeDelta" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeDelta</span></code></a></span></dt><dd><p>Summed time in the intervals.</p>
 </dd>
 </dl>
 </dd>
@@ -2091,41 +2116,23 @@ Passed to <a class="reference internal" href="gammapy.utils.random.get_random_st
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.to_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Create dict for YAML serialisation</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.TemporalModel.unfreeze">
-<span class="sig-name descname"><span class="pre">unfreeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.unfreeze" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unfreeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.TemporalModel.unfreeze" title="Permalink to this definition">#</a></dt>
 <dd><p>Restore parameters frozen status to default</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.modeling.models.TemplateNPredModel.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">TemplateNPredModel</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.modeling.models.MODEL_REGISTRY.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MODEL_REGISTRY</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2133,8 +2140,9 @@ Passed to <a class="reference internal" href="gammapy.utils.random.get_random_st
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2145,7 +2153,7 @@ Passed to <a class="reference internal" href="gammapy.utils.random.get_random_st
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

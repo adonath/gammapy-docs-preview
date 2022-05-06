@@ -56,10 +56,12 @@ RegionGeom
       ~RegionGeom.get_coord
       ~RegionGeom.get_idx
       ~RegionGeom.get_wcs_coord_and_weights
+      ~RegionGeom.is_allclose
       ~RegionGeom.pad
       ~RegionGeom.pix_to_coord
       ~RegionGeom.pix_to_idx
       ~RegionGeom.plot_region
+      ~RegionGeom.rename_axes
       ~RegionGeom.replace_axis
       ~RegionGeom.resample_axis
       ~RegionGeom.separation
@@ -122,10 +124,12 @@ RegionGeom
    .. automethod:: get_coord
    .. automethod:: get_idx
    .. automethod:: get_wcs_coord_and_weights
+   .. automethod:: is_allclose
    .. automethod:: pad
    .. automethod:: pix_to_coord
    .. automethod:: pix_to_idx
    .. automethod:: plot_region
+   .. automethod:: rename_axes
    .. automethod:: replace_axis
    .. automethod:: resample_axis
    .. automethod:: separation

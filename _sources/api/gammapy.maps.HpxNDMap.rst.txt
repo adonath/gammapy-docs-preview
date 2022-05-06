@@ -53,7 +53,10 @@ HpxNDMap
       ~HpxNDMap.interp_by_coord
       ~HpxNDMap.interp_by_pix
       ~HpxNDMap.interp_to_geom
+      ~HpxNDMap.is_allclose
+      ~HpxNDMap.iter_by_axis
       ~HpxNDMap.iter_by_image
+      ~HpxNDMap.iter_by_image_data
       ~HpxNDMap.mask_nearest_position
       ~HpxNDMap.normalize
       ~HpxNDMap.pad
@@ -64,12 +67,16 @@ HpxNDMap
       ~HpxNDMap.read
       ~HpxNDMap.reduce
       ~HpxNDMap.reduce_over_axes
+      ~HpxNDMap.rename_axes
+      ~HpxNDMap.resample
       ~HpxNDMap.resample_axis
+      ~HpxNDMap.sample_coord
       ~HpxNDMap.set_by_coord
       ~HpxNDMap.set_by_idx
       ~HpxNDMap.set_by_pix
       ~HpxNDMap.slice_by_idx
       ~HpxNDMap.smooth
+      ~HpxNDMap.split_by_axis
       ~HpxNDMap.stack
       ~HpxNDMap.sum_over_axes
       ~HpxNDMap.to_cube
@@ -127,7 +134,10 @@ HpxNDMap
    .. automethod:: interp_by_coord
    .. automethod:: interp_by_pix
    .. automethod:: interp_to_geom
+   .. automethod:: is_allclose
+   .. automethod:: iter_by_axis
    .. automethod:: iter_by_image
+   .. automethod:: iter_by_image_data
    .. automethod:: mask_nearest_position
    .. automethod:: normalize
    .. automethod:: pad
@@ -138,12 +148,16 @@ HpxNDMap
    .. automethod:: read
    .. automethod:: reduce
    .. automethod:: reduce_over_axes
+   .. automethod:: rename_axes
+   .. automethod:: resample
    .. automethod:: resample_axis
+   .. automethod:: sample_coord
    .. automethod:: set_by_coord
    .. automethod:: set_by_idx
    .. automethod:: set_by_pix
    .. automethod:: slice_by_idx
    .. automethod:: smooth
+   .. automethod:: split_by_axis
    .. automethod:: stack
    .. automethod:: sum_over_axes
    .. automethod:: to_cube

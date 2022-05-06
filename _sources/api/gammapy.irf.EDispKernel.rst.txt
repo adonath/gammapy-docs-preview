@@ -39,6 +39,7 @@ EDispKernel
       ~EDispKernel.integral
       ~EDispKernel.integrate_log_log
       ~EDispKernel.interp_missing_data
+      ~EDispKernel.is_allclose
       ~EDispKernel.normalize
       ~EDispKernel.pad
       ~EDispKernel.pdf_in_safe_range
@@ -46,6 +47,7 @@ EDispKernel
       ~EDispKernel.plot_bias
       ~EDispKernel.plot_matrix
       ~EDispKernel.read
+      ~EDispKernel.slice_by_idx
       ~EDispKernel.to_hdulist
       ~EDispKernel.to_image
       ~EDispKernel.to_table
@@ -82,6 +84,7 @@ EDispKernel
    .. automethod:: integral
    .. automethod:: integrate_log_log
    .. automethod:: interp_missing_data
+   .. automethod:: is_allclose
    .. automethod:: normalize
    .. automethod:: pad
    .. automethod:: pdf_in_safe_range
@@ -89,6 +92,7 @@ EDispKernel
    .. automethod:: plot_bias
    .. automethod:: plot_matrix
    .. automethod:: read
+   .. automethod:: slice_by_idx
    .. automethod:: to_hdulist
    .. automethod:: to_image
    .. automethod:: to_table

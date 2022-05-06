@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DiskSpatialModel &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>DiskSpatialModel &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
@@ -60,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -96,7 +93,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -108,19 +105,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -146,17 +143,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.modeling.models.DiskSpatialModel and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.modeling.models.DiskSpatialModel and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +182,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -251,7 +245,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -273,11 +267,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -318,7 +307,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -413,6 +402,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -420,7 +414,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -537,7 +531,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -582,6 +576,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -599,7 +603,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -691,7 +695,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1018,7 +1022,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1110,7 +1114,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1132,7 +1136,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1249,7 +1253,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1411,7 +1415,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1473,12 +1477,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1530,7 +1534,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1685,11 +1689,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1840,24 +1839,24 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="diskspatialmodel">
-<h1>DiskSpatialModel<a class="headerlink" href="#diskspatialmodel" title="Permalink to this headline">¶</a></h1>
+  <section id="diskspatialmodel">
+<h1>DiskSpatialModel<a class="headerlink" href="#diskspatialmodel" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.modeling.models.</span></span><span class="sig-name descname"><span class="pre">DiskSpatialModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.modeling.models.</span></span><span class="sig-name descname"><span class="pre">DiskSpatialModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="gammapy.modeling.models.SpatialModel.html#gammapy.modeling.models.SpatialModel" title="gammapy.modeling.models.spatial.SpatialModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.modeling.models.spatial.SpatialModel</span></code></a></p>
 <p>Constant disk model.</p>
-<p>For more information see <a class="reference internal" href="../modeling/gallery/spatial/plot_disk.html#disk-spatial-model"><span class="std std-ref">Disk spatial model</span></a>.</p>
+<p>For more information see <a class="reference internal" href="../user-guide/model-gallery/spatial/plot_disk.html#disk-spatial-model"><span class="std std-ref">Disk spatial model</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>lon_0, lat_0</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Center position</p>
+<dt><strong>lon_0, lat_0</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Center position</p>
 </dd>
-<dt><strong>r_0</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p><span class="math notranslate nohighlight">\(a\)</span>: length of the major semiaxis, in angular units.</p>
+<dt><strong>r_0</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p><span class="math notranslate nohighlight">\(a\)</span>: length of the major semiaxis, in angular units.</p>
 </dd>
 <dt><strong>e</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Eccentricity of the ellipse (<span class="math notranslate nohighlight">\(0&lt; e&lt; 1\)</span>).</p>
 </dd>
-<dt><strong>phi</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Rotation angle <span class="math notranslate nohighlight">\(\phi\)</span>: of the major semiaxis.
+<dt><strong>phi</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Rotation angle <span class="math notranslate nohighlight">\(\phi\)</span>: of the major semiaxis.
 Increases counter-clockwise from the North direction.</p>
 </dd>
 <dt><strong>edge_width</strong><span class="classifier">float</span></dt><dd><p>Width of the edge. The width is defined as the range within which
@@ -1870,7 +1869,7 @@ It is given as fraction of r_0.</p>
 </dd>
 </dl>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1889,10 +1888,10 @@ It is given as fraction of r_0.</p>
 <td><p>A model parameter.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_bin_size_min" title="gammapy.modeling.models.DiskSpatialModel.evaluation_bin_size_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation_bin_size_min</span></code></a></p></td>
-<td><p>Minimal evaluation bin size (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p></td>
+<td><p>Minimal evaluation bin size (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_radius" title="gammapy.modeling.models.DiskSpatialModel.evaluation_radius"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation_radius</span></code></a></p></td>
-<td><p>Evaluation radius (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p></td>
+<td><p>Evaluation radius (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_region" title="gammapy.modeling.models.DiskSpatialModel.evaluation_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluation_region</span></code></a></p></td>
 <td><p>Evaluation region</p></td>
@@ -1919,10 +1918,10 @@ It is given as fraction of r_0.</p>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.position" title="gammapy.modeling.models.DiskSpatialModel.position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">position</span></code></a></p></td>
-<td><p>Spatial model center position (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a>)</p></td>
+<td><p>Spatial model center position (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.position_error" title="gammapy.modeling.models.DiskSpatialModel.position_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">position_error</span></code></a></p></td>
-<td><p>Get 95% containment position error as (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>)</p></td>
+<td><p>Get 95% containment position error as (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>)</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.position_lonlat" title="gammapy.modeling.models.DiskSpatialModel.position_lonlat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">position_lonlat</span></code></a></p></td>
 <td><p>Spatial model center position <code class="xref py py-obj docutils literal notranslate"><span class="pre">(lon,</span> <span class="pre">lat)</span></code> in rad and frame of the model</p></td>
@@ -1939,7 +1938,7 @@ It is given as fraction of r_0.</p>
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1948,8 +1947,8 @@ It is given as fraction of r_0.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.__call__" title="gammapy.modeling.models.DiskSpatialModel.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(lon, lat[, energy])</p></td>
 <td><p>Call evaluate method</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.copy" title="gammapy.modeling.models.DiskSpatialModel.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
-<td><p>A deep copy.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.copy" title="gammapy.modeling.models.DiskSpatialModel.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(**kwargs)</p></td>
+<td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.evaluate" title="gammapy.modeling.models.DiskSpatialModel.evaluate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate</span></code></a>(lon, lat, lon_0, lat_0, r_0, e, ...)</p></td>
 <td><p>Evaluate model.</p></td>
@@ -1991,7 +1990,7 @@ It is given as fraction of r_0.</p>
 <td><p>Create dict for YAML serilisation</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.to_region" title="gammapy.modeling.models.DiskSpatialModel.to_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_region</span></code></a>(**kwargs)</p></td>
-<td><p>Model outline (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>).</p></td>
+<td><p>Model outline (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.modeling.models.DiskSpatialModel.unfreeze" title="gammapy.modeling.models.DiskSpatialModel.unfreeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unfreeze</span></code></a>()</p></td>
 <td><p>Restore parameters frozen status to default</p></td>
@@ -2001,17 +2000,17 @@ It is given as fraction of r_0.</p>
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.covariance">
-<span class="sig-name descname"><span class="pre">covariance</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.covariance" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">covariance</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.covariance" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.default_parameters">
-<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;gammapy.modeling.parameter.Parameters</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.default_parameters" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;gammapy.modeling.parameter.Parameters</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.default_parameters" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.e">
-<span class="sig-name descname"><span class="pre">e</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.e" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">e</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.e" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2030,11 +2029,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2057,6 +2056,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dt><strong>scale_method</strong><span class="classifier">{‘scale10’, ‘factor1’, None}</span></dt><dd><p>Method used to set <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
+</dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
 </dd>
 </dl>
 </dd>
@@ -2065,7 +2066,7 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.edge_width">
-<span class="sig-name descname"><span class="pre">edge_width</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.edge_width" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edge_width</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.edge_width" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2084,11 +2085,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2111,6 +2112,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dt><strong>scale_method</strong><span class="classifier">{‘scale10’, ‘factor1’, None}</span></dt><dd><p>Method used to set <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
+</dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
 </dd>
 </dl>
 </dd>
@@ -2119,38 +2122,38 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.evaluation_bin_size_min">
-<span class="sig-name descname"><span class="pre">evaluation_bin_size_min</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_bin_size_min" title="Permalink to this definition">¶</a></dt>
-<dd><p>Minimal evaluation bin size (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p>
+<span class="sig-name descname"><span class="pre">evaluation_bin_size_min</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_bin_size_min" title="Permalink to this definition">#</a></dt>
+<dd><p>Minimal evaluation bin size (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p>
 <p>The bin min size is defined as r_0*(1-edge_width)/10.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.evaluation_radius">
-<span class="sig-name descname"><span class="pre">evaluation_radius</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_radius" title="Permalink to this definition">¶</a></dt>
-<dd><p>Evaluation radius (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p>
+<span class="sig-name descname"><span class="pre">evaluation_radius</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_radius" title="Permalink to this definition">#</a></dt>
+<dd><p>Evaluation radius (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a>).</p>
 <p>Set to the length of the semi-major axis plus the edge width.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.evaluation_region">
-<span class="sig-name descname"><span class="pre">evaluation_region</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_region" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluation_region</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluation_region" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluation region</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.frozen">
-<span class="sig-name descname"><span class="pre">frozen</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.frozen" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">frozen</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.frozen" title="Permalink to this definition">#</a></dt>
 <dd><p>Frozen status of a model, True if all parameters are frozen</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.is_energy_dependent">
-<span class="sig-name descname"><span class="pre">is_energy_dependent</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.is_energy_dependent" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_energy_dependent</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.is_energy_dependent" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.lat_0">
-<span class="sig-name descname"><span class="pre">lat_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.lat_0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">lat_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.lat_0" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2169,11 +2172,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2196,6 +2199,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dt><strong>scale_method</strong><span class="classifier">{‘scale10’, ‘factor1’, None}</span></dt><dd><p>Method used to set <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
+</dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
 </dd>
 </dl>
 </dd>
@@ -2204,7 +2209,7 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.lon_0">
-<span class="sig-name descname"><span class="pre">lon_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.lon_0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">lon_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.lon_0" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2223,11 +2228,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2250,6 +2255,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dt><strong>scale_method</strong><span class="classifier">{‘scale10’, ‘factor1’, None}</span></dt><dd><p>Method used to set <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
+</dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
 </dd>
 </dl>
 </dd>
@@ -2258,13 +2265,13 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.parameters">
-<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.parameters" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">parameters</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.parameters" title="Permalink to this definition">#</a></dt>
 <dd><p>Parameters (<a class="reference internal" href="gammapy.modeling.Parameters.html#gammapy.modeling.Parameters" title="gammapy.modeling.Parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Parameters</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.phi">
-<span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.phi" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">phi</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.phi" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2283,11 +2290,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2310,6 +2317,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dt><strong>scale_method</strong><span class="classifier">{‘scale10’, ‘factor1’, None}</span></dt><dd><p>Method used to set <code class="docutils literal notranslate"><span class="pre">factor</span></code> and <code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
+</dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
 </dd>
 </dl>
 </dd>
@@ -2318,30 +2327,30 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.phi_0">
-<span class="sig-name descname"><span class="pre">phi_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.phi_0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">phi_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.phi_0" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.position">
-<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position" title="Permalink to this definition">¶</a></dt>
-<dd><p>Spatial model center position (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a>)</p>
+<span class="sig-name descname"><span class="pre">position</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position" title="Permalink to this definition">#</a></dt>
+<dd><p>Spatial model center position (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.position_error">
-<span class="sig-name descname"><span class="pre">position_error</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position_error" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get 95% containment position error as (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>)</p>
+<span class="sig-name descname"><span class="pre">position_error</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position_error" title="Permalink to this definition">#</a></dt>
+<dd><p>Get 95% containment position error as (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.position_lonlat">
-<span class="sig-name descname"><span class="pre">position_lonlat</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position_lonlat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">position_lonlat</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.position_lonlat" title="Permalink to this definition">#</a></dt>
 <dd><p>Spatial model center position <code class="xref py py-obj docutils literal notranslate"><span class="pre">(lon,</span> <span class="pre">lat)</span></code> in rad and frame of the model</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.r_0">
-<span class="sig-name descname"><span class="pre">r_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.r_0" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">r_0</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.r_0" title="Permalink to this definition">#</a></dt>
 <dd><p>A model parameter.</p>
 <p>Note that the parameter value has been split into
 a factor and scale like this:</p>
@@ -2360,11 +2369,11 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name</p>
 </dd>
-<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
+<dt><strong>value</strong><span class="classifier">float or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Value</p>
 </dd>
 <dt><strong>scale</strong><span class="classifier">float, optional</span></dt><dd><p>Scale (sometimes used in fitting)</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a> or str, optional</span></dt><dd><p>Unit</p>
 </dd>
 <dt><strong>min</strong><span class="classifier">float, optional</span></dt><dd><p>Minimum (sometimes used in fitting)</p>
 </dd>
@@ -2388,6 +2397,8 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">{“lin”, “sqrt”, “log”}</span></dt><dd><p>Parameter scaling to use for the scan.</p>
 </dd>
+<dt><strong>is_norm</strong><span class="classifier">bool</span></dt><dd><p>Whether the parameter represents the flux norm of the model.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -2395,36 +2406,35 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['DiskSpatialModel',</span> <span class="pre">'disk']</span></em><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.tag" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['DiskSpatialModel',</span> <span class="pre">'disk']</span></em><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.tag" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.type">
-<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.type" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.__call__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.__call__" title="Permalink to this definition">#</a></dt>
 <dd><p>Call evaluate method</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.copy" title="Permalink to this definition">¶</a></dt>
-<dd><p>A deep copy.</p>
-</dd></dl>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.copy" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.evaluate">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluate" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edge_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluate" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluate model.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.evaluate_geom">
-<span class="sig-name descname"><span class="pre">evaluate_geom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluate_geom" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluate_geom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.evaluate_geom" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluate model on <a class="reference internal" href="gammapy.maps.Geom.html#gammapy.maps.Geom" title="gammapy.maps.Geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Geom</span></code></a></p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2442,18 +2452,18 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.freeze">
-<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.freeze" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.freeze" title="Permalink to this definition">#</a></dt>
 <dd><p>Freeze all parameters</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.from_dict">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_dict" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.from_parameters">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_parameters" title="Permalink to this definition">#</a></dt>
 <dd><p>Create model from parameter list</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2473,12 +2483,12 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.from_position">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_position" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.from_position" title="Permalink to this definition">#</a></dt>
 <dd><p>Define the position of the model using a sky coord</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Position</p>
+<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Position</p>
 </dd>
 </dl>
 </dd>
@@ -2493,7 +2503,7 @@ i.e. the optimiser “sees” the well-scaled problem.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.integrate_geom">
-<span class="sig-name descname"><span class="pre">integrate_geom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oversampling_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.integrate_geom" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">integrate_geom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oversampling_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.integrate_geom" title="Permalink to this definition">#</a></dt>
 <dd><p>Integrate model on <a class="reference internal" href="gammapy.maps.Geom.html#gammapy.maps.Geom" title="gammapy.maps.Geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Geom</span></code></a> or <a class="reference internal" href="gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom" title="gammapy.maps.RegionGeom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegionGeom</span></code></a>.</p>
 <p>Integration is performed by simple rectangle approximation, the pixel center model value
 is multiplied by the pixel solid angle.
@@ -2522,12 +2532,12 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spatial model.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 <dt><strong>geom</strong><span class="classifier"><a class="reference internal" href="gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom" title="gammapy.maps.WcsGeom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WcsGeom</span></code></a>, optional</span></dt><dd><p>Geom to use for plotting.</p>
 </dd>
@@ -2537,7 +2547,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2546,12 +2556,12 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.plot_error">
-<span class="sig-name descname"><span class="pre">plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_error" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_error" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot position error</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 <dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot()</span></code></p>
 </dd>
@@ -2559,7 +2569,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2568,7 +2578,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.plot_grid">
-<span class="sig-name descname"><span class="pre">plot_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_grid" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_grid" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spatial model energy slices in a grid.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2581,7 +2591,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2590,12 +2600,12 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.plot_interative">
-<span class="sig-name descname"><span class="pre">plot_interative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_interative" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_interative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.plot_interative" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spatial model.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 <dt><strong>geom</strong><span class="classifier"><a class="reference internal" href="gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom" title="gammapy.maps.WcsGeom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WcsGeom</span></code></a>, optional</span></dt><dd><p>Geom to use for plotting.</p>
 </dd>
@@ -2605,7 +2615,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2614,7 +2624,7 @@ Default is None: the factor is estimated from the model minimimal bin size</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.reassign">
-<span class="sig-name descname"><span class="pre">reassign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_datasets_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.reassign" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reassign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datasets_names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_datasets_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.reassign" title="Permalink to this definition">#</a></dt>
 <dd><p>Reassign a model from one dataset to another</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2638,47 +2648,29 @@ as the reassignment is element-wise.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.to_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Create dict for YAML serilisation</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.to_region">
-<span class="sig-name descname"><span class="pre">to_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel.to_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.to_region" title="Permalink to this definition">¶</a></dt>
-<dd><p>Model outline (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>).</p>
+<span class="sig-name descname"><span class="pre">to_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/modeling/models/spatial.html#DiskSpatialModel.to_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.to_region" title="Permalink to this definition">#</a></dt>
+<dd><p>Model outline (<a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.EllipseSkyRegion.html#regions.EllipseSkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EllipseSkyRegion</span></code></a>).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.modeling.models.DiskSpatialModel.unfreeze">
-<span class="sig-name descname"><span class="pre">unfreeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.unfreeze" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unfreeze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.modeling.models.DiskSpatialModel.unfreeze" title="Permalink to this definition">#</a></dt>
 <dd><p>Restore parameters frozen status to default</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.modeling.models.DatasetModels.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">DatasetModels</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.modeling.models.EBLAbsorptionNormSpectralModel.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EBLAbsorptionNormSpectralModel</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2686,8 +2678,9 @@ as the reassignment is element-wise.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2698,7 +2691,7 @@ as the reassignment is element-wise.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

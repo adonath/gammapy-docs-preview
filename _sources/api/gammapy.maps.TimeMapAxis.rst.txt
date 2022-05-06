@@ -15,6 +15,7 @@ TimeMapAxis
       ~TimeMapAxis.as_plot_labels
       ~TimeMapAxis.as_plot_xerr
       ~TimeMapAxis.bin_width
+      ~TimeMapAxis.bounds
       ~TimeMapAxis.center
       ~TimeMapAxis.edges
       ~TimeMapAxis.edges_max
@@ -26,6 +27,7 @@ TimeMapAxis
       ~TimeMapAxis.nbin
       ~TimeMapAxis.node_type
       ~TimeMapAxis.reference_time
+      ~TimeMapAxis.time_bounds
       ~TimeMapAxis.time_delta
       ~TimeMapAxis.time_edges
       ~TimeMapAxis.time_format
@@ -49,6 +51,7 @@ TimeMapAxis
       ~TimeMapAxis.from_time_bounds
       ~TimeMapAxis.from_time_edges
       ~TimeMapAxis.is_aligned
+      ~TimeMapAxis.is_allclose
       ~TimeMapAxis.pix_to_idx
       ~TimeMapAxis.slice
       ~TimeMapAxis.squash
@@ -63,6 +66,7 @@ TimeMapAxis
    .. autoattribute:: as_plot_labels
    .. autoattribute:: as_plot_xerr
    .. autoattribute:: bin_width
+   .. autoattribute:: bounds
    .. autoattribute:: center
    .. autoattribute:: edges
    .. autoattribute:: edges_max
@@ -74,6 +78,7 @@ TimeMapAxis
    .. autoattribute:: nbin
    .. autoattribute:: node_type
    .. autoattribute:: reference_time
+   .. autoattribute:: time_bounds
    .. autoattribute:: time_delta
    .. autoattribute:: time_edges
    .. autoattribute:: time_format
@@ -95,6 +100,7 @@ TimeMapAxis
    .. automethod:: from_time_bounds
    .. automethod:: from_time_edges
    .. automethod:: is_aligned
+   .. automethod:: is_allclose
    .. automethod:: pix_to_idx
    .. automethod:: slice
    .. automethod:: squash

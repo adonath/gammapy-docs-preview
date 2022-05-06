@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.visualization.utils &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.visualization.utils &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
+ <a class="reference internal nav-link" href="../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/visualization/utils and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/visualization/utils and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -271,15 +264,26 @@ function checkPageExistsAndRedirect(event) {
                 
   <h1>Source code for gammapy.visualization.utils</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">gammapy.maps</span> <span class="kn">import</span> <span class="n">MapAxis</span>
-<span class="kn">from</span> <span class="nn">gammapy.maps.utils</span> <span class="kn">import</span> <span class="n">edges_from_lo_hi</span>
 <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">CubicSpline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;plot_contour_line&quot;</span><span class="p">,</span>
     <span class="s2">&quot;plot_spectrum_datasets_off_regions&quot;</span><span class="p">,</span>
     <span class="s2">&quot;plot_theta_squared_table&quot;</span><span class="p">,</span>
 <span class="p">]</span>
+
+
+<span class="n">ARTIST_TO_LINE_PROPERTIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;markeredgecolor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edgecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;markeredgecolor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ec&quot;</span><span class="p">:</span> <span class="s2">&quot;markeredgecolor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;facecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;markerfacecolor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fc&quot;</span><span class="p">:</span> <span class="s2">&quot;markerfacecolor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="s2">&quot;markerwidth&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lw&quot;</span><span class="p">:</span> <span class="s2">&quot;markerwidth&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 
 
 <div class="viewcode-block" id="plot_spectrum_datasets_off_regions"><a class="viewcode-back" href="../../../api/gammapy.visualization.plot_spectrum_datasets_off_regions.html#gammapy.visualization.plot_spectrum_datasets_off_regions">[docs]</a><span class="k">def</span> <span class="nf">plot_spectrum_datasets_off_regions</span><span class="p">(</span>
@@ -334,7 +338,6 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        plot_spectrum_datasets_off_regions(datasets2, ax, legend=True, legend_kwargs=dict(ncol=2))</span>
 <span class="sd">        plot_spectrum_datasets_off_regions(datasets3, ax, legend=False, edgecolor=&#39;magenta&#39;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
     <span class="kn">from</span> <span class="nn">matplotlib.legend_handler</span> <span class="kn">import</span> <span class="n">HandlerPatch</span><span class="p">,</span> <span class="n">HandlerTuple</span>
     <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">CirclePolygon</span><span class="p">,</span> <span class="n">Patch</span>
 
@@ -345,15 +348,14 @@ function checkPageExistsAndRedirect(event) {
     <span class="n">legend_kwargs</span> <span class="o">=</span> <span class="n">legend_kwargs</span> <span class="ow">or</span> <span class="p">{}</span>
     <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
 
-    <span class="n">kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;facecolor&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
     <span class="n">prop_cycle</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;prop_cycle&quot;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;axes.prop_cycle&quot;</span><span class="p">])</span>
-    <span class="n">plot_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
     <span class="k">for</span> <span class="n">props</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">prop_cycle</span><span class="p">(),</span> <span class="n">datasets</span><span class="p">):</span>
-        <span class="n">props</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">color</span> <span class="o">=</span> <span class="n">props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;patch.edgecolor&quot;</span><span class="p">])</span>
-        <span class="n">plot_kwargs</span><span class="p">[</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+        <span class="n">plot_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">plot_kwargs</span><span class="p">[</span><span class="s2">&quot;facecolor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span>
+        <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;edgecolor&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">))</span>
         <span class="n">plot_kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">props</span><span class="p">)</span>
+
         <span class="n">dataset</span><span class="o">.</span><span class="n">counts_off</span><span class="o">.</span><span class="n">plot_region</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">plot_kwargs</span><span class="p">)</span>
 
         <span class="c1"># create proxy artist for the custom legend</span>
@@ -381,14 +383,20 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="n">legend_kwargs</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;handletextpad&quot;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
         <span class="n">legend_kwargs</span><span class="p">[</span><span class="s2">&quot;handler_map&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">Patch</span><span class="p">:</span> <span class="n">patch_handler</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">:</span> <span class="n">tuple_handler</span><span class="p">}</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="o">**</span><span class="n">legend_kwargs</span><span class="p">)</span></div>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="o">**</span><span class="n">legend_kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ax</span></div>
 
 
 <div class="viewcode-block" id="plot_contour_line"><a class="viewcode-back" href="../../../api/gammapy.visualization.plot_contour_line.html#gammapy.visualization.plot_contour_line">[docs]</a><span class="k">def</span> <span class="nf">plot_contour_line</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plot smooth curve from contour points&quot;&quot;&quot;</span>
+    <span class="n">xf</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">yf</span> <span class="o">=</span> <span class="n">y</span>
+
     <span class="c1"># close contour</span>
-    <span class="n">xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">yf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">yf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
     <span class="c1"># curve parametrization must be strictly increasing</span>
     <span class="c1"># so we use the cumulative distance of each point from the first one</span>
@@ -426,7 +434,8 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">    table : `~astropy.table.Table`</span>
 <span class="sd">        Required columns: theta2_min, theta2_max, counts, counts_off and alpha</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+    <span class="kn">from</span> <span class="nn">gammapy.maps</span> <span class="kn">import</span> <span class="n">MapAxis</span>
+    <span class="kn">from</span> <span class="nn">gammapy.maps.utils</span> <span class="kn">import</span> <span class="n">edges_from_lo_hi</span>
 
     <span class="n">theta2_edges</span> <span class="o">=</span> <span class="n">edges_from_lo_hi</span><span class="p">(</span>
         <span class="n">table</span><span class="p">[</span><span class="s2">&quot;theta2_min&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantity</span><span class="p">,</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;theta2_max&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">quantity</span>
@@ -461,7 +470,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">x</span><span class="p">,</span>
         <span class="n">table</span><span class="p">[</span><span class="s2">&quot;excess&quot;</span><span class="p">],</span>
         <span class="n">xerr</span><span class="o">=</span><span class="n">xerr</span><span class="p">,</span>
-        <span class="n">yerr</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;excess_errn&quot;</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;excess_errp&quot;</span><span class="p">]),</span>
+        <span class="n">yerr</span><span class="o">=</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s2">&quot;excess_errn&quot;</span><span class="p">],</span> <span class="n">table</span><span class="p">[</span><span class="s2">&quot;excess_errp&quot;</span><span class="p">]),</span>
         <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span>
         <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Excess&quot;</span><span class="p">,</span>
@@ -481,18 +490,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -503,7 +509,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

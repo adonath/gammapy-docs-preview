@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.maps.axes &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.maps.axes &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
+ <a class="reference internal nav-link" href="../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/maps/axes and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/maps/axes and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -281,6 +274,7 @@ function checkPageExistsAndRedirect(event) {
 <span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Table</span><span class="p">,</span> <span class="n">hstack</span>
 <span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
 <span class="kn">from</span> <span class="nn">astropy.utils</span> <span class="kn">import</span> <span class="n">lazyproperty</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">gammapy.utils.interpolation</span> <span class="kn">import</span> <span class="n">interpolation_scale</span>
 <span class="kn">from</span> <span class="nn">gammapy.utils.time</span> <span class="kn">import</span> <span class="n">time_ref_from_dict</span><span class="p">,</span> <span class="n">time_ref_to_dict</span>
 <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">INVALID_INDEX</span><span class="p">,</span> <span class="n">edges_from_lo_hi</span>
@@ -297,6 +291,7 @@ function checkPageExistsAndRedirect(event) {
 
 <span class="k">class</span> <span class="nc">AxisCoordInterpolator</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Axis coord interpolator&quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="s2">&quot;lin&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="n">interpolation_scale</span><span class="p">(</span><span class="n">interp</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
@@ -360,10 +355,10 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        Axis name</span>
 <span class="sd">    node_type : str</span>
 <span class="sd">        Flag indicating whether coordinate nodes correspond to pixel</span>
-<span class="sd">        edges (node_type = &#39;edge&#39;) or pixel centers (node_type =</span>
+<span class="sd">        edges (node_type = &#39;edges&#39;) or pixel centers (node_type =</span>
 <span class="sd">        &#39;center&#39;).  &#39;center&#39; should be used where the map values are</span>
 <span class="sd">        defined at a specific coordinate (e.g. differential</span>
-<span class="sd">        quantities). &#39;edge&#39; should be used where map values are</span>
+<span class="sd">        quantities). &#39;edges&#39; should be used where map values are</span>
 <span class="sd">        defined by an integral over coordinate intervals (e.g. a</span>
 <span class="sd">        counts histogram).</span>
 <span class="sd">    unit : str</span>
@@ -372,7 +367,9 @@ function checkPageExistsAndRedirect(event) {
 
     <span class="c1"># TODO: Cache an interpolation object?</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">interp</span><span class="o">=</span><span class="s2">&quot;lin&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">node_type</span><span class="o">=</span><span class="s2">&quot;edges&quot;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name must be a string, got: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">nodes</span><span class="p">)):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;MapAxis: node values must be unique&quot;</span><span class="p">)</span>
@@ -386,6 +383,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">else</span><span class="p">:</span>
             <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_unit</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">Unit</span><span class="p">(</span><span class="n">unit</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nodes</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_node_type</span> <span class="o">=</span> <span class="n">node_type</span>
@@ -407,6 +405,7 @@ function checkPageExistsAndRedirect(event) {
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid node type: </span><span class="si">{</span><span class="n">node_type</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_nbin</span> <span class="o">=</span> <span class="n">nbin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_center_as_plot_labels</span> <span class="o">=</span> <span class="kc">None</span>
 
 <div class="viewcode-block" id="MapAxis.assert_name"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.assert_name">[docs]</a>    <span class="k">def</span> <span class="nf">assert_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">required_name</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assert axis name if a specific one is required.</span>
@@ -446,23 +445,40 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">aligned</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pix_all</span><span class="p">)</span> <span class="o">-</span> <span class="n">pix_all</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="n">atol</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">aligned</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">interp</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">interp</span></div>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
+<div class="viewcode-block" id="MapAxis.is_allclose"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.is_allclose">[docs]</a>    <span class="k">def</span> <span class="nf">is_allclose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if other map axis is all close.</span>
 
-        <span class="c1"># TODO: implement an allclose method for MapAxis and call it here</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : `MapAxis`</span>
+<span class="sd">            Other map axis</span>
+<span class="sd">        **kwargs : dict</span>
+<span class="sd">            Keyword arguments forwarded to `~numpy.allclose`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        is_allclose : bool</span>
+<span class="sd">            Whether other axis is allclose</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot compare </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="o">.</span><span class="n">is_equivalent</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">unit</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">edges</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-6</span>
-            <span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">edges</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node_type</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_node_type</span>
             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_interp</span>
             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_allclose</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
@@ -523,16 +539,28 @@ function checkPageExistsAndRedirect(event) {
         <span class="p">)</span>
 
     <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">use_center_as_plot_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Use center as plot labels&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_center_as_plot_labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_center_as_plot_labels</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="s2">&quot;center&quot;</span>
+
+    <span class="nd">@use_center_as_plot_labels</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">use_center_as_plot_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Use center as plot labels&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_use_center_as_plot_labels</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">as_plot_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return list of axis plot labels&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_type</span> <span class="o">==</span> <span class="s2">&quot;edges&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_center_as_plot_labels</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">val</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
             <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">val_min</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">val_max</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span>
                 <span class="k">for</span> <span class="n">val_min</span><span class="p">,</span> <span class="n">val_max</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">iter_by_edges</span>
             <span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">val</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">]</span>
-
         <span class="k">return</span> <span class="n">labels</span>
 
     <span class="nd">@property</span>
@@ -579,6 +607,21 @@ function checkPageExistsAndRedirect(event) {
                 <span class="n">node_type</span><span class="o">=</span><span class="n">node_type</span><span class="p">,</span>
                 <span class="n">unit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
             <span class="p">)</span></div>
+    
+<div class="viewcode-block" id="MapAxis.rename"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.rename">[docs]</a>    <span class="k">def</span> <span class="nf">rename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_name</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Rename the axis.</span>
+<span class="sd">    </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        new_name : str</span>
+<span class="sd">            The new name for the axis.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        axis : `~gammapy.maps.MapAxis`</span>
+<span class="sd">            Renamed MapAxis</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">new_name</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="MapAxis.format_plot_xaxis"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.format_plot_xaxis">[docs]</a>    <span class="k">def</span> <span class="nf">format_plot_xaxis</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Format plot axis</span>
@@ -597,7 +640,7 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="n">xlabel</span> <span class="o">=</span> <span class="n">DEFAULT_LABEL_TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">quantity</span><span class="o">=</span><span class="n">PLOT_AXIS_LABEL</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()),</span>
-            <span class="n">unit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">units</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
         <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span>
@@ -620,7 +663,10 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">as_plot_scale</span><span class="p">)</span>
 
-        <span class="n">ylabel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; [</span><span class="si">{</span><span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">units</span><span class="si">}</span><span class="s2">]&quot;</span>
+        <span class="n">ylabel</span> <span class="o">=</span> <span class="n">DEFAULT_LABEL_TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">quantity</span><span class="o">=</span><span class="n">PLOT_AXIS_LABEL</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()),</span>
+            <span class="n">unit</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">units</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bounds</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ax</span></div>
@@ -663,7 +709,7 @@ function checkPageExistsAndRedirect(event) {
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">node_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return node type (&#39;center&#39; or &#39;edge&#39;).&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return node type (&#39;center&#39; or &#39;edges&#39;).&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_node_type</span>
 
     <span class="nd">@property</span>
@@ -675,7 +721,7 @@ function checkPageExistsAndRedirect(event) {
     <span class="k">def</span> <span class="nf">from_bounds</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">lo_bnd</span><span class="p">,</span> <span class="n">hi_bnd</span><span class="p">,</span> <span class="n">nbin</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate an axis object from a lower/upper bound and number of bins.</span>
 
-<span class="sd">        If node_type = &#39;edge&#39; then bounds correspond to the</span>
+<span class="sd">        If node_type = &#39;edges&#39; then bounds correspond to the</span>
 <span class="sd">        lower and upper bound of the first and last bin.  If node_type</span>
 <span class="sd">        = &#39;center&#39; then bounds correspond to the centers of the first</span>
 <span class="sd">        and last bin.</span>
@@ -708,7 +754,7 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">elif</span> <span class="n">interp</span> <span class="o">==</span> <span class="s2">&quot;log&quot;</span><span class="p">:</span>
             <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lo_bnd</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">hi_bnd</span><span class="p">),</span> <span class="n">nnode</span><span class="p">))</span>
         <span class="k">elif</span> <span class="n">interp</span> <span class="o">==</span> <span class="s2">&quot;sqrt&quot;</span><span class="p">:</span>
-            <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lo_bnd</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">hi_bnd</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">nnode</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lo_bnd</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">hi_bnd</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">nnode</span><span class="p">)</span> <span class="o">**</span> <span class="mf">2.0</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid interp: </span><span class="si">{</span><span class="n">interp</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
@@ -2281,10 +2327,68 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
 
+
+<div class="viewcode-block" id="MapAxes.rename_axes"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.rename_axes">[docs]</a>    <span class="k">def</span> <span class="nf">rename_axes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">new_names</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Rename the axes.</span>
+<span class="sd">    </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        names : list or str</span>
+<span class="sd">            Names of the axes</span>
+<span class="sd">        new_names : list or str</span>
+<span class="sd">            New names of the axes (list must be of same length than `names`).</span>
+<span class="sd">        </span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        axes : `MapAxes`</span>
+<span class="sd">            Renamed Map axes object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">names</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">new_names</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">new_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">new_names</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">new_name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">new_names</span><span class="p">):</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">new_name</span>
+        <span class="k">return</span>  <span class="n">axes</span></div>
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">center_coord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Center coordinates&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">pix_to_coord</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">nbin</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span></div>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">ax</span><span class="o">.</span><span class="n">pix_to_coord</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">nbin</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span>
+
+<div class="viewcode-block" id="MapAxes.is_allclose"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.is_allclose">[docs]</a>    <span class="k">def</span> <span class="nf">is_allclose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if other map axes are all close.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : `MapAxes`</span>
+<span class="sd">            Other map axes</span>
+<span class="sd">        **kwargs : dict</span>
+<span class="sd">            Keyword arguments forwarded to `~MapAxis.is_allclose`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        is_allclose : bool</span>
+<span class="sd">            Whether other axes are all close</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot compare </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">([</span><span class="n">ax0</span><span class="o">.</span><span class="n">is_allclose</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="p">)])</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_allclose</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MapAxes.copy"><a class="viewcode-back" href="../../../api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Init map axes instance by copying each axis.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">([</span><span class="n">_</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">])</span></div></div>
 
 
 <div class="viewcode-block" id="TimeMapAxis"><a class="viewcode-back" href="../../../api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis">[docs]</a><span class="k">class</span> <span class="nc">TimeMapAxis</span><span class="p">:</span>
@@ -2425,6 +2529,17 @@ function checkPageExistsAndRedirect(event) {
         <span class="k">return</span> <span class="n">edges_from_lo_hi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">edges_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges_max</span><span class="p">)</span>
 
     <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Bounds of the axis (~astropy.units.Quantity)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges_min</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">edges_max</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">time_bounds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Bounds of the axis (~astropy.units.Quantity)&quot;&quot;&quot;</span>
+        <span class="n">t_min</span><span class="p">,</span> <span class="n">t_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bounds</span>
+        <span class="k">return</span> <span class="n">t_min</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_time</span><span class="p">,</span> <span class="n">t_max</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_time</span>
+
+    <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">time_min</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return axis lower edges as Time objects.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges_min</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reference_time</span>
@@ -2511,7 +2626,6 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        ax : `~matplotlib.pyplot.Axis`</span>
 <span class="sd">            Formatted plot axis</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
         <span class="kn">from</span> <span class="nn">matplotlib.dates</span> <span class="kn">import</span> <span class="n">DateFormatter</span>
 
         <span class="n">xlabel</span> <span class="o">=</span> <span class="n">DEFAULT_LABEL_TEMPLATE</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -2545,9 +2659,23 @@ function checkPageExistsAndRedirect(event) {
                 <span class="sa">f</span><span class="s1">&#39; expected &quot;</span><span class="si">{</span><span class="n">required_name</span><span class="si">}</span><span class="s1">&quot;, got: &quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
             <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="TimeMapAxis.is_allclose"><a class="viewcode-back" href="../../../api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.is_allclose">[docs]</a>    <span class="k">def</span> <span class="nf">is_allclose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if other map axis is all close.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : `TimeMapAxis`</span>
+<span class="sd">            Other map axis</span>
+<span class="sd">        **kwargs : dict</span>
+<span class="sd">            Keyword arguments forwarded to `~numpy.allclose`</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        is_allclose : bool</span>
+<span class="sd">            Whether other axis is allclose</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
+            <span class="k">return</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot compare </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edges_min</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">_edges_min</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">False</span>
@@ -2557,11 +2685,17 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">delta_max</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_max</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">time_max</span>
 
         <span class="k">return</span> <span class="p">(</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">delta_min</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
-            <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">delta_max</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">delta_min</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">delta_max</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interp</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">_interp</span>
             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_allclose</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
@@ -3181,13 +3315,31 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">str_</span> <span class="o">+=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;labels&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_labels</span><span class="p">)))</span>
         <span class="k">return</span> <span class="n">str_</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="n">tabsize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="LabelMapAxis.is_allclose"><a class="viewcode-back" href="../../../api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.is_allclose">[docs]</a>    <span class="k">def</span> <span class="nf">is_allclose</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check if other map axis is all close.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        other : `LabelMapAxis`</span>
+<span class="sd">            Other map axis</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        is_allclose : bool</span>
+<span class="sd">            Whether other axis is allclose</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
-            <span class="k">return</span> <span class="bp">NotImplemented</span>
+            <span class="k">return</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot compare </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="n">name_equal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
         <span class="n">labels_equal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">name_equal</span> <span class="o">&amp;</span> <span class="n">labels_equal</span>
+        <span class="k">return</span> <span class="n">name_equal</span> <span class="o">&amp;</span> <span class="n">labels_equal</span></div>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_allclose</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">other</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__ne__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__eq__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
@@ -3238,18 +3390,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -3260,7 +3409,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

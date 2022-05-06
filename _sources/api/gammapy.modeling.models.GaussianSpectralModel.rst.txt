@@ -10,12 +10,12 @@ GaussianSpectralModel
 
    .. autosummary::
 
+      ~GaussianSpectralModel.amplitude
       ~GaussianSpectralModel.covariance
       ~GaussianSpectralModel.default_parameters
       ~GaussianSpectralModel.frozen
       ~GaussianSpectralModel.is_norm_spectral_model
       ~GaussianSpectralModel.mean
-      ~GaussianSpectralModel.norm
       ~GaussianSpectralModel.parameters
       ~GaussianSpectralModel.sigma
       ~GaussianSpectralModel.tag
@@ -48,12 +48,12 @@ GaussianSpectralModel
 
    .. rubric:: Attributes Documentation
 
+   .. autoattribute:: amplitude
    .. autoattribute:: covariance
    .. autoattribute:: default_parameters
    .. autoattribute:: frozen
    .. autoattribute:: is_norm_spectral_model
    .. autoattribute:: mean
-   .. autoattribute:: norm
    .. autoattribute:: parameters
    .. autoattribute:: sigma
    .. autoattribute:: tag

@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project setup &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Project setup &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,12 +43,11 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dependencies" href="dependencies.html" />
-    <link rel="prev" title="Development" href="index.html" />
+    <link rel="prev" title="Developer guide" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/setup and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/setup and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pigs/pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -430,8 +429,8 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notebooks">
-     Notebooks
+    <a class="reference internal nav-link" href="#download">
+     Download
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -536,41 +535,30 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="project-setup">
-<span id="dev-things"></span><h1>Project setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h1>
+  <section id="project-setup">
+<span id="dev-things"></span><h1>Project setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">#</a></h1>
 <p>This page gives an overview of the technical infrastructure we have set up to
 develop and maintain Gammapy. If you just want to make contribution to the Gammapy
 code or documentation, you don’t need to know about most of the things mentioned on
 this page. But for Gammapy maintainers it’s helpful to have a reference that explains
 what we have and how things work.</p>
-<div class="section" id="gammapy-repository">
-<h2>gammapy repository<a class="headerlink" href="#gammapy-repository" title="Permalink to this headline">¶</a></h2>
+<section id="gammapy-repository">
+<h2>gammapy repository<a class="headerlink" href="#gammapy-repository" title="Permalink to this headline">#</a></h2>
 <p>This section explains the content of the main repository for Gammapy:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/gammapy/gammapy">https://github.com/gammapy/gammapy</a></p>
 </div></blockquote>
-<div class="section" id="package-and-docs">
-<h3>Package and docs<a class="headerlink" href="#package-and-docs" title="Permalink to this headline">¶</a></h3>
+<section id="package-and-docs">
+<h3>Package and docs<a class="headerlink" href="#package-and-docs" title="Permalink to this headline">#</a></h3>
 <p>The two main folders of interest for developers are the <code class="docutils literal notranslate"><span class="pre">gammapy</span></code> folder and
 the <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder. In <code class="docutils literal notranslate"><span class="pre">gammapy</span></code> you find the Gammapy package, i.e. all code,
 but also tests are included there in sub-folders called <code class="docutils literal notranslate"><span class="pre">tests</span></code>. The <code class="docutils literal notranslate"><span class="pre">docs</span></code>
 folder contains the documentation pages mostly in restructured text (RST) format. The
 Sphinx documentation generator is used to convert those RST files to the HTML
 documentation.</p>
-</div>
-<div class="section" id="notebooks">
-<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">docs/tutorials</span></code> folder contains tutorials that are part of the user
-documentation for Gammapy in the form of Jupyter notebooks. There may be also notebooks in
-other parts of the documentation. Except those specifically declared (see <a class="reference internal" href="doc_howto.html#skip-nb-execution"><span class="std std-ref">Skip notebooks from being executed</span></a>), all
-the notebooks present in the documentation are executed during the doc building process. They are all
-converted to the Sphinx-formatted HTML files, where clean output stripped <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebooks files
-and <code class="docutils literal notranslate"><span class="pre">.py</span></code> scripts versions are generated and placed in the <code class="docutils literal notranslate"><span class="pre">docs/_static/notebooks</span></code> folder.</p>
-<p>We perform automated set-up testing for all notebooks (just check that they run
-and don’t raise an exception) during the CI process (see below). It is also possible to
-perform tests locally on notebooks with the <code class="docutils literal notranslate"><span class="pre">gammapy</span> <span class="pre">jupyter</span></code> command. This
-command provides functionalities for testing, code formatting, stripping output cells
-and execution. See <code class="docutils literal notranslate"><span class="pre">gammapy</span> <span class="pre">jupyter</span> <span class="pre">-h</span></code> for more info on this.</p>
+</section>
+<section id="download">
+<h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">gammapy</span> <span class="pre">download</span></code> command allows downloading notebooks published in the documentation
 as well as the related datasets needed to execute them. The set of notebooks is versioned
 for each stable release as tar bundles published within the versioned documentation in the
@@ -579,33 +567,28 @@ The same happens for conda working environments of stable releases, whose yaml f
 in the <a class="reference external" href="https://github.com/gammapy/gammapy-webpage">gammapy-web</a> repository. The datasets are not
 versioned, and they are placed in the <a class="reference external" href="https://github.com/gammapy/gammapy-data">gammapy-data</a>
 repository.</p>
-</div>
-<div class="section" id="build">
-<span id="dev-build"></span><h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="build">
+<span id="dev-build"></span><h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> and <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> contain code to build and install Gammapy, as
 well as to run the tests and build the documentation, see <a class="reference internal" href="intro.html#dev-intro"><span class="std std-ref">How to contribute to Gammapy</span></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">environment-dev.yml</span></code> file contains the conda environment specification
 that allows one to quickly set up a conda environment for Gammapy development,
 see <a class="reference internal" href="intro.html#dev-setup"><span class="std std-ref">Get set up</span></a>.</p>
-</div>
-<div class="section" id="cython">
-<span id="setup-cython"></span><h3>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cython">
+<span id="setup-cython"></span><h3>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">#</a></h3>
 <p>We also have some Cython code in Gammapy, at the time of this writing less than
 10% in this file:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">gammapy/stats/fit_statistics_cython.pyx</span></code></p></li>
 </ul>
-</div>
-<div class="section" id="others">
-<h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="others">
+<h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">#</a></h3>
 <p>There are two more folders in the <code class="docutils literal notranslate"><span class="pre">gammapy</span></code> repository: <code class="docutils literal notranslate"><span class="pre">examples</span></code> and <code class="docutils literal notranslate"><span class="pre">dev</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder contains the following:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Python scripts that could be used as example scripts tutorials in <a class="reference internal" href="../tutorials/index.html#tutorials-scripts"><span class="std std-ref">Scripts</span></a>.</p></li>
-<li><p>Python scripts needed by the sphinx-gallery extension to produce collections of examples use cases.</p></li>
-</ul>
-</div></blockquote>
+<p>The <code class="docutils literal notranslate"><span class="pre">examples</span></code> folder contains Python scripts needed by the sphinx-gallery extension
+to produce collections of examples use cases.</p>
 <p>The Python scripts needed by sphinx-gallery extension are placed in folders declared in the
 <code class="docutils literal notranslate"><span class="pre">sphinx_gallery_conf</span></code> variable in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code> script.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">dev</span></code> folder is a place for Gammapy developers to put stuff that is useful for maintenance,
@@ -626,25 +609,25 @@ This is what makes it possible to execute tests e.g. with the <code class="docut
 and just run the tests that “last failed”.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">dist</span></code> contains the Gammapy distribution if you run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">sdist</span></code></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="gammapy-data-repository">
-<h2>gammapy-data repository<a class="headerlink" href="#gammapy-data-repository" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="gammapy-data-repository">
+<h2>gammapy-data repository<a class="headerlink" href="#gammapy-data-repository" title="Permalink to this headline">#</a></h2>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/gammapy/gammapy-data">https://github.com/gammapy/gammapy-data</a></p>
 </div></blockquote>
 <p>You may find here the datasets needed to execute the notebooks, perform the CI tests, build
 the documentation and check tutorials.</p>
-</div>
-<div class="section" id="gammapy-extra-repository">
-<span id="dev-gammapy-extra"></span><h2>gammapy-extra repository<a class="headerlink" href="#gammapy-extra-repository" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="gammapy-extra-repository">
+<span id="dev-gammapy-extra"></span><h2>gammapy-extra repository<a class="headerlink" href="#gammapy-extra-repository" title="Permalink to this headline">#</a></h2>
 <p>For Gammapy we have a second repository for most of the example data files and
 a few other things:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://github.com/gammapy/gammapy-extra">https://github.com/gammapy/gammapy-extra</a></p>
 </div></blockquote>
-<div class="section" id="old-example-data">
-<h3>Old example data<a class="headerlink" href="#old-example-data" title="Permalink to this headline">¶</a></h3>
+<section id="old-example-data">
+<h3>Old example data<a class="headerlink" href="#old-example-data" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">datasets</span></code> and <code class="docutils literal notranslate"><span class="pre">datasets/tests</span></code> folders contain example datasets that were
 used by the Gammapy documentation and tests. Note that here is a lot of old cruft,
 because Gammapy was developed since 2013 in parallel with the development of data
@@ -655,9 +638,9 @@ newer files or generate test datasets from scratch. Doing this “cleanup” and
 improvement of curated example datasets will be an ongoing task in Gammapy for
 the coming years, that has to proceed in parallel with code, test and
 documentation improvements.</p>
-</div>
-<div class="section" id="other-folders">
-<h3>Other folders<a class="headerlink" href="#other-folders" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-folders">
+<h3>Other folders<a class="headerlink" href="#other-folders" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">figures</span></code> folder contains images that we show in the documentation (or
 in presentations or publications), for cases where the analysis and image
@@ -674,10 +657,10 @@ somewhere else on the web. It’s hugely incomplete and probably not very useful
 as-is, and we should discuss if this is useful at all, and if yes, how we want
 to maintain it.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="other-repositories">
-<h2>Other repositories<a class="headerlink" href="#other-repositories" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="other-repositories">
+<h2>Other repositories<a class="headerlink" href="#other-repositories" title="Permalink to this headline">#</a></h2>
 <p>Performance benchmarks for Gammapy:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/gammapy/gammapy-benchmarks">https://github.com/gammapy/gammapy-benchmarks</a></p></li>
@@ -691,33 +674,33 @@ to maintain it.</p></li>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/gammapy/gammapy-meetings">https://github.com/gammapy/gammapy-meetings</a></p></li>
 </ul>
-</div>
-<div class="section" id="gammapy-webpages">
-<h2>Gammapy webpages<a class="headerlink" href="#gammapy-webpages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="gammapy-webpages">
+<h2>Gammapy webpages<a class="headerlink" href="#gammapy-webpages" title="Permalink to this headline">#</a></h2>
 <p>There are two webpages for Gammapy: <a class="reference external" href="http://gammapy.org">http://gammapy.org</a> and <a class="reference external" href="http://docs.gammapy.org">http://docs.gammapy.org</a>.</p>
 <p>In addition, we have Binder set up to allow users to try Gammapy in the browser.</p>
-<div class="section" id="gammapy-org">
-<h3>gammapy.org<a class="headerlink" href="#gammapy-org" title="Permalink to this headline">¶</a></h3>
+<section id="gammapy-org">
+<h3>gammapy.org<a class="headerlink" href="#gammapy-org" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://gammapy.org/">https://gammapy.org/</a> is a small landing page for the Gammapy project. The page
 shown there is a static webpage served via GitHub pages.</p>
 <p>To update it, edit the HTML and CSS files in the
 <a class="reference external" href="https://github.com/gammapy/gammapy-webpage">gammapy-webpage GitHub repository</a>
 and then make a pull request against the default branch for that repo, called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>.
 Once it’s merged, the webpage at <a class="reference external" href="https://gammapy.org/">https://gammapy.org/</a> usually updates within less than a minute.</p>
-</div>
-<div class="section" id="docs-gammapy-org">
-<h3>docs.gammapy.org<a class="headerlink" href="#docs-gammapy-org" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="docs-gammapy-org">
+<h3>docs.gammapy.org<a class="headerlink" href="#docs-gammapy-org" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://docs.gammapy.org/">https://docs.gammapy.org/</a> contains most of the documentation for Gammapy,
-including information about Gammapy, the changelog, tutorials, …</p>
+including information about Gammapy, release notes, tutorials, …</p>
 <p>The dev version of the docs is built and updated with an automated GitHub action for every
 pull request merged in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy</span></code> GitHub code repository. All the docs are versioned,
 and each version of the docs is placed in its dedicated version-labelled folder. It is recommended
 to build the docs locally before each release to identify and fix possible Sphinx warnings from
 badly formatted RST files or failing Python scripts used to display figures.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Gammapy Binder<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id1">
+<h2>Gammapy Binder<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>We have set up <a class="reference external" href="https://mybinder.org/">https://mybinder.org/</a> for each released version of Gammapy, which allows users
 to execute the notebooks present in the versioned docs within the web browser, without having to install
 software or download data to their local machine. This can be useful for people
@@ -731,14 +714,14 @@ The Dockerfile makes the Docker image used by Binder running some linux commands
 and copy the notebooks and datasets needed. It executes <code class="docutils literal notranslate"><span class="pre">binder.py</span></code> to conda
 install Gammapy dependencies listed in the environment YAML published within the versioned
 documentation.</p>
-</div>
-<div class="section" id="continuous-integration">
-<h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="continuous-integration">
+<h2>Continuous integration<a class="headerlink" href="#continuous-integration" title="Permalink to this headline">#</a></h2>
 <p>We are running various builds as
 <a class="reference external" href="https://github.com/gammapy/gammapy/actions/workflows/ci.yml">GitHub actions workflows for CI</a>.</p>
-</div>
-<div class="section" id="code-quality">
-<h2>Code quality<a class="headerlink" href="#code-quality" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="code-quality">
+<h2>Code quality<a class="headerlink" href="#code-quality" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Code coverage: <a class="reference external" href="https://coveralls.io/r/gammapy/gammapy">https://coveralls.io/r/gammapy/gammapy</a></p></li>
 <li><p>Code quality: <a class="reference external" href="https://lgtm.com/projects/g/gammapy/gammapy/context:python">https://lgtm.com/projects/g/gammapy/gammapy/context:python</a></p></li>
@@ -748,9 +731,9 @@ documentation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make test-cov
 </pre></div>
 </div>
-</div>
-<div class="section" id="releases">
-<h2>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="releases">
+<h2>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">#</a></h2>
 <p>At this time, making a Gammapy release is a sequence of steps to execute in the
 command line and on some webpages, that is fully documented in this checklist:
 <a class="reference internal" href="release.html#dev-release"><span class="std std-ref">How to make a Gammapy release</span></a>. It is difficult to automate this procedure more, but it is
@@ -764,30 +747,12 @@ will try to update as soon as they get the announcement email).</p>
 <li><p>Binary conda packages for Linux, Mac and Windows:
 <a class="reference external" href="https://github.com/conda-forge/gammapy-feedstock">https://github.com/conda-forge/gammapy-feedstock</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Development</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="dependencies.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Dependencies</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -795,8 +760,9 @@ will try to update as soon as they get the announcement email).</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -807,7 +773,7 @@ will try to update as soon as they get the announcement email).</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

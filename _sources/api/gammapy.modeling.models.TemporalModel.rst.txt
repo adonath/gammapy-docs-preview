@@ -25,6 +25,7 @@ TemporalModel
       ~TemporalModel.freeze
       ~TemporalModel.from_dict
       ~TemporalModel.from_parameters
+      ~TemporalModel.integral
       ~TemporalModel.plot
       ~TemporalModel.reassign
       ~TemporalModel.sample_time
@@ -47,6 +48,7 @@ TemporalModel
    .. automethod:: freeze
    .. automethod:: from_dict
    .. automethod:: from_parameters
+   .. automethod:: integral
    .. automethod:: plot
    .. automethod:: reassign
    .. automethod:: sample_time

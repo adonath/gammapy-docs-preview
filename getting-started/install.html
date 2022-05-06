@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installation &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Installation &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,11 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using Gammapy" href="usage.html" />
+    <link rel="next" title="Virtual Environments" href="environments.html" />
     <link rel="prev" title="Getting started" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables getting-started/install and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables getting-started/install and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -254,6 +248,11 @@ function checkPageExistsAndRedirect(event) {
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="usage.html">
    Using Gammapy
   </a>
@@ -280,55 +279,31 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Installation
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-anaconda-miniconda">
+   Using Anaconda / Miniconda
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-anaconda-miniconda">
-     Using Anaconda / Miniconda
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-mamba">
-     Using Mamba
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-virtual-environments">
-     Using virtual environments
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-pip">
-     Using pip
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-other-package-managers">
-     Using other package managers
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#upgrade-existing-installation">
-   Upgrade existing installation
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-mamba">
+   Using Mamba
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Using Anaconda / Miniconda
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-pip">
+   Using pip
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-other-package-managers">
+   Using other package managers
+  </a>
  </li>
 </ul>
 
@@ -351,175 +326,102 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="installation">
-<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="using-anaconda-miniconda">
-<span id="anaconda"></span><h2>Using Anaconda / Miniconda<a class="headerlink" href="#using-anaconda-miniconda" title="Permalink to this headline">¶</a></h2>
-<p>The easiest way to install Gammapy is to install the Anaconda
-distribution from <a class="reference external" href="https://www.anaconda.com/download/">https://www.anaconda.com/download/</a> and then to install
-Gammapy and its dependencies by executing this command in a terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge gammapy
+  <section id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+<p>There are many ways to install Python and Gammapy as a user. On this page we list the most common ones.
+In general <strong>we recommend to use virtual environments</strong> when using Gammapy. This ways you have full
+control over additional packages that you may use in your analysis and you work with
+well defined computing environments, that you can share and allow <strong>reproducibility of your
+scientific analysis results</strong>. If you want to learn about using virtual environments see <a class="reference internal" href="environments.html#virtual-envs"><span class="std std-ref">Virtual Environments</span></a>.
+You can also <a class="reference internal" href="../development/intro.html#dev-setup"><span class="std std-ref">install Gammapy for development</span></a>.</p>
+<section id="using-anaconda-miniconda">
+<span id="anaconda"></span><h2>Using Anaconda / Miniconda<a class="headerlink" href="#using-anaconda-miniconda" title="Permalink to this headline">#</a></h2>
+<p>The easiest way to install Gammapy is to install the <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a>
+or <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> Python distribution.
+To install the latest stable version of Gammapy and its dependencies using conda,
+execute this command in a terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge gammapy
 </pre></div>
 </div>
-<p>Though this is one line command is the standard way to install a software package using Anaconda, <strong>we recommend to
-make use of an environment definition file</strong> that we provide, so you can get additional useful packages together with
-Gammapy in a virtual isolated environment. If you want to learn about using virtual environments see
-<a class="reference internal" href="#virtual-envs"><span class="std std-ref">Using virtual environments</span></a>. In order to proceed in this way, just copy and paste in your terminal the two lines below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O https://gammapy.org/download/install/gammapy-0.19-environment.yml
-conda env create -f gammapy-0.19-environment.yml
+<p>To update an existing installation you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda update gammapy
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>On Windows, you have to open up the conda environment file and delete the
-lines with <code class="docutils literal notranslate"><span class="pre">sherpa</span></code> and <code class="docutils literal notranslate"><span class="pre">healpy</span></code>. Those are optional dependencies that
-currently aren’t available on Windows.</p>
+<p>To install a specific version of Gammapy just execute:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge <span class="nv">gammapy</span><span class="o">=</span><span class="m">0</span>.19
+</pre></div>
 </div>
-</div>
-<div class="section" id="using-mamba">
-<h2>Using Mamba<a class="headerlink" href="#using-mamba" title="Permalink to this headline">¶</a></h2>
-<p>Alternatively, you can use <code class="xref py py-obj docutils literal notranslate"><span class="pre">mamba</span></code> for the installation.
+<p>If you encountered any issues you can check the <a class="reference internal" href="troubleshooting.html#troubleshoot"><span class="std std-ref">Troubleshooting</span></a> guide.</p>
+</section>
+<section id="using-mamba">
+<h2>Using Mamba<a class="headerlink" href="#using-mamba" title="Permalink to this headline">#</a></h2>
+<p>Alternatively, you can use <a class="reference external" href="https://mamba.readthedocs.io/">Mamba</a> for the installation.
 Mamba is an alternative package manager that support most of conda’s command but offers higher installation
-speed and more reliable environment solutions. To install <code class="docutils literal notranslate"><span class="pre">mamba</span></code> in the base environment:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install mamba -n base -c conda-forge
+speed and more reliable environment solutions. To install <code class="docutils literal notranslate"><span class="pre">mamba</span></code> in the Conda base environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install mamba -n base -c conda-forge
 </pre></div>
 </div>
 <p>then:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -O https://gammapy.org/download/install/gammapy-0.19-environment.yml
-mamba env create -f gammapy-0.19-environment.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mamba install gammapy
 </pre></div>
 </div>
-<p>Both options will create a conda environment called <code class="docutils literal notranslate"><span class="pre">gammapy-0.19</span></code> which you can activate via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate gammapy-0.19
-</pre></div>
-</div>
-<p>Note that you have to execute that activation command (but not the environment
-creation command) every time you open a new terminal window, because the default
-with conda is the base environment, which might not have Gammapy installed.</p>
-<p>To check your Gammapy installation, you can use this command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gammapy info
-</pre></div>
-</div>
-<p>To leave the environment, you may activate another one or just type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate
-</pre></div>
-</div>
-</div>
-<div class="section" id="using-virtual-environments">
-<span id="virtual-envs"></span><h2>Using virtual environments<a class="headerlink" href="#using-virtual-environments" title="Permalink to this headline">¶</a></h2>
-<p>We recommend to create an isolated virtual environment for each version of Gammapy, so that you have full
-control over additional packages that you may use in your analysis. We provide, for each stable release of Gammapy,
-a YAML file that allows you to easily create a specific conda execution environment. This could also help you on
-improving reproducibility within the users community. See installation instructions on <a class="reference internal" href="index.html#getting-started"><span class="std std-ref">Getting started</span></a> section.</p>
-<p>You may prefer to create your virtual environments with Python <a class="reference external" href="https://docs.python.org/3/library/venv.html#module-venv" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">venv</span></code></a> command instead of using Anaconda.
-To create a virtual environment with <a class="reference external" href="https://docs.python.org/3/library/venv.html#module-venv" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">venv</span></code></a> (Python 3.5+ required) run the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m venv gammapy-env
-</pre></div>
-</div>
-<p>which will create one in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy-env</span></code> folder. To activate it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ . gammapy-env/bin/activate
-</pre></div>
-</div>
-<p>After that you can install Gammapy using <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code> as well as other packages you may need.</p>
-<p>To leave the environment, you may activate another one or just type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ deactivate
-</pre></div>
-</div>
-</div>
-<div class="section" id="using-pip">
-<span id="install-pip"></span><h2>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">¶</a></h2>
+<p>Mamba supports of the commands that are available for conda. So updating and installing specific versions
+works the same way as above except for replacing the <code class="docutils literal notranslate"><span class="pre">conda</span></code> with the <code class="docutils literal notranslate"><span class="pre">mamba</span></code> command.</p>
+</section>
+<section id="using-pip">
+<span id="install-pip"></span><h2>Using pip<a class="headerlink" href="#using-pip" title="Permalink to this headline">#</a></h2>
 <p>To install the latest Gammapy <strong>stable</strong> version (see <a class="reference external" href="https://pypi.org/project/gammapy">Gammapy page on PyPI</a>)
 using <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install gammapy
 </pre></div>
 </div>
-<p>To install the current Gammapy <strong>development</strong> version using <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>:</p>
+<p>To update an existing installation you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install gammapy --upgrade
+</pre></div>
+</div>
+<p>To install a specific version of Gammapy you can use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install <span class="nv">gammapy</span><span class="o">==</span><span class="m">0</span>.19
+</pre></div>
+</div>
+<p>To install the current Gammapy <strong>development</strong> version using <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> you can use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python -m pip install git+https://github.com/gammapy/gammapy.git#egg<span class="o">=</span>gammapy
 </pre></div>
 </div>
 <p>Or like this, if you want to study or edit the code locally:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/gammapy/gammapy.git
 $ <span class="nb">cd</span> gammapy
-$ pip install .
+$ python -m pip install .
 </pre></div>
 </div>
-<p>How to get set up for Gammapy development is described here: <a class="reference internal" href="../development/intro.html#dev-setup"><span class="std std-ref">Get set up</span></a></p>
-</div>
-<div class="section" id="using-other-package-managers">
-<span id="install-other"></span><h2>Using other package managers<a class="headerlink" href="#using-other-package-managers" title="Permalink to this headline">¶</a></h2>
+<p>If you encountered any issues you can check the <a class="reference internal" href="troubleshooting.html#troubleshoot"><span class="std std-ref">Troubleshooting</span></a> guide.</p>
+</section>
+<section id="using-other-package-managers">
+<span id="install-other"></span><h2>Using other package managers<a class="headerlink" href="#using-other-package-managers" title="Permalink to this headline">#</a></h2>
 <p>Gammapy has been packaged for some Linux package managers. E.g. on Debian, you
 can install Gammapy via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-gammapy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install python3-gammapy
 </pre></div>
 </div>
 <p>To get a more fully featured scientific Python environment, you can install
 other Python packages using the system package manager (<code class="docutils literal notranslate"><span class="pre">apt-get</span></code> in this
 example), and then on top of this install more Python packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
 <p>Example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install <span class="se">\</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install <span class="se">\</span>
     python3-pip python3-matplotlib <span class="se">\</span>
     ipython3-notebook python3-gammapy
 
-python3 -m pip install antigravity
+$ python3 -m pip install antigravity
 </pre></div>
 </div>
-<p>Note that also on Linux, the recommended way to install Gammapy is via
-<code class="docutils literal notranslate"><span class="pre">conda</span></code>. The <code class="docutils literal notranslate"><span class="pre">conda</span></code> install is maintained by the Gammapy team and gives you
-usually a very recent version (releases every 2 months), whereas the Linux
-package managers typically have release cycles of 6 months, or yearly or longer,
-meaning that you’ll get an older version of Gammapy. But you can always get a
-recent version via pip:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install python3-gammapy
-pip install -U gammapy
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="upgrade-existing-installation">
-<h1>Upgrade existing installation<a class="headerlink" href="#upgrade-existing-installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>Using Anaconda / Miniconda<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>We recommend to make use of a <strong>conda environment definition file</strong> that we provide for each version
-of Gammapy, so you can get a specific version of Gammapy as we as its library dependencies and additional
-useful packages in a virtual isolated environment.</p>
-<p>You may find below the commands used to upgrade Gammapy to the v0.19 version.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -O https://gammapy.org/download/install/gammapy-0.19-environment.yml
-$ conda env create -f gammapy-0.19-environment.yml
-</pre></div>
-</div>
-<p>If you want to remove a previous version og Gammapy just use the standard conda command below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env remove -n gammapy-0.18.2
-</pre></div>
-</div>
-<p>In case you are working with the development version environment and you want to update this
-environment with the content present in <code class="xref py py-obj docutils literal notranslate"><span class="pre">environment-dev.yml</span></code> see below.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda env update environment-dev.yml --prune
-</pre></div>
-</div>
-</div>
-</div>
+<p>Note that the Linux package managers typically have release cycles of 6 months,
+or yearly or longer, meaning that you’ll typically  get an older version of
+Gammapy. But you can always get a recent version via <code class="xref py py-obj docutils literal notranslate"><span class="pre">pip</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">conda</span></code> (see above).</p>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting started</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="usage.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using Gammapy</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -527,8 +429,9 @@ environment with the content present in <code class="xref py py-obj docutils lit
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -539,7 +442,7 @@ environment with the content present in <code class="xref py py-obj docutils lit
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

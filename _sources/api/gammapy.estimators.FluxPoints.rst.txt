@@ -88,9 +88,11 @@ FluxPoints
       ~FluxPoints.from_stack
       ~FluxPoints.from_table
       ~FluxPoints.get_flux_points
+      ~FluxPoints.iter_by_axis
       ~FluxPoints.plot
       ~FluxPoints.plot_ts_profiles
       ~FluxPoints.read
+      ~FluxPoints.recompute_ul
       ~FluxPoints.slice_by_idx
       ~FluxPoints.to_hdulist
       ~FluxPoints.to_maps
@@ -175,9 +177,11 @@ FluxPoints
    .. automethod:: from_stack
    .. automethod:: from_table
    .. automethod:: get_flux_points
+   .. automethod:: iter_by_axis
    .. automethod:: plot
    .. automethod:: plot_ts_profiles
    .. automethod:: read
+   .. automethod:: recompute_ul
    .. automethod:: slice_by_idx
    .. automethod:: to_hdulist
    .. automethod:: to_maps

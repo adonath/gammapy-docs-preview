@@ -65,6 +65,7 @@ Lorimer2006
       ~Lorimer2006.get_bounding_box
       ~Lorimer2006.has_inverse
       ~Lorimer2006.input_shape
+      ~Lorimer2006.output_units
       ~Lorimer2006.prepare_inputs
       ~Lorimer2006.prepare_outputs
       ~Lorimer2006.rename
@@ -130,6 +131,7 @@ Lorimer2006
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

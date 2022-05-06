@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.catalog.hess &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.catalog.hess &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
+ <a class="reference internal nav-link" href="../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/catalog/hess and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/catalog/hess and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -653,7 +646,7 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="c1"># Use Gaussian analytical error propagation,</span>
         <span class="c1"># tested against the uncertainties package</span>
-        <span class="n">err</span> <span class="o">=</span> <span class="n">err</span> <span class="o">/</span> <span class="n">val</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">err</span> <span class="o">/</span> <span class="n">val</span><span class="o">**</span><span class="mi">2</span>
         <span class="n">val</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">val</span>
 
         <span class="n">ss</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{:&lt;20s}</span><span class="s2"> : </span><span class="si">{:.2f}</span><span class="s2"> +/- </span><span class="si">{:.2f}</span><span class="s2"> TeV</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;ECPL E_cut&quot;</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
@@ -837,7 +830,9 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">spatial_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Spatial_Model&quot;</span><span class="p">]</span>
-        <span class="n">missing_size</span> <span class="o">=</span> <span class="n">spatial_type</span><span class="o">==</span><span class="s2">&quot;Gaussian&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_model</span><span class="p">()</span><span class="o">.</span><span class="n">sigma</span><span class="o">.</span><span class="n">value</span><span class="o">==</span><span class="mi">0</span>
+        <span class="n">missing_size</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">spatial_type</span> <span class="o">==</span> <span class="s2">&quot;Gaussian&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">spatial_model</span><span class="p">()</span><span class="o">.</span><span class="n">sigma</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">)</span>
         <span class="k">if</span> <span class="n">spatial_type</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;2-Gaussian&quot;</span><span class="p">,</span> <span class="s2">&quot;3-Gaussian&quot;</span><span class="p">}</span> <span class="ow">or</span> <span class="n">missing_size</span><span class="p">:</span>
             <span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">spectral_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">spectral_model</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="n">which</span><span class="p">)</span>
@@ -917,6 +912,7 @@ function checkPageExistsAndRedirect(event) {
 
 <span class="sd">    Then you can load it up like this:</span>
 
+<span class="sd">    &gt;&gt;&gt; import matplotlib.pyplot as plt</span>
 <span class="sd">    &gt;&gt;&gt; from gammapy.catalog import SourceCatalogHGPS</span>
 <span class="sd">    &gt;&gt;&gt; filename = &#39;$GAMMAPY_DATA/catalogs/hgps_catalog_v1.fits.gz&#39;</span>
 <span class="sd">    &gt;&gt;&gt; cat = SourceCatalogHGPS(filename)</span>
@@ -1037,12 +1033,13 @@ function checkPageExistsAndRedirect(event) {
 
 <span class="sd">    Access source spectral data and plot it:</span>
 
-<span class="sd">    &gt;&gt;&gt; source.spectral_model().plot(source.energy_range)</span>
-<span class="sd">    &lt;AxesSubplot:xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde [1 / (cm2 s TeV)]&#39;&gt;</span>
-<span class="sd">    &gt;&gt;&gt; source.spectral_model().plot_error(source.energy_range)</span>
-<span class="sd">    &lt;AxesSubplot:xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde [1 / (cm2 s TeV)]&#39;&gt;</span>
-<span class="sd">    &gt;&gt;&gt; source.flux_points.plot()</span>
-<span class="sd">    &lt;AxesSubplot:xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde (1 / (cm2 s TeV))&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; ax = plt.subplot()</span>
+<span class="sd">    &gt;&gt;&gt; source.spectral_model().plot(source.energy_range, ax=ax) #doctest:+ELLIPSIS</span>
+<span class="sd">    &lt;AxesSubplot:...xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde [1 / (cm2 s TeV)]&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; source.spectral_model().plot_error(source.energy_range, ax=ax) #doctest:+ELLIPSIS</span>
+<span class="sd">    &lt;AxesSubplot:...xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde [1 / (cm2 s TeV)]&#39;&gt;</span>
+<span class="sd">    &gt;&gt;&gt; source.flux_points.plot(ax=ax) #doctest:+ELLIPSIS</span>
+<span class="sd">    &lt;AxesSubplot:...xlabel=&#39;Energy [TeV]&#39;, ylabel=&#39;dnde [1 / (cm2 s TeV)]&#39;&gt;</span>
 
 <span class="sd">    Gaussian component information can be accessed as well,</span>
 <span class="sd">    either via the source, or via the catalog:</span>
@@ -1296,18 +1293,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1318,7 +1312,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

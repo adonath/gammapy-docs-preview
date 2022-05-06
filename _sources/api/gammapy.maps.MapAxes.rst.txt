@@ -27,6 +27,7 @@ MapAxes
       ~MapAxes.bin_volume
       ~MapAxes.coord_to_idx
       ~MapAxes.coord_to_pix
+      ~MapAxes.copy
       ~MapAxes.count
       ~MapAxes.downsample
       ~MapAxes.drop
@@ -36,9 +37,11 @@ MapAxes
       ~MapAxes.get_coord
       ~MapAxes.index
       ~MapAxes.index_data
+      ~MapAxes.is_allclose
       ~MapAxes.pad
       ~MapAxes.pix_to_coord
       ~MapAxes.pix_to_idx
+      ~MapAxes.rename_axes
       ~MapAxes.replace
       ~MapAxes.resample
       ~MapAxes.slice_by_idx
@@ -65,6 +68,7 @@ MapAxes
    .. automethod:: bin_volume
    .. automethod:: coord_to_idx
    .. automethod:: coord_to_pix
+   .. automethod:: copy
    .. automethod:: count
    .. automethod:: downsample
    .. automethod:: drop
@@ -74,9 +78,11 @@ MapAxes
    .. automethod:: get_coord
    .. automethod:: index
    .. automethod:: index_data
+   .. automethod:: is_allclose
    .. automethod:: pad
    .. automethod:: pix_to_coord
    .. automethod:: pix_to_idx
+   .. automethod:: rename_axes
    .. automethod:: replace
    .. automethod:: resample
    .. automethod:: slice_by_idx

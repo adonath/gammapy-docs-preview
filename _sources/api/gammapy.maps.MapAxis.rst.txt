@@ -29,6 +29,7 @@ MapAxis
       ~MapAxis.nbin_per_decade
       ~MapAxis.node_type
       ~MapAxis.unit
+      ~MapAxis.use_center_as_plot_labels
 
    .. rubric:: Methods Summary
 
@@ -52,9 +53,11 @@ MapAxis
       ~MapAxis.from_table_hdu
       ~MapAxis.group_table
       ~MapAxis.is_aligned
+      ~MapAxis.is_allclose
       ~MapAxis.pad
       ~MapAxis.pix_to_coord
       ~MapAxis.pix_to_idx
+      ~MapAxis.rename
       ~MapAxis.round
       ~MapAxis.slice
       ~MapAxis.squash
@@ -85,6 +88,7 @@ MapAxis
    .. autoattribute:: nbin_per_decade
    .. autoattribute:: node_type
    .. autoattribute:: unit
+   .. autoattribute:: use_center_as_plot_labels
 
    .. rubric:: Methods Documentation
 
@@ -106,9 +110,11 @@ MapAxis
    .. automethod:: from_table_hdu
    .. automethod:: group_table
    .. automethod:: is_aligned
+   .. automethod:: is_allclose
    .. automethod:: pad
    .. automethod:: pix_to_coord
    .. automethod:: pix_to_idx
+   .. automethod:: rename
    .. automethod:: round
    .. automethod:: slice
    .. automethod:: squash

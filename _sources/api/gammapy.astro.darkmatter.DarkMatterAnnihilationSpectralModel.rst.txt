@@ -17,6 +17,7 @@ DarkMatterAnnihilationSpectralModel
       ~DarkMatterAnnihilationSpectralModel.is_norm_spectral_model
       ~DarkMatterAnnihilationSpectralModel.parameters
       ~DarkMatterAnnihilationSpectralModel.scale
+      ~DarkMatterAnnihilationSpectralModel.tag
       ~DarkMatterAnnihilationSpectralModel.type
 
    .. rubric:: Methods Summary
@@ -53,6 +54,7 @@ DarkMatterAnnihilationSpectralModel
    .. autoattribute:: is_norm_spectral_model
    .. autoattribute:: parameters
    .. autoattribute:: scale
+   .. autoattribute:: tag
    .. autoattribute:: type
 
    .. rubric:: Methods Documentation

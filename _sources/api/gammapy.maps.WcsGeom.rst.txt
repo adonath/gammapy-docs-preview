@@ -63,11 +63,13 @@ WcsGeom
       ~WcsGeom.get_idx
       ~WcsGeom.get_pix
       ~WcsGeom.is_aligned
+      ~WcsGeom.is_allclose
       ~WcsGeom.pad
       ~WcsGeom.pix_to_coord
       ~WcsGeom.pix_to_idx
       ~WcsGeom.region_mask
       ~WcsGeom.region_weights
+      ~WcsGeom.rename_axes
       ~WcsGeom.replace_axis
       ~WcsGeom.resample_axis
       ~WcsGeom.separation
@@ -136,11 +138,13 @@ WcsGeom
    .. automethod:: get_idx
    .. automethod:: get_pix
    .. automethod:: is_aligned
+   .. automethod:: is_allclose
    .. automethod:: pad
    .. automethod:: pix_to_coord
    .. automethod:: pix_to_idx
    .. automethod:: region_mask
    .. automethod:: region_weights
+   .. automethod:: rename_axes
    .. automethod:: replace_axis
    .. automethod:: resample_axis
    .. automethod:: separation

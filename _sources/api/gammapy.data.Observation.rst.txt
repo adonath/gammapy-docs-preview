@@ -38,6 +38,7 @@ Observation
    .. autosummary::
 
       ~Observation.check
+      ~Observation.copy
       ~Observation.create
       ~Observation.peek
       ~Observation.read
@@ -72,6 +73,7 @@ Observation
    .. rubric:: Methods Documentation
 
    .. automethod:: check
+   .. automethod:: copy
    .. automethod:: create
    .. automethod:: peek
    .. automethod:: read

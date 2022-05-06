@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HDUIndexTable &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>HDUIndexTable &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,12 +43,11 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Observation" href="gammapy.data.Observation.html" />
-    <link rel="prev" title="GTI" href="gammapy.data.GTI.html" />
+    <link rel="prev" title="FixedPointingInfo" href="gammapy.data.FixedPointingInfo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.data.HDUIndexTable and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.data.HDUIndexTable and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,7 +243,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -271,11 +265,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -316,7 +305,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -411,6 +400,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -418,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -535,7 +529,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -580,6 +574,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -597,7 +601,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -689,7 +693,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1016,7 +1020,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1108,7 +1112,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1130,7 +1134,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1247,7 +1251,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1409,7 +1413,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1471,12 +1475,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1528,7 +1532,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1683,11 +1687,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1838,16 +1837,16 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="hduindextable">
-<h1>HDUIndexTable<a class="headerlink" href="#hduindextable" title="Permalink to this headline">¶</a></h1>
+  <section id="hduindextable">
+<h1>HDUIndexTable<a class="headerlink" href="#hduindextable" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.data.</span></span><span class="sig-name descname"><span class="pre">HDUIndexTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descriptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.data.</span></span><span class="sig-name descname"><span class="pre">HDUIndexTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masked</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descriptions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="astropy.table.Table"><code class="docutils literal notranslate"><span class="pre">astropy.table.Table</span></code></a></p>
 <p>HDU index table.</p>
 <p>See <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/en/latest/data_storage/hdu_index/index.html#hdu-index" title="(in Data formats for gamma-ray astronomy v0.3.dev)"><span>HDU index table</span></a>.</p>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1928,7 +1927,7 @@ function checkPageExistsAndRedirect(event) {
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1968,12 +1967,12 @@ function checkPageExistsAndRedirect(event) {
 <td><p>Return copy of self, with masked values filled.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.from_pandas" title="gammapy.data.HDUIndexTable.from_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_pandas</span></code></a>(dataframe[, index, units])</p></td>
-<td><p>Create a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> from a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p></td>
+<td><p>Create a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> from a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.group_by" title="gammapy.data.HDUIndexTable.group_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_by</span></code></a>(keys)</p></td>
 <td><p>Group this table by the specified <code class="docutils literal notranslate"><span class="pre">keys</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.hdu_location" title="gammapy.data.HDUIndexTable.hdu_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hdu_location</span></code></a>(obs_id[, hdu_type, hdu_class])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.hdu_location" title="gammapy.data.HDUIndexTable.hdu_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hdu_location</span></code></a>(obs_id[, hdu_type, hdu_class, ...])</p></td>
 <td><p>Create <code class="xref py py-obj docutils literal notranslate"><span class="pre">HDULocation</span></code> for a given selection.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.index_column" title="gammapy.data.HDUIndexTable.index_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_column</span></code></a>(name)</p></td>
@@ -2060,14 +2059,14 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.show_in_notebook" title="gammapy.data.HDUIndexTable.show_in_notebook"><code class="xref py py-obj docutils literal notranslate"><span class="pre">show_in_notebook</span></code></a>([tableid, css, ...])</p></td>
 <td><p>Render the table in HTML and show it in the IPython notebook.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.sort" title="gammapy.data.HDUIndexTable.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>([keys, reverse])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.sort" title="gammapy.data.HDUIndexTable.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>([keys, kind, reverse])</p></td>
 <td><p>Sort the table according to one or more keys.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.summary" title="gammapy.data.HDUIndexTable.summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summary</span></code></a>()</p></td>
 <td><p>Summary report (str).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.to_pandas" title="gammapy.data.HDUIndexTable.to_pandas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pandas</span></code></a>([index, use_nullable_int])</p></td>
-<td><p>Return a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p></td>
+<td><p>Return a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.data.HDUIndexTable.update" title="gammapy.data.HDUIndexTable.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(other[, copy])</p></td>
 <td><p>Perform a dictionary-style update and merge metadata.</p></td>
@@ -2083,45 +2082,45 @@ function checkPageExistsAndRedirect(event) {
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.ColumnClass">
-<span class="sig-name descname"><span class="pre">ColumnClass</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.ColumnClass" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ColumnClass</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.ColumnClass" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.VALID_HDU_CLASS">
-<span class="sig-name descname"><span class="pre">VALID_HDU_CLASS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['events',</span> <span class="pre">'gti',</span> <span class="pre">'aeff_2d',</span> <span class="pre">'edisp_2d',</span> <span class="pre">'psf_table',</span> <span class="pre">'psf_3gauss',</span> <span class="pre">'psf_king',</span> <span class="pre">'bkg_2d',</span> <span class="pre">'bkg_3d',</span> <span class="pre">'rad_max_2d']</span></em><a class="headerlink" href="#gammapy.data.HDUIndexTable.VALID_HDU_CLASS" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">VALID_HDU_CLASS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['events',</span> <span class="pre">'gti',</span> <span class="pre">'aeff_2d',</span> <span class="pre">'edisp_2d',</span> <span class="pre">'psf_table',</span> <span class="pre">'psf_3gauss',</span> <span class="pre">'psf_king',</span> <span class="pre">'bkg_2d',</span> <span class="pre">'bkg_3d',</span> <span class="pre">'rad_max_2d']</span></em><a class="headerlink" href="#gammapy.data.HDUIndexTable.VALID_HDU_CLASS" title="Permalink to this definition">#</a></dt>
 <dd><p>Valid values for <code class="xref py py-obj docutils literal notranslate"><span class="pre">HDU_CLASS</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.VALID_HDU_TYPE">
-<span class="sig-name descname"><span class="pre">VALID_HDU_TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['events',</span> <span class="pre">'gti',</span> <span class="pre">'aeff',</span> <span class="pre">'edisp',</span> <span class="pre">'psf',</span> <span class="pre">'bkg',</span> <span class="pre">'rad_max']</span></em><a class="headerlink" href="#gammapy.data.HDUIndexTable.VALID_HDU_TYPE" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">VALID_HDU_TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['events',</span> <span class="pre">'gti',</span> <span class="pre">'aeff',</span> <span class="pre">'edisp',</span> <span class="pre">'psf',</span> <span class="pre">'bkg',</span> <span class="pre">'rad_max']</span></em><a class="headerlink" href="#gammapy.data.HDUIndexTable.VALID_HDU_TYPE" title="Permalink to this definition">#</a></dt>
 <dd><p>Valid values for <code class="xref py py-obj docutils literal notranslate"><span class="pre">HDU_TYPE</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.base_dir">
-<span class="sig-name descname"><span class="pre">base_dir</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.base_dir" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">base_dir</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.base_dir" title="Permalink to this definition">#</a></dt>
 <dd><p>Base directory.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.colnames">
-<span class="sig-name descname"><span class="pre">colnames</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.colnames" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">colnames</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.colnames" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.dtype">
-<span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.dtype" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">dtype</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.dtype" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.groups">
-<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.groups" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.groups" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.has_masked_columns">
-<span class="sig-name descname"><span class="pre">has_masked_columns</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_masked_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_masked_columns</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_masked_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>True if table has any <code class="docutils literal notranslate"><span class="pre">MaskedColumn</span></code> columns.</p>
 <p>This does not check for mixin columns that may have masked values, use the
 <code class="docutils literal notranslate"><span class="pre">has_masked_values</span></code> property in that case.</p>
@@ -2129,7 +2128,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.has_masked_values">
-<span class="sig-name descname"><span class="pre">has_masked_values</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_masked_values" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_masked_values</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_masked_values" title="Permalink to this definition">#</a></dt>
 <dd><p>True if column in the table has values which are masked.</p>
 <p>This may be relatively slow for large tables as it requires checking the mask
 values of each column.</p>
@@ -2137,45 +2136,45 @@ values of each column.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.has_mixin_columns">
-<span class="sig-name descname"><span class="pre">has_mixin_columns</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_mixin_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_mixin_columns</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.has_mixin_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>True if table has any mixin columns (defined as columns that are not Column
 subclasses).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.hdu_class_unique">
-<span class="sig-name descname"><span class="pre">hdu_class_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_class_unique" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">hdu_class_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_class_unique" title="Permalink to this definition">#</a></dt>
 <dd><p>HDU classes (unique).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.hdu_type_unique">
-<span class="sig-name descname"><span class="pre">hdu_type_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_type_unique" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">hdu_type_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_type_unique" title="Permalink to this definition">#</a></dt>
 <dd><p>HDU types (unique).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.iloc">
-<span class="sig-name descname"><span class="pre">iloc</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.iloc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">iloc</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.iloc" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a TableILoc object that can be used for retrieving
 indexed rows in the order they appear in the index.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.indices">
-<span class="sig-name descname"><span class="pre">indices</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">indices</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the indices associated with columns of the table
 as a TableIndices object.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.info">
-<span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.info" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">info</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.info" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.loc">
-<span class="sig-name descname"><span class="pre">loc</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.loc" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">loc</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.loc" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a TableLoc object that can be used for retrieving
 rows by index in a given data range. Note that both loc
 and iloc work only with single-column indices.</p>
@@ -2183,35 +2182,35 @@ and iloc work only with single-column indices.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.loc_indices">
-<span class="sig-name descname"><span class="pre">loc_indices</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.loc_indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">loc_indices</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.loc_indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a TableLocIndices object that can be used for retrieving
 the row indices corresponding to given table index key value or values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.mask">
-<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.mask" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.mask" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.masked">
-<span class="sig-name descname"><span class="pre">masked</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.masked" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">masked</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.masked" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.meta">
-<span class="sig-name descname"><span class="pre">meta</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.meta" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">meta</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.meta" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.obs_id_unique">
-<span class="sig-name descname"><span class="pre">obs_id_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.obs_id_unique" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">obs_id_unique</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.obs_id_unique" title="Permalink to this definition">#</a></dt>
 <dd><p>Observation IDs (unique).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pprint_exclude_names">
-<span class="sig-name descname"><span class="pre">pprint_exclude_names</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_exclude_names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pprint_exclude_names</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_exclude_names" title="Permalink to this definition">#</a></dt>
 <dd><p>Maintain tuple that controls table column visibility for print output.</p>
 <p>This is a descriptor that inherits from MetaAttribute so that the attribute
 value is stored in the table meta[‘__attributes__’].</p>
@@ -2221,7 +2220,7 @@ attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pprint_include_names">
-<span class="sig-name descname"><span class="pre">pprint_include_names</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_include_names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pprint_include_names</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_include_names" title="Permalink to this definition">#</a></dt>
 <dd><p>Maintain tuple that controls table column visibility for print output.</p>
 <p>This is a descriptor that inherits from MetaAttribute so that the attribute
 value is stored in the table meta[‘__attributes__’].</p>
@@ -2231,7 +2230,7 @@ attributes.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.write">
-<span class="sig-name descname"><span class="pre">write</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.write" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write</span></span><a class="headerlink" href="#gammapy.data.HDUIndexTable.write" title="Permalink to this definition">#</a></dt>
 <dd><p>Write this Table object out in the specified format.</p>
 <p>This function provides the Table interface to the astropy unified I/O
 layer.  This allows easily writing a file in many supported data formats
@@ -2270,13 +2269,13 @@ first argument is the output filename.</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.add_column">
-<span class="sig-name descname"><span class="pre">add_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_duplicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_duplicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_column" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a new column to the table using <code class="docutils literal notranslate"><span class="pre">col</span></code> as input.  If <code class="docutils literal notranslate"><span class="pre">index</span></code>
 is supplied then insert column before <code class="docutils literal notranslate"><span class="pre">index</span></code> position
 in the list of columns, otherwise append column to the end
 of the list.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">col</span></code> input can be any data object which is acceptable as a
-<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> column object or can be converted.  This includes
+<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> column object or can be converted.  This includes
 mixin columns and scalar or length=1 objects which get broadcast to match
 the table length.</p>
 <p>To add several columns at once use <code class="docutils literal notranslate"><span class="pre">add_columns()</span></code> or simply call
@@ -2350,13 +2349,13 @@ or by specifying an explicit name with <code class="docutils literal notranslate
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.add_columns">
-<span class="sig-name descname"><span class="pre">add_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_duplicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_duplicate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a list of new columns the table using <code class="docutils literal notranslate"><span class="pre">cols</span></code> data objects.  If a
 corresponding list of <code class="docutils literal notranslate"><span class="pre">indexes</span></code> is supplied then insert column
 before each <code class="docutils literal notranslate"><span class="pre">index</span></code> position in the <em>original</em> list of columns,
 otherwise append columns to the end of the list.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">cols</span></code> input can include any data objects which are acceptable as
-<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> column objects or can be converted.  This includes
+<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> column objects or can be converted.  This includes
 mixin columns and scalar or length=1 objects which get broadcast to match
 the table length.</p>
 <p>From a performance perspective there is little difference between calling
@@ -2382,7 +2381,7 @@ Default is False.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.update" title="gammapy.data.HDUIndexTable.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.replace_column" title="gammapy.data.HDUIndexTable.replace_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_column</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.update" title="gammapy.data.HDUIndexTable.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.replace_column" title="gammapy.data.HDUIndexTable.replace_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_column</span></code></a></dt><dd></dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -2439,7 +2438,7 @@ or by specifying explicit names with <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.add_index">
-<span class="sig-name descname"><span class="pre">add_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_index" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colnames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">engine</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_index" title="Permalink to this definition">#</a></dt>
 <dd><p>Insert a new index among one or more columns.
 If there are no indices, make this index the
 primary table index.</p>
@@ -2461,7 +2460,7 @@ and SCEngine. If the supplied argument is None
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.add_row">
-<span class="sig-name descname"><span class="pre">add_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_row" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.add_row" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a new row to the end of the table.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">vals</span></code> argument can be:</p>
 <dl class="simple">
@@ -2515,16 +2514,16 @@ should be a dictionary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.argsort">
-<span class="sig-name descname"><span class="pre">argsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.argsort" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">argsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.argsort" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the indices which would sort the table according to one or
-more key columns.  This simply calls the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html#numpy.argsort" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.argsort</span></code></a> function on
+more key columns.  This simply calls the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.argsort.html#numpy.argsort" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.argsort</span></code></a> function on
 the table with the <code class="docutils literal notranslate"><span class="pre">order</span></code> parameter set to <code class="docutils literal notranslate"><span class="pre">keys</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>keys</strong><span class="classifier">str or list of str</span></dt><dd><p>The column name(s) to order the table by</p>
 </dd>
-<dt><strong>kind</strong><span class="classifier">{‘quicksort’, ‘mergesort’, ‘heapsort’}, optional</span></dt><dd><p>Sorting algorithm.</p>
+<dt><strong>kind</strong><span class="classifier">{‘quicksort’, ‘mergesort’, ‘heapsort’, ‘stable’}, optional</span></dt><dd><p>Sorting algorithm used by <code class="docutils literal notranslate"><span class="pre">numpy.argsort</span></code>.</p>
 </dd>
 <dt><strong>reverse</strong><span class="classifier">bool</span></dt><dd><p>Sort in reverse order (default=False)</p>
 </dd>
@@ -2542,7 +2541,7 @@ column(s).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.as_array">
-<span class="sig-name descname"><span class="pre">as_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keep_byteorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.as_array" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keep_byteorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.as_array" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a new copy of the table in the form of a structured np.ndarray or
 np.ma.MaskedArray object (as appropriate).</p>
 <dl class="field-list">
@@ -2559,8 +2558,8 @@ Default is to include all table columns.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>table_array</strong><span class="classifier">array or <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaskedArray</span></code></a></span></dt><dd><p>Copy of table as a numpy structured array.
-ndarray for unmasked or <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaskedArray</span></code></a> for masked.</p>
+<dt><strong>table_array</strong><span class="classifier">array or <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaskedArray</span></code></a></span></dt><dd><p>Copy of table as a numpy structured array.
+ndarray for unmasked or <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MaskedArray</span></code></a> for masked.</p>
 </dd>
 </dl>
 </dd>
@@ -2569,7 +2568,7 @@ ndarray for unmasked or <a class="reference external" href="https://numpy.org/do
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.convert_bytestring_to_unicode">
-<span class="sig-name descname"><span class="pre">convert_bytestring_to_unicode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.convert_bytestring_to_unicode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">convert_bytestring_to_unicode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.convert_bytestring_to_unicode" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert bytestring columns (dtype.kind=’S’) to unicode (dtype.kind=’U’)
 using UTF-8 encoding.</p>
 <p>Internally this changes string columns to represent each character
@@ -2580,7 +2579,7 @@ natural syntax.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.convert_unicode_to_bytestring">
-<span class="sig-name descname"><span class="pre">convert_unicode_to_bytestring</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.convert_unicode_to_bytestring" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">convert_unicode_to_bytestring</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.convert_unicode_to_bytestring" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert unicode columns (dtype.kind=’U’) to bytestring (dtype.kind=’S’)
 using UTF-8 encoding.</p>
 <p>When exporting a unicode string array to a file, it may be desirable
@@ -2589,7 +2588,7 @@ to encode unicode columns as bytestrings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">copy_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a copy of the table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2605,13 +2604,13 @@ deepcopied regardless of the value for <code class="docutils literal notranslate
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.field">
-<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.field" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.field" title="Permalink to this definition">#</a></dt>
 <dd><p>Return column[item] for recarray compatibility.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.filled">
-<span class="sig-name descname"><span class="pre">filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.filled" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">filled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.filled" title="Permalink to this definition">#</a></dt>
 <dd><p>Return copy of self, with masked values filled.</p>
 <p>If input <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> supplied then that value is used for all
 masked entries in the table.  Otherwise the individual
@@ -2626,7 +2625,7 @@ in the entire table.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>filled_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>New table with masked values filled</p>
+<dt><strong>filled_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>New table with masked values filled</p>
 </dd>
 </dl>
 </dd>
@@ -2635,26 +2634,26 @@ in the entire table.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.from_pandas">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.from_pandas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> from a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.from_pandas" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> from a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 <p>In addition to converting generic numeric or string columns, this supports
-conversion of pandas Date and Time delta columns to <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a>
-and <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.TimeDelta.html#astropy.time.TimeDelta" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeDelta</span></code></a> columns, respectively.</p>
+conversion of pandas Date and Time delta columns to <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a>
+and <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.TimeDelta.html#astropy.time.TimeDelta" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeDelta</span></code></a> columns, respectively.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>dataframe</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
+<dt><strong>dataframe</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 </dd>
 <dt><strong>index</strong><span class="classifier">bool</span></dt><dd><p>Include the index column in the returned table (default=False)</p>
 </dd>
-<dt><strong>units: dict</strong></dt><dd><p>A dict mapping column names to to a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>.
+<dt><strong>units: dict</strong></dt><dd><p>A dict mapping column names to to a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>.
 The columns will have the specified unit in the Table.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>A <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> (or subclass) instance</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>A <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> (or subclass) instance</p>
 </dd>
 </dl>
 </dd>
@@ -2666,8 +2665,8 @@ The columns will have the specified unit in the Table.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>Here we convert a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance
-to a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.QTable.html#astropy.table.QTable" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QTable</span></code></a>.</p>
+<p>Here we convert a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance
+to a <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.QTable.html#astropy.table.QTable" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">QTable</span></code></a>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">QTable</span>
@@ -2698,30 +2697,30 @@ to a <a class="reference external" href="https://docs.astropy.org/en/latest/api/
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.group_by">
-<span class="sig-name descname"><span class="pre">group_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.group_by" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">group_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.group_by" title="Permalink to this definition">#</a></dt>
 <dd><p>Group this table by the specified <code class="docutils literal notranslate"><span class="pre">keys</span></code></p>
 <p>This effectively splits the table into groups which correspond to unique
 values of the <code class="docutils literal notranslate"><span class="pre">keys</span></code> grouping object.  The output is a new
-<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.TableGroups.html#astropy.table.TableGroups" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TableGroups</span></code></a> which contains a copy of this table but
+<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.TableGroups.html#astropy.table.TableGroups" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TableGroups</span></code></a> which contains a copy of this table but
 sorted by row according to <code class="docutils literal notranslate"><span class="pre">keys</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">keys</span></code> input to <a class="reference internal" href="#gammapy.data.HDUIndexTable.group_by" title="gammapy.data.HDUIndexTable.group_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_by</span></code></a> can be specified in different ways:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>String or list of strings corresponding to table column name(s)</p></li>
 <li><p>Numpy array (homogeneous or structured) with same length as this table</p></li>
-<li><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> with same length as this table</p></li>
+<li><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a> with same length as this table</p></li>
 </ul>
 </div></blockquote>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>keys</strong><span class="classifier">str, list of str, numpy array, or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Key grouping object</p>
+<dt><strong>keys</strong><span class="classifier">str, list of str, numpy array, or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Key grouping object</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>out</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>New table with groups set</p>
+<dt><strong>out</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>New table with groups set</p>
 </dd>
 </dl>
 </dd>
@@ -2730,7 +2729,7 @@ sorted by row according to <code class="docutils literal notranslate"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.hdu_location">
-<span class="sig-name descname"><span class="pre">hdu_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.hdu_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_location" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">hdu_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.hdu_location"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.hdu_location" title="Permalink to this definition">#</a></dt>
 <dd><p>Create <code class="xref py py-obj docutils literal notranslate"><span class="pre">HDULocation</span></code> for a given selection.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2754,7 +2753,7 @@ sorted by row according to <code class="docutils literal notranslate"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.index_column">
-<span class="sig-name descname"><span class="pre">index_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.index_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.index_column" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the positional index of column <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2791,7 +2790,7 @@ sorted by row according to <code class="docutils literal notranslate"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.index_mode">
-<span class="sig-name descname"><span class="pre">index_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.index_mode" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index_mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.index_mode" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a context manager for an indexing mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2815,7 +2814,7 @@ indices.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.insert_row">
-<span class="sig-name descname"><span class="pre">insert_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.insert_row" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">insert_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.insert_row" title="Permalink to this definition">#</a></dt>
 <dd><p>Add a new row before the given <code class="docutils literal notranslate"><span class="pre">index</span></code> position in the table.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">vals</span></code> argument can be:</p>
 <dl class="simple">
@@ -2846,12 +2845,12 @@ should be a dictionary.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.items" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.items" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.itercols">
-<span class="sig-name descname"><span class="pre">itercols</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.itercols" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">itercols</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.itercols" title="Permalink to this definition">#</a></dt>
 <dd><p>Iterate over the columns of this table.</p>
 <p class="rubric">Examples</p>
 <p>To iterate over the columns of a table:</p>
@@ -2872,7 +2871,7 @@ but is syntactically preferred.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.iterrows">
-<span class="sig-name descname"><span class="pre">iterrows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.iterrows" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">iterrows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.iterrows" title="Permalink to this definition">#</a></dt>
 <dd><p>Iterate over rows of table returning a tuple of values for each row.</p>
 <p>This method is especially useful when only a subset of columns are needed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">iterrows</span></code> method can be substantially faster than using the standard
@@ -2912,13 +2911,12 @@ row (e.g. <code class="docutils literal notranslate"><span class="pre">row['col0
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.keep_columns">
-<span class="sig-name descname"><span class="pre">keep_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.keep_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">keep_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.keep_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>Keep only the columns specified (remove the others).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>names</strong><span class="classifier">list</span></dt><dd><p>A list containing the names of the columns to keep. All other
-columns will be removed.</p>
+<dt><strong>names</strong><span class="classifier">str or iterable of str</span></dt><dd><p>The columns to keep. All other columns will be removed.</p>
 </dd>
 </dl>
 </dd>
@@ -2935,8 +2933,7 @@ columns will be removed.</p>
 <span class="go">  3 0.3   z</span>
 </pre></div>
 </div>
-<p>Specifying only a single column name keeps only this column.
-Keep only column ‘a’ of the table:</p>
+<p>Keep only column ‘a’ of the table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">keep_columns</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="go"> a</span>
@@ -2946,8 +2943,7 @@ Keep only column ‘a’ of the table:</p>
 <span class="go">  3</span>
 </pre></div>
 </div>
-<p>Specifying a list of column names is keeps is also possible.
-Keep columns ‘a’ and ‘c’ of the table:</p>
+<p>Keep columns ‘a’ and ‘c’ of the table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">]],</span>
 <span class="gp">... </span>          <span class="n">names</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">keep_columns</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
@@ -2963,18 +2959,18 @@ Keep columns ‘a’ and ‘c’ of the table:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.keys">
-<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.keys" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.keys" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.location_info">
-<span class="sig-name descname"><span class="pre">location_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.location_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.location_info" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">location_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.location_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.location_info" title="Permalink to this definition">#</a></dt>
 <dd><p>Create <code class="xref py py-obj docutils literal notranslate"><span class="pre">HDULocation</span></code> for a given row index.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.more">
-<span class="sig-name descname"><span class="pre">more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.more" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">more</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.more" title="Permalink to this definition">#</a></dt>
 <dd><p>Interactively browse table with a paging interface.</p>
 <p>Supported keys:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">space</span><span class="o">&gt;</span> <span class="p">:</span> <span class="n">forward</span> <span class="n">one</span> <span class="n">page</span>
@@ -3001,7 +2997,7 @@ Keep columns ‘a’ and ‘c’ of the table:</p>
 for units only if one or more columns has a defined value
 for the unit.</p>
 </dd>
-<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is True.</p>
+<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is False.</p>
 </dd>
 </dl>
 </dd>
@@ -3010,7 +3006,7 @@ for the unit.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pformat">
-<span class="sig-name descname"><span class="pre">pformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableclass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pformat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableclass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pformat" title="Permalink to this definition">#</a></dt>
 <dd><dl>
 <dt>Return a list of lines for the formatted string representation of</dt><dd><p>the table.</p>
 <p>If no value of <code class="docutils literal notranslate"><span class="pre">max_lines</span></code> is supplied then the height of the
@@ -3066,7 +3062,7 @@ None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pformat_all">
-<span class="sig-name descname"><span class="pre">pformat_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableclass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pformat_all" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pformat_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableclass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pformat_all" title="Permalink to this definition">#</a></dt>
 <dd><dl>
 <dt>Return a list of lines for the formatted string representation of</dt><dd><p>the entire table.</p>
 <p>If no value of <code class="docutils literal notranslate"><span class="pre">max_lines</span></code> is supplied then the height of the
@@ -3122,7 +3118,7 @@ None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pprint">
-<span class="sig-name descname"><span class="pre">pprint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pprint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint" title="Permalink to this definition">#</a></dt>
 <dd><p>Print a formatted string representation of the table.</p>
 <blockquote>
 <div><p>If no value of <code class="docutils literal notranslate"><span class="pre">max_lines</span></code> is supplied then the height of the
@@ -3147,7 +3143,7 @@ applied.</p>
 for units only if one or more columns has a defined value
 for the unit.</p>
 </dd>
-<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is True.</p>
+<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is False.</p>
 </dd>
 <dt><strong>align</strong><span class="classifier">str or list or tuple or None</span></dt><dd><p>Left/right alignment of columns. Default is right (None) for all
 columns. Other allowed values are ‘&gt;’, ‘&lt;’, ‘^’, and ‘0=’ for
@@ -3162,10 +3158,10 @@ columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.pprint_all">
-<span class="sig-name descname"><span class="pre">pprint_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_all" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pprint_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.pprint_all" title="Permalink to this definition">#</a></dt>
 <dd><p>Print a formatted string representation of the entire table.</p>
 <blockquote>
-<div><p>This method is the same as <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table.pprint" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.Table.pprint</span></code></a> except that
+<div><p>This method is the same as <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table.pprint" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.Table.pprint</span></code></a> except that
 the default <code class="docutils literal notranslate"><span class="pre">max_lines</span></code> and <code class="docutils literal notranslate"><span class="pre">max_width</span></code> are both -1 so that by
 default the entire table is printed instead of restricting to the size
 of the screen terminal.</p>
@@ -3183,7 +3179,7 @@ of the screen terminal.</p>
 for units only if one or more columns has a defined value
 for the unit.</p>
 </dd>
-<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is True.</p>
+<dt><strong>show_dtype</strong><span class="classifier">bool</span></dt><dd><p>Include a header row for column dtypes. Default is False.</p>
 </dd>
 <dt><strong>align</strong><span class="classifier">str or list or tuple or None</span></dt><dd><p>Left/right alignment of columns. Default is right (None) for all
 columns. Other allowed values are ‘&gt;’, ‘&lt;’, ‘^’, and ‘0=’ for
@@ -3198,7 +3194,7 @@ columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.read">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.read" title="Permalink to this definition">#</a></dt>
 <dd><p>Read <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/en/latest/data_storage/hdu_index/index.html#hdu-index" title="(in Data formats for gamma-ray astronomy v0.3.dev)"><span>HDU index table</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3212,7 +3208,7 @@ columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.remove_column">
-<span class="sig-name descname"><span class="pre">remove_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_column" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove a column from the table.</p>
 <p>This can also be done with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">del</span> <span class="n">table</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
@@ -3253,12 +3249,12 @@ columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.remove_columns">
-<span class="sig-name descname"><span class="pre">remove_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove several columns from the table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>names</strong><span class="classifier">list</span></dt><dd><p>A list containing the names of the columns to remove</p>
+<dt><strong>names</strong><span class="classifier">str or iterable of str</span></dt><dd><p>Names of the columns to remove</p>
 </dd>
 </dl>
 </dd>
@@ -3302,7 +3298,7 @@ columns.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.remove_indices">
-<span class="sig-name descname"><span class="pre">remove_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_indices" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove all indices involving the given column.
 If the primary index is removed, the new primary
 index will be the most recently added remaining
@@ -3319,7 +3315,7 @@ index.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.remove_row">
-<span class="sig-name descname"><span class="pre">remove_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_row" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_row" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove a row from the table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3355,7 +3351,7 @@ index.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.remove_rows">
-<span class="sig-name descname"><span class="pre">remove_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_specifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_rows" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">remove_rows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_specifier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.remove_rows" title="Permalink to this definition">#</a></dt>
 <dd><p>Remove rows from the table.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3402,7 +3398,7 @@ outside the data:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.rename_column">
-<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.rename_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.rename_column" title="Permalink to this definition">#</a></dt>
 <dd><p>Rename a column.</p>
 <p>This can also be done directly with by setting the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute
 for a column:</p>
@@ -3443,7 +3439,7 @@ for a column:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.rename_columns">
-<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.rename_columns" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rename_columns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_names</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.rename_columns" title="Permalink to this definition">#</a></dt>
 <dd><p>Rename multiple columns.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3480,7 +3476,7 @@ for a column:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.replace_column">
-<span class="sig-name descname"><span class="pre">replace_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.replace_column" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.replace_column" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace column <code class="docutils literal notranslate"><span class="pre">name</span></code> with the new <code class="docutils literal notranslate"><span class="pre">col</span></code> object.</p>
 <p>The behavior of <code class="docutils literal notranslate"><span class="pre">copy</span></code> for Column objects is:
 - copy=True: new class instance with a copy of data and deep copy of meta
@@ -3493,7 +3489,7 @@ for a column:</p>
 <dd class="field-odd"><dl>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of column to replace</p>
 </dd>
-<dt><strong>col</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Column.html#astropy.table.Column" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Column</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or sequence</span></dt><dd><p>New column object to replace the existing column.</p>
+<dt><strong>col</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Column.html#astropy.table.Column" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Column</span></code></a> or <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or sequence</span></dt><dd><p>New column object to replace the existing column.</p>
 </dd>
 <dt><strong>copy</strong><span class="classifier">bool</span></dt><dd><p>Make copy of the input <code class="docutils literal notranslate"><span class="pre">col</span></code>, default=True</p>
 </dd>
@@ -3503,7 +3499,7 @@ for a column:</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="#gammapy.data.HDUIndexTable.add_columns" title="gammapy.data.HDUIndexTable.add_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_columns</span></code></a>, <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.update" title="gammapy.data.HDUIndexTable.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#gammapy.data.HDUIndexTable.add_columns" title="gammapy.data.HDUIndexTable.add_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_columns</span></code></a>, <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.update" title="gammapy.data.HDUIndexTable.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a></dt><dd></dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -3517,7 +3513,7 @@ for a column:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.reverse">
-<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.reverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.reverse" title="Permalink to this definition">#</a></dt>
 <dd><p>Reverse the row order of table rows.  The table is reversed
 in place and there are no function arguments.</p>
 <p class="rubric">Examples</p>
@@ -3546,7 +3542,7 @@ in place and there are no function arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.round">
-<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.round" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.round" title="Permalink to this definition">#</a></dt>
 <dd><p>Round numeric columns in-place to the specified number of decimals.
 Non-numeric columns will be ignored.</p>
 <dl class="field-list simple">
@@ -3596,7 +3592,7 @@ same.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.row_idx">
-<span class="sig-name descname"><span class="pre">row_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.row_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.row_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">row_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obs_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.row_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.row_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Table row indices for a given selection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3620,7 +3616,7 @@ same.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.show_in_browser">
-<span class="sig-name descname"><span class="pre">show_in_browser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsviewer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">browser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jskwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'use_local_files':</span> <span class="pre">True}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'display</span> <span class="pre">compact'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'idx'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.show_in_browser" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">show_in_browser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_lines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jsviewer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">browser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jskwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'use_local_files':</span> <span class="pre">True}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'display</span> <span class="pre">compact'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'idx'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.show_in_browser" title="Permalink to this definition">#</a></dt>
 <dd><p>Render the table in HTML and show it in a web browser.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3639,7 +3635,7 @@ This allows in-browser searching &amp; sorting.</p>
 <span class="pre">&quot;/Applications/Google</span> <span class="pre">Chrome.app&quot;</span> <span class="pre">{}'</span></code> for Chrome).  If
 <code class="docutils literal notranslate"><span class="pre">'default'</span></code>, will use the system default browser.</p>
 </dd>
-<dt><strong>jskwargs</strong><span class="classifier">dict</span></dt><dd><p>Passed to the <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.JSViewer.html#astropy.table.JSViewer" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.JSViewer</span></code></a> init. Defaults to
+<dt><strong>jskwargs</strong><span class="classifier">dict</span></dt><dd><p>Passed to the <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.JSViewer.html#astropy.table.JSViewer" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.JSViewer</span></code></a> init. Defaults to
 <code class="docutils literal notranslate"><span class="pre">{'use_local_files':</span> <span class="pre">True}</span></code> which means that the JavaScript
 libraries will be served from local copies.</p>
 </dd>
@@ -3667,7 +3663,7 @@ ignored. Defaults to “idx”.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.show_in_notebook">
-<span class="sig-name descname"><span class="pre">show_in_notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'astropy-default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'idx'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.show_in_notebook" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">show_in_notebook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tableid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">css</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'astropy-default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_row_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'idx'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.show_in_notebook" title="Permalink to this definition">#</a></dt>
 <dd><p>Render the table in HTML and show it in the IPython notebook.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -3710,7 +3706,7 @@ jquery and jquery.dataTables), you will not get the jsviewer features.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.sort">
-<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.sort" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.sort" title="Permalink to this definition">#</a></dt>
 <dd><p>Sort the table according to one or more keys. This operates
 on the existing table and does not return a new table.</p>
 <dl class="field-list simple">
@@ -3718,6 +3714,8 @@ on the existing table and does not return a new table.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>keys</strong><span class="classifier">str or list of str</span></dt><dd><p>The key(s) to order the table by. If None, use the
 primary index of the Table.</p>
+</dd>
+<dt><strong>kind</strong><span class="classifier">{‘quicksort’, ‘mergesort’, ‘heapsort’, ‘stable’}, optional</span></dt><dd><p>Sorting algorithm used by <code class="docutils literal notranslate"><span class="pre">numpy.argsort</span></code>.</p>
 </dd>
 <dt><strong>reverse</strong><span class="classifier">bool</span></dt><dd><p>Sort in reverse order (default=False)</p>
 </dd>
@@ -3761,14 +3759,14 @@ in reverse order:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.summary">
-<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.summary" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/data/hdu_index_table.html#HDUIndexTable.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.data.HDUIndexTable.summary" title="Permalink to this definition">#</a></dt>
 <dd><p>Summary report (str).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.to_pandas">
-<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_nullable_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.to_pandas" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
+<span class="sig-name descname"><span class="pre">to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_nullable_int</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.to_pandas" title="Permalink to this definition">#</a></dt>
+<dd><p>Return a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 <p>The index of the created DataFrame is controlled by the <code class="docutils literal notranslate"><span class="pre">index</span></code>
 argument.  For <code class="docutils literal notranslate"><span class="pre">index=True</span></code> or the default <code class="docutils literal notranslate"><span class="pre">None</span></code>, an index will be
 specified for the DataFrame if there is a primary key index on the
@@ -3796,7 +3794,7 @@ to float with NaN for missing elements and a warning is issued.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>dataframe</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
+<dt><strong>dataframe</strong><span class="classifier"><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a></span></dt><dd><p>A pandas <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance</p>
 </dd>
 </dl>
 </dd>
@@ -3811,7 +3809,7 @@ to float with NaN for missing elements and a warning is issued.</p>
 </dl>
 <p class="rubric">Examples</p>
 <p>Here we convert a table with a few mixins to a
-<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance.</p>
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> instance.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">QTable</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
@@ -3841,7 +3839,7 @@ to float with NaN for missing elements and a warning is issued.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.update" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform a dictionary-style update and merge metadata.</p>
 <p>The argument <code class="docutils literal notranslate"><span class="pre">other</span></code> must be a <a href="#id1"><span class="problematic" id="id2">|Table|</span></a>, or something that can be used
 to initialize a table. Columns from (possibly converted) <code class="docutils literal notranslate"><span class="pre">other</span></code> are
@@ -3861,7 +3859,7 @@ the originals.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="#gammapy.data.HDUIndexTable.add_columns" title="gammapy.data.HDUIndexTable.add_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_columns</span></code></a>, <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.replace_column" title="gammapy.data.HDUIndexTable.replace_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_column</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="#gammapy.data.HDUIndexTable.add_columns" title="gammapy.data.HDUIndexTable.add_columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_columns</span></code></a>, <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.hstack.html#astropy.table.hstack" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astropy.table.hstack</span></code></a>, <a class="reference internal" href="#gammapy.data.HDUIndexTable.replace_column" title="gammapy.data.HDUIndexTable.replace_column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_column</span></code></a></dt><dd></dd>
 </dl>
 </div>
 <p class="rubric">Examples</p>
@@ -3896,12 +3894,12 @@ the originals.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.values">
-<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.values" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.values" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.data.HDUIndexTable.values_equal">
-<span class="sig-name descname"><span class="pre">values_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.values_equal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">values_equal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.data.HDUIndexTable.values_equal" title="Permalink to this definition">#</a></dt>
 <dd><p>Element-wise comparison of table with another table, list, or scalar.</p>
 <p>Returns a <code class="docutils literal notranslate"><span class="pre">Table</span></code> with the same columns containing boolean values
 showing result of comparison.</p>
@@ -3930,29 +3928,11 @@ showing result of comparison.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.data.GTI.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">GTI</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.data.Observation.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Observation</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -3960,8 +3940,9 @@ showing result of comparison.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -3972,7 +3953,7 @@ showing result of comparison.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

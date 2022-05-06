@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 9 - Event sampling &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 9 - Event sampling &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-009 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-009 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -482,8 +481,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-9-event-sampling">
-<span id="pig-009"></span><h1>PIG 9 - Event sampling<a class="headerlink" href="#pig-9-event-sampling" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-9-event-sampling">
+<span id="pig-009"></span><h1>PIG 9 - Event sampling<a class="headerlink" href="#pig-9-event-sampling" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: Fabio Pintore, Andrea Giuliani, Axel Donath</p></li>
 <li><p>Created: May 03, 2019</p></li>
@@ -491,8 +490,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: accepted</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/2136">GH 2136</a></p></li>
 </ul>
-<div class="section" id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
 <p>An event sampler for gamma events is an important part of the science tools of
 the future Cherenkov Telescope Array (CTA) observatory. It will allow users to
 simulate observations of sources with different spectral, morphological and
@@ -510,9 +509,9 @@ sampling (<a class="reference external" href="https://en.wikipedia.org/wiki/Inve
 Temporal models will be also taken into account and time will be sampled
 separately in a 1D analysis, assuming that the temporal dependency of the input
 source models factorizes.</p>
-</div>
-<div class="section" id="sampling-methods">
-<h2>Sampling methods<a class="headerlink" href="#sampling-methods" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sampling-methods">
+<h2>Sampling methods<a class="headerlink" href="#sampling-methods" title="Permalink to this headline">#</a></h2>
 <p>Inverse CDF sampling (<a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_transform_sampling">inverseCDF</a>) is an established method to sample from
 discrete probability mass functions. It is used by <code class="docutils literal notranslate"><span class="pre">ASTRIsim</span></code> (<a class="reference external" href="https://github.com/cento14/Astrisim">astrisim</a>), the
 event simulator of the AGILE collaboration. However it is not the method of
@@ -535,9 +534,9 @@ study the required bin-size of the PMFs to reach sufficient precision. If we
 find the inverse CDF sampling method to be not precise enough, it is still
 possible to achieve better precision adopting the rejection sampling. This will
 not have a strong impact on the structure of the event-sampler.</p>
-</div>
-<div class="section" id="proposal">
-<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="proposal">
+<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h2>
 <p>We propose to include in <code class="docutils literal notranslate"><span class="pre">gammapy.cube</span></code> an high level interface (HLI) class,
 labelled as <code class="docutils literal notranslate"><span class="pre">MapDatasetEventSampler</span></code> or <code class="docutils literal notranslate"><span class="pre">MapDataset.sample</span></code> method. This
 class handles the complete event sampling process, including the corrections
@@ -567,8 +566,8 @@ the reconstructed sky positions, energies, times, and an <code class="docutils l
 event, while <code class="docutils literal notranslate"><span class="pre">MC_ID</span></code> is a unique ID (number or string) to identify the model
 component the event was sampled from. The <code class="docutils literal notranslate"><span class="pre">MapDatasetSampler</span></code> should also fill
 the mandatory header information for event list files described on <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/">gadf</a>.</p>
-<div class="section" id="mapdataseteventsampler">
-<h3>MapDatasetEventSampler<a class="headerlink" href="#mapdataseteventsampler" title="Permalink to this headline">¶</a></h3>
+<section id="mapdataseteventsampler">
+<h3>MapDatasetEventSampler<a class="headerlink" href="#mapdataseteventsampler" title="Permalink to this headline">#</a></h3>
 <p>The general design of the <code class="docutils literal notranslate"><span class="pre">sample</span></code> method is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
    <span class="sd">&quot;&quot;&quot;Sample events from a ``MapDataset``&quot;&quot;&quot;</span>
@@ -637,10 +636,10 @@ into a single <code class="docutils literal notranslate"><span class="pre">~astr
 <code class="docutils literal notranslate"><span class="pre">Map.sample(n_events=,</span> <span class="pre">random_state=)</span></code> as well. The time of the events is
 sampled assuming a constant event rate. Finally, the IRF corrections are not
 applied to background sampled events.</p>
-</div>
-</div>
-<div class="section" id="performance-and-precision-evaluation">
-<h2>Performance and precision evaluation<a class="headerlink" href="#performance-and-precision-evaluation" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="performance-and-precision-evaluation">
+<h2>Performance and precision evaluation<a class="headerlink" href="#performance-and-precision-evaluation" title="Permalink to this headline">#</a></h2>
 <p>To evaluate the precision and performance of the described framework we propose
 to implement a prototype for a simulation / fitting pipeline. Starting from a
 selection of spatial, spectral and temporal models, data are simulated and
@@ -652,9 +651,9 @@ simulations and to verify the over-all correctness of the simulated data. This
 will be valid for a set of input maps and IRFs. Later this prototype can be
 developed further into a full simulation / fitting continuous integration
 system.</p>
-</div>
-<div class="section" id="alternatives-outlook">
-<h2>Alternatives / Outlook<a class="headerlink" href="#alternatives-outlook" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="alternatives-outlook">
+<h2>Alternatives / Outlook<a class="headerlink" href="#alternatives-outlook" title="Permalink to this headline">#</a></h2>
 <p>So far Gammapy only supports binned likelihood analysis and technically most
 use- cases for the event sampling could be solved with binned simulations. A
 binned simulation can be basically achieved by a call to
@@ -675,9 +674,9 @@ corresponding to a given observation and/or single GTI is in place.</p>
 <p>The proposed Event Sampler will not provide, for each event, the corresponding
 <code class="docutils literal notranslate"><span class="pre">DETX</span></code> and <code class="docutils literal notranslate"><span class="pre">DETY</span></code> position. These will be added in a future development of
 the simulator.</p>
-</div>
-<div class="section" id="task-list">
-<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="task-list">
+<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">#</a></h2>
 <p>This is a proposal for a list of tasks to implement the proposed changes:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -689,37 +688,19 @@ the simulator.</p>
 <li><p>Add tutorials for event simulations of different kinds of sources.</p></li>
 </ol>
 </div></blockquote>
-</div>
-<div class="section" id="decision">
-<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h2>
 <p>The PIG was discussed extensively in <a class="reference external" href="https://github.com/gammapy/gammapy/pull/2136">GH 2136</a>, the weekly Gammapy developer
 calls and coding sprint in person. After the deadline for final review expired
 on August 20, all remaining comments were addressed and the PIG was accepted on
 August 30, 2019.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-008.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 8 - Datasets</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-010.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 10 - Regions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -727,8 +708,9 @@ August 30, 2019.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -739,7 +721,7 @@ August 30, 2019.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

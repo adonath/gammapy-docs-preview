@@ -87,6 +87,7 @@ FluxMaps
       ~FluxMaps.from_maps
       ~FluxMaps.from_stack
       ~FluxMaps.get_flux_points
+      ~FluxMaps.iter_by_axis
       ~FluxMaps.read
       ~FluxMaps.slice_by_idx
       ~FluxMaps.to_hdulist
@@ -170,6 +171,7 @@ FluxMaps
    .. automethod:: from_maps
    .. automethod:: from_stack
    .. automethod:: get_flux_points
+   .. automethod:: iter_by_axis
    .. automethod:: read
    .. automethod:: slice_by_idx
    .. automethod:: to_hdulist

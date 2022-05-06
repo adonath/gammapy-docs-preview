@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MapAxes &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MapAxes &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.maps.MapAxes and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.maps.MapAxes and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,7 +243,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -271,11 +265,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -316,7 +305,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -411,6 +400,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -418,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -535,7 +529,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -580,6 +574,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -597,7 +601,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -689,7 +693,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1016,7 +1020,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1108,7 +1112,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1130,7 +1134,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1247,7 +1251,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1409,7 +1413,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1471,12 +1475,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1528,7 +1532,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1683,11 +1687,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1838,11 +1837,11 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="mapaxes">
-<h1>MapAxes<a class="headerlink" href="#mapaxes" title="Permalink to this headline">¶</a></h1>
+  <section id="mapaxes">
+<h1>MapAxes<a class="headerlink" href="#mapaxes" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.maps.</span></span><span class="sig-name descname"><span class="pre">MapAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spatial_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.maps.</span></span><span class="sig-name descname"><span class="pre">MapAxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spatial_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Sequence</span></code></a></p>
 <p>MapAxis container class.</p>
 <dl class="field-list">
@@ -1854,7 +1853,7 @@ function checkPageExistsAndRedirect(event) {
 </dd>
 </dl>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1887,7 +1886,7 @@ function checkPageExistsAndRedirect(event) {
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1905,32 +1904,38 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.coord_to_pix" title="gammapy.maps.MapAxes.coord_to_pix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coord_to_pix</span></code></a>(coord)</p></td>
 <td><p>Transform from axis to pixel coordinates.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.count" title="gammapy.maps.MapAxes.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(value)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.copy" title="gammapy.maps.MapAxes.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
+<td><p>Init map axes instance by copying each axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.count" title="gammapy.maps.MapAxes.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(value)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.downsample" title="gammapy.maps.MapAxes.downsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample</span></code></a>(factor, axis_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.downsample" title="gammapy.maps.MapAxes.downsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample</span></code></a>(factor, axis_name)</p></td>
 <td><p>Downsample axis by a given factor</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.drop" title="gammapy.maps.MapAxes.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(axis_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.drop" title="gammapy.maps.MapAxes.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a>(axis_name)</p></td>
 <td><p>Drop an axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_default" title="gammapy.maps.MapAxes.from_default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_default</span></code></a>(axes[, n_spatial_axes])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_default" title="gammapy.maps.MapAxes.from_default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_default</span></code></a>(axes[, n_spatial_axes])</p></td>
 <td><p>Make a sequence of <a class="reference internal" href="gammapy.maps.MapAxis.html#gammapy.maps.MapAxis" title="gammapy.maps.MapAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxis</span></code></a> objects.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_table" title="gammapy.maps.MapAxes.from_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table</span></code></a>(table[, format])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_table" title="gammapy.maps.MapAxes.from_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table</span></code></a>(table[, format])</p></td>
 <td><p>Create MapAxes from table</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_table_hdu" title="gammapy.maps.MapAxes.from_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table_hdu</span></code></a>(hdu[, format])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.from_table_hdu" title="gammapy.maps.MapAxes.from_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table_hdu</span></code></a>(hdu[, format])</p></td>
 <td><p>Create MapAxes from BinTableHDU</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.get_coord" title="gammapy.maps.MapAxes.get_coord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_coord</span></code></a>([mode, axis_name])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.get_coord" title="gammapy.maps.MapAxes.get_coord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_coord</span></code></a>([mode, axis_name])</p></td>
 <td><p>Get axes coordinates</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.index" title="gammapy.maps.MapAxes.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(axis_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.index" title="gammapy.maps.MapAxes.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(axis_name)</p></td>
 <td><p>Get index in list</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.index_data" title="gammapy.maps.MapAxes.index_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_data</span></code></a>(axis_name)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.index_data" title="gammapy.maps.MapAxes.index_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index_data</span></code></a>(axis_name)</p></td>
 <td><p>Get data index of the axes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.is_allclose" title="gammapy.maps.MapAxes.is_allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_allclose</span></code></a>(other, **kwargs)</p></td>
+<td><p>Check if other map axes are all close.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.pad" title="gammapy.maps.MapAxes.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(axis_name, pad_width)</p></td>
 <td><p>Pad axes</p></td>
@@ -1941,28 +1946,31 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.pix_to_idx" title="gammapy.maps.MapAxes.pix_to_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pix_to_idx</span></code></a>(pix[, clip])</p></td>
 <td><p>Convert pix to idx</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.replace" title="gammapy.maps.MapAxes.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.rename_axes" title="gammapy.maps.MapAxes.rename_axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_axes</span></code></a>(names, new_names)</p></td>
+<td><p>Rename the axes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.replace" title="gammapy.maps.MapAxes.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a>(axis)</p></td>
 <td><p>Replace a given axis</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.resample" title="gammapy.maps.MapAxes.resample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code></a>(axis)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.resample" title="gammapy.maps.MapAxes.resample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code></a>(axis)</p></td>
 <td><p>Resample axis binning.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.slice_by_idx" title="gammapy.maps.MapAxes.slice_by_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_by_idx</span></code></a>(slices)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.slice_by_idx" title="gammapy.maps.MapAxes.slice_by_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_by_idx</span></code></a>(slices)</p></td>
 <td><p>Create a new geometry by slicing the non-spatial axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.squash" title="gammapy.maps.MapAxes.squash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squash</span></code></a>(axis_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.squash" title="gammapy.maps.MapAxes.squash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squash</span></code></a>(axis_name)</p></td>
 <td><p>Squash axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_header" title="gammapy.maps.MapAxes.to_header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_header</span></code></a>([format])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_header" title="gammapy.maps.MapAxes.to_header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_header</span></code></a>([format])</p></td>
 <td><p>Convert axes to FITS header</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_table" title="gammapy.maps.MapAxes.to_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table</span></code></a>([format])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_table" title="gammapy.maps.MapAxes.to_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table</span></code></a>([format])</p></td>
 <td><p>Convert axes to table</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_table_hdu" title="gammapy.maps.MapAxes.to_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table_hdu</span></code></a>([format, hdu_bands])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.to_table_hdu" title="gammapy.maps.MapAxes.to_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table_hdu</span></code></a>([format, hdu_bands])</p></td>
 <td><p>Make FITS table columns for map axes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.upsample" title="gammapy.maps.MapAxes.upsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsample</span></code></a>(factor, axis_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxes.upsample" title="gammapy.maps.MapAxes.upsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsample</span></code></a>(factor, axis_name)</p></td>
 <td><p>Upsample axis by a given factor</p></td>
 </tr>
 </tbody>
@@ -1970,37 +1978,37 @@ function checkPageExistsAndRedirect(event) {
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.center_coord">
-<span class="sig-name descname"><span class="pre">center_coord</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.center_coord" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">center_coord</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.center_coord" title="Permalink to this definition">#</a></dt>
 <dd><p>Center coordinates</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.is_flat">
-<span class="sig-name descname"><span class="pre">is_flat</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.is_flat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_flat</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.is_flat" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether axes is flat</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.is_unidimensional">
-<span class="sig-name descname"><span class="pre">is_unidimensional</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.is_unidimensional" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_unidimensional</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.is_unidimensional" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether axes is unidimensional</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.iter_with_reshape">
-<span class="sig-name descname"><span class="pre">iter_with_reshape</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.iter_with_reshape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">iter_with_reshape</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.iter_with_reshape" title="Permalink to this definition">#</a></dt>
 <dd><p>Iterate by shape</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.names">
-<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">names</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.names" title="Permalink to this definition">#</a></dt>
 <dd><p>Names of the axes</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.primary_axis">
-<span class="sig-name descname"><span class="pre">primary_axis</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.primary_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">primary_axis</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.primary_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Primary extra axis, defined as the one longest</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -2014,20 +2022,20 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.reverse">
-<span class="sig-name descname"><span class="pre">reverse</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.reverse" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reverse</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.reverse" title="Permalink to this definition">#</a></dt>
 <dd><p>Reverse axes order</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.shape">
-<span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.shape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#gammapy.maps.MapAxes.shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Shape of the axes</p>
 </dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.assert_names">
-<span class="sig-name descname"><span class="pre">assert_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.assert_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.assert_names" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">assert_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.assert_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.assert_names" title="Permalink to this definition">#</a></dt>
 <dd><p>Assert required axis names and order</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2041,12 +2049,12 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.bin_volume">
-<span class="sig-name descname"><span class="pre">bin_volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.bin_volume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.bin_volume" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bin_volume</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.bin_volume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.bin_volume" title="Permalink to this definition">#</a></dt>
 <dd><p>Bin axes volume</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>bin_volume</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Bin volume</p>
+<dt><strong>bin_volume</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Bin volume</p>
 </dd>
 </dl>
 </dd>
@@ -2055,18 +2063,18 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.coord_to_idx">
-<span class="sig-name descname"><span class="pre">coord_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.coord_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.coord_to_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">coord_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.coord_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.coord_to_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Transform from axis to pixel indices.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>coord</strong><span class="classifier">dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference internal" href="gammapy.maps.MapCoord.html#gammapy.maps.MapCoord" title="gammapy.maps.MapCoord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapCoord</span></code></a></span></dt><dd><p>Array of axis coordinate values.</p>
+<dt><strong>coord</strong><span class="classifier">dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference internal" href="gammapy.maps.MapCoord.html#gammapy.maps.MapCoord" title="gammapy.maps.MapCoord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapCoord</span></code></a></span></dt><dd><p>Array of axis coordinate values.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of pixel indices values.</p>
+<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of pixel indices values.</p>
 </dd>
 </dl>
 </dd>
@@ -2075,18 +2083,18 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.coord_to_pix">
-<span class="sig-name descname"><span class="pre">coord_to_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.coord_to_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.coord_to_pix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">coord_to_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.coord_to_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.coord_to_pix" title="Permalink to this definition">#</a></dt>
 <dd><p>Transform from axis to pixel coordinates.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>coord</strong><span class="classifier">dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of axis coordinate values.</p>
+<dt><strong>coord</strong><span class="classifier">dict of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of axis coordinate values.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of pixel coordinate values.</p>
+<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array of pixel coordinate values.</p>
 </dd>
 </dl>
 </dd>
@@ -2094,13 +2102,19 @@ function checkPageExistsAndRedirect(event) {
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.maps.MapAxes.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.copy" title="Permalink to this definition">#</a></dt>
+<dd><p>Init map axes instance by copying each axis.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.count">
-<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">value</span></span></span><a class="headerlink" href="#gammapy.maps.MapAxes.count" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">integer</span> <span class="pre">--</span> <span class="pre">return</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">occurrences</span> <span class="pre">of</span> <span class="pre">value</span></span></span><a class="headerlink" href="#gammapy.maps.MapAxes.count" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.downsample">
-<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.downsample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.downsample" title="Permalink to this definition">#</a></dt>
 <dd><p>Downsample axis by a given factor</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2122,7 +2136,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.drop">
-<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.drop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.drop" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">drop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.drop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.drop" title="Permalink to this definition">#</a></dt>
 <dd><p>Drop an axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2142,18 +2156,18 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.from_default">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spatial_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_default" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_spatial_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_default" title="Permalink to this definition">#</a></dt>
 <dd><p>Make a sequence of <a class="reference internal" href="gammapy.maps.MapAxis.html#gammapy.maps.MapAxis" title="gammapy.maps.MapAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxis</span></code></a> objects.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_table" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Create MapAxes from table</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Bin table HDU</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Bin table HDU</p>
 </dd>
 <dt><strong>format</strong><span class="classifier">{“gadf”, “gadf-dl3”, “fgst-ccube”, “fgst-template”, “fgst-bexcube”, “ogip-arf”}</span></dt><dd><p>Format to use.</p>
 </dd>
@@ -2170,12 +2184,12 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.from_table_hdu">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_table_hdu" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.from_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.from_table_hdu" title="Permalink to this definition">#</a></dt>
 <dd><p>Create MapAxes from BinTableHDU</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Bin table HDU</p>
+<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Bin table HDU</p>
 </dd>
 </dl>
 </dd>
@@ -2190,7 +2204,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.get_coord">
-<span class="sig-name descname"><span class="pre">get_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.get_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.get_coord" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.get_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.get_coord" title="Permalink to this definition">#</a></dt>
 <dd><p>Get axes coordinates</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2212,13 +2226,13 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.index">
-<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.index" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.index" title="Permalink to this definition">#</a></dt>
 <dd><p>Get index in list</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.index_data">
-<span class="sig-name descname"><span class="pre">index_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.index_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.index_data" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">index_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.index_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.index_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Get data index of the axes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2237,8 +2251,30 @@ function checkPageExistsAndRedirect(event) {
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.maps.MapAxes.is_allclose">
+<span class="sig-name descname"><span class="pre">is_allclose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.is_allclose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.is_allclose" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if other map axes are all close.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>other</strong><span class="classifier"><a class="reference internal" href="#gammapy.maps.MapAxes" title="gammapy.maps.MapAxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxes</span></code></a></span></dt><dd><p>Other map axes</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments forwarded to <a class="reference internal" href="gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.is_allclose" title="gammapy.maps.MapAxis.is_allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_allclose</span></code></a></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>is_allclose</strong><span class="classifier">bool</span></dt><dd><p>Whether other axes are all close</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.pad">
-<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pad" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pad" title="Permalink to this definition">#</a></dt>
 <dd><p>Pad axes</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2260,7 +2296,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.pix_to_coord">
-<span class="sig-name descname"><span class="pre">pix_to_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pix_to_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pix_to_coord" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pix_to_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pix_to_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pix_to_coord" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert pixel coordinates to map coordinates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2280,12 +2316,12 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.pix_to_idx">
-<span class="sig-name descname"><span class="pre">pix_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pix_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pix_to_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pix_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.pix_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.pix_to_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert pix to idx</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Pixel coordinates.</p>
+<dt><strong>pix</strong><span class="classifier">tuple of <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Pixel coordinates.</p>
 </dd>
 <dt><strong>clip</strong><span class="classifier">bool</span></dt><dd><p>Choose whether to clip indices to the valid range of the
 axis.  If false then indices for coordinates outside
@@ -2295,7 +2331,29 @@ the axi range will be set -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>idx</strong><span class="classifier">tuple <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Pixel indices.</p>
+<dt><strong>idx</strong><span class="classifier">tuple <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Pixel indices.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gammapy.maps.MapAxes.rename_axes">
+<span class="sig-name descname"><span class="pre">rename_axes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.rename_axes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.rename_axes" title="Permalink to this definition">#</a></dt>
+<dd><p>Rename the axes.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>names</strong><span class="classifier">list or str</span></dt><dd><p>Names of the axes</p>
+</dd>
+<dt><strong>new_names</strong><span class="classifier">list or str</span></dt><dd><p>New names of the axes (list must be of same length than <a class="reference internal" href="#gammapy.maps.MapAxes.names" title="gammapy.maps.MapAxes.names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">names</span></code></a>).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>axes</strong><span class="classifier"><a class="reference internal" href="#gammapy.maps.MapAxes" title="gammapy.maps.MapAxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxes</span></code></a></span></dt><dd><p>Renamed Map axes object</p>
 </dd>
 </dl>
 </dd>
@@ -2304,7 +2362,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.replace">
-<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.replace" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.replace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.replace" title="Permalink to this definition">#</a></dt>
 <dd><p>Replace a given axis</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2324,7 +2382,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.resample">
-<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.resample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.resample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.resample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.resample" title="Permalink to this definition">#</a></dt>
 <dd><p>Resample axis binning.</p>
 <p>This method groups the existing bins into a new binning.</p>
 <dl class="field-list">
@@ -2345,7 +2403,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.slice_by_idx">
-<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.slice_by_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.slice_by_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.slice_by_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.slice_by_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a new geometry by slicing the non-spatial axes.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2368,7 +2426,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.squash">
-<span class="sig-name descname"><span class="pre">squash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.squash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.squash" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">squash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.squash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.squash" title="Permalink to this definition">#</a></dt>
 <dd><p>Squash axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2388,7 +2446,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.to_header">
-<span class="sig-name descname"><span class="pre">to_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_header" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert axes to FITS header</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2399,7 +2457,7 @@ dict are kept unchanged.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>header</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Header</span></code></a></span></dt><dd><p>FITS header.</p>
+<dt><strong>header</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Header</span></code></a></span></dt><dd><p>FITS header.</p>
 </dd>
 </dl>
 </dd>
@@ -2408,7 +2466,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.to_table">
-<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert axes to table</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2419,7 +2477,7 @@ dict are kept unchanged.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table with axis data</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table with axis data</p>
 </dd>
 </dl>
 </dd>
@@ -2428,7 +2486,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.to_table_hdu">
-<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_table_hdu" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.to_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.to_table_hdu" title="Permalink to this definition">#</a></dt>
 <dd><p>Make FITS table columns for map axes.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2441,7 +2499,7 @@ dict are kept unchanged.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Bin table HDU.</p>
+<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Bin table HDU.</p>
 </dd>
 </dl>
 </dd>
@@ -2450,7 +2508,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxes.upsample">
-<span class="sig-name descname"><span class="pre">upsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.upsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.upsample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">upsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxes.upsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxes.upsample" title="Permalink to this definition">#</a></dt>
 <dd><p>Upsample axis by a given factor</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2472,29 +2530,11 @@ dict are kept unchanged.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.maps.Map.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Map</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.maps.MapAxis.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MapAxis</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2502,8 +2542,9 @@ dict are kept unchanged.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2514,7 +2555,7 @@ dict are kept unchanged.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

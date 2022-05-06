@@ -65,11 +65,13 @@ HpxGeom
       ~HpxGeom.global_to_local
       ~HpxGeom.interp_weights
       ~HpxGeom.is_aligned
+      ~HpxGeom.is_allclose
       ~HpxGeom.local_to_global
       ~HpxGeom.pad
       ~HpxGeom.pix_to_coord
       ~HpxGeom.pix_to_idx
       ~HpxGeom.region_mask
+      ~HpxGeom.rename_axes
       ~HpxGeom.replace_axis
       ~HpxGeom.resample_axis
       ~HpxGeom.separation
@@ -142,11 +144,13 @@ HpxGeom
    .. automethod:: global_to_local
    .. automethod:: interp_weights
    .. automethod:: is_aligned
+   .. automethod:: is_allclose
    .. automethod:: local_to_global
    .. automethod:: pad
    .. automethod:: pix_to_coord
    .. automethod:: pix_to_idx
    .. automethod:: region_mask
+   .. automethod:: rename_axes
    .. automethod:: replace_axis
    .. automethod:: resample_axis
    .. automethod:: separation

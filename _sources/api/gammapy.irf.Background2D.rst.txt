@@ -33,6 +33,7 @@ Background2D
       ~Background2D.integral
       ~Background2D.integrate_log_log
       ~Background2D.interp_missing_data
+      ~Background2D.is_allclose
       ~Background2D.normalize
       ~Background2D.pad
       ~Background2D.peek
@@ -42,6 +43,7 @@ Background2D
       ~Background2D.plot_offset_dependence
       ~Background2D.plot_spectrum
       ~Background2D.read
+      ~Background2D.slice_by_idx
       ~Background2D.to_3d
       ~Background2D.to_hdulist
       ~Background2D.to_table
@@ -72,6 +74,7 @@ Background2D
    .. automethod:: integral
    .. automethod:: integrate_log_log
    .. automethod:: interp_missing_data
+   .. automethod:: is_allclose
    .. automethod:: normalize
    .. automethod:: pad
    .. automethod:: peek
@@ -81,6 +84,7 @@ Background2D
    .. automethod:: plot_offset_dependence
    .. automethod:: plot_spectrum
    .. automethod:: read
+   .. automethod:: slice_by_idx
    .. automethod:: to_3d
    .. automethod:: to_hdulist
    .. automethod:: to_table

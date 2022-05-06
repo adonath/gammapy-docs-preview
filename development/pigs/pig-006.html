@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 6 - CTA observation handling &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 6 - CTA observation handling &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-006 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-006 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -506,8 +505,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-6-cta-observation-handling">
-<span id="pig-006"></span><h1>PIG 6 - CTA observation handling<a class="headerlink" href="#pig-6-cta-observation-handling" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-6-cta-observation-handling">
+<span id="pig-006"></span><h1>PIG 6 - CTA observation handling<a class="headerlink" href="#pig-6-cta-observation-handling" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: David Fidalgo, Christoph Deil, Régis Terrier et al</p></li>
 <li><p>Created: Oct 10, 2018</p></li>
@@ -515,8 +514,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: withdrawn</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/1877">GH 1877</a></p></li>
 </ul>
-<div class="section" id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
 <p>In this PIG we want to outline an improvement of the CTA observation handling in
 Gammapy. The current handling has some limitations and misses some key features,
 like selecting a given time interval and performing an analysis on it. We also
@@ -529,9 +528,9 @@ current limitations when analyzing IACT data, namely an analysis of time or
 phase selected observations, as well as an analysis of an observation stored
 solely in memory or given in ctool’s XML format. This PIG emerged at the Coding
 Spring in Madrid 2018.</p>
-</div>
-<div class="section" id="some-terminology">
-<h2>Some terminology<a class="headerlink" href="#some-terminology" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="some-terminology">
+<h2>Some terminology<a class="headerlink" href="#some-terminology" title="Permalink to this headline">#</a></h2>
 <p>This terminology and the definition of the terms will probably change or be
 expanded once the final data format of CTA is decided. For now we will use
 following definitions to go forward in Gammapy:</p>
@@ -567,9 +566,9 @@ following definitions to go forward in Gammapy:</p>
 </dl>
 </li>
 </ul>
-</div>
-<div class="section" id="status">
-<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Permalink to this headline">#</a></h2>
 <p>In the current implementation we use the <code class="docutils literal notranslate"><span class="pre">DataStore</span></code> class to connect to an
 <em>observation library</em> that consists of two fits files, the <em>observation index
 table</em> and the <em>HDU index table</em> (see <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/">gadf</a>). The <code class="docutils literal notranslate"><span class="pre">DataStoreObservation</span></code> is
@@ -584,8 +583,8 @@ proposed further down, this class becomes superfluous and can again be removed.<
 from which she/he extracts an <code class="docutils literal notranslate"><span class="pre">ObservationList</span></code> providing <em>obs_ids</em>. All
 analysis classes take as input an <code class="docutils literal notranslate"><span class="pre">ObservationList</span></code>, which is basically a
 python list of <code class="docutils literal notranslate"><span class="pre">DataStoreObservation</span></code>.</p>
-<div class="section" id="limitations">
-<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>We can only analyze data for which its <em>observation library</em> has the index table format.</p></li>
 <li><p>The current scheme does not allow for an analysis of a given time interval by the user.
@@ -593,10 +592,10 @@ Only full runs/observations can be processed.</p></li>
 <li><p>We do not support event selections before starting the analysis steps, such as event type selection, phase selection or time selection.</p></li>
 <li><p>It is cumbersome to write a copy of an observation (possibly modified) back to disk</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Users should be able to run an analysis (1D and 3D) on a given time interval, independent of the time intervals of the single observations.</p></li>
 <li><p>We should support event selections before starting the analysis steps (event phase, event type, …) and possibly allow for custom selections, e.g. <code class="docutils literal notranslate"><span class="pre">MC_ID</span></code> in the current CTA 1DC.
@@ -604,8 +603,8 @@ For now we aim only for a time and phase filtering of events, a filtering on eve
 <li><p>We want to support more formats for the <em>observation library</em> (like ctools XML format)</p></li>
 <li><p>We want to support observations (especially event lists) stored in memory</p></li>
 </ul>
-<div class="section" id="use-cases-scenarios">
-<h3>Use cases / scenarios<a class="headerlink" href="#use-cases-scenarios" title="Permalink to this headline">¶</a></h3>
+<section id="use-cases-scenarios">
+<h3>Use cases / scenarios<a class="headerlink" href="#use-cases-scenarios" title="Permalink to this headline">#</a></h3>
 <ol class="arabic">
 <li><dl>
 <dt>Scenario: 1D/3D analysis for a user specified time interval</dt><dd><div class="line-block">
@@ -631,10 +630,10 @@ For now we aim only for a time and phase filtering of events, a filtering on eve
 <li><p>Create an observation <em>from scratch</em> and write it to disk with Index files</p></li>
 <li><p>Read in an observation from an <em>observation library</em> given in ctool’s XML format</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="what-others-have">
-<h2>What others have<a class="headerlink" href="#what-others-have" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="what-others-have">
+<h2>What others have<a class="headerlink" href="#what-others-have" title="Permalink to this headline">#</a></h2>
 <p>With <em>Fermi-LAT</em>, you always have <code class="docutils literal notranslate"><span class="pre">gtselect</span></code> and <code class="docutils literal notranslate"><span class="pre">gtmktime</span></code> at the start
 (see <a class="reference external" href="https://fermi.gsfc.nasa.gov/ssc/data/analysis/scitools/data_preparation.html">Fermi-LAT data preparation</a>). Following analysis steps partly rely on
 “data sub space” DSS header keys for processing, which are stored in the output
@@ -643,11 +642,11 @@ fits files of the <code class="docutils literal notranslate"><span class="pre">g
 format. One can then select observations with <code class="docutils literal notranslate"><span class="pre">csobsselect</span></code>, creating a new
 observation definition file. A selection based on events is achieved by running
 <code class="docutils literal notranslate"><span class="pre">ctselect</span></code>.</p>
-</div>
-<div class="section" id="proposal">
-<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-idea-and-class-diagram">
-<h3>General idea and class diagram<a class="headerlink" href="#general-idea-and-class-diagram" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="proposal">
+<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h2>
+<section id="general-idea-and-class-diagram">
+<h3>General idea and class diagram<a class="headerlink" href="#general-idea-and-class-diagram" title="Permalink to this headline">#</a></h3>
 <p>The general idea is to have an <code class="docutils literal notranslate"><span class="pre">Observations</span></code> class that is the starting point
 of all analyses and is passed on to the analysis classes of the 1D and 3D
 analysis (effectively it replaces the <code class="docutils literal notranslate"><span class="pre">ObservationList</span></code> class). The user should
@@ -674,9 +673,9 @@ This can be useful when creating observations from <em>scratch</em>, by simulati
 <p>The new scheme proposed is illustrated by the class diagram below. The
 attributes and methods of the classes are not fully worked out and are merely
 suggestive.</p>
-</div>
-<div class="section" id="implementation-road-map">
-<h3>Implementation road map<a class="headerlink" href="#implementation-road-map" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="implementation-road-map">
+<h3>Implementation road map<a class="headerlink" href="#implementation-road-map" title="Permalink to this headline">#</a></h3>
 <p>We will outline the road map in form of scenarios that we want to achieve along
 the way and that can be implemented ideally with a few PRs.</p>
 <p>We split the implementation in two big steps:</p>
@@ -747,13 +746,13 @@ the way and that can be implemented ideally with a few PRs.</p>
 </dl>
 </li>
 </ol>
-</div>
-<div class="section" id="proposed-class-diagram">
-<h3>Proposed class diagram<a class="headerlink" href="#proposed-class-diagram" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="proposed-class-diagram">
+<h3>Proposed class diagram<a class="headerlink" href="#proposed-class-diagram" title="Permalink to this headline">#</a></h3>
 <img alt="Class diagram" src="../../_images/pig-006-class-diagram.png" />
-</div>
-<div class="section" id="decision">
-<h3>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="decision">
+<h3>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h3>
 <p>This PIG was written in fall 2018. It was intended as a design document and work
 plan, but didn’t reach a state where it was complete and ready for review. Then
 the original author left astronomy, and the other developers continued
@@ -762,31 +761,13 @@ the best course of action, making room for new pull requests and PIGs in the
 future to improve CTA observation handling in Gammapy. It’s not a “solved
 problem”, instead it will be an intense focus of work in Gammmapy and CTA in the
 coming years.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-005.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 5 - Gammapy 1.0 roadmap</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-007.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 7 - Models</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -794,8 +775,9 @@ coming years.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -806,7 +788,7 @@ coming years.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

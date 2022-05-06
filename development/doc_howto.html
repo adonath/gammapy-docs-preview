@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation How To &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Documentation How To &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/doc_howto and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/doc_howto and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pigs/pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -550,10 +549,10 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="documentation-how-to">
-<span id="doc-howto"></span><h1>Documentation How To<a class="headerlink" href="#documentation-how-to" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="documentation-building">
-<h2>Documentation building<a class="headerlink" href="#documentation-building" title="Permalink to this headline">¶</a></h2>
+  <section id="documentation-how-to">
+<span id="doc-howto"></span><h1>Documentation How To<a class="headerlink" href="#documentation-how-to" title="Permalink to this headline">#</a></h1>
+<section id="documentation-building">
+<h2>Documentation building<a class="headerlink" href="#documentation-building" title="Permalink to this headline">#</a></h2>
 <p>Generating the HTML docs for Gammapy is straight-forward:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">docs</span><span class="o">-</span><span class="nb">all</span>
 <span class="n">make</span> <span class="n">docs</span><span class="o">-</span><span class="n">show</span>
@@ -596,11 +595,11 @@ that notebooks are not executed during the docs build.</p>
 <p>In the case one single notebook is modified or added to the documentation, you can
 execute the build doc process with the <code class="docutils literal notranslate"><span class="pre">src</span></code> parameter with value the name of the
 considered notebook. i.e. <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">docs-all</span> <span class="pre">src=docs/tutorials/my-notebook.ipynb</span></code></p>
-</div>
-<div class="section" id="check-python-code">
-<h2>Check Python code<a class="headerlink" href="#check-python-code" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="code-in-rst-files">
-<h3>Code in RST files<a class="headerlink" href="#code-in-rst-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="check-python-code">
+<h2>Check Python code<a class="headerlink" href="#check-python-code" title="Permalink to this headline">#</a></h2>
+<section id="code-in-rst-files">
+<h3>Code in RST files<a class="headerlink" href="#code-in-rst-files" title="Permalink to this headline">#</a></h3>
 <p>Most of the documentation of Gammapy is present in RST files that are converted into HTML pages using
 Sphinx during the build documentation process. You may include snippets of Python code in these RST files
 within blocks labelled with <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code-block::</span> <span class="pre">python</span></code> Sphinx directive. However, this code could not be
@@ -632,9 +631,9 @@ only execution tests will be performed.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest --doctest-glob<span class="o">=</span><span class="s2">&quot;*.rst&quot;</span> docs/
 </pre></div>
 </div>
-</div>
-<div class="section" id="code-in-docstrings-in-python-files">
-<h3>Code in docstrings in Python files<a class="headerlink" href="#code-in-docstrings-in-python-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="code-in-docstrings-in-python-files">
+<h3>Code in docstrings in Python files<a class="headerlink" href="#code-in-docstrings-in-python-files" title="Permalink to this headline">#</a></h3>
 <p>It is also advisable to add code snippets within the docstrings of the classes and functions present in Python files.
 These snippets show how to use the function or class that is documented, and are written in the docstrings using the
 following syntax.</p>
@@ -668,19 +667,19 @@ following command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest --doctest-modules <span class="s2">&quot;--ignore-glob=*/tests&quot;</span> gammapy
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="sphinx-gallery-extension">
-<h2>Sphinx gallery extension<a class="headerlink" href="#sphinx-gallery-extension" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="sphinx-gallery-extension">
+<h2>Sphinx gallery extension<a class="headerlink" href="#sphinx-gallery-extension" title="Permalink to this headline">#</a></h2>
 <p>The documentation built-in process uses the <a class="reference external" href="https://sphinx-gallery.github.io/stable/">sphinx-gallery</a>
 extension to build galleries of illustrated examples on how to use Gammapy (i.e.
-<a class="reference internal" href="../modeling/gallery/index.html#model-gallery"><span class="std std-ref">Model gallery</span></a>). The Python scripts used to produce the model gallery are placed in
+<a class="reference internal" href="../user-guide/model-gallery/index.html#model-gallery"><span class="std std-ref">Model gallery</span></a>). The Python scripts used to produce the model gallery are placed in
 <code class="docutils literal notranslate"><span class="pre">examples/models</span></code> and the configuration of the <code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code> module is done in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.</p>
-</div>
-<div class="section" id="working-with-notebooks">
-<h2>Working with notebooks<a class="headerlink" href="#working-with-notebooks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="common-tasks">
-<span id="common-taks-notebooks"></span><h3>Common tasks<a class="headerlink" href="#common-tasks" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="working-with-notebooks">
+<h2>Working with notebooks<a class="headerlink" href="#working-with-notebooks" title="Permalink to this headline">#</a></h2>
+<section id="common-tasks">
+<span id="common-taks-notebooks"></span><h3>Common tasks<a class="headerlink" href="#common-tasks" title="Permalink to this headline">#</a></h3>
 <blockquote>
 <div><ul class="simple">
 <li><p>test with tutorials env: <code class="docutils literal notranslate"><span class="pre">gammapy</span> <span class="pre">jupyter</span> <span class="pre">--src</span> <span class="pre">mynotebook.ipynb</span> <span class="pre">test</span> <span class="pre">--tutor</span></code></p></li>
@@ -689,9 +688,9 @@ extension to build galleries of illustrated examples on how to use Gammapy (i.e.
 <li><p>diff stripped notebooks: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">mynotbook.pynb</span></code></p></li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="add-a-notebook-into-a-folder-other-than-tutorials-folder">
-<h3>Add a notebook into a folder other than tutorials folder<a class="headerlink" href="#add-a-notebook-into-a-folder-other-than-tutorials-folder" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="add-a-notebook-into-a-folder-other-than-tutorials-folder">
+<h3>Add a notebook into a folder other than tutorials folder<a class="headerlink" href="#add-a-notebook-into-a-folder-other-than-tutorials-folder" title="Permalink to this headline">#</a></h3>
 <p>Most of the Gammapy notebooks are placed in the <code class="docutils literal notranslate"><span class="pre">tutorials</span></code> folder, and are displayed in a
 <a class="reference internal" href="../tutorials/index.html#tutorials"><span class="std std-ref">Tutorials</span></a> Gallery. However, we can choose to place a notebook in a different folder of the
 documentation folder structure. In this way we can write some parts of the documentation as notebooks
@@ -703,50 +702,50 @@ instead of RST files. Once we have placed the notebook in the folder we choose w
     mynotebook
 </pre></div>
 </div>
-</div>
-<div class="section" id="skip-notebooks-from-being-executed">
-<span id="skip-nb-execution"></span><h3>Skip notebooks from being executed<a class="headerlink" href="#skip-notebooks-from-being-executed" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="skip-notebooks-from-being-executed">
+<span id="skip-nb-execution"></span><h3>Skip notebooks from being executed<a class="headerlink" href="#skip-notebooks-from-being-executed" title="Permalink to this headline">#</a></h3>
 <p>You may choose if a notebook is not executed during the documentation building process, and hence
 it will be published without the output cells in its static HTML version. To do this you may add
 the following code to the notebook metadata:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;gammapy&quot;</span><span class="o">:</span> <span class="p">{</span>
-  <span class="s2">&quot;skip_run&quot;</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;gammapy&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;skip_run&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="choose-a-thumbnail-and-tooltip-for-the-tutorial-gallery">
-<h3>Choose a thumbnail and tooltip for the tutorial gallery<a class="headerlink" href="#choose-a-thumbnail-and-tooltip-for-the-tutorial-gallery" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="choose-a-thumbnail-and-tooltip-for-the-tutorial-gallery">
+<h3>Choose a thumbnail and tooltip for the tutorial gallery<a class="headerlink" href="#choose-a-thumbnail-and-tooltip-for-the-tutorial-gallery" title="Permalink to this headline">#</a></h3>
 <p>The Gammapy <a class="reference internal" href="../tutorials/index.html#tutorials"><span class="std std-ref">Tutorials</span></a> are Jupyter notebooks that are displayed as a gallery with picture thumbnails and tooltips.
 You can choose the thumbnail for the tutorial and add the tooltip editing the metadata of the code cell that produces
 the picture that you’ve chosen. You can open the notebook in a text editor, and edit the internal code there. It may
 sound risky, but it is much simpler. Then, find the code cell that produces the figure that you would like for the
 gallery, and then replace the <code class="docutils literal notranslate"><span class="pre">&quot;metadata&quot;:</span> <span class="pre">{},</span></code> bit above the code cell with the snippet below:</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;metadata&quot;</span><span class="o">:</span> <span class="p">{</span>
- <span class="s2">&quot;nbsphinx-thumbnail&quot;</span><span class="o">:</span> <span class="p">{</span>
-  <span class="s2">&quot;tooltip&quot;</span><span class="o">:</span> <span class="s2">&quot;Learn how to do perform a Fit in gammapy.&quot;</span>
- <span class="p">}},</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;metadata&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w"> </span><span class="s2">&quot;nbsphinx-thumbnail&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="s2">&quot;tooltip&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Learn how to do perform a Fit in gammapy.&quot;</span><span class="w"></span>
+<span class="w"> </span><span class="p">}},</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Note that you may write whatever you like after “tooltip”.</p>
-</div>
-</div>
-<div class="section" id="dealing-with-links">
-<h2>Dealing with links<a class="headerlink" href="#dealing-with-links" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="dealing-with-links">
+<h2>Dealing with links<a class="headerlink" href="#dealing-with-links" title="Permalink to this headline">#</a></h2>
 <p>All Jupyter notebooks in Gammpay documentation are converted to HTML files using
 <a class="reference external" href="http://nbsphinx.readthedocs.io/">nb_sphinx</a> Sphinx extension which provides a source parser
 for <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
-<div class="section" id="links-to-notebooks">
-<h3>Links to notebooks<a class="headerlink" href="#links-to-notebooks" title="Permalink to this headline">¶</a></h3>
+<section id="links-to-notebooks">
+<h3>Links to notebooks<a class="headerlink" href="#links-to-notebooks" title="Permalink to this headline">#</a></h3>
 <p>From docstrings and RST documentation files in Gammapy you can link to the built fixed-text HTML formatted
 versions of the notebooks and subsections providing its filename with the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file extension
 and the relative path to the folder where they are placed:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`Maps section in Gammapy overview tutorial &lt;../tutorials/overview.ipynb#Maps&gt;`__
 </pre></div>
 </div>
-</div>
-<div class="section" id="links-within-notebooks">
-<h3>Links within notebooks<a class="headerlink" href="#links-within-notebooks" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="links-within-notebooks">
+<h3>Links within notebooks<a class="headerlink" href="#links-within-notebooks" title="Permalink to this headline">#</a></h3>
 <p>From MD cells in notebooks you can link to other notebooks, as well as to RST documentation files,
 and subsections using the Markdown syntax to declare links to resources, as shown in the examples below:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">-</span> [Maps section in Gammapy overview tutorial](overview.ipynb#Maps)
@@ -761,10 +760,10 @@ in the <code class="docutils literal notranslate"><span class="pre">.ipynb</span
 will be raised for each detected broken link to the API.</p>
 <p>Examples:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../maps/index.html#module-gammapy.maps" title="gammapy.maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api-reference/maps.html#module-gammapy.maps" title="gammapy.maps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api/gammapy.maps.Geom.html#gammapy.maps.Geom" title="gammapy.maps.Geom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.Geom</span></code></a></p></li>
-<li><p><a class="reference internal" href="../api/gammapy.maps.Geom.html#gammapy.maps.Geom.is_image" title="gammapy.maps.Geom.is_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.Geom.is_image</span></code></a></p></li>
-<li><p><a class="reference internal" href="../api/gammapy.maps.Geom.html#gammapy.maps.Geom.is_image" title="gammapy.maps.Geom.is_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.Geom.is_image()</span></code></a></p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.Geom.is_image</span></code></p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.Geom.is_image()</span></code></p></li>
 </ul>
 <p>The example links above could be created within MD cells in notebooks with the syntax below:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">-</span> <span class="nv">`~gammapy.maps`</span>
@@ -777,9 +776,9 @@ will be raised for each detected broken link to the API.</p>
 to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> version of the online Gammapy documentation will be transformed to relative links in the built
 HTML formatted notebooks and to absolute links pointing to that specific released version of the online docs
 in the downloadable <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
-</div>
-<div class="section" id="check-broken-links">
-<span id="dev-check-html-links"></span><h3>Check broken links<a class="headerlink" href="#check-broken-links" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="check-broken-links">
+<span id="dev-check-html-links"></span><h3>Check broken links<a class="headerlink" href="#check-broken-links" title="Permalink to this headline">#</a></h3>
 <p>To check for broken external links from the Sphinx documentation:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> docs<span class="p">;</span> make linkcheck
 </pre></div>
@@ -789,21 +788,21 @@ the links present in the notebooks files.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ brok docs/tutorials/*.ipynb <span class="p">|</span> grep <span class="s2">&quot;Failed|Could&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="include-png-files-as-images">
-<h2>Include png files as images<a class="headerlink" href="#include-png-files-as-images" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="in-jupyter-notebooks">
-<h3>In Jupyter notebooks<a class="headerlink" href="#in-jupyter-notebooks" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="include-png-files-as-images">
+<h2>Include png files as images<a class="headerlink" href="#include-png-files-as-images" title="Permalink to this headline">#</a></h2>
+<section id="in-jupyter-notebooks">
+<h3>In Jupyter notebooks<a class="headerlink" href="#in-jupyter-notebooks" title="Permalink to this headline">#</a></h3>
 <p>You may include static images in notebooks using the following markdown directive:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>![](images/my_static_image.png)
 </pre></div>
 </div>
 <p>Please note that your images should be placed inside a <code class="xref py py-obj docutils literal notranslate"><span class="pre">images</span></code> folder, accessed with that relative
 path from your notebook.</p>
-</div>
-<div class="section" id="in-the-rst-files">
-<h3>In the RST files<a class="headerlink" href="#in-the-rst-files" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="in-the-rst-files">
+<h3>In the RST files<a class="headerlink" href="#in-the-rst-files" title="Permalink to this headline">#</a></h3>
 <p>Gammapy has a <code class="docutils literal notranslate"><span class="pre">gp-image</span></code> directive to include an image from <code class="docutils literal notranslate"><span class="pre">$GAMMAPY_DATA/figures/</span></code>,
 use the <code class="docutils literal notranslate"><span class="pre">gp-image</span></code> directive instead of the usual Sphinx <code class="docutils literal notranslate"><span class="pre">image</span></code> directive like this:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">gp-image</span><span class="p">::</span> detect/fermi_ts_image.png
@@ -811,13 +810,13 @@ use the <code class="docutils literal notranslate"><span class="pre">gp-image</s
 </pre></div>
 </div>
 <p>More info on the <a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html#images">image directive</a>.</p>
-</div>
-</div>
-<div class="section" id="documentation-guidelines">
-<h2>Documentation guidelines<a class="headerlink" href="#documentation-guidelines" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="documentation-guidelines">
+<h2>Documentation guidelines<a class="headerlink" href="#documentation-guidelines" title="Permalink to this headline">#</a></h2>
 <p>Like almost all Python projects, the Gammapy documentation is written in a format called
 <a class="reference external" href="http://sphinx-doc.org/rest.html">restructured text (RST)</a> and built using <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a>.
-We mostly follow the <a class="reference external" href="https://docs.astropy.org/en/latest/development/docguide.html#documentation-guidelines" title="(in Astropy v5.1)"><span class="xref std std-ref">Astropy documentation guidelines</span></a>,
+We mostly follow the <a class="reference external" href="https://docs.astropy.org/en/latest/development/docguide.html#documentation-guidelines" title="(in Astropy v5.2)"><span class="xref std std-ref">Astropy documentation guidelines</span></a>,
 which are based on the <a class="reference external" href="https://github.com/numpy/numpy/blob/main/doc/HOWTO_DOCUMENT.rst.txt">Numpy docstring standard</a>,
 which is what most scientific Python packages use.</p>
 <p>There’s a few details that are not easy to figure out by browsing the Numpy or Astropy
@@ -828,13 +827,13 @@ or Gammapy code a bit (either locally with your editor or online on GitHub or vi
 or search the Numpy or Astropy documentation guidelines mentioned above.
 If that doesn’t quickly turn up something useful, please ask by putting a comment on the issue or
 pull request you’re working on GitHub, or email the Gammapy mailing list.</p>
-<div class="section" id="functions-or-class-methods-that-return-a-single-object">
-<h3>Functions or class methods that return a single object<a class="headerlink" href="#functions-or-class-methods-that-return-a-single-object" title="Permalink to this headline">¶</a></h3>
+<section id="functions-or-class-methods-that-return-a-single-object">
+<h3>Functions or class methods that return a single object<a class="headerlink" href="#functions-or-class-methods-that-return-a-single-object" title="Permalink to this headline">#</a></h3>
 <p>For functions or class methods that return a single object, following the
 Numpy docstring standard and adding a <em>Returns</em> section usually means
 that you duplicate the one-line description and repeat the function name as
 return variable name.
-See <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM.w" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time.sidereal_time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sidereal_time</span></code></a>
+See <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.cosmology.LambdaCDM.html#astropy.cosmology.LambdaCDM.w" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time.sidereal_time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sidereal_time</span></code></a>
 as examples in the Astropy codebase. Here’s a simple example:</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Circle area.</span>
@@ -876,9 +875,9 @@ As an example see <a class="reference internal" href="../api/gammapy.data.EventL
     <span class="k">return</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;icrs&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="class-attributes">
-<h3>Class attributes<a class="headerlink" href="#class-attributes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="class-attributes">
+<h3>Class attributes<a class="headerlink" href="#class-attributes" title="Permalink to this headline">#</a></h3>
 <p>Class attributes (data members) and properties are currently a bit of a mess.
 Attributes are listed in an <em>Attributes</em> section because I’ve listed them in a class-level
 docstring attributes section as recommended
@@ -888,31 +887,13 @@ sections, which is confusing to users (“what’s the difference between attrib
 <p>One solution is to always use properties, but that can get very verbose if we have to write
 so many getters and setters. We could start using descriptors.</p>
 <p>TODO: make a decision on this and describe the issue / solution here.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="release.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">How to make a Gammapy release</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="dev_howto.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Developer How To</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -920,8 +901,9 @@ so many getters and setters. We could start using descriptors.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -932,7 +914,7 @@ so many getters and setters. We could start using descriptors.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

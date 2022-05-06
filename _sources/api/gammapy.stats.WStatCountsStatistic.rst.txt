@@ -27,6 +27,7 @@ WStatCountsStatistic
       ~WStatCountsStatistic.compute_errp
       ~WStatCountsStatistic.compute_upper_limit
       ~WStatCountsStatistic.n_sig_matching_significance
+      ~WStatCountsStatistic.sum
 
    .. rubric:: Attributes Documentation
 
@@ -45,3 +46,4 @@ WStatCountsStatistic
    .. automethod:: compute_errp
    .. automethod:: compute_upper_limit
    .. automethod:: n_sig_matching_significance
+   .. automethod:: sum

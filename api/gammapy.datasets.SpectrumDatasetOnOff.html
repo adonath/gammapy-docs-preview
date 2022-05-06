@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpectrumDatasetOnOff &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SpectrumDatasetOnOff &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
@@ -60,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -96,7 +93,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -108,19 +105,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -146,17 +143,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.datasets.SpectrumDatasetOnOff and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.datasets.SpectrumDatasetOnOff and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +182,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -251,7 +245,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -273,11 +267,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -318,7 +307,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -413,6 +402,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -420,7 +414,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -537,7 +531,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -582,6 +576,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -599,7 +603,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -691,7 +695,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1018,7 +1022,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1110,7 +1114,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1132,7 +1136,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1249,7 +1253,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1411,7 +1415,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1473,12 +1477,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1530,7 +1534,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1685,11 +1689,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1840,14 +1839,14 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="spectrumdatasetonoff">
-<h1>SpectrumDatasetOnOff<a class="headerlink" href="#spectrumdatasetonoff" title="Permalink to this headline">¶</a></h1>
+  <section id="spectrumdatasetonoff">
+<h1>SpectrumDatasetOnOff<a class="headerlink" href="#spectrumdatasetonoff" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.datasets.</span></span><span class="sig-name descname"><span class="pre">SpectrumDatasetOnOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edisp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.datasets.</span></span><span class="sig-name descname"><span class="pre">SpectrumDatasetOnOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">models</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exposure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edisp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.datasets.spectrum.PlotMixin</span></code>, <a class="reference internal" href="gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff" title="gammapy.datasets.map.MapDatasetOnOff"><code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.datasets.map.MapDatasetOnOff</span></code></a></p>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1937,7 +1936,7 @@ function checkPageExistsAndRedirect(event) {
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1964,7 +1963,7 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.from_geoms" title="gammapy.datasets.SpectrumDatasetOnOff.from_geoms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_geoms</span></code></a>(geom, geom_exposure[, geom_psf, ...])</p></td>
 <td><p>Create a MapDatasetOnOff object  switch zero filled maps according to the specified geometries</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist" title="gammapy.datasets.SpectrumDatasetOnOff.from_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_hdulist</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist" title="gammapy.datasets.SpectrumDatasetOnOff.from_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_hdulist</span></code></a>(hdulist[, name, format])</p></td>
 <td><p>Create map dataset from list of HDUs.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.from_map_dataset" title="gammapy.datasets.SpectrumDatasetOnOff.from_map_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_map_dataset</span></code></a>(dataset, acceptance, ...[, ...])</p></td>
@@ -1991,7 +1990,7 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.pad" title="gammapy.datasets.SpectrumDatasetOnOff.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>()</p></td>
 <td><p>Pad the spatial dimensions of the dataset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.peek" title="gammapy.datasets.SpectrumDatasetOnOff.peek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peek</span></code></a>([fig])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.peek" title="gammapy.datasets.SpectrumDatasetOnOff.peek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peek</span></code></a>([figsize])</p></td>
 <td><p>Quick-look summary plots.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_counts" title="gammapy.datasets.SpectrumDatasetOnOff.plot_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_counts</span></code></a>([ax, kwargs_counts, ...])</p></td>
@@ -2015,7 +2014,7 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spectral" title="gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_residuals_spectral</span></code></a>([ax, method, region])</p></td>
 <td><p>Plot spectral residuals.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.read" title="gammapy.datasets.SpectrumDatasetOnOff.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.read" title="gammapy.datasets.SpectrumDatasetOnOff.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename[, format])</p></td>
 <td><p>Read from file</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.resample_energy_axis" title="gammapy.datasets.SpectrumDatasetOnOff.resample_energy_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample_energy_axis</span></code></a>(energy_axis[, name])</p></td>
@@ -2045,7 +2044,7 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.to_dict" title="gammapy.datasets.SpectrumDatasetOnOff.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a>()</p></td>
 <td><p>Convert to dict for YAML serialization.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.to_hdulist" title="gammapy.datasets.SpectrumDatasetOnOff.to_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdulist</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.to_hdulist" title="gammapy.datasets.SpectrumDatasetOnOff.to_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdulist</span></code></a>()</p></td>
 <td><p>Convert map dataset to list of HDUs.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.datasets.SpectrumDatasetOnOff.to_image" title="gammapy.datasets.SpectrumDatasetOnOff.to_image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_image</span></code></a>([name])</p></td>
@@ -2071,9 +2070,9 @@ function checkPageExistsAndRedirect(event) {
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.alpha">
-<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.alpha" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.alpha" title="Permalink to this definition">#</a></dt>
 <dd><p>Exposure ratio between signal and background regions</p>
-<p>See <a class="reference internal" href="../stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
+<p>See <a class="reference internal" href="../user-guide/stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
@@ -2086,9 +2085,9 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.background">
-<span class="sig-name descname"><span class="pre">background</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.background" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">background</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.background" title="Permalink to this definition">#</a></dt>
 <dd><p>Computed as alpha * n_off</p>
-<p>See <a class="reference internal" href="../stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
+<p>See <a class="reference internal" href="../user-guide/stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
@@ -2101,12 +2100,12 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.background_model">
-<span class="sig-name descname"><span class="pre">background_model</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.background_model" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">background_model</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.background_model" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.counts">
-<span class="sig-name descname"><span class="pre">counts</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.counts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">counts</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.counts" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2120,13 +2119,13 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.data_shape">
-<span class="sig-name descname"><span class="pre">data_shape</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.data_shape" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">data_shape</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.data_shape" title="Permalink to this definition">#</a></dt>
 <dd><p>Shape of the counts or background data (tuple)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.edisp">
-<span class="sig-name descname"><span class="pre">edisp</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.edisp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edisp</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.edisp" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2140,43 +2139,43 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.energy_range">
-<span class="sig-name descname"><span class="pre">energy_range</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_range</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy range maps defined by the full mask (mask_safe and mask_fit).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.energy_range_fit">
-<span class="sig-name descname"><span class="pre">energy_range_fit</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_range_fit</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_fit" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy range maps defined by the mask_fit only.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.energy_range_safe">
-<span class="sig-name descname"><span class="pre">energy_range_safe</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_safe" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_range_safe</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_safe" title="Permalink to this definition">#</a></dt>
 <dd><p>Energy range maps defined by the mask_safe only.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.energy_range_total">
-<span class="sig-name descname"><span class="pre">energy_range_total</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_total" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">energy_range_total</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.energy_range_total" title="Permalink to this definition">#</a></dt>
 <dd><p>Largest energy range among all pixels, defined by the full mask (mask_safe and mask_fit).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.evaluators">
-<span class="sig-name descname"><span class="pre">evaluators</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.evaluators" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluators</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.evaluators" title="Permalink to this definition">#</a></dt>
 <dd><p>Model evaluators</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.excess">
-<span class="sig-name descname"><span class="pre">excess</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.excess" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">excess</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.excess" title="Permalink to this definition">#</a></dt>
 <dd><p>Observed excess: counts-background</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.exposure">
-<span class="sig-name descname"><span class="pre">exposure</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.exposure" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">exposure</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.exposure" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2190,7 +2189,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.geoms">
-<span class="sig-name descname"><span class="pre">geoms</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.geoms" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">geoms</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.geoms" title="Permalink to this definition">#</a></dt>
 <dd><p>Map geometries</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -2204,13 +2203,13 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask">
-<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask" title="Permalink to this definition">#</a></dt>
 <dd><p>Combined fit and safe mask</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_fit">
-<span class="sig-name descname"><span class="pre">mask_fit</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_fit</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_fit" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2224,19 +2223,19 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_fit_image">
-<span class="sig-name descname"><span class="pre">mask_fit_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_fit_image" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_fit_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_fit_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Reduced mask fit</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_image">
-<span class="sig-name descname"><span class="pre">mask_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_image" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Reduced mask</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_safe">
-<span class="sig-name descname"><span class="pre">mask_safe</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_safe</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2250,36 +2249,36 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_safe_edisp">
-<span class="sig-name descname"><span class="pre">mask_safe_edisp</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_edisp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_safe_edisp</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_edisp" title="Permalink to this definition">#</a></dt>
 <dd><p>Mask safe for edisp maps</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_safe_image">
-<span class="sig-name descname"><span class="pre">mask_safe_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_image" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_safe_image</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Reduced mask safe</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.mask_safe_psf">
-<span class="sig-name descname"><span class="pre">mask_safe_psf</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_psf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">mask_safe_psf</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.mask_safe_psf" title="Permalink to this definition">#</a></dt>
 <dd><p>Mask safe for psf maps</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.models">
-<span class="sig-name descname"><span class="pre">models</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.models" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">models</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.models" title="Permalink to this definition">#</a></dt>
 <dd><p>Models set on the dataset (<a class="reference internal" href="gammapy.modeling.models.Models.html#gammapy.modeling.models.Models" title="gammapy.modeling.models.Models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Models</span></code></a>).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.name" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.psf">
-<span class="sig-name descname"><span class="pre">psf</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.psf" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">psf</span></span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.psf" title="Permalink to this definition">#</a></dt>
 <dd><p>A lazy FITS data descriptor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2293,18 +2292,18 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.stat_type">
-<span class="sig-name descname"><span class="pre">stat_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wstat'</span></em><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wstat'</span></em><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_type" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SpectrumDatasetOnOff'</span></em><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.tag" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'SpectrumDatasetOnOff'</span></em><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.tag" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>A deep copy.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2324,7 +2323,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.create">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_axis_true</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">migra_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binsz_irf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.create" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_axis_true</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">migra_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rad_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binsz_irf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_table</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.create" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a MapDataset object with zero filled maps.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2340,11 +2339,11 @@ If not set, an EDispKernelMap is produced instead. Default is None</p>
 </dd>
 <dt><strong>binsz_irf</strong><span class="classifier">float</span></dt><dd><p>IRF Map pixel size in degrees.</p>
 </dd>
-<dt><strong>reference_time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>the reference time to use in GTI definition</p>
+<dt><strong>reference_time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>the reference time to use in GTI definition</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the returned dataset.</p>
 </dd>
-<dt><strong>meta_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table listing information on observations used to create the dataset.
+<dt><strong>meta_table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table listing information on observations used to create the dataset.
 One line per observation for stacked datasets.</p>
 </dd>
 </dl>
@@ -2373,17 +2372,17 @@ One line per observation for stacked datasets.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.cutout">
-<span class="sig-name descname"><span class="pre">cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.cutout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.cutout" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.cutout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.cutout" title="Permalink to this definition">#</a></dt>
 <dd><p>Cutout map dataset.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Center position of the cutout region.</p>
+<dt><strong>position</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyCoord</span></code></a></span></dt><dd><p>Center position of the cutout region.</p>
 </dd>
-<dt><strong>width</strong><span class="classifier">tuple of <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Angular sizes of the region in (lon, lat) in that specific order.
+<dt><strong>width</strong><span class="classifier">tuple of <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Angular sizes of the region in (lon, lat) in that specific order.
 If only one value is passed, a square region is extracted.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">{‘trim’, ‘partial’, ‘strict’}</span></dt><dd><p>Mode option for Cutout2D, for details see <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.nddata.utils.Cutout2D.html#astropy.nddata.utils.Cutout2D" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cutout2D</span></code></a>.</p>
+<dt><strong>mode</strong><span class="classifier">{‘trim’, ‘partial’, ‘strict’}</span></dt><dd><p>Mode option for Cutout2D, for details see <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.nddata.utils.Cutout2D.html#astropy.nddata.utils.Cutout2D" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cutout2D</span></code></a>.</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the new dataset.</p>
 </dd>
@@ -2400,7 +2399,7 @@ If only one value is passed, a square region is extracted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.downsample">
-<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.downsample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.downsample" title="Permalink to this definition">#</a></dt>
 <dd><p>Downsample map dataset.</p>
 <p>The PSFMap and EDispKernelMap are not downsampled, except if
 a corresponding axis is given.</p>
@@ -2426,13 +2425,13 @@ a corresponding axis is given.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.fake">
-<span class="sig-name descname"><span class="pre">fake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">npred_background</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random-seed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.fake" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">npred_background</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random-seed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.fake" title="Permalink to this definition">#</a></dt>
 <dd><p>Simulate fake counts (on and off) for the current model and reduced IRFs.</p>
 <p>This method overwrites the counts defined on the dataset object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>random_state</strong><span class="classifier">{int, ‘random-seed’, ‘global-rng’, <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>}</span></dt><dd><p>Defines random number generator initialisation.
+<dt><strong>random_state</strong><span class="classifier">{int, ‘random-seed’, ‘global-rng’, <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>}</span></dt><dd><p>Defines random number generator initialisation.
 Passed to <a class="reference internal" href="gammapy.utils.random.get_random_state.html#gammapy.utils.random.get_random_state" title="gammapy.utils.random.get_random_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_random_state</span></code></a>.</p>
 </dd>
 </dl>
@@ -2442,7 +2441,7 @@ Passed to <a class="reference internal" href="gammapy.utils.random.get_random_st
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.from_dict">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_dict" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.from_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Create spectrum dataset from dict.
 Reads file from the disk as specified in the dict</p>
 <dl class="field-list">
@@ -2463,7 +2462,7 @@ Reads file from the disk as specified in the dict</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.from_geoms">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_geoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_exposure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_psf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_edisp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_geoms" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_geoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_exposure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_psf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geom_edisp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'2000-01-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_geoms" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a MapDatasetOnOff object  switch zero filled maps according to the specified geometries</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2477,7 +2476,7 @@ Reads file from the disk as specified in the dict</p>
 <dt><strong>geom_edisp</strong><span class="classifier"><a class="reference internal" href="gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom" title="gammapy.maps.WcsGeom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.maps.WcsGeom</span></code></a></span></dt><dd><p>geometry for the energy dispersion kernel map.
 If geom_edisp has a migra axis, this will create an EDispMap instead.</p>
 </dd>
-<dt><strong>reference_time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>the reference time to use in GTI definition</p>
+<dt><strong>reference_time</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.time.Time.html#astropy.time.Time" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Time</span></code></a></span></dt><dd><p>the reference time to use in GTI definition</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the returned dataset.</p>
 </dd>
@@ -2494,12 +2493,12 @@ If geom_edisp has a migra axis, this will create an EDispMap instead.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.from_hdulist">
-<span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.from_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdulist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist" title="Permalink to this definition">#</a></dt>
 <dd><p>Create map dataset from list of HDUs.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>List of HDUs.</p>
+<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>List of HDUs.</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the new dataset.</p>
 </dd>
@@ -2518,7 +2517,7 @@ If geom_edisp has a migra axis, this will create an EDispMap instead.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.from_map_dataset">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_map_dataset" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptance_off</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">counts_off</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_map_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Create on off dataset from a map dataset.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2548,16 +2547,16 @@ counts_off / alpha.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.from_spectrum_dataset">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_spectrum_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.from_spectrum_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_spectrum_dataset" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_spectrum_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.from_spectrum_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.from_spectrum_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Create spectrum dataseton off from another dataset.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>dataset</strong><span class="classifier"><a class="reference internal" href="gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset" title="gammapy.datasets.SpectrumDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectrumDataset</span></code></a></span></dt><dd><p>Spectrum dataset defining counts, edisp, exposure etc.</p>
 </dd>
-<dt><strong>acceptance</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or float</span></dt><dd><p>Relative background efficiency in the on region.</p>
+<dt><strong>acceptance</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or float</span></dt><dd><p>Relative background efficiency in the on region.</p>
 </dd>
-<dt><strong>acceptance_off</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or float</span></dt><dd><p>Relative background efficiency in the off region.</p>
+<dt><strong>acceptance_off</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or float</span></dt><dd><p>Relative background efficiency in the off region.</p>
 </dd>
 <dt><strong>counts_off</strong><span class="classifier"><a class="reference internal" href="gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap" title="gammapy.maps.RegionNDMap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RegionNDMap</span></code></a></span></dt><dd><p>Off counts spectrum . If the dataset provides a background model,
 and no off counts are defined. The off counts are deferred from
@@ -2576,7 +2575,7 @@ counts_off / alpha.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.info_dict">
-<span class="sig-name descname"><span class="pre">info_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_safe_data_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.info_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">info_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_safe_data_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.info_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Basic info dict with summary statistics</p>
 <p>If a region is passed, then a spectrum dataset is
 extracted, and the corresponding info returned.</p>
@@ -2598,7 +2597,7 @@ extracted, and the corresponding info returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.npred">
-<span class="sig-name descname"><span class="pre">npred</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred" title="Permalink to this definition">#</a></dt>
 <dd><p>Total predicted source and background counts</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -2612,9 +2611,9 @@ extracted, and the corresponding info returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.npred_background">
-<span class="sig-name descname"><span class="pre">npred_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_background" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_background" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted background counts (mu_bkg) estimated from the marginalized likelihood estimate.</p>
-<p>See <a class="reference internal" href="../stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
+<p>See <a class="reference internal" href="../user-guide/stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
@@ -2627,9 +2626,9 @@ extracted, and the corresponding info returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.npred_off">
-<span class="sig-name descname"><span class="pre">npred_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_off" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_off" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicted counts in the off region; mu_bkg/alpha</p>
-<p>See <a class="reference internal" href="../stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
+<p>See <a class="reference internal" href="../user-guide/stats/fit_statistics.html#wstat"><span class="std std-ref">WStat : Poisson data with background measurement</span></a></p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
@@ -2642,7 +2641,7 @@ extracted, and the corresponding info returned.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.npred_signal">
-<span class="sig-name descname"><span class="pre">npred_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_signal" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">npred_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.npred_signal" title="Permalink to this definition">#</a></dt>
 <dd><p>Model predicted signal counts.</p>
 <p>If a model name is passed, predicted counts from that component are returned.
 Else, the total signal counts are returned.</p>
@@ -2666,7 +2665,7 @@ is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.pad">
-<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.pad" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.pad" title="Permalink to this definition">#</a></dt>
 <dd><p>Pad the spatial dimensions of the dataset.</p>
 <p>The padding only applies to counts, masks, background and exposure.</p>
 <p>Counts, background and masks are padded with zeros, exposure is padded with edge value.</p>
@@ -2690,18 +2689,12 @@ is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.peek">
-<span class="sig-name descname"><span class="pre">peek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.peek" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">peek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(16,</span> <span class="pre">4)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.peek" title="Permalink to this definition">#</a></dt>
 <dd><p>Quick-look summary plots.</p>
-<dl class="field-list">
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>fig</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/figure_api.html#matplotlib.figure.Figure" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Figure</span></code></a></span></dt><dd><p>Figure to add AxesSubplot on.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl>
-<dt><strong>ax1, ax2, ax3</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AxesSubplot</span></code></span></dt><dd><p>Counts, effective area and energy dispersion subplots.</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>figsize</strong><span class="classifier">tuple</span></dt><dd><p>Size of the figure.</p>
 </dd>
 </dl>
 </dd>
@@ -2710,24 +2703,24 @@ is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_counts">
-<span class="sig-name descname"><span class="pre">plot_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_counts" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_counts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_counts" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot counts and background.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
 </dd>
-<dt><strong>kwargs_counts: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the counts.</p>
+<dt><strong>kwargs_counts: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the counts.</p>
 </dd>
-<dt><strong>kwargs_background: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the background.</p>
+<dt><strong>kwargs_background: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the background.</p>
 </dd>
-<dt><strong>**kwargs: dict</strong></dt><dd><p>Keyword arguments passed to both <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a>.</p>
+<dt><strong>**kwargs: dict</strong></dt><dd><p>Keyword arguments passed to both <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
 </dd>
 </dl>
 </dd>
@@ -2736,17 +2729,18 @@ is returned</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_excess">
-<span class="sig-name descname"><span class="pre">plot_excess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_excess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_npred_signal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_excess" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_excess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_excess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_npred_signal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_excess" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot excess and predicted signal.</p>
+<p>The error bars are computed with a symmetric assumption on the excess.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
 </dd>
-<dt><strong>kwargs_excess: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html#matplotlib.axes.Axes.errorbar" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a> for
+<dt><strong>kwargs_excess: dict</strong></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html#matplotlib.axes.Axes.errorbar" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a> for
 the excess.</p>
 </dd>
-<dt><strong>kwargs_npred_signal</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the
+<dt><strong>kwargs_npred_signal</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html#matplotlib.axes.Axes.hist" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a> for the
 predicted signal.</p>
 </dd>
 <dt><strong>**kwargs: dict</strong></dt><dd><p>Keyword arguments passed to both plot methods.</p>
@@ -2755,7 +2749,7 @@ predicted signal.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
 </dd>
 </dl>
 </dd>
@@ -2777,15 +2771,15 @@ predicted signal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_fit">
-<span class="sig-name descname"><span class="pre">plot_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_fit" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spectrum and residuals in two panels.</p>
 <p>Calls <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.plot_excess" title="gammapy.datasets.SpectrumDataset.plot_excess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_excess</span></code></a> and <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.plot_residuals_spectral" title="gammapy.datasets.SpectrumDataset.plot_residuals_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_residuals_spectral</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax_spectrum</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot spectrum on.</p>
+<dt><strong>ax_spectrum</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot spectrum on.</p>
 </dd>
-<dt><strong>ax_residuals</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot residuals on.</p>
+<dt><strong>ax_residuals</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot residuals on.</p>
 </dd>
 <dt><strong>kwargs_spectrum</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.plot_excess" title="gammapy.datasets.SpectrumDataset.plot_excess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_excess</span></code></a>.</p>
 </dd>
@@ -2795,7 +2789,7 @@ predicted signal.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax_spectrum, ax_residuals</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Spectrum and residuals plots.</p>
+<dt><strong>ax_spectrum, ax_residuals</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Spectrum and residuals plots.</p>
 </dd>
 </dl>
 </dd>
@@ -2819,12 +2813,12 @@ predicted signal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_masks">
-<span class="sig-name descname"><span class="pre">plot_masks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_masks" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_masks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_safe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_masks" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot mask safe and mask fit</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
 </dd>
 <dt><strong>kwargs_fit: dict</strong></dt><dd><p>Keyword arguments passed to <code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_mask()</span></code> for mask fit.</p>
 </dd>
@@ -2834,7 +2828,7 @@ predicted signal.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
 </dd>
 </dl>
 </dd>
@@ -2856,7 +2850,7 @@ predicted signal.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_residuals">
-<span class="sig-name descname"><span class="pre">plot_residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_spatial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_spectral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spatial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spectral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax_spatial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax_spectral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spatial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs_spectral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spatial and spectral residuals in two panels.</p>
 <p>Calls <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.plot_residuals_spatial" title="gammapy.datasets.MapDataset.plot_residuals_spatial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_residuals_spatial</span></code></a> and <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.plot_residuals_spectral" title="gammapy.datasets.MapDataset.plot_residuals_spectral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_residuals_spectral</span></code></a>.
 The spectral residuals are extracted from the provided region, and the
@@ -2866,9 +2860,9 @@ the residuals are computed for the entire map</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax_spatial</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>Axes to plot spatial residuals on.</p>
+<dt><strong>ax_spatial</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>Axes to plot spatial residuals on.</p>
 </dd>
-<dt><strong>ax_spectral</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot spectral residuals on.</p>
+<dt><strong>ax_spectral</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot spectral residuals on.</p>
 </dd>
 <dt><strong>kwargs_spatial</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.plot_residuals_spatial" title="gammapy.datasets.MapDataset.plot_residuals_spatial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_residuals_spatial</span></code></a>.</p>
 </dd>
@@ -2879,7 +2873,7 @@ The region should be passed as a dictionary key</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax_spatial, ax_spectral</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a>, <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Spatial and spectral residuals plots.</p>
+<dt><strong>ax_spatial, ax_spectral</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a>, <a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Spatial and spectral residuals plots.</p>
 </dd>
 </dl>
 </dd>
@@ -2900,14 +2894,14 @@ The region should be passed as a dictionary key</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spatial">
-<span class="sig-name descname"><span class="pre">plot_residuals_spatial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.plot_residuals_spatial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spatial" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_residuals_spatial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.plot_residuals_spatial"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spatial" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spatial residuals.</p>
 <p>The normalization used for the residuals computation can be controlled
 using the method parameter.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
 </dd>
 <dt><strong>method</strong><span class="classifier">{“diff”, “diff/model”, “diff/sqrt(model)”}</span></dt><dd><p>Normalization used to compute the residuals, see <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.residuals" title="gammapy.datasets.MapDataset.residuals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapDataset.residuals</span></code></a>.</p>
 </dd>
@@ -2916,13 +2910,13 @@ using the method parameter.</p>
 <dt><strong>smooth_radius: `~astropy.units.Quantity`, str or float</strong></dt><dd><p>Smoothing width given as quantity or float. If a float is given, it
 is interpreted as smoothing width in pixels.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.imshow.html#matplotlib.axes.Axes.imshow" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>.</p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.imshow.html#matplotlib.axes.Axes.imshow" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imshow</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>WCSAxes object.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.visualization.wcsaxes.WCSAxes.html#astropy.visualization.wcsaxes.WCSAxes" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WCSAxes</span></code></a></span></dt><dd><p>WCSAxes object.</p>
 </dd>
 </dl>
 </dd>
@@ -2938,26 +2932,27 @@ is interpreted as smoothing width in pixels.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spectral">
-<span class="sig-name descname"><span class="pre">plot_residuals_spectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'diff'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spectral" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_residuals_spectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'diff'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.plot_residuals_spectral" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot spectral residuals.</p>
 <p>The residuals are extracted from the provided region, and the normalization
 used for its computation can be controlled using the method parameter.</p>
+<p>The error bars are computed using the uncertainty on the excess with a symmetric assumption.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes to plot on.</p>
 </dd>
 <dt><strong>method</strong><span class="classifier">{“diff”, “diff/sqrt(model)”}</span></dt><dd><p>Normalization used to compute the residuals, see <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.residuals" title="gammapy.datasets.SpectrumDataset.residuals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectrumDataset.residuals</span></code></a>.</p>
 </dd>
 <dt><strong>region: `~regions.SkyRegion` (required)</strong></dt><dd><p>Target sky region.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html#matplotlib.axes.Axes.errorbar" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a>.</p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.errorbar.html#matplotlib.axes.Axes.errorbar" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">errorbar</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axes object.</p>
 </dd>
 </dl>
 </dd>
@@ -2973,16 +2968,21 @@ used for its computation can be controlled using the method parameter.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.read">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.read" title="Permalink to this definition">#</a></dt>
 <dd><p>Read from file</p>
-<p>For now, filename is assumed to the name of a PHA file where BKG file, ARF, and RMF names
-must be set in the PHA header and be present in the same folder.</p>
-<p>For formats specs see <code class="xref py py-obj docutils literal notranslate"><span class="pre">OGIPDatasetReader.read</span></code></p>
+<p>For OGIP formats, filename is assumed to the name of a PHA file where
+BKG file, ARF, and RMF names
+must be set in the PHA header and be present in the same folder.
+For details, see <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read" title="gammapy.datasets.OGIPDatasetReader.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OGIPDatasetReader.read</span></code></a></p>
+<p>For the GADF format, a MapDataset serialisation is used</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
 <dt><strong>filename</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Path</span></code></a> or str</span></dt><dd><p>OGIP PHA file to read</p>
 </dd>
+<dt><strong>format</strong><span class="classifier">{“ogip”, “ogip-sherpa”, “gadf”}</span></dt><dd><p>Format to use.</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">arguments passed to <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.read" title="gammapy.datasets.MapDataset.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapDataset.read</span></code></a></span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -2990,7 +2990,7 @@ must be set in the PHA header and be present in the same folder.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.resample_energy_axis">
-<span class="sig-name descname"><span class="pre">resample_energy_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.resample_energy_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resample_energy_axis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.resample_energy_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Resample MapDatasetOnOff over reconstructed energy edges.</p>
 <p>Counts are summed taking into account safe mask.</p>
 <dl class="field-list">
@@ -3013,13 +3013,13 @@ must be set in the PHA header and be present in the same folder.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.reset_data_cache">
-<span class="sig-name descname"><span class="pre">reset_data_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.reset_data_cache" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reset_data_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.reset_data_cache" title="Permalink to this definition">#</a></dt>
 <dd><p>Reset data cache to free memory space</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.residuals">
-<span class="sig-name descname"><span class="pre">residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'diff'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.residuals" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">residuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'diff'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.residuals" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute residuals map.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3048,12 +3048,12 @@ must be set in the PHA header and be present in the same folder.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.slice_by_energy">
-<span class="sig-name descname"><span class="pre">slice_by_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.slice_by_energy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice_by_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.slice_by_energy" title="Permalink to this definition">#</a></dt>
 <dd><p>Select and slice datasets in energy range</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy bounds to compute the flux point for.</p>
+<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy bounds to compute the flux point for.</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the sliced dataset.</p>
 </dd>
@@ -3078,7 +3078,7 @@ must be set in the PHA header and be present in the same folder.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.slice_by_idx">
-<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.slice_by_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.slice_by_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Slice sub dataset.</p>
 <p>The slicing only applies to the maps that define the corresponding axes.</p>
 <dl class="field-list">
@@ -3104,7 +3104,7 @@ dict are kept unchanged.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.stack">
-<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stack" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stack" title="Permalink to this definition">#</a></dt>
 <dd><p>Stack another dataset in place.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">acceptance</span></code> of the stacked dataset is normalized to 1,
 and the stacked <code class="docutils literal notranslate"><span class="pre">acceptance_off</span></code> is scaled so that:</p>
@@ -3126,30 +3126,30 @@ and the stacked <code class="docutils literal notranslate"><span class="pre">acc
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.stat_array">
-<span class="sig-name descname"><span class="pre">stat_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_array" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_array</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_array" title="Permalink to this definition">#</a></dt>
 <dd><p>Likelihood per bin given the current model parameters</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.stat_sum">
-<span class="sig-name descname"><span class="pre">stat_sum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_sum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">stat_sum</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.stat_sum" title="Permalink to this definition">#</a></dt>
 <dd><p>Total likelihood given the current model parameters.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_dict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_dict" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert to dict for YAML serialization.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_hdulist">
-<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.to_hdulist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_hdulist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_hdulist" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert map dataset to list of HDUs.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>Map dataset list of HDUs.</p>
+<dt><strong>hdulist</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a></span></dt><dd><p>Map dataset list of HDUs.</p>
 </dd>
 </dl>
 </dd>
@@ -3158,7 +3158,7 @@ and the stacked <code class="docutils literal notranslate"><span class="pre">acc
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_image">
-<span class="sig-name descname"><span class="pre">to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_image" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_image" title="Permalink to this definition">#</a></dt>
 <dd><p>Create images by summing over the reconstructed energy axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3178,7 +3178,7 @@ and the stacked <code class="docutils literal notranslate"><span class="pre">acc
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_map_dataset">
-<span class="sig-name descname"><span class="pre">to_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_map_dataset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_map_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert a MapDatasetOnOff to  MapDataset
 The background model template is taken as alpha * counts_off</p>
 <dl class="field-list simple">
@@ -3199,7 +3199,7 @@ The background model template is taken as alpha * counts_off</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_masked">
-<span class="sig-name descname"><span class="pre">to_masked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_masked" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_masked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_to_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_masked" title="Permalink to this definition">#</a></dt>
 <dd><p>Return masked dataset</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -3221,7 +3221,7 @@ The background model template is taken as alpha * counts_off</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_region_map_dataset">
-<span class="sig-name descname"><span class="pre">to_region_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_region_map_dataset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_region_map_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_region_map_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Integrate the map dataset in a given region.</p>
 <p>Counts and background of the dataset are integrated in the given region,
 taking the safe mask into accounts. The exposure is averaged in the
@@ -3230,7 +3230,7 @@ dispersion kernel are taken at the center of the region.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev20+g9bd81c2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>Region from which to extract the spectrum</p>
+<dt><strong>region</strong><span class="classifier"><a class="reference external" href="https://astropy-regions.readthedocs.io/en/latest/api/regions.SkyRegion.html#regions.SkyRegion" title="(in regions v0.7.dev49+g9bbb388)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SkyRegion</span></code></a></span></dt><dd><p>Region from which to extract the spectrum</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the new dataset.</p>
 </dd>
@@ -3247,7 +3247,7 @@ dispersion kernel are taken at the center of the region.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.to_spectrum_dataset">
-<span class="sig-name descname"><span class="pre">to_spectrum_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.to_spectrum_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_spectrum_dataset" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_spectrum_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.to_spectrum_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.to_spectrum_dataset" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert a SpectrumDatasetOnOff to a SpectrumDataset
 The background model template is taken as alpha*counts_off</p>
 <dl class="field-list simple">
@@ -3268,10 +3268,11 @@ The background model template is taken as alpha*counts_off</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.datasets.SpectrumDatasetOnOff.write">
-<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.write" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/datasets/spectrum.html#SpectrumDatasetOnOff.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.datasets.SpectrumDatasetOnOff.write" title="Permalink to this definition">#</a></dt>
 <dd><p>Write spectrum dataset on off to file.</p>
-<p>Currently only the OGIP format is supported</p>
-<p>For formats specs see <code class="xref py py-obj docutils literal notranslate"><span class="pre">OGIPDatasetWriter</span></code></p>
+<p>Can be serialised either as a <a class="reference internal" href="gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset" title="gammapy.datasets.MapDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapDataset</span></code></a> with a <code class="xref py py-obj docutils literal notranslate"><span class="pre">RegionGeom</span></code>
+following the GADF specifications, or as per the OGIP format.
+For OGIP formats specs see <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter" title="gammapy.datasets.OGIPDatasetWriter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OGIPDatasetWriter</span></code></a></p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -3279,7 +3280,7 @@ The background model template is taken as alpha*counts_off</p>
 </dd>
 <dt><strong>overwrite</strong><span class="classifier">bool</span></dt><dd><p>Overwrite existing file.</p>
 </dd>
-<dt><strong>format</strong><span class="classifier">{“ogip”, “ogip-sherpa”}</span></dt><dd><p>Format to use.</p>
+<dt><strong>format</strong><span class="classifier">{“ogip”, “ogip-sherpa”, “gadf”}</span></dt><dd><p>Format to use.</p>
 </dd>
 </dl>
 </dd>
@@ -3288,29 +3289,11 @@ The background model template is taken as alpha*counts_off</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.datasets.SpectrumDataset.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">SpectrumDataset</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.datasets.DATASET_REGISTRY.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DATASET_REGISTRY</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -3318,8 +3301,9 @@ The background model template is taken as alpha*counts_off</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -3330,7 +3314,7 @@ The background model template is taken as alpha*counts_off</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

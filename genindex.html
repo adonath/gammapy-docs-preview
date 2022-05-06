@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>Index &#8212; gammapy vX.Y.Z</title>
     
-    <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="userguide/index.html">
+ <a class="reference internal nav-link" href="user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="api.html">
+ <a class="reference internal nav-link" href="api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="changelog/index.html">
+ <a class="reference internal nav-link" href="release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables genindex and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables genindex and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -310,149 +303,115 @@ function checkPageExistsAndRedirect(event) {
     --dependencies
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-dependencies">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-dependencies">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --envvar
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-envvar">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-envvar">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --filename
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-config-filename">gammapy-analysis-config command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-config-filename">gammapy-analysis-config command line option</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-filename">gammapy-analysis-run command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-filename">gammapy-analysis-run command line option</a>
 </li>
       </ul></li>
       <li>
     --ignore-warnings
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-ignore-warnings">gammapy command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --kernel
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-run-kernel">gammapy-jupyter-run command line option</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-test-kernel">gammapy-jupyter-test command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-ignore-warnings">gammapy command line option</a>
 </li>
       </ul></li>
       <li>
     --log-level
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-log-level">gammapy command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-log-level">gammapy command line option</a>
 </li>
       </ul></li>
       <li>
     --no-dependencies
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-dependencies">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-dependencies">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --no-envvar
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-envvar">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-envvar">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --no-system
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-system">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-system">gammapy-info command line option</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --no-version
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-version">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-version">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --out
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-out">gammapy-analysis-run command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-out">gammapy-analysis-run command line option</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-datasets-out">gammapy-download-datasets command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-datasets-out">gammapy-download-datasets command line option</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-notebooks-out">gammapy-download-notebooks command line option</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-tar-out">gammapy-jupyter-tar command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-notebooks-out">gammapy-download-notebooks command line option</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     --overwrite
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-config-overwrite">gammapy-analysis-config command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-config-overwrite">gammapy-analysis-config command line option</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-overwrite">gammapy-analysis-run command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --r
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-r">gammapy-jupyter command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-overwrite">gammapy-analysis-run command line option</a>
 </li>
       </ul></li>
       <li>
     --release
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-notebooks-release">gammapy-download-notebooks command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --src
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-src">gammapy-jupyter command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-notebooks-release">gammapy-download-notebooks command line option</a>
 </li>
       </ul></li>
       <li>
     --system
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-system">gammapy-info command line option</a>
-</li>
-      </ul></li>
-      <li>
-    --tutor
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-run-tutor">gammapy-jupyter-run command line option</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-test-tutor">gammapy-jupyter-test command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-system">gammapy-info command line option</a>
 </li>
       </ul></li>
       <li>
     --version
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-version">gammapy command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-version">gammapy command line option</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-version">gammapy-info command line option</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-version">gammapy-info command line option</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-1D-Analysis"><strong>1D Analysis</strong></a>
+      <li><a href="user-guide/references.html#term-1D-Analysis"><strong>1D Analysis</strong></a>
 </li>
-      <li><a href="userguide/references.html#term-3D-Analysis"><strong>3D Analysis</strong></a>
+      <li><a href="user-guide/references.html#term-3D-Analysis"><strong>3D Analysis</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -624,7 +583,7 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.astro.population.add_snr_parameters.html#gammapy.astro.population.add_snr_parameters">add_snr_parameters() (in module gammapy.astro.population)</a>
 </li>
-      <li><a href="userguide/references.html#term-Aeff"><strong>Aeff</strong></a>
+      <li><a href="user-guide/references.html#term-Aeff"><strong>Aeff</strong></a>
 </li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.aeff">aeff (gammapy.data.Observation attribute)</a>
 </li>
@@ -713,6 +672,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.ExpCutoffPowerLawSpectralModel.html#gammapy.modeling.models.ExpCutoffPowerLawSpectralModel.amplitude">(gammapy.modeling.models.ExpCutoffPowerLawSpectralModel attribute)</a>
 </li>
+        <li><a href="api/gammapy.modeling.models.GaussianSpectralModel.html#gammapy.modeling.models.GaussianSpectralModel.amplitude">(gammapy.modeling.models.GaussianSpectralModel attribute)</a>
+</li>
         <li><a href="api/gammapy.modeling.models.LogParabolaSpectralModel.html#gammapy.modeling.models.LogParabolaSpectralModel.amplitude">(gammapy.modeling.models.LogParabolaSpectralModel attribute)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.PowerLaw2SpectralModel.html#gammapy.modeling.models.PowerLaw2SpectralModel.amplitude">(gammapy.modeling.models.PowerLaw2SpectralModel attribute)</a>
@@ -734,18 +695,16 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.visualization.annotate_heatmap.html#gammapy.visualization.annotate_heatmap">annotate_heatmap() (in module gammapy.visualization)</a>
 </li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.append">append() (gammapy.data.Observations method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.append">append() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.append">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.append">(gammapy.maps.MapAxis method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.append">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.apply_edisp">apply_edisp() (gammapy.maps.HpxMap method)</a>
 
       <ul>
@@ -774,11 +733,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.as_array">(gammapy.data.ObservationTable method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.as_energy_true">as_energy_true (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.as_energy_true">as_energy_true (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.as_energy_true">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.as_energy_true">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.as_energy_true">(gammapy.maps.WcsGeom attribute)</a>
@@ -846,12 +803,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.catalog.SourceCatalogObject4FGL.html#gammapy.catalog.SourceCatalogObject4FGL.asso">(gammapy.catalog.SourceCatalogObject4FGL attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.autoscale">autoscale() (gammapy.modeling.Parameter method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.autoscale">(gammapy.modeling.Parameters method)</a>
+      <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.autoscale">autoscale() (gammapy.modeling.Parameters method)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.available_hdus">available_hdus (gammapy.data.Observation attribute)</a>
 </li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.available_irfs">available_irfs (gammapy.data.Observation attribute)</a>
@@ -892,6 +845,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.axes">(gammapy.irf.PSF3D attribute)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.axes">(gammapy.irf.PSFKing attribute)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.axes">(gammapy.irf.RadMax2D attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.axes">(gammapy.maps.HpxGeom attribute)</a>
 </li>
@@ -1059,6 +1014,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.bounds">(gammapy.maps.MapAxis attribute)</a>
 </li>
+        <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.bounds">(gammapy.maps.TimeMapAxis attribute)</a>
+</li>
       </ul></li>
       <li><a href="api/gammapy.maps.MapCoord.html#gammapy.maps.MapCoord.broadcasted">broadcasted (gammapy.maps.MapCoord attribute)</a>
 </li>
@@ -1078,7 +1035,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998">CaseBattacharya1998 (class in gammapy.astro.population)</a>
 </li>
-      <li><a href="userguide/references.html#term-Cash"><strong>Cash</strong></a>
+      <li><a href="user-guide/references.html#term-Cash"><strong>Cash</strong></a>
 </li>
       <li><a href="api/gammapy.stats.cash.html#gammapy.stats.cash">cash() (in module gammapy.stats)</a>
 </li>
@@ -1096,11 +1053,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.center">(gammapy.maps.TimeMapAxis attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.center_coord">center_coord (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_coord">center_coord (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_coord">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.center_coord">(gammapy.maps.MapAxes attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.center_coord">(gammapy.maps.RegionGeom attribute)</a>
@@ -1108,21 +1063,17 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.center_coord">(gammapy.maps.WcsGeom attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.center_pix">center_pix (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_pix">center_pix (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_pix">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.center_pix">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.center_pix">(gammapy.maps.WcsGeom attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.center_skydir">center_skydir (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_skydir">center_skydir (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.center_skydir">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.center_skydir">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.center_skydir">(gammapy.maps.WcsGeom attribute)</a>
@@ -1140,21 +1091,13 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.check">(gammapy.data.Observation method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.check_limits">check_limits() (gammapy.modeling.Parameter method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.check_limits">(gammapy.modeling.Parameters method)</a>
+      <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.check_limits">check_limits() (gammapy.modeling.Parameters method)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.utils.testing.Checker.html#gammapy.utils.testing.Checker">Checker (class in gammapy.utils.testing)</a>
 </li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.clear">clear() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.clear">clear() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.clear">(gammapy.datasets.Datasets method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.clear">(gammapy.maps.Maps method)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.clear">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
@@ -1262,12 +1205,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.stats.WStatCountsStatistic.html#gammapy.stats.WStatCountsStatistic.compute_upper_limit">(gammapy.stats.WStatCountsStatistic method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.conf_max">conf_max (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.conf_min">conf_min (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.confidence">confidence() (gammapy.modeling.Fit method)</a>
-</li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.config">config (gammapy.analysis.Analysis attribute)</a>
 </li>
       <li><a href="api/gammapy.estimators.ASmoothMapEstimator.html#gammapy.estimators.ASmoothMapEstimator.config_parameters">config_parameters (gammapy.estimators.ASmoothMapEstimator attribute)</a>
@@ -1328,21 +1265,17 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.containment_radius_map">containment_radius_map() (gammapy.irf.PSFMap method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.contains">contains() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.contains">contains() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.contains">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.contains">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.contains">(gammapy.maps.WcsGeom method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.contains_pix">contains_pix() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.contains_pix">contains_pix() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.contains_pix">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.contains_pix">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.contains_pix">(gammapy.maps.WcsGeom method)</a>
@@ -1350,7 +1283,7 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.contains_wcs_pix">contains_wcs_pix() (gammapy.maps.RegionGeom method)</a>
 </li>
-      <li><a href="api/gammapy.modeling.models.FoVBackgroundModel.html#gammapy.modeling.models.FoVBackgroundModel.contributes">contributes() (gammapy.modeling.models.FoVBackgroundModel method)</a>
+      <li><a href="api/gammapy.modeling.models.FoVBackgroundModel.html#gammapy.modeling.models.FoVBackgroundModel.contributes">contributes() (gammapy.modeling.models.FoVBackgroundModel static method)</a>
 
       <ul>
         <li><a href="api/gammapy.modeling.models.SkyModel.html#gammapy.modeling.models.SkyModel.contributes">(gammapy.modeling.models.SkyModel method)</a>
@@ -1380,11 +1313,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.convolve_wcs">convolve_wcs() (gammapy.maps.HpxNDMap method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.coord_to_idx">coord_to_idx() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.coord_to_idx">coord_to_idx() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.coord_to_idx">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.coord_to_idx">(gammapy.maps.LabelMapAxis method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.coord_to_idx">(gammapy.maps.MapAxes method)</a>
@@ -1398,11 +1329,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.coord_to_idx">(gammapy.maps.WcsGeom method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.coord_to_pix">coord_to_pix() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.coord_to_pix">coord_to_pix() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.coord_to_pix">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.coord_to_pix">(gammapy.maps.LabelMapAxis method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.coord_to_pix">(gammapy.maps.MapAxes method)</a>
@@ -1441,9 +1370,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.copy">(gammapy.astro.population.YusifovKucuk2004B method)</a>
 </li>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.copy">(gammapy.data.GTI method)</a>
-</li>
         <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.copy">(gammapy.data.HDUIndexTable method)</a>
+</li>
+        <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.copy">(gammapy.data.Observation method)</a>
 </li>
         <li><a href="api/gammapy.data.ObservationFilter.html#gammapy.data.ObservationFilter.copy">(gammapy.data.ObservationFilter method)</a>
 </li>
@@ -1500,6 +1429,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.copy">(gammapy.maps.LabelMapAxis method)</a>
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.copy">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.copy">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.copy">(gammapy.maps.MapAxis method)</a>
 </li>
@@ -1624,15 +1555,11 @@ function checkPageExistsAndRedirect(event) {
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.data.DataStore.html#gammapy.data.DataStore.copy_obs">copy_obs() (gammapy.data.DataStore method)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.correlation">correlation (gammapy.modeling.Covariance attribute)</a>
-</li>
       <li><a href="api/gammapy.estimators.ExcessMapEstimator.html#gammapy.estimators.ExcessMapEstimator.correlation_radius">correlation_radius (gammapy.estimators.ExcessMapEstimator attribute)</a>
 </li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.count">count() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.count">count() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.count">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.count">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.count">(gammapy.modeling.models.DatasetModels method)</a>
@@ -1782,13 +1709,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.covariance">(gammapy.modeling.models.TemporalModel attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.covariance">covariance() (gammapy.modeling.Fit method)</a>
-</li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.create">create() (gammapy.data.GTI class method)</a>
+      <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.create">create() (gammapy.data.Observation class method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.create">(gammapy.data.Observation class method)</a>
-</li>
         <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.create">(gammapy.datasets.MapDataset class method)</a>
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.create">(gammapy.datasets.MapDatasetOnOff class method)</a>
@@ -1830,11 +1753,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.datasets.create_map_dataset_geoms.html#gammapy.datasets.create_map_dataset_geoms">create_map_dataset_geoms() (in module gammapy.datasets)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.crop">crop() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.crop">crop() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.crop">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.crop">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.crop">(gammapy.maps.HpxNDMap method)</a>
@@ -1872,6 +1793,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.cumsum">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.cumsum">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.cumsum">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.cumsum">(gammapy.maps.HpxMap method)</a>
 </li>
@@ -1949,6 +1872,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.data">(gammapy.irf.PSFKing attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.data">(gammapy.irf.RadMax2D attribute)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.data">(gammapy.maps.HpxMap attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.data">(gammapy.maps.HpxNDMap attribute)</a>
@@ -1961,14 +1886,10 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.data">(gammapy.maps.WcsNDMap attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.data">(gammapy.modeling.Covariance attribute)</a>
-</li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.data_nbytes">data_nbytes() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.data_nbytes">data_nbytes() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.data_nbytes">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.data_nbytes">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.data_nbytes">(gammapy.maps.WcsGeom method)</a>
@@ -1982,8 +1903,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.data_shape">(gammapy.datasets.SpectrumDataset attribute)</a>
 </li>
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.data_shape">(gammapy.datasets.SpectrumDatasetOnOff attribute)</a>
-</li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.data_shape">(gammapy.maps.Geom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.data_shape">(gammapy.maps.HpxGeom attribute)</a>
 </li>
@@ -2002,7 +1921,7 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.data_shape_axes">(gammapy.maps.WcsGeom attribute)</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-Dataset"><strong>Dataset</strong></a>
+      <li><a href="user-guide/references.html#term-Dataset"><strong>Dataset</strong></a>
 
       <ul>
         <li><a href="api/gammapy.datasets.Dataset.html#gammapy.datasets.Dataset">(class in gammapy.datasets)</a>
@@ -2060,6 +1979,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.default_interp_kwargs">(gammapy.irf.PSF3D attribute)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.default_interp_kwargs">(gammapy.irf.PSFKing attribute)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.default_interp_kwargs">(gammapy.irf.RadMax2D attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.data.DataStore.html#gammapy.data.DataStore.DEFAULT_OBS_TABLE">DEFAULT_OBS_TABLE (gammapy.data.DataStore attribute)</a>
@@ -2173,6 +2094,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.default_unit">(gammapy.irf.PSF3D attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.default_unit">(gammapy.irf.RadMax2D attribute)</a>
+</li>
       </ul></li>
       <li><a href="api/gammapy.catalog.SourceCatalog2FHL.html#gammapy.catalog.SourceCatalog2FHL.description">description (gammapy.catalog.SourceCatalog2FHL attribute)</a>
 
@@ -2251,8 +2174,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.downsample">(gammapy.irf.PSFMap method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.downsample">(gammapy.maps.Geom method)</a>
-</li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.downsample">(gammapy.maps.HpxGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.downsample">(gammapy.maps.HpxMap method)</a>
@@ -2282,11 +2203,9 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.utils.random.draw.html#gammapy.utils.random.draw">draw() (in module gammapy.utils.random)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.drop">drop() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.drop">drop() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.drop">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.drop">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.drop">(gammapy.maps.RegionGeom method)</a>
@@ -2404,7 +2323,7 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.edges_min">(gammapy.maps.TimeMapAxis attribute)</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-EDisp"><strong>EDisp</strong></a>
+      <li><a href="user-guide/references.html#term-EDisp"><strong>EDisp</strong></a>
 </li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.edisp">edisp (gammapy.data.Observation attribute)</a>
 
@@ -2592,13 +2511,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.TemplateSpectralModel.html#gammapy.modeling.models.TemplateSpectralModel.energy_flux_error">(gammapy.modeling.models.TemplateSpectralModel method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.energy_integrated">energy_integrated() (gammapy.astro.source.Pulsar method)</a>
-</li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.energy_mask">energy_mask() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.energy_mask">energy_mask() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.energy_mask">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.energy_mask">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.energy_mask">(gammapy.maps.WcsGeom method)</a>
@@ -2698,11 +2613,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.eqcons">(gammapy.astro.population.YusifovKucuk2004B attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.error">error (gammapy.modeling.Parameter attribute)</a>
+      <li><a href="api/gammapy.stats.CashCountsStatistic.html#gammapy.stats.CashCountsStatistic.error">error (gammapy.stats.CashCountsStatistic attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.stats.CashCountsStatistic.html#gammapy.stats.CashCountsStatistic.error">(gammapy.stats.CashCountsStatistic attribute)</a>
-</li>
         <li><a href="api/gammapy.stats.WStatCountsStatistic.html#gammapy.stats.WStatCountsStatistic.error">(gammapy.stats.WStatCountsStatistic attribute)</a>
 </li>
       </ul></li>
@@ -2786,10 +2699,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.estimators.LightCurveEstimator.html#gammapy.estimators.LightCurveEstimator.estimate_scan">(gammapy.estimators.LightCurveEstimator method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.estimators.LightCurveEstimator.html#gammapy.estimators.LightCurveEstimator.estimate_time_bin_flux">estimate_time_bin_flux() (gammapy.estimators.LightCurveEstimator method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.estimators.FluxPointsEstimator.html#gammapy.estimators.FluxPointsEstimator.estimate_ts">estimate_ts() (gammapy.estimators.FluxPointsEstimator method)</a>
 
       <ul>
@@ -2860,6 +2773,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.evaluate">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.evaluate">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.evaluate">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.BrokenPowerLawSpectralModel.html#gammapy.modeling.models.BrokenPowerLawSpectralModel.evaluate">(gammapy.modeling.models.BrokenPowerLawSpectralModel static method)</a>
 </li>
@@ -3210,11 +3125,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.exposure">(gammapy.datasets.SpectrumDatasetOnOff attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.extend">extend() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.extend">extend() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.extend">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.extend">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
@@ -3225,12 +3138,6 @@ function checkPageExistsAndRedirect(event) {
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.stats.f_cash_root_cython.html#gammapy.stats.f_cash_root_cython">f_cash_root_cython() (in module gammapy.stats)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.factor">factor (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.factor_max">factor_max (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.factor_min">factor_min (gammapy.modeling.Parameter attribute)</a>
 </li>
       <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.fake">fake() (gammapy.datasets.MapDataset method)</a>
 
@@ -3506,7 +3413,7 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.format_plot_yaxis">format_plot_yaxis() (gammapy.maps.MapAxis method)</a>
 </li>
-      <li><a href="userguide/references.html#term-FoV"><strong>FoV</strong></a>
+      <li><a href="user-guide/references.html#term-FoV"><strong>FoV</strong></a>
 </li>
       <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.fov_alignment">fov_alignment (gammapy.irf.Background2D attribute)</a>
 
@@ -3526,6 +3433,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.fov_alignment">(gammapy.irf.PSF3D attribute)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.fov_alignment">(gammapy.irf.PSFKing attribute)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.fov_alignment">(gammapy.irf.RadMax2D attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.utils.coordinates.fov_to_sky.html#gammapy.utils.coordinates.fov_to_sky">fov_to_sky() (in module gammapy.utils.coordinates)</a>
@@ -3683,7 +3592,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.from_dict">(gammapy.datasets.MapDatasetOnOff class method)</a>
 </li>
-        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.from_dict">(gammapy.datasets.SpectrumDataset method)</a>
+        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.from_dict">(gammapy.datasets.SpectrumDataset class method)</a>
 </li>
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.from_dict">(gammapy.datasets.SpectrumDatasetOnOff class method)</a>
 </li>
@@ -3804,8 +3713,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.data.DataStore.html#gammapy.data.DataStore.from_events_files">from_events_files() (gammapy.data.DataStore class method)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.from_factor_matrix">from_factor_matrix() (gammapy.modeling.Covariance class method)</a>
-</li>
       <li><a href="api/gammapy.data.DataStore.html#gammapy.data.DataStore.from_file">from_file() (gammapy.data.DataStore class method)</a>
 </li>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.from_gauss">from_gauss() (gammapy.irf.EDispKernel class method)</a>
@@ -3832,8 +3739,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.from_geom">(gammapy.maps.HpxNDMap static method)</a>
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.from_geom">(gammapy.maps.Map static method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.from_geom">(gammapy.maps.Maps class method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.from_geom">(gammapy.maps.RegionNDMap static method)</a>
 </li>
@@ -3867,9 +3772,9 @@ function checkPageExistsAndRedirect(event) {
       <ul>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.from_hdulist">(gammapy.datasets.MapDatasetOnOff class method)</a>
 </li>
-        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.from_hdulist">(gammapy.datasets.SpectrumDataset method)</a>
+        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.from_hdulist">(gammapy.datasets.SpectrumDataset class method)</a>
 </li>
-        <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist">(gammapy.datasets.SpectrumDatasetOnOff method)</a>
+        <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.from_hdulist">(gammapy.datasets.SpectrumDatasetOnOff class method)</a>
 </li>
         <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.from_hdulist">(gammapy.estimators.FluxMaps class method)</a>
 </li>
@@ -3901,7 +3806,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.from_hdulist">(gammapy.irf.PSFMap class method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.from_hdulist">(gammapy.maps.Geom class method)</a>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.from_hdulist">(gammapy.irf.RadMax2D class method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.from_hdulist">(gammapy.maps.HpxGeom class method)</a>
 </li>
@@ -3910,8 +3815,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.from_hdulist">(gammapy.maps.HpxNDMap class method)</a>
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.from_hdulist">(gammapy.maps.Map static method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.from_hdulist">(gammapy.maps.Maps class method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.from_hdulist">(gammapy.maps.RegionGeom class method)</a>
 </li>
@@ -3930,6 +3833,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.from_header">(gammapy.maps.WcsGeom class method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.from_irf">from_irf() (gammapy.irf.RadMax2D class method)</a>
+</li>
       <li><a href="api/gammapy.modeling.models.LogParabolaNormSpectralModel.html#gammapy.modeling.models.LogParabolaNormSpectralModel.from_log10">from_log10() (gammapy.modeling.models.LogParabolaNormSpectralModel class method)</a>
 
       <ul>
@@ -4091,8 +3996,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.from_stack">from_stack() (gammapy.data.EventList class method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.from_stack">(gammapy.data.GTI class method)</a>
-</li>
         <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.from_stack">(gammapy.estimators.FluxMaps class method)</a>
 </li>
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.from_stack">(gammapy.estimators.FluxPoints class method)</a>
@@ -4110,8 +4013,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.from_stack">(gammapy.maps.WcsMap class method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.from_stack">(gammapy.maps.WcsNDMap class method)</a>
-</li>
-        <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.from_stack">(gammapy.modeling.Covariance class method)</a>
 </li>
         <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.from_stack">(gammapy.modeling.Parameters class method)</a>
 </li>
@@ -4137,6 +4038,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.from_table">(gammapy.irf.PSFKing class method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.from_table">(gammapy.irf.RadMax2D class method)</a>
+</li>
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.from_table">(gammapy.maps.LabelMapAxis class method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.from_table">(gammapy.maps.MapAxes class method)</a>
@@ -4157,8 +4060,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.from_time_bounds">from_time_bounds() (gammapy.maps.TimeMapAxis class method)</a>
 </li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.from_time_edges">from_time_edges() (gammapy.maps.TimeMapAxis class method)</a>
-</li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.from_time_intervals">from_time_intervals() (gammapy.data.GTI class method)</a>
 </li>
       <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.from_wcs_tiles">from_wcs_tiles() (gammapy.maps.HpxNDMap class method)</a>
 </li>
@@ -4271,8 +4172,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.frozen">(gammapy.modeling.models.TemporalModel attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.frozen">(gammapy.modeling.Parameter attribute)</a>
-</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -4290,298 +4189,264 @@ function checkPageExistsAndRedirect(event) {
     gammapy command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-ignore-warnings">--ignore-warnings</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-ignore-warnings">--ignore-warnings</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-log-level">--log-level</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-log-level">--log-level</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-version">--version</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-version">--version</a>
 </li>
       </ul></li>
       <li>
     gammapy-analysis-config command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-config-filename">--filename</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-config-filename">--filename</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-config-overwrite">--overwrite</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-config-overwrite">--overwrite</a>
 </li>
       </ul></li>
       <li>
     gammapy-analysis-run command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-filename">--filename</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-filename">--filename</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-out">--out</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-out">--out</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-analysis-run-overwrite">--overwrite</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-analysis-run-overwrite">--overwrite</a>
 </li>
       </ul></li>
       <li>
     gammapy-download-datasets command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-datasets-out">--out</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-datasets-out">--out</a>
 </li>
       </ul></li>
       <li>
     gammapy-download-notebooks command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-notebooks-out">--out</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-notebooks-out">--out</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-download-notebooks-release">--release</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-download-notebooks-release">--release</a>
 </li>
       </ul></li>
       <li>
     gammapy-info command line option
 
       <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-dependencies">--dependencies</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-dependencies">--dependencies</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-envvar">--envvar</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-envvar">--envvar</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-dependencies">--no-dependencies</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-dependencies">--no-dependencies</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-envvar">--no-envvar</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-envvar">--no-envvar</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-system">--no-system</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-system">--no-system</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-version">--no-version</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-version">--no-version</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-system">--system</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-system">--system</a>
 </li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-info-version">--version</a>
-</li>
-      </ul></li>
-      <li>
-    gammapy-jupyter command line option
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-r">--r</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-src">--src</a>
-</li>
-      </ul></li>
-      <li>
-    gammapy-jupyter-run command line option
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-run-kernel">--kernel</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-run-tutor">--tutor</a>
-</li>
-      </ul></li>
-      <li>
-    gammapy-jupyter-tar command line option
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-tar-out">--out</a>
-</li>
-      </ul></li>
-      <li>
-    gammapy-jupyter-test command line option
-
-      <ul>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-test-kernel">--kernel</a>
-</li>
-        <li><a href="scripts/index.html#cmdoption-gammapy-jupyter-test-tutor">--tutor</a>
+        <li><a href="api-reference/scripts.html#cmdoption-gammapy-info-version">--version</a>
 </li>
       </ul></li>
       <li>
     gammapy.analysis
 
       <ul>
-        <li><a href="analysis/index.html#module-gammapy.analysis">module</a>
+        <li><a href="api-reference/analysis.html#module-gammapy.analysis">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.astro.darkmatter
 
       <ul>
-        <li><a href="astro/index.html#module-gammapy.astro.darkmatter">module</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.darkmatter">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.astro.population
 
       <ul>
-        <li><a href="astro/index.html#module-gammapy.astro.population">module</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.population">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.astro.source
 
       <ul>
-        <li><a href="astro/index.html#module-gammapy.astro.source">module</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.source">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.catalog
 
       <ul>
-        <li><a href="catalog/index.html#module-gammapy.catalog">module</a>
+        <li><a href="api-reference/catalog.html#module-gammapy.catalog">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.data
 
       <ul>
-        <li><a href="data/index.html#module-gammapy.data">module</a>
+        <li><a href="api-reference/data.html#module-gammapy.data">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.datasets
 
       <ul>
-        <li><a href="datasets/index.html#module-gammapy.datasets">module</a>
+        <li><a href="api-reference/datasets.html#module-gammapy.datasets">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.estimators
 
       <ul>
-        <li><a href="estimators/index.html#module-gammapy.estimators">module</a>
+        <li><a href="api-reference/estimators.html#module-gammapy.estimators">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.estimators.utils
 
       <ul>
-        <li><a href="estimators/index.html#module-gammapy.estimators.utils">module</a>
+        <li><a href="api-reference/estimators.html#module-gammapy.estimators.utils">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.irf
 
       <ul>
-        <li><a href="irf/index.html#module-gammapy.irf">module</a>
+        <li><a href="api-reference/irf.html#module-gammapy.irf">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.makers
 
       <ul>
-        <li><a href="makers/index.html#module-gammapy.makers">module</a>
+        <li><a href="api-reference/makers.html#module-gammapy.makers">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.makers.utils
 
       <ul>
-        <li><a href="makers/index.html#module-gammapy.makers.utils">module</a>
+        <li><a href="api-reference/makers.html#module-gammapy.makers.utils">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.maps
 
       <ul>
-        <li><a href="maps/index.html#module-gammapy.maps">module</a>
+        <li><a href="api-reference/maps.html#module-gammapy.maps">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.modeling
 
       <ul>
-        <li><a href="modeling/index.html#module-gammapy.modeling">module</a>
+        <li><a href="api-reference/modeling.html#module-gammapy.modeling">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.modeling.models
 
       <ul>
-        <li><a href="modeling/index.html#module-gammapy.modeling.models">module</a>
+        <li><a href="api-reference/modeling.html#module-gammapy.modeling.models">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.stats
 
       <ul>
-        <li><a href="stats/index.html#module-gammapy.stats">module</a>
+        <li><a href="api-reference/stats.html#module-gammapy.stats">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.coordinates
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.coordinates">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.coordinates">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.fits
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.fits">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.fits">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.integrate
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.integrate">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.integrate">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.interpolation
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.interpolation">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.interpolation">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.random
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.random">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.random">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.regions
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.regions">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.regions">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.scripts
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.scripts">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.scripts">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.table
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.table">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.table">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.testing
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.testing">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.testing">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.time
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.time">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.time">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.utils.units
 
       <ul>
-        <li><a href="utils/index.html#module-gammapy.utils.units">module</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.units">module</a>
 </li>
       </ul></li>
       <li>
     gammapy.visualization
 
       <ul>
-        <li><a href="visualization/index.html#module-gammapy.visualization">module</a>
+        <li><a href="api-reference/visualization.html#module-gammapy.visualization">module</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.catalog.SourceCatalogHGPS.html#gammapy.catalog.SourceCatalogHGPS.gaussian_component">gaussian_component() (gammapy.catalog.SourceCatalogHGPS method)</a>
@@ -4609,8 +4474,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.geom">(gammapy.maps.Map attribute)</a>
 </li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.geom">(gammapy.maps.Maps attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.geom">(gammapy.maps.RegionNDMap attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.geom">(gammapy.maps.WcsMap attribute)</a>
@@ -4628,16 +4491,14 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.geoms">(gammapy.datasets.SpectrumDatasetOnOff attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.get">get() (gammapy.maps.Maps method)</a>
-</li>
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.get_altaz">get_altaz() (gammapy.data.FixedPointingInfo method)</a>
 
       <ul>
         <li><a href="api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_altaz">(gammapy.data.PointingInfo method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.get_bias">get_bias() (gammapy.irf.EDispKernel method)</a>
 </li>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.get_bias_energy">get_bias_energy() (gammapy.irf.EDispKernel method)</a>
@@ -4706,11 +4567,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.get_by_pix">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.get_coord">get_coord() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.get_coord">get_coord() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.get_coord">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.get_coord">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.get_coord">(gammapy.maps.RegionGeom method)</a>
@@ -4728,6 +4587,12 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.get_excess_map">get_excess_map() (gammapy.analysis.Analysis method)</a>
 </li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.get_filenames">get_filenames() (gammapy.datasets.OGIPDatasetReader method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.get_filenames">(gammapy.datasets.OGIPDatasetWriter static method)</a>
+</li>
+      </ul></li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.get_flux_points">get_flux_points() (gammapy.analysis.Analysis method)</a>
 
       <ul>
@@ -4744,11 +4609,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.get_icrs">(gammapy.data.PointingInfo method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.get_idx">get_idx() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.get_idx">get_idx() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.get_idx">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.get_idx">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.get_idx">(gammapy.maps.WcsGeom method)</a>
@@ -4806,16 +4669,14 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.get_mean">get_mean() (gammapy.irf.EDispKernel method)</a>
 </li>
-      <li><a href="api/gammapy.utils.scripts.get_notebooks_paths.html#gammapy.utils.scripts.get_notebooks_paths">get_notebooks_paths() (in module gammapy.utils.scripts)</a>
-</li>
-      <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.get_obs_idx">get_obs_idx() (gammapy.data.ObservationTable method)</a>
-</li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.get_observations">get_observations() (gammapy.analysis.Analysis method)</a>
 
       <ul>
         <li><a href="api/gammapy.data.DataStore.html#gammapy.data.DataStore.get_observations">(gammapy.data.DataStore method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.get_ogip_meta">get_ogip_meta() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
       <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.get_pix">get_pix() (gammapy.maps.WcsGeom method)</a>
 </li>
       <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.get_psf_kernel">get_psf_kernel() (gammapy.irf.PSFMap method)</a>
@@ -4848,7 +4709,7 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.get_spectrum">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.get_subcovariance">get_subcovariance() (gammapy.modeling.Covariance method)</a>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.get_valid_path">get_valid_path() (gammapy.datasets.OGIPDatasetReader method)</a>
 </li>
       <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.get_wcs_coord_and_weights">get_wcs_coord_and_weights() (gammapy.maps.RegionGeom method)</a>
 </li>
@@ -4864,24 +4725,16 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.group_by">(gammapy.data.ObservationTable method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.group_table">group_table() (gammapy.data.GTI method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.group_table">(gammapy.maps.MapAxis method)</a>
+      <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.group_table">group_table() (gammapy.maps.MapAxis method)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.groups">groups (gammapy.data.HDUIndexTable attribute)</a>
 
       <ul>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.groups">(gammapy.data.ObservationTable attribute)</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-GTI"><strong>GTI</strong></a>
-
-      <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI">(class in gammapy.data)</a>
+      <li><a href="user-guide/references.html#term-GTI"><strong>GTI</strong></a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.gti">gti (gammapy.data.Observation attribute)</a>
 
       <ul>
@@ -4890,6 +4743,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.FluxPointsDataset.html#gammapy.datasets.FluxPointsDataset.gti">(gammapy.datasets.FluxPointsDataset attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI">GTI (in module gammapy.data)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -4902,11 +4757,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.has_any_ts">(gammapy.estimators.FluxPoints attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.has_energy_axis">has_energy_axis (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.has_energy_axis">has_energy_axis (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.has_energy_axis">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.has_energy_axis">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.has_energy_axis">(gammapy.maps.WcsGeom attribute)</a>
@@ -4970,6 +4823,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.has_offset_axis">(gammapy.irf.PSF3D attribute)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.has_offset_axis">(gammapy.irf.PSFKing attribute)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.has_offset_axis">(gammapy.irf.RadMax2D attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.has_stat_profiles">has_stat_profiles (gammapy.estimators.FluxMaps attribute)</a>
@@ -5060,8 +4915,6 @@ function checkPageExistsAndRedirect(event) {
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.ids">ids (gammapy.data.Observations attribute)</a>
-</li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.iloc">iloc (gammapy.data.HDUIndexTable attribute)</a>
 
       <ul>
@@ -5071,6 +4924,8 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.estimators.ImageProfile.html#gammapy.estimators.ImageProfile">ImageProfile (class in gammapy.estimators)</a>
 </li>
       <li><a href="api/gammapy.estimators.ImageProfileEstimator.html#gammapy.estimators.ImageProfileEstimator">ImageProfileEstimator (class in gammapy.estimators)</a>
+</li>
+      <li><a href="api/gammapy.modeling.models.NaimaSpectralModel.html#gammapy.modeling.models.NaimaSpectralModel.include_ssc">include_ssc (gammapy.modeling.models.NaimaSpectralModel attribute)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.ExpCutoffPowerLaw3FGLSpectralModel.html#gammapy.modeling.models.ExpCutoffPowerLaw3FGLSpectralModel.index">index (gammapy.modeling.models.ExpCutoffPowerLaw3FGLSpectralModel attribute)</a>
 
@@ -5084,11 +4939,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.PowerLawSpectralModel.html#gammapy.modeling.models.PowerLawSpectralModel.index">(gammapy.modeling.models.PowerLawSpectralModel attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.index">index() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.index">index() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.index">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.index">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.index">(gammapy.modeling.models.DatasetModels method)</a>
@@ -5348,11 +5201,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.inputs">(gammapy.astro.population.YusifovKucuk2004B attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.insert">insert() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.insert">insert() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.insert">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.insert">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
@@ -5382,6 +5233,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.integral">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.integral">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.integral">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.integral">(gammapy.maps.HpxMap method)</a>
 </li>
@@ -5458,6 +5311,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.TemplateNDSpectralModel.html#gammapy.modeling.models.TemplateNDSpectralModel.integral">(gammapy.modeling.models.TemplateNDSpectralModel method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.TemplateSpectralModel.html#gammapy.modeling.models.TemplateSpectralModel.integral">(gammapy.modeling.models.TemplateSpectralModel method)</a>
+</li>
+        <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.integral">(gammapy.modeling.models.TemporalModel method)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.html#gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.integral_error">integral_error() (gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel method)</a>
@@ -5555,9 +5410,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.integrate_log_log">(gammapy.irf.PSFKing method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.integrate_log_log">(gammapy.irf.RadMax2D method)</a>
+</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.modeling.models.integrate_spectrum.html#gammapy.modeling.models.integrate_spectrum">integrate_spectrum() (in module gammapy.modeling.models)</a>
 </li>
       <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.interp">interp (gammapy.maps.MapAxis attribute)</a>
@@ -5594,6 +5449,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.interp_by_pix">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.interp_missing_data">interp_missing_data() (gammapy.irf.Background2D method)</a>
 
       <ul>
@@ -5612,6 +5469,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.interp_missing_data">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.interp_missing_data">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.interp_missing_data">(gammapy.irf.RadMax2D method)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.interp_to_geom">interp_to_geom() (gammapy.maps.HpxMap method)</a>
@@ -5764,7 +5623,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.ipix">ipix (gammapy.maps.HpxGeom attribute)</a>
 </li>
-      <li><a href="userguide/references.html#term-IRF"><strong>IRF</strong></a>
+      <li><a href="user-guide/references.html#term-IRF"><strong>IRF</strong></a>
 </li>
       <li><a href="api/gammapy.irf.IRF_REGISTRY.html#gammapy.irf.IRF_REGISTRY">IRF_REGISTRY (in module gammapy.irf)</a>
 </li>
@@ -5788,11 +5647,57 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.is_all_same_type">is_all_same_type (gammapy.datasets.Datasets attribute)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.is_allsky">is_allsky (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.is_allclose">is_allclose() (gammapy.irf.Background2D method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_allsky">(gammapy.maps.HpxGeom attribute)</a>
+        <li><a href="api/gammapy.irf.Background3D.html#gammapy.irf.Background3D.is_allclose">(gammapy.irf.Background3D method)</a>
 </li>
+        <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.is_allclose">(gammapy.irf.EDispKernel method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EffectiveAreaTable2D.html#gammapy.irf.EffectiveAreaTable2D.is_allclose">(gammapy.irf.EffectiveAreaTable2D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.is_allclose">(gammapy.irf.EnergyDependentMultiGaussPSF method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EnergyDispersion2D.html#gammapy.irf.EnergyDispersion2D.is_allclose">(gammapy.irf.EnergyDispersion2D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.ParametricPSF.html#gammapy.irf.ParametricPSF.is_allclose">(gammapy.irf.ParametricPSF method)</a>
+</li>
+        <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.is_allclose">(gammapy.irf.PSF3D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.is_allclose">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.is_allclose">(gammapy.irf.RadMax2D method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_allclose">(gammapy.maps.HpxGeom method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.is_allclose">(gammapy.maps.HpxMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.is_allclose">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.is_allclose">(gammapy.maps.LabelMapAxis method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.is_allclose">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.is_allclose">(gammapy.maps.MapAxes method)</a>
+</li>
+        <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.is_allclose">(gammapy.maps.MapAxis method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.is_allclose">(gammapy.maps.RegionGeom method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.is_allclose">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.is_allclose">(gammapy.maps.TimeMapAxis method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.is_allclose">(gammapy.maps.WcsGeom method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.is_allclose">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.is_allclose">(gammapy.maps.WcsNDMap method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_allsky">is_allsky (gammapy.maps.HpxGeom attribute)</a>
+
+      <ul>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.is_allsky">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.is_allsky">(gammapy.maps.WcsGeom attribute)</a>
@@ -5830,11 +5735,11 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.modeling.models.PointSpatialModel.html#gammapy.modeling.models.PointSpatialModel.is_energy_dependent">is_energy_dependent() (gammapy.modeling.models.PointSpatialModel method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.is_flat">is_flat (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.is_fixed_rad_max">is_fixed_rad_max (gammapy.irf.RadMax2D attribute)</a>
+</li>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_flat">is_flat (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_flat">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.is_flat">(gammapy.maps.MapAxes attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.is_flat">(gammapy.maps.RegionGeom attribute)</a>
@@ -5850,11 +5755,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.is_hpx">(gammapy.maps.WcsGeom attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.is_image">is_image (gammapy.maps.Geom attribute)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_image">is_image (gammapy.maps.HpxGeom attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_image">(gammapy.maps.HpxGeom attribute)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.is_image">(gammapy.maps.RegionGeom attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.is_image">(gammapy.maps.WcsGeom attribute)</a>
@@ -5957,6 +5860,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.is_pointlike">(gammapy.irf.PSFKing attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.is_pointlike">(gammapy.irf.RadMax2D attribute)</a>
+</li>
       </ul></li>
       <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.is_region">is_region (gammapy.maps.HpxGeom attribute)</a>
 
@@ -5987,10 +5892,26 @@ function checkPageExistsAndRedirect(event) {
       <ul>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.items">(gammapy.data.ObservationTable method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.items">(gammapy.maps.Maps method)</a>
+      </ul></li>
+      <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.iter_by_axis">iter_by_axis() (gammapy.estimators.FluxMaps method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.iter_by_axis">(gammapy.estimators.FluxPoints method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.iter_by_axis">(gammapy.maps.HpxMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.iter_by_axis">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.iter_by_axis">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.iter_by_axis">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.iter_by_axis">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.iter_by_axis">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.iter_by_axis">iter_by_axis() (gammapy.maps.RegionNDMap method)</a>
+      <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.iter_by_axis_data">iter_by_axis_data() (gammapy.maps.RegionNDMap method)</a>
 </li>
       <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.iter_by_edges">iter_by_edges (gammapy.maps.MapAxis attribute)</a>
 
@@ -6010,6 +5931,20 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.iter_by_image">(gammapy.maps.WcsMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.iter_by_image">(gammapy.maps.WcsNDMap method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.iter_by_image_data">iter_by_image_data() (gammapy.maps.HpxMap method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.iter_by_image_data">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.iter_by_image_data">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.iter_by_image_data">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.iter_by_image_data">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.iter_by_image_data">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.iter_with_reshape">iter_with_reshape (gammapy.maps.MapAxes attribute)</a>
@@ -6036,7 +5971,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="userguide/references.html#term-Joint-Analysis"><strong>Joint Analysis</strong></a>
+      <li><a href="user-guide/references.html#term-Joint-Analysis"><strong>Joint Analysis</strong></a>
 </li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.json">json() (gammapy.analysis.AnalysisConfig method)</a>
 </li>
@@ -6054,18 +5989,16 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.keep_columns">(gammapy.data.ObservationTable method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.makers.RingBackgroundMaker.html#gammapy.makers.RingBackgroundMaker.kernel">kernel() (gammapy.makers.RingBackgroundMaker method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/gammapy.makers.RingBackgroundMaker.html#gammapy.makers.RingBackgroundMaker.kernel">kernel() (gammapy.makers.RingBackgroundMaker method)</a>
+</li>
       <li><a href="api/gammapy.makers.AdaptiveRingBackgroundMaker.html#gammapy.makers.AdaptiveRingBackgroundMaker.kernels">kernels() (gammapy.makers.AdaptiveRingBackgroundMaker method)</a>
 </li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.keys">keys() (gammapy.data.HDUIndexTable method)</a>
 
       <ul>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.keys">(gammapy.data.ObservationTable method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.keys">(gammapy.maps.Maps method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -6192,14 +6125,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.astro.source.SimplePulsar.html#gammapy.astro.source.SimplePulsar.luminosity_spindown">luminosity_spindown (gammapy.astro.source.SimplePulsar attribute)</a>
 </li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.luminosity_spindown">luminosity_spindown() (gammapy.astro.source.Pulsar method)</a>
+      <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.luminosity_tev">luminosity_tev() (gammapy.astro.source.SNRTrueloveMcKee method)</a>
 </li>
-      <li><a href="api/gammapy.astro.source.SNR.html#gammapy.astro.source.SNR.luminosity_tev">luminosity_tev() (gammapy.astro.source.SNR method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.luminosity_tev">(gammapy.astro.source.SNRTrueloveMcKee method)</a>
-</li>
-      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -6210,12 +6137,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.astro.source.SimplePulsar.html#gammapy.astro.source.SimplePulsar.magnetic_field">magnetic_field (gammapy.astro.source.SimplePulsar attribute)</a>
 </li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.magnetic_field">magnetic_field() (gammapy.astro.source.Pulsar method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.astro.source.PWN.html#gammapy.astro.source.PWN.magnetic_field">(gammapy.astro.source.PWN method)</a>
-</li>
-      </ul></li>
       <li><a href="api/gammapy.makers.MapDatasetMaker.html#gammapy.makers.MapDatasetMaker.make_background">make_background() (gammapy.makers.MapDatasetMaker method)</a>
 
       <ul>
@@ -6480,17 +6401,13 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.maps.MapCoord.html#gammapy.maps.MapCoord.match_by_name">match_by_name (gammapy.maps.MapCoord attribute)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.max">max (gammapy.modeling.Parameter attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.max">(gammapy.modeling.Parameters attribute)</a>
+      <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.max">max (gammapy.modeling.Parameters attribute)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.astro.darkmatter.PrimaryFlux.html#gammapy.astro.darkmatter.PrimaryFlux.mDM">mDM (gammapy.astro.darkmatter.PrimaryFlux attribute)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.GaussianSpectralModel.html#gammapy.modeling.models.GaussianSpectralModel.mean">mean (gammapy.modeling.models.GaussianSpectralModel attribute)</a>
 </li>
-      <li><a href="userguide/references.html#term-MET"><strong>MET</strong></a>
+      <li><a href="user-guide/references.html#term-MET"><strong>MET</strong></a>
 </li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.meta">meta (gammapy.astro.population.CaseBattacharya1998 attribute)</a>
 
@@ -6536,13 +6453,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.modeling.models.MeyerCrabSpectralModel.html#gammapy.modeling.models.MeyerCrabSpectralModel">MeyerCrabSpectralModel (class in gammapy.modeling.models)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.min">min (gammapy.modeling.Parameter attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.min">(gammapy.modeling.Parameters attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.minuit">minuit (gammapy.modeling.Fit attribute)</a>
+      <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.min">min (gammapy.modeling.Parameters attribute)</a>
 </li>
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.mode">mode (gammapy.data.FixedPointingInfo attribute)</a>
 </li>
@@ -6618,61 +6529,61 @@ function checkPageExistsAndRedirect(event) {
     module
 
       <ul>
-        <li><a href="analysis/index.html#module-gammapy.analysis">gammapy.analysis</a>
+        <li><a href="api-reference/analysis.html#module-gammapy.analysis">gammapy.analysis</a>
 </li>
-        <li><a href="astro/index.html#module-gammapy.astro.darkmatter">gammapy.astro.darkmatter</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.darkmatter">gammapy.astro.darkmatter</a>
 </li>
-        <li><a href="astro/index.html#module-gammapy.astro.population">gammapy.astro.population</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.population">gammapy.astro.population</a>
 </li>
-        <li><a href="astro/index.html#module-gammapy.astro.source">gammapy.astro.source</a>
+        <li><a href="api-reference/astro.html#module-gammapy.astro.source">gammapy.astro.source</a>
 </li>
-        <li><a href="catalog/index.html#module-gammapy.catalog">gammapy.catalog</a>
+        <li><a href="api-reference/catalog.html#module-gammapy.catalog">gammapy.catalog</a>
 </li>
-        <li><a href="data/index.html#module-gammapy.data">gammapy.data</a>
+        <li><a href="api-reference/data.html#module-gammapy.data">gammapy.data</a>
 </li>
-        <li><a href="datasets/index.html#module-gammapy.datasets">gammapy.datasets</a>
+        <li><a href="api-reference/datasets.html#module-gammapy.datasets">gammapy.datasets</a>
 </li>
-        <li><a href="estimators/index.html#module-gammapy.estimators">gammapy.estimators</a>
+        <li><a href="api-reference/estimators.html#module-gammapy.estimators">gammapy.estimators</a>
 </li>
-        <li><a href="estimators/index.html#module-gammapy.estimators.utils">gammapy.estimators.utils</a>
+        <li><a href="api-reference/estimators.html#module-gammapy.estimators.utils">gammapy.estimators.utils</a>
 </li>
-        <li><a href="irf/index.html#module-gammapy.irf">gammapy.irf</a>
+        <li><a href="api-reference/irf.html#module-gammapy.irf">gammapy.irf</a>
 </li>
-        <li><a href="makers/index.html#module-gammapy.makers">gammapy.makers</a>
+        <li><a href="api-reference/makers.html#module-gammapy.makers">gammapy.makers</a>
 </li>
-        <li><a href="makers/index.html#module-gammapy.makers.utils">gammapy.makers.utils</a>
+        <li><a href="api-reference/makers.html#module-gammapy.makers.utils">gammapy.makers.utils</a>
 </li>
-        <li><a href="maps/index.html#module-gammapy.maps">gammapy.maps</a>
+        <li><a href="api-reference/maps.html#module-gammapy.maps">gammapy.maps</a>
 </li>
-        <li><a href="modeling/index.html#module-gammapy.modeling">gammapy.modeling</a>
+        <li><a href="api-reference/modeling.html#module-gammapy.modeling">gammapy.modeling</a>
 </li>
-        <li><a href="modeling/index.html#module-gammapy.modeling.models">gammapy.modeling.models</a>
+        <li><a href="api-reference/modeling.html#module-gammapy.modeling.models">gammapy.modeling.models</a>
 </li>
-        <li><a href="stats/index.html#module-gammapy.stats">gammapy.stats</a>
+        <li><a href="api-reference/stats.html#module-gammapy.stats">gammapy.stats</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.coordinates">gammapy.utils.coordinates</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.coordinates">gammapy.utils.coordinates</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.fits">gammapy.utils.fits</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.fits">gammapy.utils.fits</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.integrate">gammapy.utils.integrate</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.integrate">gammapy.utils.integrate</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.interpolation">gammapy.utils.interpolation</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.interpolation">gammapy.utils.interpolation</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.random">gammapy.utils.random</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.random">gammapy.utils.random</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.regions">gammapy.utils.regions</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.regions">gammapy.utils.regions</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.scripts">gammapy.utils.scripts</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.scripts">gammapy.utils.scripts</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.table">gammapy.utils.table</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.table">gammapy.utils.table</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.testing">gammapy.utils.testing</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.testing">gammapy.utils.testing</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.time">gammapy.utils.time</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.time">gammapy.utils.time</a>
 </li>
-        <li><a href="utils/index.html#module-gammapy.utils.units">gammapy.utils.units</a>
+        <li><a href="api-reference/utils.html#module-gammapy.utils.units">gammapy.utils.units</a>
 </li>
-        <li><a href="visualization/index.html#module-gammapy.visualization">gammapy.visualization</a>
+        <li><a href="api-reference/visualization.html#module-gammapy.visualization">gammapy.visualization</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.more">more() (gammapy.data.HDUIndexTable method)</a>
@@ -6862,8 +6773,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.TemplateNPredModel.html#gammapy.modeling.models.TemplateNPredModel.name">(gammapy.modeling.models.TemplateNPredModel attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.name">(gammapy.modeling.Parameter attribute)</a>
-</li>
       </ul></li>
       <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.names">names (gammapy.datasets.Datasets attribute)</a>
 
@@ -6920,13 +6829,15 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.ExpCutoffPowerLawNormSpectralModel.html#gammapy.modeling.models.ExpCutoffPowerLawNormSpectralModel.norm">(gammapy.modeling.models.ExpCutoffPowerLawNormSpectralModel attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.models.GaussianSpectralModel.html#gammapy.modeling.models.GaussianSpectralModel.norm">(gammapy.modeling.models.GaussianSpectralModel attribute)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.LogParabolaNormSpectralModel.html#gammapy.modeling.models.LogParabolaNormSpectralModel.norm">(gammapy.modeling.models.LogParabolaNormSpectralModel attribute)</a>
+</li>
+        <li><a href="api/gammapy.modeling.models.MeyerCrabSpectralModel.html#gammapy.modeling.models.MeyerCrabSpectralModel.norm">(gammapy.modeling.models.MeyerCrabSpectralModel attribute)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.PowerLawNormSpectralModel.html#gammapy.modeling.models.PowerLawNormSpectralModel.norm">(gammapy.modeling.models.PowerLawNormSpectralModel attribute)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.ScaleSpectralModel.html#gammapy.modeling.models.ScaleSpectralModel.norm">(gammapy.modeling.models.ScaleSpectralModel attribute)</a>
+</li>
+        <li><a href="api/gammapy.modeling.models.TemplateSpectralModel.html#gammapy.modeling.models.TemplateSpectralModel.norm">(gammapy.modeling.models.TemplateSpectralModel attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.stats.norm_bounds_cython.html#gammapy.stats.norm_bounds_cython">norm_bounds_cython() (in module gammapy.stats)</a>
@@ -6981,6 +6892,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.normalize">(gammapy.irf.PSFKing method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.normalize">(gammapy.irf.PSFMap method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.normalize">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.normalize">(gammapy.maps.HpxMap method)</a>
 </li>
@@ -7145,8 +7058,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.observatory_earth_location">(gammapy.data.Observation attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.data.observatory_locations.html#gammapy.data.observatory_locations">observatory_locations (in module gammapy.data)</a>
 </li>
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.obstime">obstime (gammapy.data.FixedPointingInfo attribute)</a>
@@ -7157,14 +7068,40 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.makers.DatasetsMaker.html#gammapy.makers.DatasetsMaker.offset_max">offset_max (gammapy.makers.DatasetsMaker attribute)</a>
 </li>
-      <li><a href="api/gammapy.modeling.models.SineTemporalModel.html#gammapy.modeling.models.SineTemporalModel.omega">omega (gammapy.modeling.models.SineTemporalModel attribute)</a>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader">OGIPDatasetReader (class in gammapy.datasets)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.optimize">optimize() (gammapy.modeling.Fit method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter">OGIPDatasetWriter (class in gammapy.datasets)</a>
+</li>
+      <li><a href="api/gammapy.modeling.models.SineTemporalModel.html#gammapy.modeling.models.SineTemporalModel.omega">omega (gammapy.modeling.models.SineTemporalModel attribute)</a>
 </li>
       <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.order">order (gammapy.maps.HpxGeom attribute)</a>
 </li>
       <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.ordering">ordering (gammapy.maps.HpxGeom attribute)</a>
 </li>
+      <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.output_units">output_units() (gammapy.astro.population.CaseBattacharya1998 method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.astro.population.Exponential.html#gammapy.astro.population.Exponential.output_units">(gammapy.astro.population.Exponential method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.FaucherKaspi2006.html#gammapy.astro.population.FaucherKaspi2006.output_units">(gammapy.astro.population.FaucherKaspi2006 method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.FaucherKaspi2006VelocityBimodal.html#gammapy.astro.population.FaucherKaspi2006VelocityBimodal.output_units">(gammapy.astro.population.FaucherKaspi2006VelocityBimodal method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.FaucherKaspi2006VelocityMaxwellian.html#gammapy.astro.population.FaucherKaspi2006VelocityMaxwellian.output_units">(gammapy.astro.population.FaucherKaspi2006VelocityMaxwellian method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.Lorimer2006.html#gammapy.astro.population.Lorimer2006.output_units">(gammapy.astro.population.Lorimer2006 method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.Paczynski1990.html#gammapy.astro.population.Paczynski1990.output_units">(gammapy.astro.population.Paczynski1990 method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.Paczynski1990Velocity.html#gammapy.astro.population.Paczynski1990Velocity.output_units">(gammapy.astro.population.Paczynski1990Velocity method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.YusifovKucuk2004.html#gammapy.astro.population.YusifovKucuk2004.output_units">(gammapy.astro.population.YusifovKucuk2004 method)</a>
+</li>
+        <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.output_units">(gammapy.astro.population.YusifovKucuk2004B method)</a>
+</li>
+      </ul></li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.outputs">outputs (gammapy.astro.population.CaseBattacharya1998 attribute)</a>
 
       <ul>
@@ -7232,7 +7169,7 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.pad">(gammapy.irf.PSFKing method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.pad">(gammapy.maps.Geom method)</a>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.pad">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.pad">(gammapy.maps.HpxGeom method)</a>
 </li>
@@ -7467,6 +7404,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.parse_raw">parse_raw() (gammapy.analysis.AnalysisConfig class method)</a>
 </li>
+      <li><a href="api/gammapy.modeling.models.NaimaSpectralModel.html#gammapy.modeling.models.NaimaSpectralModel.particle_distribution">particle_distribution (gammapy.modeling.models.NaimaSpectralModel attribute)</a>
+</li>
       <li><a href="api/gammapy.utils.fits.HDULocation.html#gammapy.utils.fits.HDULocation.path">path() (gammapy.utils.fits.HDULocation method)</a>
 </li>
       <li><a href="api/gammapy.utils.random.pdf.html#gammapy.utils.random.pdf">pdf() (in module gammapy.utils.random)</a>
@@ -7504,6 +7443,10 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.peek">(gammapy.irf.EDispKernel method)</a>
 </li>
+        <li><a href="api/gammapy.irf.EDispKernelMap.html#gammapy.irf.EDispKernelMap.peek">(gammapy.irf.EDispKernelMap method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EDispMap.html#gammapy.irf.EDispMap.peek">(gammapy.irf.EDispMap method)</a>
+</li>
         <li><a href="api/gammapy.irf.EffectiveAreaTable2D.html#gammapy.irf.EffectiveAreaTable2D.peek">(gammapy.irf.EffectiveAreaTable2D method)</a>
 </li>
         <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.peek">(gammapy.irf.EnergyDependentMultiGaussPSF method)</a>
@@ -7516,11 +7459,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.peek">(gammapy.irf.PSFKing method)</a>
 </li>
+        <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.peek">(gammapy.irf.PSFMap method)</a>
+</li>
       </ul></li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.period">period() (gammapy.astro.source.Pulsar method)</a>
-</li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.period_dot">period_dot() (gammapy.astro.source.Pulsar method)</a>
-</li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.pformat">pformat() (gammapy.data.HDUIndexTable method)</a>
 
       <ul>
@@ -7575,11 +7516,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.PowerLawSpectralModel.html#gammapy.modeling.models.PowerLawSpectralModel.pivot_energy">(gammapy.modeling.models.PowerLawSpectralModel attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.pix_to_coord">pix_to_coord() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.pix_to_coord">pix_to_coord() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.pix_to_coord">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.pix_to_coord">(gammapy.maps.LabelMapAxis method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.pix_to_coord">(gammapy.maps.MapAxes method)</a>
@@ -7591,11 +7530,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.pix_to_coord">(gammapy.maps.WcsGeom method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.pix_to_idx">pix_to_idx() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.pix_to_idx">pix_to_idx() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.pix_to_idx">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.pix_to_idx">(gammapy.maps.LabelMapAxis method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.pix_to_idx">(gammapy.maps.MapAxes method)</a>
@@ -7735,6 +7672,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.EnergyDispersion2D.html#gammapy.irf.EnergyDispersion2D.plot_bias">(gammapy.irf.EnergyDispersion2D method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.plot_containment_radius">plot_containment_radius() (gammapy.irf.EnergyDependentMultiGaussPSF method)</a>
 
       <ul>
@@ -7745,8 +7684,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.plot_containment_radius">(gammapy.irf.PSFKing method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.plot_containment_radius_vs_energy">plot_containment_radius_vs_energy() (gammapy.irf.EnergyDependentMultiGaussPSF method)</a>
 
       <ul>
@@ -7760,8 +7697,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
       </ul></li>
       <li><a href="api/gammapy.visualization.plot_contour_line.html#gammapy.visualization.plot_contour_line">plot_contour_line() (in module gammapy.visualization)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.plot_correlation">plot_correlation() (gammapy.modeling.Covariance method)</a>
 </li>
       <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.plot_counts">plot_counts() (gammapy.datasets.SpectrumDataset method)</a>
 
@@ -7989,6 +7924,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.plot_psf_vs_rad">(gammapy.irf.PSFMap method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.plot_rad_max_vs_energy">plot_rad_max_vs_energy() (gammapy.irf.RadMax2D method)</a>
+</li>
       <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.plot_region">plot_region() (gammapy.maps.RegionGeom method)</a>
 
       <ul>
@@ -8067,18 +8004,12 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.utils.coordinates.polar.html#gammapy.utils.coordinates.polar">polar() (in module gammapy.utils.coordinates)</a>
 </li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.pop">pop() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.pop">pop() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.pop">(gammapy.datasets.Datasets method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.pop">(gammapy.maps.Maps method)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.pop">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.popitem">popitem() (gammapy.maps.Maps method)</a>
-</li>
       <li><a href="api/gammapy.catalog.SourceCatalogObject.html#gammapy.catalog.SourceCatalogObject.position">position (gammapy.catalog.SourceCatalogObject attribute)</a>
 
       <ul>
@@ -8342,6 +8273,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.quantity">(gammapy.irf.PSFKing attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.quantity">(gammapy.irf.RadMax2D attribute)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.quantity">(gammapy.maps.HpxMap attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.quantity">(gammapy.maps.HpxNDMap attribute)</a>
@@ -8353,8 +8286,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.quantity">(gammapy.maps.WcsMap attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.quantity">(gammapy.maps.WcsNDMap attribute)</a>
-</li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.quantity">(gammapy.modeling.Parameter attribute)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -8408,20 +8339,14 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.astro.population.ValleeSpiral.html#gammapy.astro.population.ValleeSpiral.radius">(gammapy.astro.population.ValleeSpiral method)</a>
 </li>
-        <li><a href="api/gammapy.astro.source.PWN.html#gammapy.astro.source.PWN.radius">(gammapy.astro.source.PWN method)</a>
-</li>
-        <li><a href="api/gammapy.astro.source.SNR.html#gammapy.astro.source.SNR.radius">(gammapy.astro.source.SNR method)</a>
-</li>
         <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.radius">(gammapy.astro.source.SNRTrueloveMcKee method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.astro.source.SNR.html#gammapy.astro.source.SNR.radius_inner">radius_inner() (gammapy.astro.source.SNR method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.radius_inner">(gammapy.astro.source.SNRTrueloveMcKee method)</a>
+      <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.radius_inner">radius_inner() (gammapy.astro.source.SNRTrueloveMcKee method)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.radius_reverse_shock">radius_reverse_shock() (gammapy.astro.source.SNRTrueloveMcKee method)</a>
+</li>
+      <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D">RadMax2D (class in gammapy.irf)</a>
 </li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.read">read() (gammapy.analysis.AnalysisConfig class method)</a>
 
@@ -8429,8 +8354,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.read">(gammapy.data.EventList class method)</a>
 </li>
         <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.read">(gammapy.data.FixedPointingInfo class method)</a>
-</li>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.read">(gammapy.data.GTI class method)</a>
 </li>
         <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.read">(gammapy.data.HDUIndexTable class method)</a>
 </li>
@@ -8448,7 +8371,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.read">(gammapy.datasets.MapDatasetOnOff class method)</a>
 </li>
-        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.read">(gammapy.datasets.SpectrumDataset method)</a>
+        <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read">(gammapy.datasets.OGIPDatasetReader method)</a>
+</li>
+        <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.read">(gammapy.datasets.SpectrumDataset class method)</a>
 </li>
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.read">(gammapy.datasets.SpectrumDatasetOnOff class method)</a>
 </li>
@@ -8484,13 +8409,13 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.read">(gammapy.irf.PSFMap class method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.read">(gammapy.irf.RadMax2D class method)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.read">(gammapy.maps.HpxMap static method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.read">(gammapy.maps.HpxNDMap static method)</a>
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.read">(gammapy.maps.Map static method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.read">(gammapy.maps.Maps class method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.read">(gammapy.maps.RegionNDMap class method)</a>
 </li>
@@ -8509,6 +8434,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.TemplateSpatialModel.html#gammapy.modeling.models.TemplateSpatialModel.read">(gammapy.modeling.models.TemplateSpatialModel class method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read_arf">read_arf() (gammapy.datasets.OGIPDatasetReader static method)</a>
+</li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read_bkg">read_bkg() (gammapy.datasets.OGIPDatasetReader static method)</a>
+</li>
       <li><a href="api/gammapy.modeling.models.EBLAbsorptionNormSpectralModel.html#gammapy.modeling.models.EBLAbsorptionNormSpectralModel.read_builtin">read_builtin() (gammapy.modeling.models.EBLAbsorptionNormSpectralModel class method)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.read_covariance">read_covariance() (gammapy.modeling.models.DatasetModels method)</a>
@@ -8520,6 +8449,10 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.read_datasets">read_datasets() (gammapy.analysis.Analysis method)</a>
 </li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.read_models">read_models() (gammapy.analysis.Analysis method)</a>
+</li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read_pha">read_pha() (gammapy.datasets.OGIPDatasetReader static method)</a>
+</li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.read_rmf">read_rmf() (gammapy.datasets.OGIPDatasetReader static method)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.TemplateSpectralModel.html#gammapy.modeling.models.TemplateSpectralModel.read_xspec_model">read_xspec_model() (gammapy.modeling.models.TemplateSpectralModel class method)</a>
 </li>
@@ -8627,7 +8560,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.reassign">(gammapy.modeling.models.TemporalModel method)</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-Reco-Energy"><strong>Reco Energy</strong></a>
+      <li><a href="user-guide/references.html#term-Reco-Energy"><strong>Reco Energy</strong></a>
+</li>
+      <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.recompute_ul">recompute_ul() (gammapy.estimators.FluxPoints method)</a>
 </li>
       <li><a href="api/gammapy.utils.scripts.recursive_merge_dicts.html#gammapy.utils.scripts.recursive_merge_dicts">recursive_merge_dicts() (in module gammapy.utils.scripts)</a>
 </li>
@@ -8743,8 +8678,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.reference_model">(gammapy.estimators.FluxPoints attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.reference_model_default">reference_model_default (gammapy.estimators.FluxMaps attribute)</a>
 
       <ul>
@@ -8759,7 +8692,9 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.reference_time">reference_time (gammapy.maps.TimeMapAxis attribute)</a>
 </li>
-      <li><a href="userguide/references.html#term-Reflected-Background"><strong>Reflected Background</strong></a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="user-guide/references.html#term-Reflected-Background"><strong>Reflected Background</strong></a>
 </li>
       <li><a href="api/gammapy.makers.ReflectedRegionsBackgroundMaker.html#gammapy.makers.ReflectedRegionsBackgroundMaker">ReflectedRegionsBackgroundMaker (class in gammapy.makers)</a>
 </li>
@@ -8787,11 +8722,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.makers.RegionsFinder.html#gammapy.makers.RegionsFinder">RegionsFinder (class in gammapy.makers)</a>
 </li>
-      <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.remove">remove() (gammapy.data.Observations method)</a>
+      <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.remove">remove() (gammapy.datasets.Datasets method)</a>
 
       <ul>
-        <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.remove">(gammapy.datasets.Datasets method)</a>
-</li>
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.remove">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
@@ -8846,6 +8779,30 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.rename">(gammapy.astro.population.YusifovKucuk2004B class method)</a>
 </li>
+        <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.rename">(gammapy.maps.MapAxis method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.rename_axes">rename_axes() (gammapy.maps.HpxGeom method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.rename_axes">(gammapy.maps.HpxMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.rename_axes">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.rename_axes">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.rename_axes">(gammapy.maps.MapAxes method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.rename_axes">(gammapy.maps.RegionGeom method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.rename_axes">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.rename_axes">(gammapy.maps.WcsGeom method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.rename_axes">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.rename_axes">(gammapy.maps.WcsNDMap method)</a>
+</li>
       </ul></li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.rename_column">rename_column() (gammapy.data.HDUIndexTable method)</a>
 
@@ -8883,11 +8840,9 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.replace">replace() (gammapy.maps.MapAxes method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.replace_axis">replace_axis() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.replace_axis">replace_axis() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.replace_axis">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.replace_axis">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.replace_axis">(gammapy.maps.WcsGeom method)</a>
@@ -8926,6 +8881,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.required_axes">(gammapy.irf.PSFMap attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.required_axes">(gammapy.irf.RadMax2D attribute)</a>
+</li>
       </ul></li>
       <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.required_parameters">required_parameters (gammapy.irf.EnergyDependentMultiGaussPSF attribute)</a>
 
@@ -8939,17 +8896,27 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.utils.testing.requires_dependency.html#gammapy.utils.testing.requires_dependency">requires_dependency() (in module gammapy.utils.testing)</a>
 </li>
-      <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.resample">resample() (gammapy.maps.LabelMapAxis method)</a>
+      <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.resample">resample() (gammapy.maps.HpxMap method)</a>
 
       <ul>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.resample">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.LabelMapAxis.html#gammapy.maps.LabelMapAxis.resample">(gammapy.maps.LabelMapAxis method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.resample">(gammapy.maps.Map method)</a>
+</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.resample">(gammapy.maps.MapAxes method)</a>
 </li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.resample">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.resample">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.resample">(gammapy.maps.WcsNDMap method)</a>
+</li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.resample_axis">resample_axis() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.resample_axis">resample_axis() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.resample_axis">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.resample_axis">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.resample_axis">(gammapy.maps.HpxNDMap method)</a>
@@ -9040,8 +9007,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.reverse">reverse() (gammapy.data.HDUIndexTable method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.reverse">(gammapy.data.Observations method)</a>
-</li>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.reverse">(gammapy.data.ObservationTable method)</a>
 </li>
         <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.reverse">(gammapy.datasets.Datasets method)</a>
@@ -9049,11 +9014,11 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.reverse">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
-      <li><a href="userguide/references.html#term-Ring-Background"><strong>Ring Background</strong></a>
+      <li><a href="user-guide/references.html#term-Ring-Background"><strong>Ring Background</strong></a>
 </li>
       <li><a href="api/gammapy.makers.RingBackgroundMaker.html#gammapy.makers.RingBackgroundMaker">RingBackgroundMaker (class in gammapy.makers)</a>
 </li>
-      <li><a href="userguide/references.html#term-RoI"><strong>RoI</strong></a>
+      <li><a href="user-guide/references.html#term-RoI"><strong>RoI</strong></a>
 </li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.round">round() (gammapy.data.HDUIndexTable method)</a>
 
@@ -9154,8 +9119,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.makers.WobbleRegionsFinder.html#gammapy.makers.WobbleRegionsFinder.run">(gammapy.makers.WobbleRegionsFinder method)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.run">(gammapy.modeling.Fit method)</a>
-</li>
         <li><a href="api/gammapy.utils.testing.Checker.html#gammapy.utils.testing.Checker.run">(gammapy.utils.testing.Checker method)</a>
 </li>
       </ul></li>
@@ -9181,6 +9144,16 @@ function checkPageExistsAndRedirect(event) {
 
       <ul>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.sample_coord">(gammapy.irf.PSFMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.sample_coord">(gammapy.maps.HpxMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.sample_coord">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.sample_coord">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.sample_coord">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.sample_coord">(gammapy.maps.WcsMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.sample_coord">(gammapy.maps.WcsNDMap method)</a>
 </li>
@@ -9220,12 +9193,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.utils.random.sample_times.html#gammapy.utils.random.sample_times">sample_times() (in module gammapy.utils.random)</a>
 </li>
       <li><a href="api/gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.html#gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.scale">scale (gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scale">(gammapy.modeling.Parameter attribute)</a>
-</li>
-      </ul></li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scale_method">scale_method (gammapy.modeling.Parameter attribute)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.scale_plot_flux.html#gammapy.modeling.models.scale_plot_flux">scale_plot_flux() (in module gammapy.modeling.models)</a>
 </li>
@@ -9233,19 +9200,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.modeling.models.ScaleSpectralModel.html#gammapy.modeling.models.ScaleSpectralModel">ScaleSpectralModel (class in gammapy.modeling.models)</a>
 </li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scan_max">scan_max (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scan_min">scan_min (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scan_n_sigma">scan_n_sigma (gammapy.modeling.Parameter attribute)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.scan_values">scan_values (gammapy.modeling.Parameter attribute)</a>
-</li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.schema">schema() (gammapy.analysis.AnalysisConfig class method)</a>
 </li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.schema_json">schema_json() (gammapy.analysis.AnalysisConfig class method)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.scipy_mvn">scipy_mvn (gammapy.modeling.Covariance attribute)</a>
 </li>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.sed_type_init">sed_type_init (gammapy.estimators.FluxMaps attribute)</a>
 
@@ -9259,18 +9216,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.sed_type_plot_default">(gammapy.estimators.FluxPoints attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.astro.source.SNR.html#gammapy.astro.source.SNR.sedov_taylor_begin">sedov_taylor_begin (gammapy.astro.source.SNR attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.sedov_taylor_begin">(gammapy.astro.source.SNRTrueloveMcKee attribute)</a>
+      <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.sedov_taylor_begin">sedov_taylor_begin (gammapy.astro.source.SNRTrueloveMcKee attribute)</a>
 </li>
-      </ul></li>
-      <li><a href="api/gammapy.astro.source.SNR.html#gammapy.astro.source.SNR.sedov_taylor_end">sedov_taylor_end (gammapy.astro.source.SNR attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.sedov_taylor_end">(gammapy.astro.source.SNRTrueloveMcKee attribute)</a>
+      <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee.sedov_taylor_end">sedov_taylor_end (gammapy.astro.source.SNRTrueloveMcKee attribute)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.select">select() (gammapy.modeling.models.DatasetModels method)</a>
 
       <ul>
@@ -9316,11 +9265,7 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.select_time">select_time() (gammapy.data.EventList method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.select_time">(gammapy.data.GTI method)</a>
-</li>
         <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.select_time">(gammapy.data.Observation method)</a>
-</li>
-        <li><a href="api/gammapy.data.Observations.html#gammapy.data.Observations.select_time">(gammapy.data.Observations method)</a>
 </li>
         <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.select_time">(gammapy.datasets.Datasets method)</a>
 </li>
@@ -9465,16 +9410,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.astro.population.YusifovKucuk2004B.html#gammapy.astro.population.YusifovKucuk2004B.set_slice_args">(gammapy.astro.population.YusifovKucuk2004B method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.set_subcovariance">set_subcovariance() (gammapy.modeling.Covariance method)</a>
-</li>
-      <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.setdefault">setdefault() (gammapy.maps.Maps method)</a>
-</li>
       <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.shape">shape (gammapy.maps.MapAxes attribute)</a>
 
       <ul>
         <li><a href="api/gammapy.maps.MapCoord.html#gammapy.maps.MapCoord.shape">(gammapy.maps.MapCoord attribute)</a>
-</li>
-        <li><a href="api/gammapy.modeling.Covariance.html#gammapy.modeling.Covariance.shape">(gammapy.modeling.Covariance attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.shape_axes">shape_axes (gammapy.maps.HpxGeom attribute)</a>
@@ -9578,17 +9517,35 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.slice_by_idx">(gammapy.estimators.FluxPoints method)</a>
 </li>
+        <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.slice_by_idx">(gammapy.irf.Background2D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.Background3D.html#gammapy.irf.Background3D.slice_by_idx">(gammapy.irf.Background3D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EDispKernel.html#gammapy.irf.EDispKernel.slice_by_idx">(gammapy.irf.EDispKernel method)</a>
+</li>
         <li><a href="api/gammapy.irf.EDispKernelMap.html#gammapy.irf.EDispKernelMap.slice_by_idx">(gammapy.irf.EDispKernelMap method)</a>
 </li>
         <li><a href="api/gammapy.irf.EDispMap.html#gammapy.irf.EDispMap.slice_by_idx">(gammapy.irf.EDispMap method)</a>
 </li>
+        <li><a href="api/gammapy.irf.EffectiveAreaTable2D.html#gammapy.irf.EffectiveAreaTable2D.slice_by_idx">(gammapy.irf.EffectiveAreaTable2D method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EnergyDependentMultiGaussPSF.html#gammapy.irf.EnergyDependentMultiGaussPSF.slice_by_idx">(gammapy.irf.EnergyDependentMultiGaussPSF method)</a>
+</li>
+        <li><a href="api/gammapy.irf.EnergyDispersion2D.html#gammapy.irf.EnergyDispersion2D.slice_by_idx">(gammapy.irf.EnergyDispersion2D method)</a>
+</li>
         <li><a href="api/gammapy.irf.IRFMap.html#gammapy.irf.IRFMap.slice_by_idx">(gammapy.irf.IRFMap method)</a>
+</li>
+        <li><a href="api/gammapy.irf.ParametricPSF.html#gammapy.irf.ParametricPSF.slice_by_idx">(gammapy.irf.ParametricPSF method)</a>
+</li>
+        <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.slice_by_idx">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKernel.html#gammapy.irf.PSFKernel.slice_by_idx">(gammapy.irf.PSFKernel method)</a>
 </li>
+        <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.slice_by_idx">(gammapy.irf.PSFKing method)</a>
+</li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.slice_by_idx">(gammapy.irf.PSFMap method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.slice_by_idx">(gammapy.maps.Geom method)</a>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.slice_by_idx">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.slice_by_idx">(gammapy.maps.HpxGeom method)</a>
 </li>
@@ -9625,11 +9582,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.astro.source.SNRTrueloveMcKee.html#gammapy.astro.source.SNRTrueloveMcKee">SNRTrueloveMcKee (class in gammapy.astro.source)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.solid_angle">solid_angle() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.solid_angle">solid_angle() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.solid_angle">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.solid_angle">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.solid_angle">(gammapy.maps.WcsGeom method)</a>
@@ -9823,6 +9778,20 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.astro.population.ValleeSpiral.html#gammapy.astro.population.ValleeSpiral.spiralarms">(gammapy.astro.population.ValleeSpiral attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.split_by_axis">split_by_axis() (gammapy.maps.HpxMap method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.split_by_axis">(gammapy.maps.HpxNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.split_by_axis">(gammapy.maps.Map method)</a>
+</li>
+        <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.split_by_axis">(gammapy.maps.RegionNDMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsMap.html#gammapy.maps.WcsMap.split_by_axis">(gammapy.maps.WcsMap method)</a>
+</li>
+        <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.split_by_axis">(gammapy.maps.WcsNDMap method)</a>
+</li>
+      </ul></li>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.sqrt_ts">sqrt_ts (gammapy.estimators.FluxMaps attribute)</a>
 
       <ul>
@@ -9839,11 +9808,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.sqrt_ts_threshold_ul">(gammapy.estimators.FluxPoints attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.squash">squash() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.squash">squash() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.squash">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.squash">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.squash">(gammapy.maps.MapAxis method)</a>
@@ -9855,11 +9822,11 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.squash">(gammapy.maps.WcsGeom method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.modeling.models.NaimaSpectralModel.html#gammapy.modeling.models.NaimaSpectralModel.ssc_model">ssc_model (gammapy.modeling.models.NaimaSpectralModel attribute)</a>
+</li>
       <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.stack">stack() (gammapy.data.EventList method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.stack">(gammapy.data.GTI method)</a>
-</li>
         <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.stack">(gammapy.datasets.MapDataset method)</a>
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.stack">(gammapy.datasets.MapDatasetOnOff method)</a>
@@ -9887,7 +9854,7 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.stack_reduce">stack_reduce() (gammapy.datasets.Datasets method)</a>
 </li>
-      <li><a href="userguide/references.html#term-Stacked-Analysis"><strong>Stacked Analysis</strong></a>
+      <li><a href="user-guide/references.html#term-Stacked-Analysis"><strong>Stacked Analysis</strong></a>
 </li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.standard_broadcasting">standard_broadcasting (gammapy.astro.population.CaseBattacharya1998 attribute)</a>
 
@@ -9933,8 +9900,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.stat_array">(gammapy.datasets.SpectrumDatasetOnOff method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.stat_contour">stat_contour() (gammapy.modeling.Fit method)</a>
-</li>
       <li><a href="api/gammapy.stats.CashCountsStatistic.html#gammapy.stats.CashCountsStatistic.stat_max">stat_max (gammapy.stats.CashCountsStatistic attribute)</a>
 
       <ul>
@@ -9951,8 +9916,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.stats.WStatCountsStatistic.html#gammapy.stats.WStatCountsStatistic.stat_null">(gammapy.stats.WStatCountsStatistic attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.stat_profile">stat_profile() (gammapy.modeling.Fit method)</a>
-</li>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.stat_scan">stat_scan (gammapy.estimators.FluxMaps attribute)</a>
 
       <ul>
@@ -9975,8 +9938,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.SpectrumDatasetOnOff.html#gammapy.datasets.SpectrumDatasetOnOff.stat_sum">(gammapy.datasets.SpectrumDatasetOnOff method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.Fit.html#gammapy.modeling.Fit.stat_surface">stat_surface() (gammapy.modeling.Fit method)</a>
-</li>
       <li><a href="api/gammapy.datasets.FluxPointsDataset.html#gammapy.datasets.FluxPointsDataset.stat_type">stat_type (gammapy.datasets.FluxPointsDataset attribute)</a>
 
       <ul>
@@ -10037,6 +9998,12 @@ function checkPageExistsAndRedirect(event) {
 
       <ul>
         <li><a href="api/gammapy.estimators.FluxPoints.html#gammapy.estimators.FluxPoints.success">(gammapy.estimators.FluxPoints attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/gammapy.stats.CashCountsStatistic.html#gammapy.stats.CashCountsStatistic.sum">sum() (gammapy.stats.CashCountsStatistic method)</a>
+
+      <ul>
+        <li><a href="api/gammapy.stats.WStatCountsStatistic.html#gammapy.stats.WStatCountsStatistic.sum">(gammapy.stats.WStatCountsStatistic method)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.sum_of_implicit_terms">sum_of_implicit_terms() (gammapy.astro.population.CaseBattacharya1998 method)</a>
@@ -10159,9 +10126,11 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.utils.table.table_standardise_units_inplace.html#gammapy.utils.table.table_standardise_units_inplace">table_standardise_units_inplace() (in module gammapy.utils.table)</a>
 </li>
-      <li><a href="api/gammapy.catalog.SourceCatalog.html#gammapy.catalog.SourceCatalog.tag">tag (gammapy.catalog.SourceCatalog attribute)</a>
+      <li><a href="api/gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.html#gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.tag">tag (gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel attribute)</a>
 
       <ul>
+        <li><a href="api/gammapy.catalog.SourceCatalog.html#gammapy.catalog.SourceCatalog.tag">(gammapy.catalog.SourceCatalog attribute)</a>
+</li>
         <li><a href="api/gammapy.catalog.SourceCatalog2FHL.html#gammapy.catalog.SourceCatalog2FHL.tag">(gammapy.catalog.SourceCatalog2FHL attribute)</a>
 </li>
         <li><a href="api/gammapy.catalog.SourceCatalog2HWC.html#gammapy.catalog.SourceCatalog2HWC.tag">(gammapy.catalog.SourceCatalog2HWC attribute)</a>
@@ -10185,6 +10154,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.tag">(gammapy.datasets.MapDataset attribute)</a>
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.tag">(gammapy.datasets.MapDatasetOnOff attribute)</a>
+</li>
+        <li><a href="api/gammapy.datasets.OGIPDatasetReader.html#gammapy.datasets.OGIPDatasetReader.tag">(gammapy.datasets.OGIPDatasetReader attribute)</a>
+</li>
+        <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.tag">(gammapy.datasets.OGIPDatasetWriter attribute)</a>
 </li>
         <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.tag">(gammapy.datasets.SpectrumDataset attribute)</a>
 </li>
@@ -10233,6 +10206,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.tag">(gammapy.irf.PSFKing attribute)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.tag">(gammapy.irf.PSFMap attribute)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.tag">(gammapy.irf.RadMax2D attribute)</a>
 </li>
         <li><a href="api/gammapy.makers.AdaptiveRingBackgroundMaker.html#gammapy.makers.AdaptiveRingBackgroundMaker.tag">(gammapy.makers.AdaptiveRingBackgroundMaker attribute)</a>
 </li>
@@ -10355,8 +10330,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.astro.source.SimplePulsar.html#gammapy.astro.source.SimplePulsar.tau">tau (gammapy.astro.source.SimplePulsar attribute)</a>
 </li>
-      <li><a href="api/gammapy.astro.source.Pulsar.html#gammapy.astro.source.Pulsar.tau">tau() (gammapy.astro.source.Pulsar method)</a>
-</li>
       <li><a href="api/gammapy.modeling.models.TemplateNDSpectralModel.html#gammapy.modeling.models.TemplateNDSpectralModel">TemplateNDSpectralModel (class in gammapy.modeling.models)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.TemplateNPredModel.html#gammapy.modeling.models.TemplateNPredModel">TemplateNPredModel (class in gammapy.modeling.models)</a>
@@ -10419,17 +10392,13 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.data.PointingInfo.html#gammapy.data.PointingInfo.time">(gammapy.data.PointingInfo attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_delta">time_delta (gammapy.data.GTI attribute)</a>
-
-      <ul>
-        <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_delta">(gammapy.maps.TimeMapAxis attribute)</a>
+      <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_bounds">time_bounds (gammapy.maps.TimeMapAxis attribute)</a>
 </li>
-      </ul></li>
+      <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_delta">time_delta (gammapy.maps.TimeMapAxis attribute)</a>
+</li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_edges">time_edges (gammapy.maps.TimeMapAxis attribute)</a>
 </li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_format">time_format (gammapy.maps.TimeMapAxis attribute)</a>
-</li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_intervals">time_intervals (gammapy.data.GTI attribute)</a>
 </li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.time_max">time_max (gammapy.maps.TimeMapAxis attribute)</a>
 </li>
@@ -10441,8 +10410,6 @@ function checkPageExistsAndRedirect(event) {
 
       <ul>
         <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.time_ref">(gammapy.data.FixedPointingInfo attribute)</a>
-</li>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_ref">(gammapy.data.GTI attribute)</a>
 </li>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.time_ref">(gammapy.data.ObservationTable attribute)</a>
 </li>
@@ -10458,21 +10425,15 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.time_start">time_start (gammapy.data.FixedPointingInfo attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_start">(gammapy.data.GTI attribute)</a>
-</li>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.time_start">(gammapy.data.ObservationTable attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.data.FixedPointingInfo.html#gammapy.data.FixedPointingInfo.time_stop">time_stop (gammapy.data.FixedPointingInfo attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_stop">(gammapy.data.GTI attribute)</a>
-</li>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.time_stop">(gammapy.data.ObservationTable attribute)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.time_sum">time_sum (gammapy.data.GTI attribute)</a>
-</li>
       <li><a href="api/gammapy.modeling.models.ConstantTemporalModel.html#gammapy.modeling.models.ConstantTemporalModel.time_sum">time_sum() (gammapy.modeling.models.ConstantTemporalModel static method)</a>
 
       <ul>
@@ -10499,11 +10460,9 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.to_3d">to_3d() (gammapy.irf.Background2D method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.to_bands_hdu">to_bands_hdu() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.to_bands_hdu">to_bands_hdu() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.to_bands_hdu">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.to_bands_hdu">(gammapy.maps.RegionGeom method)</a>
 </li>
         <li><a href="api/gammapy.maps.WcsGeom.html#gammapy.maps.WcsGeom.to_bands_hdu">(gammapy.maps.WcsGeom method)</a>
@@ -10521,11 +10480,11 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.maps.TimeMapAxis.html#gammapy.maps.TimeMapAxis.to_contiguous">to_contiguous() (gammapy.maps.TimeMapAxis method)</a>
 </li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.to_cube">to_cube() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.to_counts_hdulist">to_counts_hdulist() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.to_cube">to_cube() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.to_cube">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.to_cube">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.to_cube">(gammapy.maps.HpxNDMap method)</a>
@@ -10656,8 +10615,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.to_dict">(gammapy.modeling.models.TemporalModel method)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.to_dict">(gammapy.modeling.Parameter method)</a>
-</li>
         <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.to_dict">(gammapy.modeling.Parameters method)</a>
 </li>
       </ul></li>
@@ -10720,11 +10677,11 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.to_hdulist">(gammapy.irf.PSFMap method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.to_hdulist">(gammapy.irf.RadMax2D method)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.to_hdulist">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.to_hdulist">(gammapy.maps.HpxNDMap method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.to_hdulist">(gammapy.maps.Maps method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.to_hdulist">(gammapy.maps.RegionGeom method)</a>
 </li>
@@ -10765,8 +10722,6 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFKernel.html#gammapy.irf.PSFKernel.to_image">(gammapy.irf.PSFKernel method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.to_image">(gammapy.irf.PSFMap method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.to_image">(gammapy.maps.Geom method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.to_image">(gammapy.maps.HpxGeom method)</a>
 </li>
@@ -10847,10 +10802,10 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.to_psf3d">(gammapy.irf.PSFKing method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.modeling.models.ConstantFluxSpatialModel.html#gammapy.modeling.models.ConstantFluxSpatialModel.to_region">to_region() (gammapy.modeling.models.ConstantFluxSpatialModel static method)</a>
+      <li><a href="api/gammapy.modeling.models.ConstantFluxSpatialModel.html#gammapy.modeling.models.ConstantFluxSpatialModel.to_region">to_region() (gammapy.modeling.models.ConstantFluxSpatialModel method)</a>
 
       <ul>
-        <li><a href="api/gammapy.modeling.models.ConstantSpatialModel.html#gammapy.modeling.models.ConstantSpatialModel.to_region">(gammapy.modeling.models.ConstantSpatialModel static method)</a>
+        <li><a href="api/gammapy.modeling.models.ConstantSpatialModel.html#gammapy.modeling.models.ConstantSpatialModel.to_region">(gammapy.modeling.models.ConstantSpatialModel method)</a>
 </li>
         <li><a href="api/gammapy.modeling.models.DiskSpatialModel.html#gammapy.modeling.models.DiskSpatialModel.to_region">(gammapy.modeling.models.DiskSpatialModel method)</a>
 </li>
@@ -10940,6 +10895,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.to_table">(gammapy.irf.PSFKing method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.to_table">(gammapy.irf.RadMax2D method)</a>
+</li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.to_table">(gammapy.maps.MapAxes method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.to_table">(gammapy.maps.MapAxis method)</a>
@@ -10952,8 +10909,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.to_table_hdu">to_table_hdu() (gammapy.data.EventList method)</a>
 
       <ul>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.to_table_hdu">(gammapy.data.GTI method)</a>
-</li>
         <li><a href="api/gammapy.irf.Background2D.html#gammapy.irf.Background2D.to_table_hdu">(gammapy.irf.Background2D method)</a>
 </li>
         <li><a href="api/gammapy.irf.Background3D.html#gammapy.irf.Background3D.to_table_hdu">(gammapy.irf.Background3D method)</a>
@@ -10971,6 +10926,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.to_table_hdu">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.to_table_hdu">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.to_table_hdu">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.MapAxes.html#gammapy.maps.MapAxes.to_table_hdu">(gammapy.maps.MapAxes method)</a>
 </li>
@@ -11001,6 +10958,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.irf.PSF3D.html#gammapy.irf.PSF3D.to_unit">(gammapy.irf.PSF3D method)</a>
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.to_unit">(gammapy.irf.PSFKing method)</a>
+</li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.to_unit">(gammapy.irf.RadMax2D method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.to_unit">(gammapy.maps.HpxMap method)</a>
 </li>
@@ -11043,7 +11002,7 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.utils.integrate.trapz_loglog.html#gammapy.utils.integrate.trapz_loglog">trapz_loglog() (in module gammapy.utils.integrate)</a>
 </li>
-      <li><a href="userguide/references.html#term-True-Energy"><strong>True Energy</strong></a>
+      <li><a href="user-guide/references.html#term-True-Energy"><strong>True Energy</strong></a>
 </li>
       <li><a href="api/gammapy.estimators.FluxMaps.html#gammapy.estimators.FluxMaps.ts">ts (gammapy.estimators.FluxMaps attribute)</a>
 
@@ -11164,8 +11123,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.modeling.models.TemporalModel.html#gammapy.modeling.models.TemporalModel.type">(gammapy.modeling.models.TemporalModel attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.type">(gammapy.modeling.Parameter attribute)</a>
-</li>
       </ul></li>
       <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.types">types (gammapy.modeling.Parameters attribute)</a>
 </li>
@@ -11279,12 +11236,8 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
       <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.unfreeze_all">unfreeze_all() (gammapy.modeling.Parameters method)</a>
 </li>
-      <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.union">union() (gammapy.data.GTI method)</a>
-
-      <ul>
-        <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.union">(gammapy.maps.RegionGeom method)</a>
+      <li><a href="api/gammapy.maps.RegionGeom.html#gammapy.maps.RegionGeom.union">union() (gammapy.maps.RegionGeom method)</a>
 </li>
-      </ul></li>
       <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.unique_parameters">unique_parameters (gammapy.modeling.Parameters attribute)</a>
 </li>
   </ul></td>
@@ -11308,6 +11261,8 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFKing.html#gammapy.irf.PSFKing.unit">(gammapy.irf.PSFKing attribute)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.unit">(gammapy.irf.RadMax2D attribute)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.unit">(gammapy.maps.HpxMap attribute)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.unit">(gammapy.maps.HpxNDMap attribute)</a>
@@ -11326,8 +11281,6 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.unit">(gammapy.maps.WcsNDMap attribute)</a>
 </li>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.unit">(gammapy.modeling.Parameter attribute)</a>
-</li>
       </ul></li>
       <li><a href="api/gammapy.utils.units.unit_from_fits_image_hdu.html#gammapy.utils.units.unit_from_fits_image_hdu">unit_from_fits_image_hdu() (in module gammapy.utils.units)</a>
 </li>
@@ -11338,14 +11291,10 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.update">(gammapy.data.ObservationTable method)</a>
 </li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.update">(gammapy.maps.Maps method)</a>
-</li>
       </ul></li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.update_config">update_config() (gammapy.analysis.Analysis method)</a>
 </li>
       <li><a href="api/gammapy.analysis.AnalysisConfig.html#gammapy.analysis.AnalysisConfig.update_forward_refs">update_forward_refs() (gammapy.analysis.AnalysisConfig class method)</a>
-</li>
-      <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.update_from_dict">update_from_dict() (gammapy.modeling.Parameter method)</a>
 </li>
       <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.update_link_label">update_link_label() (gammapy.modeling.models.DatasetModels method)</a>
 
@@ -11359,11 +11308,9 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.modeling.models.Models.html#gammapy.modeling.models.Models.update_parameters_from_table">(gammapy.modeling.models.Models method)</a>
 </li>
       </ul></li>
-      <li><a href="api/gammapy.maps.Geom.html#gammapy.maps.Geom.upsample">upsample() (gammapy.maps.Geom method)</a>
+      <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.upsample">upsample() (gammapy.maps.HpxGeom method)</a>
 
       <ul>
-        <li><a href="api/gammapy.maps.HpxGeom.html#gammapy.maps.HpxGeom.upsample">(gammapy.maps.HpxGeom method)</a>
-</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.upsample">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.upsample">(gammapy.maps.HpxNDMap method)</a>
@@ -11389,6 +11336,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.maps.WcsNDMap.html#gammapy.maps.WcsNDMap.upsample">(gammapy.maps.WcsNDMap method)</a>
 </li>
       </ul></li>
+      <li><a href="api/gammapy.maps.MapAxis.html#gammapy.maps.MapAxis.use_center_as_plot_labels">use_center_as_plot_labels (gammapy.maps.MapAxis attribute)</a>
+</li>
       <li><a href="api/gammapy.astro.population.CaseBattacharya1998.html#gammapy.astro.population.CaseBattacharya1998.uses_quantity">uses_quantity (gammapy.astro.population.CaseBattacharya1998 attribute)</a>
 
       <ul>
@@ -11430,8 +11379,6 @@ function checkPageExistsAndRedirect(event) {
       <li><a href="api/gammapy.modeling.models.ConstantSpatialModel.html#gammapy.modeling.models.ConstantSpatialModel.value">value (gammapy.modeling.models.ConstantSpatialModel attribute)</a>
 
       <ul>
-        <li><a href="api/gammapy.modeling.Parameter.html#gammapy.modeling.Parameter.value">(gammapy.modeling.Parameter attribute)</a>
-</li>
         <li><a href="api/gammapy.modeling.Parameters.html#gammapy.modeling.Parameters.value">(gammapy.modeling.Parameters attribute)</a>
 </li>
       </ul></li>
@@ -11441,8 +11388,6 @@ function checkPageExistsAndRedirect(event) {
 
       <ul>
         <li><a href="api/gammapy.data.ObservationTable.html#gammapy.data.ObservationTable.values">(gammapy.data.ObservationTable method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.values">(gammapy.maps.Maps method)</a>
 </li>
       </ul></li>
       <li><a href="api/gammapy.data.HDUIndexTable.html#gammapy.data.HDUIndexTable.values_equal">values_equal() (gammapy.data.HDUIndexTable method)</a>
@@ -11552,8 +11497,6 @@ function checkPageExistsAndRedirect(event) {
       <ul>
         <li><a href="api/gammapy.data.EventList.html#gammapy.data.EventList.write">(gammapy.data.EventList method)</a>
 </li>
-        <li><a href="api/gammapy.data.GTI.html#gammapy.data.GTI.write">(gammapy.data.GTI method)</a>
-</li>
         <li><a href="api/gammapy.data.Observation.html#gammapy.data.Observation.write">(gammapy.data.Observation method)</a>
 </li>
         <li><a href="api/gammapy.datasets.Datasets.html#gammapy.datasets.Datasets.write">(gammapy.datasets.Datasets method)</a>
@@ -11563,6 +11506,8 @@ function checkPageExistsAndRedirect(event) {
         <li><a href="api/gammapy.datasets.MapDataset.html#gammapy.datasets.MapDataset.write">(gammapy.datasets.MapDataset method)</a>
 </li>
         <li><a href="api/gammapy.datasets.MapDatasetOnOff.html#gammapy.datasets.MapDatasetOnOff.write">(gammapy.datasets.MapDatasetOnOff method)</a>
+</li>
+        <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.write">(gammapy.datasets.OGIPDatasetWriter method)</a>
 </li>
         <li><a href="api/gammapy.datasets.SpectrumDataset.html#gammapy.datasets.SpectrumDataset.write">(gammapy.datasets.SpectrumDataset method)</a>
 </li>
@@ -11600,13 +11545,13 @@ function checkPageExistsAndRedirect(event) {
 </li>
         <li><a href="api/gammapy.irf.PSFMap.html#gammapy.irf.PSFMap.write">(gammapy.irf.PSFMap method)</a>
 </li>
+        <li><a href="api/gammapy.irf.RadMax2D.html#gammapy.irf.RadMax2D.write">(gammapy.irf.RadMax2D method)</a>
+</li>
         <li><a href="api/gammapy.maps.HpxMap.html#gammapy.maps.HpxMap.write">(gammapy.maps.HpxMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.HpxNDMap.html#gammapy.maps.HpxNDMap.write">(gammapy.maps.HpxNDMap method)</a>
 </li>
         <li><a href="api/gammapy.maps.Map.html#gammapy.maps.Map.write">(gammapy.maps.Map method)</a>
-</li>
-        <li><a href="api/gammapy.maps.Maps.html#gammapy.maps.Maps.write">(gammapy.maps.Maps method)</a>
 </li>
         <li><a href="api/gammapy.maps.RegionNDMap.html#gammapy.maps.RegionNDMap.write">(gammapy.maps.RegionNDMap method)</a>
 </li>
@@ -11627,6 +11572,10 @@ function checkPageExistsAndRedirect(event) {
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.write_arf">write_arf() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.write_bkg">write_bkg() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
       <li><a href="api/gammapy.modeling.models.DatasetModels.html#gammapy.modeling.models.DatasetModels.write_covariance">write_covariance() (gammapy.modeling.models.DatasetModels method)</a>
 
       <ul>
@@ -11637,9 +11586,13 @@ function checkPageExistsAndRedirect(event) {
 </li>
       <li><a href="api/gammapy.analysis.Analysis.html#gammapy.analysis.Analysis.write_models">write_models() (gammapy.analysis.Analysis method)</a>
 </li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.write_pha">write_pha() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
+      <li><a href="api/gammapy.datasets.OGIPDatasetWriter.html#gammapy.datasets.OGIPDatasetWriter.write_rmf">write_rmf() (gammapy.datasets.OGIPDatasetWriter method)</a>
+</li>
       <li><a href="api/gammapy.utils.scripts.write_yaml.html#gammapy.utils.scripts.write_yaml">write_yaml() (in module gammapy.utils.scripts)</a>
 </li>
-      <li><a href="userguide/references.html#term-WStat"><strong>WStat</strong></a>
+      <li><a href="user-guide/references.html#term-WStat"><strong>WStat</strong></a>
 </li>
       <li><a href="api/gammapy.stats.wstat.html#gammapy.stats.wstat">wstat() (in module gammapy.stats)</a>
 </li>
@@ -11695,18 +11648,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -11717,7 +11667,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

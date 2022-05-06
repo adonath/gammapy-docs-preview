@@ -100,19 +100,24 @@ Here is an example YAML file using the model:
             parameters:
             -   name: index
                 value: 2.0
+                is_norm: false
             -   name: amplitude
                 value: 1.0e-12
                 unit: cm-2 s-1 TeV-1
+                is_norm: true
             -   name: reference
                 value: 1.0
                 unit: TeV
                 frozen: true
+                is_norm: false
             -   name: lambda_
                 value: 0.1
                 unit: TeV-1
+                is_norm: false
             -   name: alpha
                 value: 1.0
                 frozen: true
+                is_norm: false
 
 
 

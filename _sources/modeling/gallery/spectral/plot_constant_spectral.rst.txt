@@ -93,6 +93,7 @@ Here is an example YAML file using the model:
             -   name: const
                 value: 1.0
                 unit: cm-2 s-1 TeV-1
+                is_norm: true
 
 
 

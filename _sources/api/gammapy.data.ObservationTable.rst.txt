@@ -50,7 +50,6 @@ ObservationTable
       ~ObservationTable.field
       ~ObservationTable.filled
       ~ObservationTable.from_pandas
-      ~ObservationTable.get_obs_idx
       ~ObservationTable.group_by
       ~ObservationTable.index_column
       ~ObservationTable.index_mode
@@ -130,7 +129,6 @@ ObservationTable
    .. automethod:: field
    .. automethod:: filled
    .. automethod:: from_pandas
-   .. automethod:: get_obs_idx
    .. automethod:: group_by
    .. automethod:: index_column
    .. automethod:: index_mode

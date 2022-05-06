@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EffectiveAreaTable2D &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>EffectiveAreaTable2D &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
@@ -60,7 +57,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -96,7 +93,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../userguide/index.html">
+ <a class="reference internal nav-link" href="../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -108,19 +105,19 @@
 </li>
 
 <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
+ <a class="reference internal nav-link" href="../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../changelog/index.html">
+ <a class="reference internal nav-link" href="../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -146,17 +143,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables api/gammapy.irf.EffectiveAreaTable2D and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables api/gammapy.irf.EffectiveAreaTable2D and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +182,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -251,7 +245,7 @@ function checkPageExistsAndRedirect(event) {
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
+  <a class="reference internal" href="../api-reference/data.html">
    data - DL3 data and observations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -273,11 +267,6 @@ function checkPageExistsAndRedirect(event) {
    <li class="toctree-l2">
     <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
      FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
     </a>
    </li>
    <li class="toctree-l2">
@@ -318,7 +307,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../irf/index.html">
+  <a class="reference internal" href="../api-reference/irf.html">
    irf - Instrument response functions
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
@@ -413,6 +402,11 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.irf.RadMax2D.html">
+     RadMax2D
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
      IRF_REGISTRY
     </a>
@@ -420,7 +414,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
+  <a class="reference internal" href="../api-reference/makers.html">
    makers - Data reduction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -537,7 +531,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
+  <a class="reference internal" href="../api-reference/datasets.html">
    datasets - Reduced datasets
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -582,6 +576,16 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetWriter.html">
+     OGIPDatasetWriter
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gammapy.datasets.OGIPDatasetReader.html">
+     OGIPDatasetReader
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
      SpectrumDataset
     </a>
@@ -599,7 +603,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../maps/index.html">
+  <a class="reference internal" href="../api-reference/maps.html">
    maps - Sky maps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -691,7 +695,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
+  <a class="reference internal" href="../api-reference/modeling.html">
    modeling - Models and fitting
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -1018,7 +1022,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
+  <a class="reference internal" href="../api-reference/estimators.html">
    estimators - High level estimators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -1110,7 +1114,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
+  <a class="reference internal" href="../api-reference/analysis.html">
    analysis - High level interface
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -1132,7 +1136,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
+  <a class="reference internal" href="../api-reference/catalog.html">
    catalog - Source catalogs
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1249,7 +1253,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
+  <a class="reference internal" href="../api-reference/astro.html">
    astro - Astrophysics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
@@ -1411,7 +1415,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
+  <a class="reference internal" href="../api-reference/stats.html">
    stats - Statistics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
@@ -1473,12 +1477,12 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
+  <a class="reference internal" href="../api-reference/scripts.html">
    scripts - Command line tools
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
+  <a class="reference internal" href="../api-reference/visualization.html">
    visualization - Plotting features
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
@@ -1530,7 +1534,7 @@ function checkPageExistsAndRedirect(event) {
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
+  <a class="reference internal" href="../api-reference/utils.html">
    utils - Utilities
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
@@ -1685,11 +1689,6 @@ function checkPageExistsAndRedirect(event) {
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
      make_path
     </a>
@@ -1840,11 +1839,11 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="effectiveareatable2d">
-<h1>EffectiveAreaTable2D<a class="headerlink" href="#effectiveareatable2d" title="Permalink to this headline">¶</a></h1>
+  <section id="effectiveareatable2d">
+<h1>EffectiveAreaTable2D<a class="headerlink" href="#effectiveareatable2d" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.irf.</span></span><span class="sig-name descname"><span class="pre">EffectiveAreaTable2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_pointlike</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov_alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FoVAlignment.RADEC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.irf.</span></span><span class="sig-name descname"><span class="pre">EffectiveAreaTable2D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_pointlike</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fov_alignment</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FoVAlignment.RADEC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gammapy.irf.core.IRF</span></code></p>
 <p>2D effective area table.</p>
 <p>Data format specification: <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/en/latest/irfs/full_enclosure/aeff/index.html#aeff-2d" title="(in Data formats for gamma-ray astronomy v0.3.dev)"><span>AEFF_2D</span></a></p>
@@ -1855,7 +1854,7 @@ function checkPageExistsAndRedirect(event) {
 </dd>
 <dt><strong>offset_axis</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxis</span></code></span></dt><dd><p>Field of view offset axis.</p>
 </dd>
-<dt><strong>data</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Effective area</p>
+<dt><strong>data</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Effective area</p>
 </dd>
 <dt><strong>meta</strong><span class="classifier">dict</span></dt><dd><p>Meta data</p>
 </dd>
@@ -1896,7 +1895,7 @@ function checkPageExistsAndRedirect(event) {
 </pre></div>
 </div>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1924,7 +1923,7 @@ function checkPageExistsAndRedirect(event) {
 <td><p>Whether the IRF is pointlike of full containment.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.quantity" title="gammapy.irf.EffectiveAreaTable2D.quantity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantity</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.required_axes" title="gammapy.irf.EffectiveAreaTable2D.required_axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">required_axes</span></code></a></p></td>
 <td><p></p></td>
@@ -1933,12 +1932,12 @@ function checkPageExistsAndRedirect(event) {
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.unit" title="gammapy.irf.EffectiveAreaTable2D.unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unit</span></code></a></p></td>
-<td><p>Map unit (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>)</p></td>
+<td><p>Map unit (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>)</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1951,13 +1950,13 @@ function checkPageExistsAndRedirect(event) {
 <td><p>Evaluate IRF</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.from_hdulist" title="gammapy.irf.EffectiveAreaTable2D.from_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_hdulist</span></code></a>(hdulist[, hdu, format])</p></td>
-<td><p>Create from <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a>.</p></td>
+<td><p>Create from <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.from_parametrization" title="gammapy.irf.EffectiveAreaTable2D.from_parametrization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_parametrization</span></code></a>([energy_axis_true, ...])</p></td>
 <td><p>Create parametrized effective area.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.from_table" title="gammapy.irf.EffectiveAreaTable2D.from_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_table</span></code></a>(table[, format])</p></td>
-<td><p>Read from <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a>.</p></td>
+<td><p>Read from <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.integral" title="gammapy.irf.EffectiveAreaTable2D.integral"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integral</span></code></a>(axis_name, **kwargs)</p></td>
 <td><p>Compute integral along a given axis</p></td>
@@ -1968,26 +1967,32 @@ function checkPageExistsAndRedirect(event) {
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.interp_missing_data" title="gammapy.irf.EffectiveAreaTable2D.interp_missing_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interp_missing_data</span></code></a>(axis_name)</p></td>
 <td><p>Interpolate missing data along a given axis</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.normalize" title="gammapy.irf.EffectiveAreaTable2D.normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code></a>(axis_name)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.is_allclose" title="gammapy.irf.EffectiveAreaTable2D.is_allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_allclose</span></code></a>(other[, rtol_axes, atol_axes])</p></td>
+<td><p>Compare two data IRFs for equivalency</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.normalize" title="gammapy.irf.EffectiveAreaTable2D.normalize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize</span></code></a>(axis_name)</p></td>
 <td><p>Normalise data in place along a given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.pad" title="gammapy.irf.EffectiveAreaTable2D.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(pad_width, axis_name, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.pad" title="gammapy.irf.EffectiveAreaTable2D.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a>(pad_width, axis_name, **kwargs)</p></td>
 <td><p>Pad irf along a given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.peek" title="gammapy.irf.EffectiveAreaTable2D.peek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peek</span></code></a>([figsize])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.peek" title="gammapy.irf.EffectiveAreaTable2D.peek"><code class="xref py py-obj docutils literal notranslate"><span class="pre">peek</span></code></a>([figsize])</p></td>
 <td><p>Quick-look summary plots.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot" title="gammapy.irf.EffectiveAreaTable2D.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>([ax, add_cbar])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot" title="gammapy.irf.EffectiveAreaTable2D.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>([ax, add_cbar])</p></td>
 <td><p>Plot effective area image.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence" title="gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_energy_dependence</span></code></a>([ax, offset])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence" title="gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_energy_dependence</span></code></a>([ax, offset])</p></td>
 <td><p>Plot effective area versus energy for a given offset.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence" title="gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_offset_dependence</span></code></a>([ax, energy])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence" title="gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_offset_dependence</span></code></a>([ax, energy])</p></td>
 <td><p>Plot effective area versus offset for a given energy.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.read" title="gammapy.irf.EffectiveAreaTable2D.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename[, hdu, format])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.read" title="gammapy.irf.EffectiveAreaTable2D.read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read</span></code></a>(filename[, hdu, format])</p></td>
 <td><p>Read from file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.slice_by_idx" title="gammapy.irf.EffectiveAreaTable2D.slice_by_idx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_by_idx</span></code></a>(slices)</p></td>
+<td><p>Slice sub IRF from IRF object.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.to_hdulist" title="gammapy.irf.EffectiveAreaTable2D.to_hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdulist</span></code></a>([format])</p></td>
 <td><p></p></td>
@@ -1996,7 +2001,7 @@ function checkPageExistsAndRedirect(event) {
 <td><p>Convert to table</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.to_table_hdu" title="gammapy.irf.EffectiveAreaTable2D.to_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table_hdu</span></code></a>([format])</p></td>
-<td><p>Convert to <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a>.</p></td>
+<td><p>Convert to <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.irf.EffectiveAreaTable2D.to_unit" title="gammapy.irf.EffectiveAreaTable2D.to_unit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_unit</span></code></a>(unit)</p></td>
 <td><p>Convert irf to different unit</p></td>
@@ -2009,69 +2014,69 @@ function checkPageExistsAndRedirect(event) {
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.axes">
-<span class="sig-name descname"><span class="pre">axes</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.axes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">axes</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.axes" title="Permalink to this definition">#</a></dt>
 <dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxes</span></code></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.data">
-<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.data" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.data" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.default_interp_kwargs">
-<span class="sig-name descname"><span class="pre">default_interp_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bounds_error':</span> <span class="pre">False,</span> <span class="pre">'fill_value':</span> <span class="pre">0.0}</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.default_interp_kwargs" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_interp_kwargs</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'bounds_error':</span> <span class="pre">False,</span> <span class="pre">'fill_value':</span> <span class="pre">0.0}</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.default_interp_kwargs" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.default_unit">
-<span class="sig-name descname"><span class="pre">default_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Unit(&quot;m2&quot;)</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.default_unit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Unit(&quot;m2&quot;)</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.default_unit" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.fov_alignment">
-<span class="sig-name descname"><span class="pre">fov_alignment</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.fov_alignment" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fov_alignment</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.fov_alignment" title="Permalink to this definition">#</a></dt>
 <dd><p>Alignment of the field of view coordinate axes, see <a class="reference internal" href="gammapy.irf.FoVAlignment.html#gammapy.irf.FoVAlignment" title="gammapy.irf.FoVAlignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoVAlignment</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.has_offset_axis">
-<span class="sig-name descname"><span class="pre">has_offset_axis</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.has_offset_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">has_offset_axis</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.has_offset_axis" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the IRF explicitly depends on offset</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.is_pointlike">
-<span class="sig-name descname"><span class="pre">is_pointlike</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.is_pointlike" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_pointlike</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.is_pointlike" title="Permalink to this definition">#</a></dt>
 <dd><p>Whether the IRF is pointlike of full containment.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.quantity">
-<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.quantity" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></p>
+<span class="sig-name descname"><span class="pre">quantity</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.quantity" title="Permalink to this definition">#</a></dt>
+<dd><p><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.required_axes">
-<span class="sig-name descname"><span class="pre">required_axes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['energy_true',</span> <span class="pre">'offset']</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.required_axes" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">required_axes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['energy_true',</span> <span class="pre">'offset']</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.required_axes" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.tag">
-<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'aeff_2d'</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.tag" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'aeff_2d'</span></em><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.tag" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.unit">
-<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.unit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Map unit (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>)</p>
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.unit" title="Permalink to this definition">#</a></dt>
+<dd><p>Map unit (<a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a>)</p>
 </dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.cumsum">
-<span class="sig-name descname"><span class="pre">cumsum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.cumsum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">cumsum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.cumsum" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute cumsum along a given axis</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2091,7 +2096,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.evaluate">
-<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.evaluate" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.evaluate" title="Permalink to this definition">#</a></dt>
 <dd><p>Evaluate IRF</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2104,7 +2109,7 @@ function checkPageExistsAndRedirect(event) {
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Interpolated values</p>
+<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Interpolated values</p>
 </dd>
 </dl>
 </dd>
@@ -2113,8 +2118,8 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.from_hdulist">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdulist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_hdulist" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create from <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a>.</p>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdulist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_hdulist" title="Permalink to this definition">#</a></dt>
+<dd><p>Create from <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HDUList</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
@@ -2137,7 +2142,7 @@ function checkPageExistsAndRedirect(event) {
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.from_parametrization">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parametrization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_axis_true</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'HESS'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.from_parametrization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_parametrization" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_parametrization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_axis_true</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instrument</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'HESS'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.from_parametrization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_parametrization" title="Permalink to this definition">#</a></dt>
 <dd><p>Create parametrized effective area.</p>
 <p>Parametrizations of the effective areas of different Cherenkov
 telescopes taken from Appendix B of Abramowski et al. (2010), see
@@ -2166,12 +2171,12 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Read from <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a>.</p>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.from_table" title="Permalink to this definition">#</a></dt>
+<dd><p>Read from <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table with irf data</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table with irf data</p>
 </dd>
 <dt><strong>format</strong><span class="classifier">{“gadf-dl3”}</span></dt><dd><p>Format specification</p>
 </dd>
@@ -2188,7 +2193,7 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.integral">
-<span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.integral" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.integral" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute integral along a given axis</p>
 <p>This method uses interpolation of the cumulative sum.</p>
 <dl class="field-list">
@@ -2202,7 +2207,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Returns 2D array with axes offset</p>
+<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Returns 2D array with axes offset</p>
 </dd>
 </dl>
 </dd>
@@ -2211,7 +2216,7 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.integrate_log_log">
-<span class="sig-name descname"><span class="pre">integrate_log_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.integrate_log_log" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">integrate_log_log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.integrate_log_log" title="Permalink to this definition">#</a></dt>
 <dd><p>Integrate along a given axis.</p>
 <p>This method uses log-log trapezoidal integration.</p>
 <dl class="field-list">
@@ -2225,7 +2230,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Returns 2D array with axes offset</p>
+<dt><strong>array</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Returns 2D array with axes offset</p>
 </dd>
 </dl>
 </dd>
@@ -2234,13 +2239,39 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.interp_missing_data">
-<span class="sig-name descname"><span class="pre">interp_missing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.interp_missing_data" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">interp_missing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.interp_missing_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Interpolate missing data along a given axis</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.is_allclose">
+<span class="sig-name descname"><span class="pre">is_allclose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol_axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.is_allclose" title="Permalink to this definition">#</a></dt>
+<dd><p>Compare two data IRFs for equivalency</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>other</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gammapy.irfs.IRF</span></code></span></dt><dd><p>The irf to compare against</p>
+</dd>
+<dt><strong>rtol_axes</strong><span class="classifier">float</span></dt><dd><p>Relative tolerance for the axes comparison.</p>
+</dd>
+<dt><strong>atol_axes</strong><span class="classifier">float</span></dt><dd><p>Relative tolerance for the axes comparison.</p>
+</dd>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>keywords passed to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.allclose.html#numpy.allclose" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.allclose</span></code></a></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>is_allclose</strong><span class="classifier">bool</span></dt><dd><p>Whether the IRF is all close.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.normalize">
-<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.normalize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.normalize" title="Permalink to this definition">#</a></dt>
 <dd><p>Normalise data in place along a given axis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2254,7 +2285,7 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.pad">
-<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.pad" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.pad" title="Permalink to this definition">#</a></dt>
 <dd><p>Pad irf along a given axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2263,7 +2294,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt><strong>axis_name</strong><span class="classifier">str</span></dt><dd><p>Which axis to downsample. By default spatial axes are padded.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword argument forwarded to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a></p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword argument forwarded to <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.pad.html#numpy.pad" title="(in NumPy v1.23)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a></p>
 </dd>
 </dl>
 </dd>
@@ -2278,26 +2309,34 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.peek">
-<span class="sig-name descname"><span class="pre">peek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(15,</span> <span class="pre">5)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.peek"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.peek" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">peek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(15,</span> <span class="pre">5)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.peek"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.peek" title="Permalink to this definition">#</a></dt>
 <dd><p>Quick-look summary plots.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>figsize</strong><span class="classifier">tuple</span></dt><dd><p>Size of the figure.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_cbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">add_cbar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot effective area image.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence">
-<span class="sig-name descname"><span class="pre">plot_energy_dependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot_energy_dependence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_energy_dependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot_energy_dependence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot_energy_dependence" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot effective area versus energy for a given offset.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
-<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Offset</p>
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.coordinates.Angle.html#astropy.coordinates.Angle" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Angle</span></code></a></span></dt><dd><p>Offset</p>
 </dd>
 <dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>Forwarded tp plt.plot()</p>
 </dd>
@@ -2305,7 +2344,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2314,22 +2353,22 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence">
-<span class="sig-name descname"><span class="pre">plot_offset_dependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot_offset_dependence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot_offset_dependence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/irf/effective_area.html#EffectiveAreaTable2D.plot_offset_dependence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.plot_offset_dependence" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot effective area versus offset for a given energy.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a>, optional</span></dt><dd><p>Axis</p>
 </dd>
-<dt><strong>energy</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy</p>
+<dt><strong>energy</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Energy</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword argument passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword argument passed to <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axis</p>
+<dt><strong>ax</strong><span class="classifier"><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#matplotlib.axes.Axes" title="(in Matplotlib v3.6.0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Axes</span></code></a></span></dt><dd><p>Axis</p>
 </dd>
 </dl>
 </dd>
@@ -2338,7 +2377,7 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.read">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.read" title="Permalink to this definition">#</a></dt>
 <dd><p>Read from file.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2361,13 +2400,35 @@ but just assumes that it is constant.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.slice_by_idx">
+<span class="sig-name descname"><span class="pre">slice_by_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.slice_by_idx" title="Permalink to this definition">#</a></dt>
+<dd><p>Slice sub IRF from IRF object.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>slices</strong><span class="classifier">dict</span></dt><dd><p>Dict of axes names and <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice</span></code></a> object pairs. Contains one
+element for each non-spatial dimension. Axes not specified in the
+dict are kept unchanged.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt><strong>sliced</strong><span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IRF</span></code></span></dt><dd><p>Sliced IRF object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.to_hdulist">
-<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_hdulist" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_hdulist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_hdulist" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.to_table">
-<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert to table</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2378,7 +2439,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>IRF data table</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>IRF data table</p>
 </dd>
 </dl>
 </dd>
@@ -2387,8 +2448,8 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.to_table_hdu">
-<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_table_hdu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert to <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a>.</p>
+<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gadf-dl3'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_table_hdu" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert to <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -2398,7 +2459,7 @@ but just assumes that it is constant.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>IRF data table hdu</p>
+<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>IRF data table hdu</p>
 </dd>
 </dl>
 </dd>
@@ -2407,7 +2468,7 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.to_unit">
-<span class="sig-name descname"><span class="pre">to_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_unit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.to_unit" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert irf to different unit</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2427,36 +2488,18 @@ but just assumes that it is constant.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.irf.EffectiveAreaTable2D.write">
-<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.write" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gammapy.irf.EffectiveAreaTable2D.write" title="Permalink to this definition">#</a></dt>
 <dd><p>Write IRF to fits.</p>
-<p>Calls <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList.writeto" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeto</span></code></a>, forwarding all arguments.</p>
+<p>Calls <a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/hdulists.html#astropy.io.fits.HDUList.writeto" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">writeto</span></code></a>, forwarding all arguments.</p>
 </dd></dl>
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.irf.EDispMap.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">EDispMap</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.irf.EnergyDependentMultiGaussPSF.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EnergyDependentMultiGaussPSF</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -2464,8 +2507,9 @@ but just assumes that it is constant.</p>
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2476,7 +2520,7 @@ but just assumes that it is constant.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

@@ -64,6 +64,7 @@ Exponential
       ~Exponential.get_bounding_box
       ~Exponential.has_inverse
       ~Exponential.input_shape
+      ~Exponential.output_units
       ~Exponential.prepare_inputs
       ~Exponential.prepare_outputs
       ~Exponential.rename
@@ -128,6 +129,7 @@ Exponential
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

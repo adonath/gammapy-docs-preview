@@ -94,15 +94,18 @@ Here is an example YAML file using the model:
         spectral:
             type: GaussianSpectralModel
             parameters:
-            -   name: norm
-                value: 0.01
+            -   name: amplitude
+                value: 1.0e-12
                 unit: cm-2 s-1
+                is_norm: true
             -   name: mean
                 value: 2.0
                 unit: TeV
+                is_norm: false
             -   name: sigma
                 value: 0.2
                 unit: TeV
+                is_norm: false
 
 
 

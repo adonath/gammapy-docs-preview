@@ -13,8 +13,11 @@ NaimaSpectralModel
       ~NaimaSpectralModel.covariance
       ~NaimaSpectralModel.default_parameters
       ~NaimaSpectralModel.frozen
+      ~NaimaSpectralModel.include_ssc
       ~NaimaSpectralModel.is_norm_spectral_model
       ~NaimaSpectralModel.parameters
+      ~NaimaSpectralModel.particle_distribution
+      ~NaimaSpectralModel.ssc_model
       ~NaimaSpectralModel.tag
       ~NaimaSpectralModel.type
 
@@ -48,8 +51,11 @@ NaimaSpectralModel
    .. autoattribute:: covariance
    .. autoattribute:: default_parameters
    .. autoattribute:: frozen
+   .. autoattribute:: include_ssc
    .. autoattribute:: is_norm_spectral_model
    .. autoattribute:: parameters
+   .. autoattribute:: particle_distribution
+   .. autoattribute:: ssc_model
    .. autoattribute:: tag
    .. autoattribute:: type
 

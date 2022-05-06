@@ -5,25 +5,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gammapy.data.data_store &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <title>gammapy.data.data_store &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +42,6 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -56,7 +52,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -92,7 +88,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -104,19 +100,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
+ <a class="reference internal nav-link" href="../../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../development/index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -142,17 +138,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables _modules/gammapy/data/data_store and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables _modules/gammapy/data/data_store and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -188,22 +177,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -286,11 +279,18 @@ function checkPageExistsAndRedirect(event) {
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DataStore&quot;</span><span class="p">]</span>
 
+<span class="n">ALL_IRFS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="s2">&quot;bkg&quot;</span><span class="p">,</span> <span class="s2">&quot;rad_max&quot;</span><span class="p">]</span>
+<span class="n">ALL_HDUS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="s2">&quot;gti&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">ALL_IRFS</span>
 <span class="n">REQUIRED_IRFS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;full-enclosure&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="s2">&quot;bkg&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;point-like&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;all-optional&quot;</span><span class="p">:</span>  <span class="p">[</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="s2">&quot;bkg&quot;</span><span class="p">,</span> <span class="s2">&quot;rad_max&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;full-enclosure&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="s2">&quot;bkg&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;point-like&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">},</span>
+    <span class="s2">&quot;all-optional&quot;</span><span class="p">:</span> <span class="p">{},</span>
 <span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">MissingRequiredHDU</span><span class="p">(</span><span class="ne">IOError</span><span class="p">):</span>
+    <span class="k">pass</span>
+
 
 <span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
@@ -348,7 +348,7 @@ function checkPageExistsAndRedirect(event) {
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">obs_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return list of obs_ids contained in the datastore.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Return the sorted obs_ids contained in the datastore.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hdu_table</span><span class="p">[</span><span class="s2">&quot;OBS_ID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <div class="viewcode-block" id="DataStore.from_file"><a class="viewcode-back" href="../../../api/gammapy.data.DataStore.html#gammapy.data.DataStore.from_file">[docs]</a>    <span class="nd">@classmethod</span>
@@ -531,16 +531,19 @@ function checkPageExistsAndRedirect(event) {
 <span class="sd">            Observation ID.</span>
 <span class="sd">        required_irf : list of str or str</span>
 <span class="sd">            The list can include the following options:</span>
-<span class="sd">            * `events` : Events</span>
-<span class="sd">            * `gti` :  Good time intervals</span>
-<span class="sd">            * `aeff` : Effective area</span>
-<span class="sd">            * `bkg` : Background</span>
-<span class="sd">            * `edisp`: Energy dispersion</span>
-<span class="sd">            * `psf` : Point Spread Function</span>
-<span class="sd">            * `rad_max` : Maximal radius</span>
+
+<span class="sd">            * `&quot;events&quot;` : Events</span>
+<span class="sd">            * `&quot;gti&quot;` :  Good time intervals</span>
+<span class="sd">            * `&quot;aeff&quot;` : Effective area</span>
+<span class="sd">            * `&quot;bkg&quot;` : Background</span>
+<span class="sd">            * `&quot;edisp&quot;`: Energy dispersion</span>
+<span class="sd">            * `&quot;psf&quot;` : Point Spread Function</span>
+<span class="sd">            * `&quot;rad_max&quot;` : Maximal radius</span>
+
 <span class="sd">            Alternatively single string can be used as shortcut:</span>
-<span class="sd">            * `full-enclosure` : [&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;, &quot;psf&quot;, &quot;bkg&quot;]</span>
-<span class="sd">            * `point-like` : [&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;]</span>
+
+<span class="sd">            * `&quot;full-enclosure&quot;` : includes `[&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;, &quot;psf&quot;, &quot;bkg&quot;]`</span>
+<span class="sd">            * `&quot;point-like&quot;` : includes `[&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;]`</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -553,61 +556,75 @@ function checkPageExistsAndRedirect(event) {
 
         <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;obs_id&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">obs_id</span><span class="p">)}</span>
 
-        <span class="k">if</span> <span class="n">required_irf</span> <span class="o">==</span> <span class="s2">&quot;full-enclosure&quot;</span><span class="p">:</span>
-            <span class="n">hdus</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="s2">&quot;gti&quot;</span><span class="p">,</span> <span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">,</span> <span class="s2">&quot;psf&quot;</span><span class="p">,</span> <span class="s2">&quot;bkg&quot;</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="n">required_irf</span> <span class="o">==</span> <span class="s2">&quot;point-like&quot;</span><span class="p">:</span>
-            <span class="n">hdus</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="s2">&quot;gti&quot;</span><span class="p">,</span> <span class="s2">&quot;aeff&quot;</span><span class="p">,</span> <span class="s2">&quot;edisp&quot;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">hdus</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;events&quot;</span><span class="p">,</span> <span class="s2">&quot;gti&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">required_irf</span>
-        <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">hdus</span><span class="p">:</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="n">hdu</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_table</span><span class="o">.</span><span class="n">hdu_location</span><span class="p">(</span><span class="n">obs_id</span><span class="o">=</span><span class="n">obs_id</span><span class="p">,</span> <span class="n">hdu_type</span><span class="o">=</span><span class="n">hdu</span><span class="p">)</span>
+        <span class="c1"># check for the &quot;short forms&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">required_irf</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">required_irf</span> <span class="o">=</span> <span class="n">REQUIRED_IRFS</span><span class="p">[</span><span class="n">required_irf</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">ALL_IRFS</span><span class="p">):</span>
+            <span class="n">difference</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">ALL_IRFS</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">difference</span><span class="si">}</span><span class="s2"> is not a valid hdu key. Choose from: </span><span class="si">{</span><span class="n">ALL_IRFS</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">required_hdus</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="s2">&quot;gti&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span>
+
+        <span class="n">missing_hdus</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">ALL_HDUS</span><span class="p">:</span>
+            <span class="n">hdu_location</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_table</span><span class="o">.</span><span class="n">hdu_location</span><span class="p">(</span>
+                <span class="n">obs_id</span><span class="o">=</span><span class="n">obs_id</span><span class="p">,</span>
+                <span class="n">hdu_type</span><span class="o">=</span><span class="n">hdu</span><span class="p">,</span>
+                <span class="n">warn_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">hdu_location</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="n">hdu</span><span class="p">]</span> <span class="o">=</span> <span class="n">hdu_location</span>
+            <span class="k">elif</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">required_hdus</span><span class="p">:</span>
+                <span class="n">missing_hdus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hdu</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">missing_hdus</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MissingRequiredHDU</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Required HDUs </span><span class="si">{</span><span class="n">missing_hdus</span><span class="si">}</span><span class="s2"> not found in observation </span><span class="si">{</span><span class="n">obs_id</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">Observation</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-
-<div class="viewcode-block" id="DataStore.get_observations"><a class="viewcode-back" href="../../../api/gammapy.data.DataStore.html#gammapy.data.DataStore.get_observations">[docs]</a>    <span class="k">def</span> <span class="nf">get_observations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obs_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">required_irf</span><span class="o">=</span><span class="s2">&quot;full-enclosure&quot;</span><span class="p">):</span>
+<div class="viewcode-block" id="DataStore.get_observations"><a class="viewcode-back" href="../../../api/gammapy.data.DataStore.html#gammapy.data.DataStore.get_observations">[docs]</a>    <span class="k">def</span> <span class="nf">get_observations</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">obs_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">required_irf</span><span class="o">=</span><span class="s2">&quot;full-enclosure&quot;</span>
+    <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a `~gammapy.data.Observations`.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        obs_id : list</span>
 <span class="sd">            Observation IDs (default of ``None`` means &quot;all&quot;)</span>
+<span class="sd">            If not given, all observations ordered by OBS_ID are returned.</span>
+<span class="sd">            This is not necessarily the order in the ``obs_table``.</span>
 <span class="sd">        skip_missing : bool, optional</span>
 <span class="sd">            Skip missing observations, default: False</span>
 <span class="sd">        required_irf : list of str or str</span>
 <span class="sd">            Runs will be added to the list of observations only if the</span>
 <span class="sd">            required HDUs are present. Otherwise, the given run will be skipped</span>
 <span class="sd">            The list can include the following options:</span>
-<span class="sd">            * `events` : Events</span>
-<span class="sd">            * `gti` :  Good time intervals</span>
-<span class="sd">            * `aeff` : Effective area</span>
-<span class="sd">            * `bkg` : Background</span>
-<span class="sd">            * `edisp`: Energy dispersion</span>
-<span class="sd">            * `psf` : Point Spread Function</span>
-<span class="sd">            * `rad_max` : Maximal radius</span>
+
+<span class="sd">            * `&quot;events&quot;` : Events</span>
+<span class="sd">            * `&quot;gti&quot;` :  Good time intervals</span>
+<span class="sd">            * `&quot;aeff&quot;` : Effective area</span>
+<span class="sd">            * `&quot;bkg&quot;` : Background</span>
+<span class="sd">            * `&quot;edisp&quot;`: Energy dispersion</span>
+<span class="sd">            * `&quot;psf&quot;` : Point Spread Function</span>
+<span class="sd">            * `&quot;rad_max&quot;` : Maximal radius</span>
+
 <span class="sd">            Alternatively single string can be used as shortcut:</span>
-<span class="sd">            * `full-enclosure` : [&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;, &quot;psf&quot;, &quot;bkg&quot;]</span>
-<span class="sd">            * `point-like` : [&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;]</span>
-<span class="sd">            * `all-optional` : no HDUs are required, only warnings will be emitted</span>
-<span class="sd">                               for missing HDUs among all possibilities.</span>
+
+<span class="sd">            * `&quot;full-enclosure&quot;` : includes `[&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;, &quot;psf&quot;, &quot;bkg&quot;]`</span>
+<span class="sd">            * `&quot;point-like&quot;` : includes `[&quot;events&quot;, &quot;gti&quot;, &quot;aeff&quot;, &quot;edisp&quot;]`</span>
+<span class="sd">            * `&quot;all-optional&quot;` : no HDUs are required, only warnings will be emitted</span>
+<span class="sd">              for missing HDUs among all possibilities.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        observations : `~gammapy.data.Observations`</span>
 <span class="sd">            Container holding a list of `~gammapy.data.Observation`</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="n">all_hdu</span> <span class="o">=</span> <span class="n">REQUIRED_IRFS</span><span class="p">[</span><span class="s2">&quot;all-optional&quot;</span><span class="p">]</span>
-        <span class="n">is_all_optional</span> <span class="o">=</span> <span class="n">required_irf</span> <span class="o">==</span> <span class="s2">&quot;all-optional&quot;</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">required_irf</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">required_irf</span> <span class="ow">in</span> <span class="n">REQUIRED_IRFS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">required_irf</span> <span class="o">=</span> <span class="n">REQUIRED_IRFS</span><span class="p">[</span><span class="n">required_irf</span><span class="p">]</span>
-
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">all_hdu</span><span class="p">):</span>
-            <span class="n">difference</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">all_hdu</span><span class="p">)</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">difference</span><span class="si">}</span><span class="s2"> is not a valid hdu key. Choose from: </span><span class="si">{</span><span class="n">all_hdu</span><span class="si">}</span><span class="s2">&quot;</span>
-            <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">obs_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">obs_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">obs_ids</span>
@@ -623,11 +640,12 @@ function checkPageExistsAndRedirect(event) {
                     <span class="k">continue</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="n">err</span>
+            <span class="k">except</span> <span class="n">MissingRequiredHDU</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipping run with missing HDUs; </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
 
-            <span class="k">if</span> <span class="n">is_all_optional</span> <span class="ow">or</span> <span class="nb">set</span><span class="p">(</span><span class="n">required_irf</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">available_hdus</span><span class="p">):</span>
-                <span class="n">obs_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Skipping run with missing HDUs; obs_id: </span><span class="si">{</span><span class="n">_</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">obs_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+
         <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Observations selected: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">obs_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> out of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">obs_id</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Observations</span><span class="p">(</span><span class="n">obs_list</span><span class="p">)</span></div>
 
@@ -789,7 +807,9 @@ function checkPageExistsAndRedirect(event) {
 
     <span class="k">def</span> <span class="nf">get_events_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">events_path</span><span class="p">,</span> <span class="n">irf_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">events_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_events_info</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_events_info</span><span class="p">[</span><span class="n">events_path</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_events_info</span><span class="p">(</span><span class="n">events_path</span><span class="p">,</span> <span class="n">irf_path</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_events_info</span><span class="p">[</span><span class="n">events_path</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_events_info</span><span class="p">(</span>
+                <span class="n">events_path</span><span class="p">,</span> <span class="n">irf_path</span>
+            <span class="p">)</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_events_info</span><span class="p">[</span><span class="n">events_path</span><span class="p">]</span>
 
@@ -837,7 +857,6 @@ function checkPageExistsAndRedirect(event) {
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;TIME-END&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;TIME_END&quot;</span><span class="p">,</span> <span class="n">na_str</span><span class="p">)</span>
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;N_TELS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;N_TELS&quot;</span><span class="p">,</span> <span class="n">na_int</span><span class="p">)</span>
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;OBJECT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OBJECT&quot;</span><span class="p">,</span> <span class="n">na_str</span><span class="p">)</span>
-
 
         <span class="c1"># Not part of the spec, but good to know from which file the info comes</span>
         <span class="n">info</span><span class="p">[</span><span class="s2">&quot;EVENTS_FILENAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">events_path</span><span class="p">)</span>
@@ -966,18 +985,15 @@ function checkPageExistsAndRedirect(event) {
               </div>
               
               
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
-              
           </main>
           
 
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -988,7 +1004,7 @@ function checkPageExistsAndRedirect(event) {
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ring background map &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Ring background map &#8212; gammapy v0.20.dev834+ga5aea9145</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +43,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
@@ -60,7 +58,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -95,7 +93,7 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../userguide/index.html">
   User guide
  </a>
@@ -108,8 +106,8 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
-  API reference
+ <a class="reference internal nav-link" href="../../../userguide/howto.html">
+  How To
  </a>
 </li>
 
@@ -150,13 +148,6 @@
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +183,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.dev834+ga5aea9145 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,456 +244,194 @@ function checkPageExistsAndRedirect(event) {
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
+    <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/analysis.html">
-   Gamma-ray data analysis
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../userguide/package.html">
-   Package structure
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/dl3.html">
-     Data access and selection (DL3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/makers.html">
-     Data reduction (DL3 to DL4)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/dl4.html">
-     Datasets (DL4)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/modeling.html">
-     Modeling and Fitting (DL4 to DL5)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/hli.html">
-     High Level Analysis Interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/astro.html">
-     Astrophysics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/stats.html">
-     Statistical utility functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/cli.html">
-     Command line tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/visualization.html">
-     Plotting features
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/utils.html">
-     Utility functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../index.html">
-   Tutorials
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/analysis_1.html">
-     High level interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/analysis_2.html">
-     Low level API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/overview.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/cta.html">
-     CTA with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/hess.html">
-     H.E.S.S. with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/fermi_lat.html">
-     Fermi-LAT with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/spectral_analysis.html">
-     Spectral analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/spectral_analysis_rad_max.html">
-     Spectral analysis with energy-dependent directional cuts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/sed_fitting.html">
-     Flux point fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/extended_source_spectral_analysis.html">
-     Spectral analysis of extended sources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/spectrum_simulation.html">
-     1D spectrum simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../1D/cta_sensitivity.html">
-     Point source sensitivity
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Ring background map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="modeling_2D.html">
-     2D map fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="detect.html">
-     Source detection and significance maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/cta_data_analysis.html">
-     Basic image exploration and fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/simulate_3d.html">
-     3D map simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/analysis_mwl.html">
-     Multi instrument joint 3D and 1D analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/event_sampling.html">
-     Event sampling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/flux_profiles.html">
-     Flux Profile Estimation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve_simulation.html">
-     Simulating and fitting a time varying source
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve.html">
-     Light curves
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve_flare.html">
-     Light curves for flares
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/pulsar_analysis.html">
-     Pulsar analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/makers.html">
-     Makers - Data reduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/models.html">
-     Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/model_management.html">
-     Modelling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/fitting.html">
-     Fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/maps.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/mask_maps.html">
-     Mask maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/astro_dark_matter.html">
-     Dark matter spatial and spectral models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/datasets.html">
-     Datasets - Reduced data, IRFs, models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../survey_map.html">
-     Survey map
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/howto.html">
-   How To
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../modeling/gallery/index.html">
-   Model gallery
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_constant.html">
-     Constant spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_disk.html">
-     Disk spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_gauss.html">
-     Gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_gen_gauss.html">
-     Generalized gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_point.html">
-     Point spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_shell.html">
-     Shell spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_shell2.html">
-     Shell2 spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_template.html">
-     Template spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_absorbed.html">
-     EBL absorbption spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_broken_powerlaw.html">
-     Broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_compound.html">
-     Compound spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_constant_spectral.html">
-     Constant spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw.html">
-     Exponential cutoff power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw_3fgl.html">
-     Exponential cutoff power law spectral model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_gauss_spectral.html">
-     Gaussian spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_logparabola.html">
-     Log parabola spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_naima.html">
-     Naima spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_piecewise_norm_spectral.html">
-     Piecewise  norm spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_powerlaw.html">
-     Power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_powerlaw2.html">
-     Power law 2 spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_smooth_broken_powerlaw.html">
-     Smooth broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_3fgl.html">
-     Super exponential cutoff power law model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl_dr1.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR1 (and DR2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_template_spectral.html">
-     Template spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_constant_temporal.html">
-     Constant temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_expdecay_temporal.html">
-     ExpDecay temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_gaussian_temporal.html">
-     Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_generalized_gaussian_temporal.html">
-     Generalized Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_linear_temporal.html">
-     Linear temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_powerlaw_temporal.html">
-     PowerLaw temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_sine_temporal.html">
-     Sine temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_template_temporal.html">
-     Light curve temporal model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://gammapy.github.io/gammapy-recipes">
-   Gammapy recipes
+  <a class="reference internal" href="../../starting/analysis_1.html">
+   High level interface
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/references.html">
-   Glossary and references
+  <a class="reference internal" href="../../starting/analysis_2.html">
+   Low level API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../starting/overview.html">
+   Data structures
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/cta.html">
+   CTA with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/hess.html">
+   H.E.S.S. with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/fermi_lat.html">
+   Fermi-LAT with Gammapy
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/spectral_analysis.html">
+   Spectral analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/spectral_analysis_rad_max.html">
+   Spectral analysis with energy-dependent directional cuts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/sed_fitting.html">
+   Flux point fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/extended_source_spectral_analysis.html">
+   Spectral analysis of extended sources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/spectrum_simulation.html">
+   1D spectrum simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1D/cta_sensitivity.html">
+   Point source sensitivity
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ring background map
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modeling_2D.html">
+   2D map fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="detect.html">
+   Source detection and significance maps
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/cta_data_analysis.html">
+   Basic image exploration and fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/analysis_3d.html">
+   3D detailed analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/simulate_3d.html">
+   3D map simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/analysis_mwl.html">
+   Multi instrument joint 3D and 1D analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/event_sampling.html">
+   Event sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/flux_profiles.html">
+   Flux Profile Estimation
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve_simulation.html">
+   Simulating and fitting a time varying source
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve.html">
+   Light curves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve_flare.html">
+   Light curves for flares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/pulsar_analysis.html">
+   Pulsar analysis
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/makers.html">
+   Makers - Data reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/catalog.html">
+   Source catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/model_management.html">
+   Modelling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/fitting.html">
+   Fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/maps.html">
+   Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/mask_maps.html">
+   Mask maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/astro_dark_matter.html">
+   Dark matter spatial and spectral models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/datasets.html">
+   Datasets - Reduced data, IRFs, models
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../survey_map.html">
+   Survey map
   </a>
  </li>
 </ul>
@@ -718,7 +451,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -1045,24 +778,24 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="Ring-background-map">
-<h1>Ring background map<a class="headerlink" href="#Ring-background-map" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Context">
-<h2>Context<a class="headerlink" href="#Context" title="Permalink to this headline">¶</a></h2>
+<section id="Ring-background-map">
+<h1>Ring background map<a class="headerlink" href="#Ring-background-map" title="Permalink to this headline">#</a></h1>
+<section id="Context">
+<h2>Context<a class="headerlink" href="#Context" title="Permalink to this headline">#</a></h2>
 <p>One of the challenges of IACT analysis is accounting for the large residual hadronic emission. An excess map, assumed to be a map of only gamma-ray events, requires a good estimate of the background. However, in the absence of a solid template bkg model it is not possible to obtain reliable background model a priori. It was often found necessary in classical cherenkov astronomy to perform a local renormalization of the existing templates, usually with a ring kernel. This assumes that most of the
 events are background and requires to have an exclusion mask to remove regions with bright signal from the estimation. To read more about this method, see <a class="reference external" href="https://arxiv.org/abs/astro-ph/0610959">here.</a></p>
-</div>
-<div class="section" id="Objective">
-<h2>Objective<a class="headerlink" href="#Objective" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Objective">
+<h2>Objective<a class="headerlink" href="#Objective" title="Permalink to this headline">#</a></h2>
 <p>Create an excess (gamma-ray events) map of MSH 15-52 as well as a significance map to determine how solid the signal is.</p>
-</div>
-<div class="section" id="Proposed-approach">
-<h2>Proposed approach<a class="headerlink" href="#Proposed-approach" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Proposed-approach">
+<h2>Proposed approach<a class="headerlink" href="#Proposed-approach" title="Permalink to this headline">#</a></h2>
 <p>The analysis workflow is roughly - Compute the sky maps keeping each observation separately using the <code class="docutils literal notranslate"><span class="pre">Analysis</span></code> class - Estimate the background using the <code class="docutils literal notranslate"><span class="pre">RingBackgroundMaker</span></code> - Compute the correlated excess and significance maps using the <code class="docutils literal notranslate"><span class="pre">CorrelatedExcessMapEstimator</span></code></p>
 <p>The normalised background thus obtained can be used for general modelling and fitting.</p>
-</div>
-<div class="section" id="Setup">
-<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Setup">
+<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">#</a></h2>
 <p>As usual, we’ll start with some general imports…</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1095,9 +828,9 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Creating-the-config-file">
-<h2>Creating the config file<a class="headerlink" href="#Creating-the-config-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Creating-the-config-file">
+<h2>Creating the config file<a class="headerlink" href="#Creating-the-config-file" title="Permalink to this headline">#</a></h2>
 <p>Now, we create a config file for out analysis. You may load this from disc if you have a pre-defined config file.</p>
 <p>In this example, we will use a few HESS runs on the pulsar wind nebula, MSH 1552</p>
 <div class="nbinput nblast docutils container">
@@ -1159,9 +892,9 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Getting-the-reduced-dataset">
-<h2>Getting the reduced dataset<a class="headerlink" href="#Getting-the-reduced-dataset" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Getting-the-reduced-dataset">
+<h2>Getting the reduced dataset<a class="headerlink" href="#Getting-the-reduced-dataset" title="Permalink to this headline">#</a></h2>
 <p>We now use the config file to do the initial data reduction which will then be used for a ring extraction</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1199,12 +932,12 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Extracting-the-ring-background">
-<h2>Extracting the ring background<a class="headerlink" href="#Extracting-the-ring-background" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Extracting-the-ring-background">
+<h2>Extracting the ring background<a class="headerlink" href="#Extracting-the-ring-background" title="Permalink to this headline">#</a></h2>
 <p>Since the ring background is extracted from real off events, we need to use the wstat statistics in this case. For this, we will use the <code class="docutils literal notranslate"><span class="pre">MapDatasetOnOFF</span></code> and the <code class="docutils literal notranslate"><span class="pre">RingBackgroundMaker</span></code> classes.</p>
-<div class="section" id="Create-exclusion-mask">
-<h3>Create exclusion mask<a class="headerlink" href="#Create-exclusion-mask" title="Permalink to this headline">¶</a></h3>
+<section id="Create-exclusion-mask">
+<h3>Create exclusion mask<a class="headerlink" href="#Create-exclusion-mask" title="Permalink to this headline">#</a></h3>
 <p>First, we need to create an exclusion mask on the known sources. In this case, we need to mask only <code class="docutils literal notranslate"><span class="pre">MSH</span> <span class="pre">15-52</span></code> but this depends on the sources present in our field of view.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1233,9 +966,9 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Create-a-stacked-dataset">
-<h3>Create a stacked dataset<a class="headerlink" href="#Create-a-stacked-dataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Create-a-stacked-dataset">
+<h3>Create a stacked dataset<a class="headerlink" href="#Create-a-stacked-dataset" title="Permalink to this headline">#</a></h3>
 <p>Now, we extract the background for each dataset and then stack the maps together to create a single stacked map for further analysis</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1263,10 +996,10 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Compute-correlated-significance-and-correlated-excess-maps">
-<h2>Compute correlated significance and correlated excess maps<a class="headerlink" href="#Compute-correlated-significance-and-correlated-excess-maps" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="Compute-correlated-significance-and-correlated-excess-maps">
+<h2>Compute correlated significance and correlated excess maps<a class="headerlink" href="#Compute-correlated-significance-and-correlated-excess-maps" title="Permalink to this headline">#</a></h2>
 <p>We need to convolve our maps with an appropriate smoothing kernel. The significance is computed according to the Li &amp; Ma expression for ON and OFF Poisson measurements, see <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/1983ApJ...272..317L/abstract">here</a>. Since astropy convolution kernels only accept integers, we first convert our required size in degrees to int depending on our pixel size.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1358,8 +1091,8 @@ events are background and requires to have an exclusion mask to remove regions w
 </pre></div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -1389,8 +1122,9 @@ events are background and requires to have an exclusion mask to remove regions w
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1401,7 +1135,7 @@ events are background and requires to have an exclusion mask to remove regions w
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

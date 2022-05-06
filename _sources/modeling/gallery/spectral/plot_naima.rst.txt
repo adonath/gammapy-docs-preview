@@ -134,6 +134,7 @@ Here is an example YAML file using the model:
                 frozen: false
                 interp: lin
                 scale_method: scale10
+                is_norm: true
             -   name: e_0
                 value: 10.0
                 unit: TeV
@@ -143,6 +144,7 @@ Here is an example YAML file using the model:
                 frozen: false
                 interp: lin
                 scale_method: scale10
+                is_norm: false
             -   name: alpha
                 value: 3.0
                 unit: ''
@@ -152,6 +154,7 @@ Here is an example YAML file using the model:
                 frozen: false
                 interp: lin
                 scale_method: scale10
+                is_norm: false
             -   name: e_cutoff
                 value: 30.0
                 unit: TeV
@@ -161,6 +164,7 @@ Here is an example YAML file using the model:
                 frozen: false
                 interp: lin
                 scale_method: scale10
+                is_norm: false
             -   name: beta
                 value: 1.0
                 unit: ''
@@ -170,6 +174,7 @@ Here is an example YAML file using the model:
                 frozen: false
                 interp: lin
                 scale_method: scale10
+                is_norm: false
 
 
 

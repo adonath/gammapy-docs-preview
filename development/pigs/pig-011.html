@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PIG 11 - Light curves &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PIG 11 - Light curves &#8212; gammapy vX.Y.Z</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,6 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -58,7 +55,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -94,7 +91,7 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../userguide/index.html">
+ <a class="reference internal nav-link" href="../../user-guide/index.html">
   User guide
  </a>
 </li>
@@ -106,19 +103,19 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
+ <a class="reference internal nav-link" href="../../api-reference/index.html">
   API reference
  </a>
 </li>
 
 <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
-  Development
+  Developer guide
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../changelog/index.html">
+ <a class="reference internal nav-link" href="../../release-notes/index.html">
   Release notes
  </a>
 </li>
@@ -144,17 +141,10 @@
 
 <!-- NOTE: this JS must live here (not in our global JS file) because it relies
      on being processed by Jinja before it is run (specifically for replacing
-     variables development/pigs/pig-011 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'url_template': 'https://docs.gammapy.org/{version}/', 'version_match': 'dev'}.
+     variables development/pigs/pig-011 and {'json_url': 'https://docs.gammapy.org/stable/switcher.json', 'version_match': 'dev'}.
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +180,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.2.dev307+gf180a1571 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -394,6 +388,11 @@ function checkPageExistsAndRedirect(event) {
      PIG 22 - Unified flux estimators API
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pig-023.html">
+     PIG 23 - Gammapy release cycle and version numbering
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -413,7 +412,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -526,8 +525,8 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="pig-11-light-curves">
-<span id="pig-011"></span><h1>PIG 11 - Light curves<a class="headerlink" href="#pig-11-light-curves" title="Permalink to this headline">¶</a></h1>
+  <section id="pig-11-light-curves">
+<span id="pig-011"></span><h1>PIG 11 - Light curves<a class="headerlink" href="#pig-11-light-curves" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Author: Régis Terrier, Axel Donath, David Fidalgo, Atreyee Sinha</p></li>
 <li><p>Created: Jul 2, 2018</p></li>
@@ -535,8 +534,8 @@ function checkPageExistsAndRedirect(event) {
 <li><p>Status: withdrawn</p></li>
 <li><p>Discussion: <a class="reference external" href="https://github.com/gammapy/gammapy/pull/1451">GH 1451</a></p></li>
 </ul>
-<div class="section" id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h2>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
 <p>In this PIG we want to discuss a restructuring of the way light curves are
 computed and stored in Gammapy. Lightcurves in gamma-ray astronomy are the
 result of a series of fits of the source flux in each time bin. Lightcurve
@@ -555,11 +554,11 @@ passed with the configuration <code class="docutils literal notranslate"><span c
 the new <code class="docutils literal notranslate"><span class="pre">LightCurveEstimator</span></code> class, which  should essentially be a wrapper
 around the <code class="docutils literal notranslate"><span class="pre">FluxPointEstimator</span></code> class that does the same thing for spectrum
 and map datasets.</p>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="lightcurves-in-gamma-ray-astronomy">
-<h3>Lightcurves in gamma-ray astronomy<a class="headerlink" href="#lightcurves-in-gamma-ray-astronomy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<section id="lightcurves-in-gamma-ray-astronomy">
+<h3>Lightcurves in gamma-ray astronomy<a class="headerlink" href="#lightcurves-in-gamma-ray-astronomy" title="Permalink to this headline">#</a></h3>
 <p>In photon counting experiments, lightcurves are often simply obtained by
 counting events in a given energy range in a set of time bins. In ground based
 gamma-ray astronomy, things are usually more complex.</p>
@@ -576,9 +575,9 @@ in these time bins.</p>
 <p>This is more limited than e.g. time resolved spectral analysis. Although the
 latter share many similarities with the lightcurve extraction, it is a more
 complex task which we do not cover here.</p>
-</div>
-<div class="section" id="background-what-we-have-now">
-<h3>Background / What we have now<a class="headerlink" href="#background-what-we-have-now" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="background-what-we-have-now">
+<h3>Background / What we have now<a class="headerlink" href="#background-what-we-have-now" title="Permalink to this headline">#</a></h3>
 <p>The current <code class="docutils literal notranslate"><span class="pre">gammapy.time.LightCurveEstimator</span></code> class assumes that a part of
 the data reduction process has already been applied at it takes as input a
 <code class="docutils literal notranslate"><span class="pre">gammapy.spectrum.SpectrumExtraction</span></code> instance for which a list of
@@ -591,12 +590,12 @@ the whole data sample. See <a class="reference external" href="https://docs.gamm
 <p>Drawbacks of this approach: no clear separation of the data reduction and
 modeling steps, and only 1D On-Off spectral analysis is supported and lacks
 supports for <code class="docutils literal notranslate"><span class="pre">MapDataset</span></code> based analysis.</p>
-</div>
-</div>
-<div class="section" id="proposal">
-<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-organization-of-the-new-approach">
-<h3>General organization of the new approach<a class="headerlink" href="#general-organization-of-the-new-approach" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="proposal">
+<h2>Proposal<a class="headerlink" href="#proposal" title="Permalink to this headline">#</a></h2>
+<section id="general-organization-of-the-new-approach">
+<h3>General organization of the new approach<a class="headerlink" href="#general-organization-of-the-new-approach" title="Permalink to this headline">#</a></h3>
 <p>The approach will be split into 3 main phases:
 * Time bin preparation
 * Data reduction in time bins to produce a list of <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>
@@ -604,9 +603,9 @@ supports for <code class="docutils literal notranslate"><span class="pre">MapDat
 <p>The end product should contain enough information to perform some rebinning and
 apply high level timing techniques without rerunning the whole data reduction
 and fitting steps.</p>
-</div>
-<div class="section" id="time-bin-preparation">
-<h3>Time bin preparation<a class="headerlink" href="#time-bin-preparation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="time-bin-preparation">
+<h3>Time bin preparation<a class="headerlink" href="#time-bin-preparation" title="Permalink to this headline">#</a></h3>
 <p>Independently of the actual data reduction technique chosen, the user should
 first provide a list/table of time intervals for which she/he wants to compute
 the source flux. The computation of this list/table will be done outside of the
@@ -624,9 +623,9 @@ code similar to the following example:</p>
     <span class="n">time_bins</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-reduction">
-<h3>Data reduction<a class="headerlink" href="#data-reduction" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-reduction">
+<h3>Data reduction<a class="headerlink" href="#data-reduction" title="Permalink to this headline">#</a></h3>
 <p>Once the time bins are determined, the user will have to select the relevant
 <code class="docutils literal notranslate"><span class="pre">Observations</span></code> from the <code class="docutils literal notranslate"><span class="pre">Datastore</span></code>. The <code class="docutils literal notranslate"><span class="pre">Observations</span></code> are then filtered
 and grouped according to the time bins using the <code class="docutils literal notranslate"><span class="pre">ObservationFilter</span></code> and
@@ -653,9 +652,9 @@ objects it is necessary to be able to combine <code class="docutils literal notr
 stacking of tables is enough in many cases, the situation of overlapping time
 intervals should be considered and a proper <code class="docutils literal notranslate"><span class="pre">GTI.union()</span></code> should be introduced
 (a functionality recurrent in HEA software see e.g. ftools <code class="docutils literal notranslate"><span class="pre">mgtime</span></code>)</p>
-</div>
-<div class="section" id="data-fitting">
-<h3>Data Fitting<a class="headerlink" href="#data-fitting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-fitting">
+<h3>Data Fitting<a class="headerlink" href="#data-fitting" title="Permalink to this headline">#</a></h3>
 <p>The data fitting is the step were the <code class="docutils literal notranslate"><span class="pre">Datasets</span></code> are converted into a
 lightcurve based on a model of the emission. The amplitude of the source model
 is fitted while other parameters are usually, but not necessarily, fixed.</p>
@@ -684,9 +683,9 @@ introduced to freeze all parameters of a model. Another possibility is to assume
 that all parameters are fixed except the <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> in the
 <code class="docutils literal notranslate"><span class="pre">LightCurveEstimator.run()</span></code> method, or pass as arguments the names of the
 parameters to leave free.</p>
-</div>
-<div class="section" id="storing-the-results-and-further-studies">
-<h3>Storing the results and further studies<a class="headerlink" href="#storing-the-results-and-further-studies" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="storing-the-results-and-further-studies">
+<h3>Storing the results and further studies<a class="headerlink" href="#storing-the-results-and-further-studies" title="Permalink to this headline">#</a></h3>
 <p>The results are returned as a <code class="docutils literal notranslate"><span class="pre">gammapy.time.LightCurve</span></code> instance (the current
 container class for light curves) that, so far, essentially holds the integrated
 flux + errors and the time_min/time_max of each time bin. There are many other
@@ -709,12 +708,12 @@ possible to perform minimal significance rebinning:</p>
 <span class="n">min_significance_lc</span> <span class="o">=</span> <span class="n">lightcurve</span><span class="o">.</span><span class="n">rebin</span><span class="p">(</span><span class="n">min_significance</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="discussion-alternatives">
-<h2>Discussion / Alternatives<a class="headerlink" href="#discussion-alternatives" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="time-bins">
-<h3>Time bins<a class="headerlink" href="#time-bins" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="discussion-alternatives">
+<h2>Discussion / Alternatives<a class="headerlink" href="#discussion-alternatives" title="Permalink to this headline">#</a></h2>
+<section id="time-bins">
+<h3>Time bins<a class="headerlink" href="#time-bins" title="Permalink to this headline">#</a></h3>
 <p>To work with time bins, we could also rely on <code class="docutils literal notranslate"><span class="pre">astropy.timeseries</span></code> if we force
 the dependency to astropy v&gt;3.2. This would look like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.timeseries</span> <span class="kn">import</span> <span class="n">BinnedTimeSeries</span>
@@ -724,23 +723,23 @@ the dependency to astropy v&gt;3.2. This would look like:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">times</span><span class="o">.</span><span class="n">time_bin_end</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="light-curve-fitting">
-<h3>Light Curve Fitting<a class="headerlink" href="#light-curve-fitting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="light-curve-fitting">
+<h3>Light Curve Fitting<a class="headerlink" href="#light-curve-fitting" title="Permalink to this headline">#</a></h3>
 <p>We could provide distinct objects specialized for <code class="docutils literal notranslate"><span class="pre">Map</span></code> and <code class="docutils literal notranslate"><span class="pre">Spectrum</span></code> datasets
 instead of a single object.</p>
-</div>
-<div class="section" id="lightcurve">
-<h3>Lightcurve<a class="headerlink" href="#lightcurve" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="lightcurve">
+<h3>Lightcurve<a class="headerlink" href="#lightcurve" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Lightcurve</span></code> contains  an <code class="docutils literal notranslate"><span class="pre">astropy.table.Table</span></code> object. It could be
 improved by using the <code class="docutils literal notranslate"><span class="pre">astropy_timeseries.BinnedTimeSeries</span></code> object which
 itself inherits from <code class="docutils literal notranslate"><span class="pre">QTable</span></code> and provides support for row selection with
 time, rebinning and more complex methods for detailed timing studies such as
 Lomb-Scargle periodograms.</p>
-</div>
-</div>
-<div class="section" id="task-list">
-<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="task-list">
+<h2>Task list<a class="headerlink" href="#task-list" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">TSTART</span></code> and <code class="docutils literal notranslate"><span class="pre">TSTOP</span></code> meta info on the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> as well as the <code class="docutils literal notranslate"><span class="pre">GTI</span></code> table.</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">GTI.union()`</span></code> method to merge <code class="docutils literal notranslate"><span class="pre">Datasets</span></code>.</p></li>
@@ -753,36 +752,18 @@ Lomb-Scargle periodograms.</p>
 <li><p>Implement the new <code class="docutils literal notranslate"><span class="pre">LightCurveEstimator</span></code> class</p></li>
 <li><p>Provide a notebook showing data reduction  and fitting examples for both 3D and 1D cases</p></li>
 </ul>
-</div>
-<div class="section" id="decision">
-<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="decision">
+<h2>Decision<a class="headerlink" href="#decision" title="Permalink to this headline">#</a></h2>
 <p>The authors have decided to withdraw the PIG. A significant part of the
 implementation is already there. Besides, the recent additions of the high level
 interface and of the new Maker scheme change the scope of the discussion.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
               
-              
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pig-010.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">PIG 10 - Regions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pig-012.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PIG 12 - High level interface</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
               
           </main>
           
@@ -790,8 +771,9 @@ interface and of the new Maker scheme change the scope of the discussion.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -802,7 +784,7 @@ interface and of the new Maker scheme change the scope of the discussion.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     
