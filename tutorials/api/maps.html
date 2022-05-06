@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maps &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Maps &#8212; gammapy v0.20.dev834+ga5aea9145</title>
     
-    <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
@@ -45,7 +43,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../_static/gammapy_logo.ico"/>
@@ -60,7 +58,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -95,21 +93,21 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../userguide/index.html">
   User guide
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
+<li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../index.html">
   Tutorials
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../api.html">
-  API reference
+ <a class="reference internal nav-link" href="../../userguide/howto.html">
+  How To
  </a>
 </li>
 
@@ -150,13 +148,6 @@
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +183,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.dev834+ga5aea9145 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,456 +244,194 @@ function checkPageExistsAndRedirect(event) {
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
+    <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../userguide/analysis.html">
-   Gamma-ray data analysis
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../userguide/package.html">
-   Package structure
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/dl3.html">
-     Data access and selection (DL3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/makers.html">
-     Data reduction (DL3 to DL4)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="reference internal" href="../../userguide/dl4.html">
-     Datasets (DL4)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/modeling.html">
-     Modeling and Fitting (DL4 to DL5)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/hli.html">
-     High Level Analysis Interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/astro.html">
-     Astrophysics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/stats.html">
-     Statistical utility functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/cli.html">
-     Command line tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/visualization.html">
-     Plotting features
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../userguide/utils.html">
-     Utility functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../index.html">
-   Tutorials
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../starting/analysis_1.html">
-     High level interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../starting/analysis_2.html">
-     Low level API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../starting/overview.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data/cta.html">
-     CTA with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data/hess.html">
-     H.E.S.S. with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../data/fermi_lat.html">
-     Fermi-LAT with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/spectral_analysis.html">
-     Spectral analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/spectral_analysis_rad_max.html">
-     Spectral analysis with energy-dependent directional cuts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/sed_fitting.html">
-     Flux point fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/extended_source_spectral_analysis.html">
-     Spectral analysis of extended sources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/spectrum_simulation.html">
-     1D spectrum simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/1D/cta_sensitivity.html">
-     Point source sensitivity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/2D/ring_background.html">
-     Ring background map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/2D/modeling_2D.html">
-     2D map fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/2D/detect.html">
-     Source detection and significance maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/cta_data_analysis.html">
-     Basic image exploration and fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/simulate_3d.html">
-     3D map simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/analysis_mwl.html">
-     Multi instrument joint 3D and 1D analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/event_sampling.html">
-     Event sampling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/3D/flux_profiles.html">
-     Flux Profile Estimation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/time/light_curve_simulation.html">
-     Simulating and fitting a time varying source
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/time/light_curve.html">
-     Light curves
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/time/light_curve_flare.html">
-     Light curves for flares
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/time/pulsar_analysis.html">
-     Pulsar analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="makers.html">
-     Makers - Data reduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="models.html">
-     Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="model_management.html">
-     Modelling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="fitting.html">
-     Fitting
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="mask_maps.html">
-     Mask maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="astro_dark_matter.html">
-     Dark matter spatial and spectral models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets.html">
-     Datasets - Reduced data, IRFs, models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../survey_map.html">
-     Survey map
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../userguide/howto.html">
-   How To
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../modeling/gallery/index.html">
-   Model gallery
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_constant.html">
-     Constant spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_disk.html">
-     Disk spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_gauss.html">
-     Gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_gen_gauss.html">
-     Generalized gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_point.html">
-     Point spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_shell.html">
-     Shell spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_shell2.html">
-     Shell2 spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spatial/plot_template.html">
-     Template spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_absorbed.html">
-     EBL absorbption spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_broken_powerlaw.html">
-     Broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_compound.html">
-     Compound spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_constant_spectral.html">
-     Constant spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw.html">
-     Exponential cutoff power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw_3fgl.html">
-     Exponential cutoff power law spectral model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_gauss_spectral.html">
-     Gaussian spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_logparabola.html">
-     Log parabola spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_naima.html">
-     Naima spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_piecewise_norm_spectral.html">
-     Piecewise  norm spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_powerlaw.html">
-     Power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_powerlaw2.html">
-     Power law 2 spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_smooth_broken_powerlaw.html">
-     Smooth broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_3fgl.html">
-     Super exponential cutoff power law model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl_dr1.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR1 (and DR2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/spectral/plot_template_spectral.html">
-     Template spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_constant_temporal.html">
-     Constant temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_expdecay_temporal.html">
-     ExpDecay temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_gaussian_temporal.html">
-     Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_generalized_gaussian_temporal.html">
-     Generalized Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_linear_temporal.html">
-     Linear temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_powerlaw_temporal.html">
-     PowerLaw temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_sine_temporal.html">
-     Sine temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../modeling/gallery/temporal/plot_template_temporal.html">
-     Light curve temporal model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://gammapy.github.io/gammapy-recipes">
-   Gammapy recipes
+  <a class="reference internal" href="../starting/analysis_1.html">
+   High level interface
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../userguide/references.html">
-   Glossary and references
+  <a class="reference internal" href="../starting/analysis_2.html">
+   Low level API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../starting/overview.html">
+   Data structures
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/cta.html">
+   CTA with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/hess.html">
+   H.E.S.S. with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data/fermi_lat.html">
+   Fermi-LAT with Gammapy
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/spectral_analysis.html">
+   Spectral analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/spectral_analysis_rad_max.html">
+   Spectral analysis with energy-dependent directional cuts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/sed_fitting.html">
+   Flux point fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/extended_source_spectral_analysis.html">
+   Spectral analysis of extended sources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/spectrum_simulation.html">
+   1D spectrum simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/1D/cta_sensitivity.html">
+   Point source sensitivity
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/2D/ring_background.html">
+   Ring background map
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/2D/modeling_2D.html">
+   2D map fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/2D/detect.html">
+   Source detection and significance maps
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/cta_data_analysis.html">
+   Basic image exploration and fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/analysis_3d.html">
+   3D detailed analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/simulate_3d.html">
+   3D map simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/analysis_mwl.html">
+   Multi instrument joint 3D and 1D analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/event_sampling.html">
+   Event sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/3D/flux_profiles.html">
+   Flux Profile Estimation
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/time/light_curve_simulation.html">
+   Simulating and fitting a time varying source
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/time/light_curve.html">
+   Light curves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/time/light_curve_flare.html">
+   Light curves for flares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../analysis/time/pulsar_analysis.html">
+   Pulsar analysis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="makers.html">
+   Makers - Data reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="catalog.html">
+   Source catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="model_management.html">
+   Modelling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fitting.html">
+   Fitting
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mask_maps.html">
+   Mask maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="astro_dark_matter.html">
+   Dark matter spatial and spectral models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets - Reduced data, IRFs, models
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../survey_map.html">
+   Survey map
   </a>
  </li>
 </ul>
@@ -718,7 +451,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -1125,11 +858,11 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="Maps">
-<h1>Maps<a class="headerlink" href="#Maps" title="Permalink to this headline">¶</a></h1>
+<section id="Maps">
+<h1>Maps<a class="headerlink" href="#Maps" title="Permalink to this headline">#</a></h1>
 <img alt="Gammapy Maps Illustration" src="../../_images/gammapy_maps.png" />
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+<section id="Introduction">
+<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">~gammapy.maps</span></code> submodule contains classes for representing pixilised data on the sky with an arbitrary number of non-spatial dimensions such as energy, time, event class or any possible user-defined dimension (illustrated in the image above). The main <code class="docutils literal notranslate"><span class="pre">Map</span></code> data structure features a uniform API for <a class="reference external" href="https://fits.gsfc.nasa.gov/fits_wcs.html">WCS</a> as well as <a class="reference external" href="https://en.wikipedia.org/wiki/HEALPix">HEALPix</a> based images. The API also generalizes simple image based operations such as
 smoothing, interpolation and reprojection to the arbitrary extra dimensions and makes working with (2 + N)-dimensional hypercubes as easy as working with a simple 2D image. Further information is also provided on the <code class="docutils literal notranslate"><span class="pre">~gammapy.maps</span></code> docs page.</p>
 <p>In the following introduction we will learn all the basics of working with WCS based maps. HEALPix based maps will be covered in a future tutorial. We will cover the following topics in order:</p>
@@ -1143,9 +876,9 @@ smoothing, interpolation and reprojection to the arbitrary extra dimensions and 
 </ol>
 <p>Make sure you have worked through the <a class="reference internal" href="../starting/overview.html"><span class="doc">Gammapy overview</span></a>, because a solid knowledge about working with <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> and <code class="docutils literal notranslate"><span class="pre">Quantity</span></code> objects as well as <a class="reference external" href="http://www.numpy.org/">Numpy</a> is required for this tutorial.</p>
 <p>This notebook is rather lengthy, but getting to know the <code class="docutils literal notranslate"><span class="pre">Map</span></code> data structure in detail is essential for working with Gammapy and will allow you to fulfill complex analysis tasks with very few and simple code in future!</p>
-</div>
-<div class="section" id="Setup">
-<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Setup">
+<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">#</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1171,11 +904,11 @@ smoothing, interpolation and reprojection to the arbitrary extra dimensions and 
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Creating-WCS-Maps">
-<h2>Creating WCS Maps<a class="headerlink" href="#Creating-WCS-Maps" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Using-Factory-Methods">
-<h3>Using Factory Methods<a class="headerlink" href="#Using-Factory-Methods" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Creating-WCS-Maps">
+<h2>Creating WCS Maps<a class="headerlink" href="#Creating-WCS-Maps" title="Permalink to this headline">#</a></h2>
+<section id="Using-Factory-Methods">
+<h3>Using Factory Methods<a class="headerlink" href="#Using-Factory-Methods" title="Permalink to this headline">#</a></h3>
 <p>Maps are most easily created using the <code class="docutils literal notranslate"><span class="pre">~gammapy.maps.Map.create()</span></code> factory method:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1234,9 +967,9 @@ smoothing, interpolation and reprojection to the arbitrary extra dimensions and 
 </div>
 </div>
 <p>In addition we have defined a TAN projection, a pixel size of <code class="docutils literal notranslate"><span class="pre">0.02</span></code> deg and a width of the map of <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">deg</span> <span class="pre">x</span> <span class="pre">5</span> <span class="pre">deg</span></code>. The <code class="docutils literal notranslate"><span class="pre">width</span></code> argument also takes scalar value instead of a tuple, which is interpreted as both the width and height of the map, so that a quadratic map is created.</p>
-</div>
-<div class="section" id="Creating-from-a-Map-Geometry">
-<h3>Creating from a Map Geometry<a class="headerlink" href="#Creating-from-a-Map-Geometry" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Creating-from-a-Map-Geometry">
+<h3>Creating from a Map Geometry<a class="headerlink" href="#Creating-from-a-Map-Geometry" title="Permalink to this headline">#</a></h3>
 <p>As we have seen in the first examples, the <code class="docutils literal notranslate"><span class="pre">Map</span></code> object couples the data (stored as a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) with a <code class="docutils literal notranslate"><span class="pre">Geom</span></code> object. The <code class="docutils literal notranslate"><span class="pre">Geom</span></code> object can be seen as a generalization of an <code class="docutils literal notranslate"><span class="pre">astropy.wcs.WCS</span></code> object, providing the information on how the data maps to physical coordinate systems. In some cases e.g. when creating many maps with the same WCS geometry it can be advantegeous to first create the map geometry independent of the map object itsself:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1289,9 +1022,9 @@ smoothing, interpolation and reprojection to the arbitrary extra dimensions and 
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Adding-Non-Spatial-Axes">
-<h3>Adding Non-Spatial Axes<a class="headerlink" href="#Adding-Non-Spatial-Axes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Adding-Non-Spatial-Axes">
+<h3>Adding Non-Spatial Axes<a class="headerlink" href="#Adding-Non-Spatial-Axes" title="Permalink to this headline">#</a></h3>
 <p>In many analysis scenarios we would like to add extra dimension to the maps to study e.g. energy or time dependency of the data. Those non-spatial dimensions are handled with the <code class="docutils literal notranslate"><span class="pre">MapAxis</span></code> object. Let us first define an energy axis, with 4 bins:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1361,10 +1094,10 @@ smoothing, interpolation and reprojection to the arbitrary extra dimensions and 
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Reading-and-Writing">
-<h2>Reading and Writing<a class="headerlink" href="#Reading-and-Writing" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="Reading-and-Writing">
+<h2>Reading and Writing<a class="headerlink" href="#Reading-and-Writing" title="Permalink to this headline">#</a></h2>
 <p>Gammapy <code class="docutils literal notranslate"><span class="pre">Map</span></code> objects are serialized using the Flexible Image Transport Format (FITS). Depending on the pixelisation scheme (HEALPix or WCS) and presence of non-spatial dimensions the actual convention to write the FITS file is different. By default Gammpy uses a generic convention named <code class="docutils literal notranslate"><span class="pre">gadf</span></code>, which will support WCS and HEALPix formats as well as an arbitrary number of non-spatial axes. The convention is documented in detail on the <a class="reference external" href="https://gamma-astro-data-formats.readthedocs.io/en/latest/skymaps/index.html">Gamma Astro Data
 Formats</a> page.</p>
 <p>Other conventions required by specific software (e.g. the Fermi Science Tools) are supported as well. At the moment those are the following</p>
@@ -1376,8 +1109,8 @@ Formats</a> page.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">fgst-srcmap</span></code> and <code class="docutils literal notranslate"><span class="pre">fgst-srcmap-sparse</span></code>: Fermi source map and sparse source map format.</p></li>
 </ul>
 <p>The conventions listed above only support an additional energy axis.</p>
-<div class="section" id="Reading-Maps">
-<h3>Reading Maps<a class="headerlink" href="#Reading-Maps" title="Permalink to this headline">¶</a></h3>
+<section id="Reading-Maps">
+<h3>Reading Maps<a class="headerlink" href="#Reading-Maps" title="Permalink to this headline">#</a></h3>
 <p>Reading FITS files is mainly exposed via the <code class="docutils literal notranslate"><span class="pre">Map.read()</span></code> method.Let us take a look at a first example:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1424,9 +1157,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Writing-Maps">
-<h3>Writing Maps<a class="headerlink" href="#Writing-Maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Writing-Maps">
+<h3>Writing Maps<a class="headerlink" href="#Writing-Maps" title="Permalink to this headline">#</a></h3>
 <p>Writing FITS files is mainoy exposure via the <code class="docutils literal notranslate"><span class="pre">Map.write()</span></code> method. Here is a first example:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1494,12 +1227,12 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Accessing-Data">
-<h2>Accessing Data<a class="headerlink" href="#Accessing-Data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="How-to-get-data-values">
-<h3>How to get data values<a class="headerlink" href="#How-to-get-data-values" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="Accessing-Data">
+<h2>Accessing Data<a class="headerlink" href="#Accessing-Data" title="Permalink to this headline">#</a></h2>
+<section id="How-to-get-data-values">
+<h3>How to get data values<a class="headerlink" href="#How-to-get-data-values" title="Permalink to this headline">#</a></h3>
 <p>All map objects have a set of accessor methods, which can be used to access or update the contents of the map irrespective of its underlying representation. Those accessor methods accept as their first argument a coordinate <code class="docutils literal notranslate"><span class="pre">tuple</span></code> containing scalars, <code class="docutils literal notranslate"><span class="pre">list</span></code>, or <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> with one tuple element for each dimension. Some methods additionally accept a <code class="docutils literal notranslate"><span class="pre">dict</span></code> or <code class="docutils literal notranslate"><span class="pre">MapCoord</span></code> argument, of which both allow to assign coordinates by axis name.</p>
 <p>Let us first begin with the <code class="docutils literal notranslate"><span class="pre">.get_by_idx()</span></code> method, that accepts a tuple of indices. The order of the indices corresponds to the axis order of the map:</p>
 <div class="nbinput nblast docutils container">
@@ -1559,9 +1292,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Indexing-and-Slicing-Sub-Maps">
-<h3>Indexing and Slicing Sub-Maps<a class="headerlink" href="#Indexing-and-Slicing-Sub-Maps" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Indexing-and-Slicing-Sub-Maps">
+<h3>Indexing and Slicing Sub-Maps<a class="headerlink" href="#Indexing-and-Slicing-Sub-Maps" title="Permalink to this headline">#</a></h3>
 <p>When you have worked with Numpy arrays in the past you are probably familiar with the concept of indexing and slicing into data arrays. To support slicing of non-spatial axes of <code class="docutils literal notranslate"><span class="pre">Map</span></code> objects, the <code class="docutils literal notranslate"><span class="pre">Map</span></code> object has a <code class="docutils literal notranslate"><span class="pre">.slice_by_idx()</span></code> method, which allows to extract sub-maps from a larger map.</p>
 <p>The following example demonstrates how to get the map at the energy bin number 3:</p>
 <div class="nbinput nblast docutils container">
@@ -1605,10 +1338,10 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Iterating-by-image">
-<h3>Iterating by image<a class="headerlink" href="#Iterating-by-image" title="Permalink to this headline">¶</a></h3>
-<p>For maps with non-spatial dimensions the <code class="docutils literal notranslate"><span class="pre">~Map.iter_by_image</span></code> method can be used to loop over image slices. The image plane index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is returned in data order, so that the data array can be indexed directly. Here is an example for an in-place convolution of an image using <code class="docutils literal notranslate"><span class="pre">astropy.convolution.convolve</span></code> to interpolate NaN values:</p>
+</section>
+<section id="Iterating-by-image">
+<h3>Iterating by image<a class="headerlink" href="#Iterating-by-image" title="Permalink to this headline">#</a></h3>
+<p>For maps with non-spatial dimensions the <code class="docutils literal notranslate"><span class="pre">~Map.iter_by_image_data</span></code> method can be used to loop over image slices. The image plane index <code class="docutils literal notranslate"><span class="pre">idx</span></code> is returned in data order, so that the data array can be indexed directly. Here is an example for an in-place convolution of an image using <code class="docutils literal notranslate"><span class="pre">astropy.convolution.convolve</span></code> to interpolate NaN values:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1618,7 +1351,7 @@ Formats</a> page.</p>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Map</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="p">[</span><span class="n">axis1</span><span class="p">,</span> <span class="n">axis2</span><span class="p">],</span> <span class="n">binsz</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">m</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">15</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
-<span class="k">for</span> <span class="n">img</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">iter_by_image</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">img</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">iter_by_image_data</span><span class="p">():</span>
     <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
     <span class="n">m</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">convolve</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
 
@@ -1626,12 +1359,12 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Modifying-Data">
-<h2>Modifying Data<a class="headerlink" href="#Modifying-Data" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="How-to-set-data-values">
-<h3>How to set data values<a class="headerlink" href="#How-to-set-data-values" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="Modifying-Data">
+<h2>Modifying Data<a class="headerlink" href="#Modifying-Data" title="Permalink to this headline">#</a></h2>
+<section id="How-to-set-data-values">
+<h3>How to set data values<a class="headerlink" href="#How-to-set-data-values" title="Permalink to this headline">#</a></h3>
 <p>To modify and set map data values the <code class="docutils literal notranslate"><span class="pre">Map</span></code> object features as well a <code class="docutils literal notranslate"><span class="pre">.set_by_idx()</span></code> method:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1670,9 +1403,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Filling-maps-from-event-lists">
-<h3>Filling maps from event lists<a class="headerlink" href="#Filling-maps-from-event-lists" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Filling-maps-from-event-lists">
+<h3>Filling maps from event lists<a class="headerlink" href="#Filling-maps-from-event-lists" title="Permalink to this headline">#</a></h3>
 <p>This example shows how to fill a counts cube from an event list:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1724,9 +1457,9 @@ Formats</a> page.</p>
 </div>
 </div>
 <p>It works for IACT and Fermi-LAT events, for WCS or HEALPix map geometries, and also for extra axes. Especially energy axes are automatically handled correctly.</p>
-</div>
-<div class="section" id="Filling-maps-from-interpolation">
-<h3>Filling maps from interpolation<a class="headerlink" href="#Filling-maps-from-interpolation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Filling-maps-from-interpolation">
+<h3>Filling maps from interpolation<a class="headerlink" href="#Filling-maps-from-interpolation" title="Permalink to this headline">#</a></h3>
 <p>Maps support interpolation via the <code class="docutils literal notranslate"><span class="pre">~Map.interp_by_coord</span></code> and <code class="docutils literal notranslate"><span class="pre">~Map.interp_by_pix</span></code> methods. Currently the following interpolation methods are supported:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nearest</span></code> : Return value of nearest pixel (no interpolation).</p></li>
@@ -1763,9 +1496,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Interpolating-onto-a-different-geometry">
-<h3>Interpolating onto a different geometry<a class="headerlink" href="#Interpolating-onto-a-different-geometry" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Interpolating-onto-a-different-geometry">
+<h3>Interpolating onto a different geometry<a class="headerlink" href="#Interpolating-onto-a-different-geometry" title="Permalink to this headline">#</a></h3>
 <p>For 3d geometries this operation can be performed directly using the <code class="docutils literal notranslate"><span class="pre">.interp_to_geom()</span></code> method. This is very useful, ex: while using map arithmetic.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1789,12 +1522,12 @@ Formats</a> page.</p>
 </div>
 </div>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">preserve_counts</span></code> option should be true if the map is an integral quantity (e.g. counts) and false if the map is a differential quantity (e.g. intensity).</p>
-</div>
-</div>
-<div class="section" id="Maps-operations">
-<h2>Maps operations<a class="headerlink" href="#Maps-operations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="Basic-operators">
-<h3>Basic operators<a class="headerlink" href="#Basic-operators" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="Maps-operations">
+<h2>Maps operations<a class="headerlink" href="#Maps-operations" title="Permalink to this headline">#</a></h2>
+<section id="Basic-operators">
+<h3>Basic operators<a class="headerlink" href="#Basic-operators" title="Permalink to this headline">#</a></h3>
 <p>One can perform simple arithmetic on maps using the <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code> operators, this works only for maps with the same geometry:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1835,9 +1568,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Cutouts">
-<h3>Cutouts<a class="headerlink" href="#Cutouts" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Cutouts">
+<h3>Cutouts<a class="headerlink" href="#Cutouts" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">WCSNDMap</span></code> objects features a <code class="docutils literal notranslate"><span class="pre">.cutout()</span></code> method, which allows you to cut out a smaller part of a larger map. This can be useful, e.g. when working with allsky diffuse maps. Here is an example:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1849,13 +1582,13 @@ Formats</a> page.</p>
 </div>
 </div>
 <p>The returned object is again a <code class="docutils literal notranslate"><span class="pre">Map</span></code> object with updated WCS information and data size. As one can see the cutout is automatically applied to all the non-spatial axes as well. The cutout width is given in the order of <code class="docutils literal notranslate"><span class="pre">(lon,</span> <span class="pre">lat)</span></code> and can be specified with units that will be handled correctly.</p>
-</div>
-</div>
-<div class="section" id="Visualizing-and-Plotting">
-<h2>Visualizing and Plotting<a class="headerlink" href="#Visualizing-and-Plotting" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="Visualizing-and-Plotting">
+<h2>Visualizing and Plotting<a class="headerlink" href="#Visualizing-and-Plotting" title="Permalink to this headline">#</a></h2>
 <p>All map objects provide a <code class="docutils literal notranslate"><span class="pre">plot</span></code> method for generating a visualization of a map. This method returns figure, axes, and image objects that can be used to further tweak/customize the image. The <code class="docutils literal notranslate"><span class="pre">plot</span></code> method should be used with 2D maps, while 3D maps can be displayed with the <code class="docutils literal notranslate"><span class="pre">.plot_interative()</span></code> or <code class="docutils literal notranslate"><span class="pre">.plot_grid()</span></code> methods.</p>
-<div class="section" id="Image-Plotting">
-<h3>Image Plotting<a class="headerlink" href="#Image-Plotting" title="Permalink to this headline">¶</a></h3>
+<section id="Image-Plotting">
+<h3>Image Plotting<a class="headerlink" href="#Image-Plotting" title="Permalink to this headline">#</a></h3>
 <p>For debugging and inspecting the map data it is useful to plot or visualize the images planes contained in the map.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1897,9 +1630,9 @@ Formats</a> page.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Cube-plotting">
-<h3>Cube plotting<a class="headerlink" href="#Cube-plotting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="Cube-plotting">
+<h3>Cube plotting<a class="headerlink" href="#Cube-plotting" title="Permalink to this headline">#</a></h3>
 <p>For maps with non-spatial dimensions the <code class="docutils literal notranslate"><span class="pre">Map</span></code> object features an interactive plotting method, that works in jupyter notebooks only (Note: it requires the package <code class="docutils literal notranslate"><span class="pre">ipywidgets</span></code> to be installed). We first read a small example cutout from the Fermi Galactic diffuse model and display the data cube by calling <code class="docutils literal notranslate"><span class="pre">.plot_interactive()</span></code>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1934,9 +1667,9 @@ Formats</a> page.</p>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {"165bbe3c053b44fc9747fb9f234c2417": {"model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "model_name": "OutputModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_8772c8d1f8384b958f91805191d50235", "msg_id": "", "outputs": []}}, "67f9b51530bf4e12bddf6d82aeb8b8f0": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "7b5cae29cd0440e0978d862d8e7d7021": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "DescriptionStyleModel", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "DescriptionStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "initial"}}, "8772c8d1f8384b958f91805191d50235": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "8c0504fb9e774d88aab5a9aa1f7daaaa": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": "50%"}}, "959aeaca9c8b48a094873145ffef10c6": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "97ca79ad83204a98968f69b36729e301": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "RadioButtonsModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "RadioButtonsModel", "_options_labels": ["linear", "sqrt", "log"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "RadioButtonsView", "description": "Select stretch:", "description_tooltip": null, "disabled": false, "index": 1, "layout": "IPY_MODEL_a4ffa90d854d40039b22aa4dcf407cd8", "style": "IPY_MODEL_67f9b51530bf4e12bddf6d82aeb8b8f0"}}, "a4ffa90d854d40039b22aa4dcf407cd8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "d0376e517c494199814d81953eb3f95c": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "SelectionSliderModel", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SelectionSliderModel", "_options_labels": ["5.85e+01 MeV MeV", "8.00e+01 MeV MeV", "1.09e+02 MeV MeV", "1.50e+02 MeV MeV", "2.05e+02 MeV MeV", "2.80e+02 MeV MeV", "3.83e+02 MeV MeV", "5.23e+02 MeV MeV", "7.16e+02 MeV MeV", "9.79e+02 MeV MeV", "1.34e+03 MeV MeV", "1.83e+03 MeV MeV", "2.50e+03 MeV MeV", "3.42e+03 MeV MeV", "4.68e+03 MeV MeV", "6.41e+03 MeV MeV", "8.76e+03 MeV MeV", "1.20e+04 MeV MeV", "1.64e+04 MeV MeV", "2.24e+04 MeV MeV", "3.06e+04 MeV MeV", "4.19e+04 MeV MeV", "5.73e+04 MeV MeV", "7.84e+04 MeV MeV", "1.07e+05 MeV MeV", "1.47e+05 MeV MeV", "2.01e+05 MeV MeV", "2.74e+05 MeV MeV", "3.75e+05 MeV MeV", "5.13e+05 MeV MeV"], "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "SelectionSliderView", "continuous_update": false, "description": "Select energy_true:", "description_tooltip": null, "disabled": false, "index": 0, "layout": "IPY_MODEL_8c0504fb9e774d88aab5a9aa1f7daaaa", "orientation": "horizontal", "readout": true, "style": "IPY_MODEL_7b5cae29cd0440e0978d862d8e7d7021"}}, "fcb67bef27fd4f3f89975aa73d805b39": {"model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "model_name": "VBoxModel", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_d0376e517c494199814d81953eb3f95c", "IPY_MODEL_97ca79ad83204a98968f69b36729e301", "IPY_MODEL_165bbe3c053b44fc9747fb9f234c2417"], "layout": "IPY_MODEL_959aeaca9c8b48a094873145ffef10c6"}}}, "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-</div>
+</script></section>
+</section>
+</section>
 
 
               </div>
@@ -1966,8 +1699,9 @@ Formats</a> page.</p>
       </div>
     </div>
   
-    <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1978,7 +1712,7 @@ Formats</a> page.</p>
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

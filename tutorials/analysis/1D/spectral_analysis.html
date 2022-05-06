@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spectral analysis &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Spectral analysis &#8212; gammapy v0.20.dev834+ga5aea9145</title>
     
-    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
@@ -45,7 +43,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../../../_static/gammapy_logo.ico"/>
@@ -60,7 +58,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -95,21 +93,21 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../../userguide/index.html">
   User guide
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
+<li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="../../index.html">
   Tutorials
  </a>
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../api.html">
-  API reference
+ <a class="reference internal nav-link" href="../../../userguide/howto.html">
+  How To
  </a>
 </li>
 
@@ -150,13 +148,6 @@
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -192,22 +183,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.dev834+ga5aea9145 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -249,456 +244,194 @@ function checkPageExistsAndRedirect(event) {
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="current nav bd-sidenav">
+    <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/analysis.html">
-   Gamma-ray data analysis
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../../userguide/package.html">
-   Package structure
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/dl3.html">
-     Data access and selection (DL3)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="reference internal" href="../../../userguide/makers.html">
-     Data reduction (DL3 to DL4)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="reference internal" href="../../../userguide/dl4.html">
-     Datasets (DL4)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="reference internal" href="../../../userguide/modeling.html">
-     Modeling and Fitting (DL4 to DL5)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/hli.html">
-     High Level Analysis Interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/astro.html">
-     Astrophysics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/stats.html">
-     Statistical utility functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/cli.html">
-     Command line tools
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/visualization.html">
-     Plotting features
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../userguide/utils.html">
-     Utility functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../index.html">
-   Tutorials
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/analysis_1.html">
-     High level interface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/analysis_2.html">
-     Low level API
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../starting/overview.html">
-     Data structures
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/cta.html">
-     CTA with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/hess.html">
-     H.E.S.S. with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../data/fermi_lat.html">
-     Fermi-LAT with Gammapy
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Spectral analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="spectral_analysis_rad_max.html">
-     Spectral analysis with energy-dependent directional cuts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sed_fitting.html">
-     Flux point fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="extended_source_spectral_analysis.html">
-     Spectral analysis of extended sources
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="spectrum_simulation.html">
-     1D spectrum simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cta_sensitivity.html">
-     Point source sensitivity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2D/ring_background.html">
-     Ring background map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2D/modeling_2D.html">
-     2D map fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../2D/detect.html">
-     Source detection and significance maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/cta_data_analysis.html">
-     Basic image exploration and fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/analysis_3d.html">
-     3D detailed analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/simulate_3d.html">
-     3D map simulation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/analysis_mwl.html">
-     Multi instrument joint 3D and 1D analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/event_sampling.html">
-     Event sampling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3D/flux_profiles.html">
-     Flux Profile Estimation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve_simulation.html">
-     Simulating and fitting a time varying source
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve.html">
-     Light curves
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/light_curve_flare.html">
-     Light curves for flares
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../time/pulsar_analysis.html">
-     Pulsar analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/makers.html">
-     Makers - Data reduction
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/catalog.html">
-     Source catalogs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/models.html">
-     Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/model_management.html">
-     Modelling
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/fitting.html">
-     Fitting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/maps.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/mask_maps.html">
-     Mask maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/astro_dark_matter.html">
-     Dark matter spatial and spectral models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../api/datasets.html">
-     Datasets - Reduced data, IRFs, models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../survey_map.html">
-     Survey map
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/howto.html">
-   How To
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../../modeling/gallery/index.html">
-   Model gallery
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_constant.html">
-     Constant spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_disk.html">
-     Disk spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_gauss.html">
-     Gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_gen_gauss.html">
-     Generalized gaussian spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_point.html">
-     Point spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_shell.html">
-     Shell spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_shell2.html">
-     Shell2 spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spatial/plot_template.html">
-     Template spatial model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_absorbed.html">
-     EBL absorbption spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_broken_powerlaw.html">
-     Broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_compound.html">
-     Compound spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_constant_spectral.html">
-     Constant spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw.html">
-     Exponential cutoff power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_exp_cutoff_powerlaw_3fgl.html">
-     Exponential cutoff power law spectral model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_gauss_spectral.html">
-     Gaussian spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_logparabola.html">
-     Log parabola spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_naima.html">
-     Naima spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_piecewise_norm_spectral.html">
-     Piecewise  norm spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_powerlaw.html">
-     Power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_powerlaw2.html">
-     Power law 2 spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_smooth_broken_powerlaw.html">
-     Smooth broken power law spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_3fgl.html">
-     Super exponential cutoff power law model used for 3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_super_exp_cutoff_powerlaw_4fgl_dr1.html">
-     Super Exponential Cutoff Power Law Model used for 4FGL-DR1 (and DR2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/spectral/plot_template_spectral.html">
-     Template spectral model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_constant_temporal.html">
-     Constant temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_expdecay_temporal.html">
-     ExpDecay temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_gaussian_temporal.html">
-     Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_generalized_gaussian_temporal.html">
-     Generalized Gaussian temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_linear_temporal.html">
-     Linear temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_powerlaw_temporal.html">
-     PowerLaw temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_sine_temporal.html">
-     Sine temporal model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../../modeling/gallery/temporal/plot_template_temporal.html">
-     Light curve temporal model
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference external" href="https://gammapy.github.io/gammapy-recipes">
-   Gammapy recipes
+  <a class="reference internal" href="../../starting/analysis_1.html">
+   High level interface
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../../userguide/references.html">
-   Glossary and references
+  <a class="reference internal" href="../../starting/analysis_2.html">
+   Low level API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../starting/overview.html">
+   Data structures
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/cta.html">
+   CTA with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/hess.html">
+   H.E.S.S. with Gammapy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../data/fermi_lat.html">
+   Fermi-LAT with Gammapy
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Spectral analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="spectral_analysis_rad_max.html">
+   Spectral analysis with energy-dependent directional cuts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sed_fitting.html">
+   Flux point fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="extended_source_spectral_analysis.html">
+   Spectral analysis of extended sources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="spectrum_simulation.html">
+   1D spectrum simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cta_sensitivity.html">
+   Point source sensitivity
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2D/ring_background.html">
+   Ring background map
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2D/modeling_2D.html">
+   2D map fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2D/detect.html">
+   Source detection and significance maps
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/cta_data_analysis.html">
+   Basic image exploration and fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/analysis_3d.html">
+   3D detailed analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/simulate_3d.html">
+   3D map simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/analysis_mwl.html">
+   Multi instrument joint 3D and 1D analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/event_sampling.html">
+   Event sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3D/flux_profiles.html">
+   Flux Profile Estimation
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve_simulation.html">
+   Simulating and fitting a time varying source
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve.html">
+   Light curves
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/light_curve_flare.html">
+   Light curves for flares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../time/pulsar_analysis.html">
+   Pulsar analysis
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/makers.html">
+   Makers - Data reduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/catalog.html">
+   Source catalogs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/models.html">
+   Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/model_management.html">
+   Modelling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/fitting.html">
+   Fitting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/maps.html">
+   Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/mask_maps.html">
+   Mask maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/astro_dark_matter.html">
+   Dark matter spatial and spectral models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api/datasets.html">
+   Datasets - Reduced data, IRFs, models
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../survey_map.html">
+   Survey map
   </a>
  </li>
 </ul>
@@ -718,7 +451,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -1073,24 +806,24 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="Spectral-analysis">
-<h1>Spectral analysis<a class="headerlink" href="#Spectral-analysis" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#Prerequisites" title="Permalink to this headline">¶</a></h2>
+<section id="Spectral-analysis">
+<h1>Spectral analysis<a class="headerlink" href="#Spectral-analysis" title="Permalink to this headline">#</a></h1>
+<section id="Prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#Prerequisites" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Understanding how spectral extraction is performed in Cherenkov astronomy, in particular regarding OFF background measurements.</p></li>
 <li><p>Understanding the basics data reduction and modeling/fitting process with the gammapy library API as shown in the <a class="reference internal" href="../../starting/analysis_2.html"><span class="doc">first gammapy analysis with the gammapy library API tutorial</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="Context">
-<h2>Context<a class="headerlink" href="#Context" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Context">
+<h2>Context<a class="headerlink" href="#Context" title="Permalink to this headline">#</a></h2>
 <p>While 3D analyses allow in principle to consider complex field of views containing overlapping gamma-ray sources, in many cases we might have an observation with a single, strong, point-like source in the field of view. A spectral analysis, in that case, might consider all the events inside a source (or ON) region and bin them in energy only, obtaining 1D datasets.</p>
 <p>In classical Cherenkov astronomy, the background estimation technique associated with this method measures the number of events in OFF regions taken in regions of the field-of-view devoid of gamma-ray emitters, where the background rate is assumed to be equal to the one in the ON region.</p>
 <p>This allows to use a specific fit statistics for ON-OFF measurements, the wstat (see <code class="docutils literal notranslate"><span class="pre">~gammapy.stats.fit_statistics</span></code>), where no background model is assumed. Background is treated as a set of nuisance parameters. This removes some systematic effects connected to the choice or the quality of the background model. But this comes at the expense of larger statistical uncertainties on the fitted model parameters.</p>
 <p><strong>Objective: perform a full region based spectral analysis of 4 Crab observations of H.E.S.S. data release 1 and fit the resulting datasets.</strong></p>
-</div>
-<div class="section" id="Introduction">
-<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Introduction">
+<h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">#</a></h2>
 <p>Here, as usual, we use the <code class="docutils literal notranslate"><span class="pre">~gammapy.data.DataStore</span></code> to retrieve a list of selected observations (<code class="docutils literal notranslate"><span class="pre">~gammapy.data.Observations</span></code>). Then, we define the ON region containing the source and the geometry of the <code class="docutils literal notranslate"><span class="pre">~gammapy.datasets.SpectrumDataset</span></code> object we want to produce. We then create the corresponding dataset Maker.</p>
 <p>We have to define the Maker object that will extract the OFF counts from reflected regions in the field-of-view. To ensure we use data in an energy range where the quality of the IRFs is good enough we also create a safe range Maker.</p>
 <p>We can then proceed with data reduction with a loop over all selected observations to produce datasets in the relevant geometry.</p>
@@ -1098,9 +831,9 @@ div.rendered_html tbody tr:hover {
 <p>In practice, we have to: - Create a <code class="docutils literal notranslate"><span class="pre">~gammapy.data.DataStore</span></code> poiting to the relevant data - Apply an observation selection to produce a list of observations, a <code class="docutils literal notranslate"><span class="pre">~gammapy.data.Observations</span></code> object. - Define a geometry of the spectrum we want to produce: - Create a <code class="docutils literal notranslate"><span class="pre">~regions.CircleSkyRegion</span></code> for the ON extraction region - Create a <code class="docutils literal notranslate"><span class="pre">~gammapy.maps.MapAxis</span></code> for the energy binnings: one for the reconstructed (i.e. measured) energy, the other for the true energy (i.e. the one used by IRFs and
 models) - Create the necessary makers : - the spectrum dataset maker : <code class="docutils literal notranslate"><span class="pre">~gammapy.makers.SpectrumDatasetMaker</span></code> - the OFF background maker, here a <code class="docutils literal notranslate"><span class="pre">~gammapy.makers.ReflectedRegionsBackgroundMaker</span></code> - and the safe range maker : <code class="docutils literal notranslate"><span class="pre">~gammapy.makers.SafeRangeMaker</span></code> - Perform the data reduction loop. And for every observation: - Apply the makers sequentially to produce a <code class="docutils literal notranslate"><span class="pre">~gammapy.datasets.SpectrumDatasetOnOff</span></code> - Append it to list of datasets - Define the <code class="docutils literal notranslate"><span class="pre">~gammapy.modeling.models.SkyModel</span></code> to
 apply to the dataset. - Create a <code class="docutils literal notranslate"><span class="pre">~gammapy.modeling.Fit</span></code> object and run it to fit the model parameters - Apply a <code class="docutils literal notranslate"><span class="pre">~gammapy.estimators.FluxPointsEstimator</span></code> to compute flux points for the spectral part of the fit.</p>
-</div>
-<div class="section" id="Setup">
-<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Setup">
+<h2>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">#</a></h2>
 <p>As usual, we’ll start with some setup …</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1160,9 +893,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Load-Data">
-<h2>Load Data<a class="headerlink" href="#Load-Data" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Load-Data">
+<h2>Load Data<a class="headerlink" href="#Load-Data" title="Permalink to this headline">#</a></h2>
 <p>First, we select and load some H.E.S.S. observations of the Crab nebula (simulated events for now).</p>
 <p>We will access the events, effective area, energy dispersion, livetime and PSF for containement correction.</p>
 <div class="nbinput nblast docutils container">
@@ -1175,9 +908,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Define-Target-Region">
-<h2>Define Target Region<a class="headerlink" href="#Define-Target-Region" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Define-Target-Region">
+<h2>Define Target Region<a class="headerlink" href="#Define-Target-Region" title="Permalink to this headline">#</a></h2>
 <p>The next step is to define a signal extraction region, also known as on region. In the simplest case this is just a <a class="reference external" href="http://astropy-regions.readthedocs.io/en/latest/api/regions.CircleSkyRegion.html">CircleSkyRegion</a>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1189,9 +922,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Create-exclusion-mask">
-<h2>Create exclusion mask<a class="headerlink" href="#Create-exclusion-mask" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Create-exclusion-mask">
+<h2>Create exclusion mask<a class="headerlink" href="#Create-exclusion-mask" title="Permalink to this headline">#</a></h2>
 <p>We will use the reflected regions method to place off regions to estimate the background level in the on region. To make sure the off regions don’t contain gamma-ray emission, we create an exclusion mask.</p>
 <p>Using <a class="reference external" href="http://gamma-sky.net/">http://gamma-sky.net/</a> we find that there’s only one known gamma-ray source near the Crab nebula: the AGN called <a class="reference external" href="http://gamma-sky.net/#/cat/tev/23">RGB J0521+212</a> at GLON = 183.604 deg and GLAT = -8.708 deg.</p>
 <div class="nbinput nblast docutils container">
@@ -1213,9 +946,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Run-data-reduction-chain">
-<h2>Run data reduction chain<a class="headerlink" href="#Run-data-reduction-chain" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Run-data-reduction-chain">
+<h2>Run data reduction chain<a class="headerlink" href="#Run-data-reduction-chain" title="Permalink to this headline">#</a></h2>
 <p>We begin with the configuration of the maker classes:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1264,9 +997,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Plot-off-regions">
-<h2>Plot off regions<a class="headerlink" href="#Plot-off-regions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Plot-off-regions">
+<h2>Plot off regions<a class="headerlink" href="#Plot-off-regions" title="Permalink to this headline">#</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -1278,9 +1011,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Source-statistic">
-<h2>Source statistic<a class="headerlink" href="#Source-statistic" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Source-statistic">
+<h2>Source statistic<a class="headerlink" href="#Source-statistic" title="Permalink to this headline">#</a></h2>
 <p>Next we’re going to look at the overall source statistics in our signal region.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1359,9 +1092,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Fit-spectrum">
-<h2>Fit spectrum<a class="headerlink" href="#Fit-spectrum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Fit-spectrum">
+<h2>Fit spectrum<a class="headerlink" href="#Fit-spectrum" title="Permalink to this headline">#</a></h2>
 <p>Now we’ll fit a global model to the spectrum. First we do a joint likelihood fit to all observations. If you want to stack the observations see below. We will also produce a debug plot in order to show how the global fit matches one of the individual observations.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1385,9 +1118,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Fit-quality-and-model-residuals">
-<h2>Fit quality and model residuals<a class="headerlink" href="#Fit-quality-and-model-residuals" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Fit-quality-and-model-residuals">
+<h2>Fit quality and model residuals<a class="headerlink" href="#Fit-quality-and-model-residuals" title="Permalink to this headline">#</a></h2>
 <p>We can access the results dictionary to see if the fit converged:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1417,9 +1150,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </div>
 </div>
 <p>For more ways of assessing fit quality, please refer to the dedicated <a class="reference internal" href="../2D/modeling_2D.html"><span class="doc">modeling and fitting tutorial</span></a>.</p>
-</div>
-<div class="section" id="Compute-Flux-Points">
-<h2>Compute Flux Points<a class="headerlink" href="#Compute-Flux-Points" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Compute-Flux-Points">
+<h2>Compute Flux Points<a class="headerlink" href="#Compute-Flux-Points" title="Permalink to this headline">#</a></h2>
 <p>To round up our analysis we can compute flux points by fitting the norm of the global model in energy bands. We’ll use a fixed energy binning for now:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1481,9 +1214,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Stack-observations">
-<h2>Stack observations<a class="headerlink" href="#Stack-observations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Stack-observations">
+<h2>Stack observations<a class="headerlink" href="#Stack-observations" title="Permalink to this headline">#</a></h2>
 <p>And alternative approach to fitting the spectrum is stacking all observations first and the fitting a model. For this we first stack the individual datasets:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -1565,21 +1298,21 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Exercises">
-<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">#</a></h2>
 <p>Now you have learned the basics of a spectral analysis with Gammapy. To practice you can continue with the following exercises:</p>
 <ul class="simple">
 <li><p>Fit a different spectral model to the data. You could try <code class="docutils literal notranslate"><span class="pre">~gammapy.modeling.models.ExpCutoffPowerLawSpectralModel</span></code> or <code class="docutils literal notranslate"><span class="pre">~gammapy.modeling.models.LogParabolaSpectralModel</span></code>.</p></li>
 <li><p>Compute flux points for the stacked dataset.</p></li>
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">~gammapy.estimators.FluxPointsDataset</span></code> with the flux points you have computed for the stacked dataset and fit the flux points again with obe of the spectral models. How does the result compare to the best fit model, that was directly fitted to the counts data?</p></li>
 </ul>
-</div>
-<div class="section" id="What-next?">
-<h2>What next?<a class="headerlink" href="#What-next?" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="What-next?">
+<h2>What next?<a class="headerlink" href="#What-next?" title="Permalink to this headline">#</a></h2>
 <p>The methods shown in this tutorial is valid for point-like or midly extended sources where we can assume that the IRF taken at the region center is valid over the whole region. If one wants to extract the 1D spectrum of a large source and properly average the response over the extraction region, one has to use a different approach explained in <a class="reference internal" href="extended_source_spectral_analysis.html"><span class="doc">the extended source spectral analysis tutorial</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
               </div>
@@ -1609,8 +1342,9 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
       </div>
     </div>
   
-    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -1621,7 +1355,7 @@ apply to the dataset. - Create a <code class="docutils literal notranslate"><spa
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

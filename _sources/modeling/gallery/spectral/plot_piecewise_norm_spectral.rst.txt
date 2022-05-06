@@ -103,16 +103,22 @@ Here is an example YAML file using the model:
                 parameters:
                 -   name: norm_0
                     value: 1.0
+                    is_norm: false
                 -   name: norm_1
                     value: 3.0
+                    is_norm: false
                 -   name: norm_2
                     value: 8.0
+                    is_norm: false
                 -   name: norm_3
                     value: 10.0
+                    is_norm: false
                 -   name: norm_4
                     value: 8.0
+                    is_norm: false
                 -   name: norm_5
                     value: 2.0
+                    is_norm: false
                 energy:
                     data:
                     - 0.1
@@ -127,13 +133,16 @@ Here is an example YAML file using the model:
                 parameters:
                 -   name: index
                     value: 2.0
+                    is_norm: false
                 -   name: amplitude
                     value: 1.0e-12
                     unit: cm-2 s-1 TeV-1
+                    is_norm: true
                 -   name: reference
                     value: 1.0
                     unit: TeV
                     frozen: true
+                    is_norm: false
             operator: mul
 
 

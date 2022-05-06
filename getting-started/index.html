@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting started &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Getting started &#8212; gammapy v0.20.dev834+ga5aea9145</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,7 +43,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -58,7 +56,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -106,8 +104,8 @@
 </li>
 
 <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../api.html">
-  API reference
+ <a class="reference internal nav-link" href="../userguide/howto.html">
+  How To
  </a>
 </li>
 
@@ -148,13 +146,6 @@
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +181,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.dev834+ga5aea9145 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -254,6 +249,11 @@ function checkPageExistsAndRedirect(event) {
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="environments.html">
+   Virtual Environments
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="usage.html">
    Using Gammapy
   </a>
@@ -280,7 +280,7 @@ function checkPageExistsAndRedirect(event) {
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
@@ -292,13 +292,13 @@ function checkPageExistsAndRedirect(event) {
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tutorial-datasets-download">
-   Tutorial Datasets Download
+  <a class="reference internal nav-link" href="#quickstart-setup">
+   Quickstart Setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis-overview">
-   Analysis Overview
+  <a class="reference internal nav-link" href="#tutorials-overview">
+   Tutorials Overview
   </a>
  </li>
 </ul>
@@ -322,12 +322,12 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="getting-started">
-<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+  <section id="getting-started">
+<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3 docutils">
@@ -337,7 +337,7 @@ function checkPageExistsAndRedirect(event) {
 </div>
 <div class="card-body docutils">
 <p class="card-text">Gammapy can be installed with <a class="reference external" href="https://docs.continuum.io/anaconda/">Anaconda</a> or Miniconda:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge gammapy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda install -c conda-forge gammapy
 </pre></div>
 </div>
 </div>
@@ -350,7 +350,7 @@ function checkPageExistsAndRedirect(event) {
 </div>
 <div class="card-body docutils">
 <p class="card-text">Gammapy can be installed via pip from <a class="reference external" href="https://pypi.org/project/gammapy/">PyPI</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install gammapy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install gammapy
 </pre></div>
 </div>
 </div>
@@ -370,15 +370,34 @@ installation page.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="quickstart-setup">
+<span id="id2"></span><h2>Quickstart Setup<a class="headerlink" href="#quickstart-setup" title="Permalink to this headline">#</a></h2>
+<p>The best way to get started and learn Gammapy are the <a class="reference internal" href="../tutorials/index.html#tutorials"><span class="std std-ref">Tutorials</span></a>. For
+convenience we provide a pre-defined conda environment file, so you can
+get additional useful packages together with Gammapy in a virtual isolated
+environment. First install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>
+and then just execute the following commands in the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -O https://gammapy.org/download/install/gammapy-0.19-environment.yml
+$ conda env create -f gammapy-0.19-environment.yml
+</pre></div>
 </div>
-<div class="section" id="tutorial-datasets-download">
-<span id="download-tutorials"></span><h2>Tutorial Datasets Download<a class="headerlink" href="#tutorial-datasets-download" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, you have to open up the conda environment file and delete the
+lines with <code class="docutils literal notranslate"><span class="pre">sherpa</span></code> and <code class="docutils literal notranslate"><span class="pre">healpy</span></code>. Those are optional dependencies that
+currently aren’t available on Windows.</p>
+</div>
+<p>Once the environment has been created you can activate it using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate gammapy-v0.19
+</pre></div>
+</div>
 <p>You can now proceed to download the Gammapy tutorial notebooks and the example
 datasets. The total size to download is ~180 MB. Select the location where you
 want to install the datasets and proceed with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gammapy download notebooks --release <span class="m">0</span>.19
-gammapy download datasets
-<span class="nb">export</span> <span class="nv">GAMMAPY_DATA</span><span class="o">=</span><span class="nv">$PWD</span>/gammapy-datasets
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gammapy download notebooks --release <span class="m">0</span>.19
+$ gammapy download datasets
+$ <span class="nb">export</span> <span class="nv">GAMMAPY_DATA</span><span class="o">=</span><span class="nv">$PWD</span>/gammapy-datasets
 </pre></div>
 </div>
 <p>You might want to put the definition of the <code class="docutils literal notranslate"><span class="pre">$GAMMAPY_DATA</span></code> environment
@@ -393,9 +412,16 @@ On Windows, you should set the <code class="docutils literal notranslate"><span 
 “Environment Variables” settings dialog, as explained e.g.
 <a class="reference external" href="https://docs.python.org/3/using/windows.html#excursus-setting-environment-variables">here</a></p>
 </div>
+<p>Finally start a notebook server by executing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> notebooks
+$ jupyter notebook
+</pre></div>
 </div>
-<div class="section" id="analysis-overview">
-<h2>Analysis Overview<a class="headerlink" href="#analysis-overview" title="Permalink to this headline">¶</a></h2>
+<p>If you are new to conda, Python and Jupyter, maybe also read the <a class="reference internal" href="usage.html#using-gammapy"><span class="std std-ref">Using Gammapy</span></a> guide.
+If you encountered any issues you can check the <a class="reference internal" href="troubleshooting.html#troubleshoot"><span class="std std-ref">Troubleshooting</span></a> guide.</p>
+</section>
+<section id="tutorials-overview">
+<h2>Tutorials Overview<a class="headerlink" href="#tutorials-overview" title="Permalink to this headline">#</a></h2>
 
             <div id="accordion" class="shadow tutorial-accordion">
         <div class="card tutorial-card">
@@ -598,11 +624,8 @@ at the same time and can also include e.g. flux points in a combined likelihood 
                 </div>
             </div>
         </div>        
-        <p>You can also go to <a class="reference internal" href="../tutorials/index.html#tutorials"><span class="std std-ref">Tutorials</span></a> to see all available tutorials.
-If you’re new to conda, Python and Jupyter, maybe also read the <a class="reference internal" href="usage.html#using-gammapy"><span class="std std-ref">Using Gammapy</span></a> guide.
-If you encountered any issues you can check the <a class="reference internal" href="troubleshooting.html#troubleshoot"><span class="std std-ref">Troubleshooting</span></a> guide.</p>
-</div>
-</div>
+        </section>
+</section>
 
 
               </div>
@@ -632,8 +655,9 @@ If you encountered any issues you can check the <a class="reference internal" hr
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -644,7 +668,7 @@ If you encountered any issues you can check the <a class="reference internal" hr
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

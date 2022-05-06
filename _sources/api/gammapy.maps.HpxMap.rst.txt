@@ -47,7 +47,9 @@ HpxMap
       ~HpxMap.interp_by_coord
       ~HpxMap.interp_by_pix
       ~HpxMap.interp_to_geom
+      ~HpxMap.iter_by_axis
       ~HpxMap.iter_by_image
+      ~HpxMap.iter_by_image_data
       ~HpxMap.mask_nearest_position
       ~HpxMap.normalize
       ~HpxMap.pad
@@ -56,6 +58,7 @@ HpxMap
       ~HpxMap.read
       ~HpxMap.reduce
       ~HpxMap.reduce_over_axes
+      ~HpxMap.resample
       ~HpxMap.resample_axis
       ~HpxMap.set_by_coord
       ~HpxMap.set_by_idx
@@ -108,7 +111,9 @@ HpxMap
    .. automethod:: interp_by_coord
    .. automethod:: interp_by_pix
    .. automethod:: interp_to_geom
+   .. automethod:: iter_by_axis
    .. automethod:: iter_by_image
+   .. automethod:: iter_by_image_data
    .. automethod:: mask_nearest_position
    .. automethod:: normalize
    .. automethod:: pad
@@ -117,6 +122,7 @@ HpxMap
    .. automethod:: read
    .. automethod:: reduce
    .. automethod:: reduce_over_axes
+   .. automethod:: resample
    .. automethod:: resample_axis
    .. automethod:: set_by_coord
    .. automethod:: set_by_idx

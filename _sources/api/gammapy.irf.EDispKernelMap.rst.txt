@@ -28,6 +28,7 @@ EDispKernelMap
       ~EDispKernelMap.from_geom
       ~EDispKernelMap.from_hdulist
       ~EDispKernelMap.get_edisp_kernel
+      ~EDispKernelMap.peek
       ~EDispKernelMap.read
       ~EDispKernelMap.resample_energy_axis
       ~EDispKernelMap.slice_by_idx
@@ -55,6 +56,7 @@ EDispKernelMap
    .. automethod:: from_geom
    .. automethod:: from_hdulist
    .. automethod:: get_edisp_kernel
+   .. automethod:: peek
    .. automethod:: read
    .. automethod:: resample_energy_axis
    .. automethod:: slice_by_idx

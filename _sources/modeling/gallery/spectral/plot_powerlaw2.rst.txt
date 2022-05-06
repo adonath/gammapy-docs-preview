@@ -104,16 +104,20 @@ Here is an example YAML file using the model:
             -   name: amplitude
                 value: 1.0e-12
                 unit: cm-2 s-1
+                is_norm: true
             -   name: index
                 value: 2.3
+                is_norm: false
             -   name: emin
                 value: 1.0
                 unit: TeV
                 frozen: true
+                is_norm: false
             -   name: emax
                 value: 10.0
                 unit: TeV
                 frozen: true
+                is_norm: false
 
 
 

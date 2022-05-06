@@ -47,7 +47,9 @@ Map
       ~Map.interp_by_coord
       ~Map.interp_by_pix
       ~Map.interp_to_geom
+      ~Map.iter_by_axis
       ~Map.iter_by_image
+      ~Map.iter_by_image_data
       ~Map.mask_nearest_position
       ~Map.normalize
       ~Map.pad
@@ -56,6 +58,7 @@ Map
       ~Map.read
       ~Map.reduce
       ~Map.reduce_over_axes
+      ~Map.resample
       ~Map.resample_axis
       ~Map.set_by_coord
       ~Map.set_by_idx
@@ -104,7 +107,9 @@ Map
    .. automethod:: interp_by_coord
    .. automethod:: interp_by_pix
    .. automethod:: interp_to_geom
+   .. automethod:: iter_by_axis
    .. automethod:: iter_by_image
+   .. automethod:: iter_by_image_data
    .. automethod:: mask_nearest_position
    .. automethod:: normalize
    .. automethod:: pad
@@ -113,6 +118,7 @@ Map
    .. automethod:: read
    .. automethod:: reduce
    .. automethod:: reduce_over_axes
+   .. automethod:: resample
    .. automethod:: resample_axis
    .. automethod:: set_by_coord
    .. automethod:: set_by_idx

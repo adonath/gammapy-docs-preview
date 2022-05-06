@@ -91,6 +91,7 @@ FluxPoints
       ~FluxPoints.plot
       ~FluxPoints.plot_ts_profiles
       ~FluxPoints.read
+      ~FluxPoints.recompute_ul
       ~FluxPoints.slice_by_idx
       ~FluxPoints.to_hdulist
       ~FluxPoints.to_maps
@@ -178,6 +179,7 @@ FluxPoints
    .. automethod:: plot
    .. automethod:: plot_ts_profiles
    .. automethod:: read
+   .. automethod:: recompute_ul
    .. automethod:: slice_by_idx
    .. automethod:: to_hdulist
    .. automethod:: to_maps

@@ -65,6 +65,7 @@ CaseBattacharya1998
       ~CaseBattacharya1998.get_bounding_box
       ~CaseBattacharya1998.has_inverse
       ~CaseBattacharya1998.input_shape
+      ~CaseBattacharya1998.output_units
       ~CaseBattacharya1998.prepare_inputs
       ~CaseBattacharya1998.prepare_outputs
       ~CaseBattacharya1998.rename
@@ -130,6 +131,7 @@ CaseBattacharya1998
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

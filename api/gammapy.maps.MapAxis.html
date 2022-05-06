@@ -4,26 +4,23 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MapAxis &#8212; gammapy v0.20.dev703+gba08bf709</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MapAxis &#8212; gammapy v0.20.dev834+ga5aea9145</title>
     
-    <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-  
+
     
-    <link rel="stylesheet"
-      href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-  
-    
-      
-  
-    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pydata-sphinx-theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -36,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gammapy.css" />
     
-    <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
-  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -45,12 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="shortcut icon" href="../_static/gammapy_logo.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MapCoord" href="gammapy.maps.MapCoord.html" />
-    <link rel="prev" title="MapAxes" href="gammapy.maps.MapAxes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -58,7 +54,7 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -105,9 +101,9 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../api.html">
-  API reference
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../userguide/howto.html">
+  How To
  </a>
 </li>
 
@@ -148,13 +144,6 @@
 -->
 
 <script type="text/javascript">
-// Construct the target URL from the JSON components
-function buildURL(entry) {
-    var template = "https://docs.gammapy.org/{version}/";  // supplied by jinja
-    template = template.replace("{version}", entry.version);
-    return template;
-}
-
 // Check if corresponding page path exists in other version of docs
 // and, if so, go there instead of the homepage of the other docs version
 function checkPageExistsAndRedirect(event) {
@@ -190,22 +179,26 @@ function checkPageExistsAndRedirect(event) {
             const node = document.createElement("a");
             node.setAttribute("class", "list-group-item list-group-item-action py-1");
             node.textContent = `${entry.name}`;
-            // get the base URL for that doc version, add the current page's
-            // path to it, and set as `href`
-            entry.url = buildURL(entry);
             node.setAttribute("href", `${entry.url}${currentFilePath}`);
             // on click, AJAX calls will check if the linked page exists before
             // trying to redirect, and if not, will redirect to the homepage
             // for that version of the docs.
             node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.20.dev703+gba08bf709 variable.
+            // this version, rather than using sphinx's 0.20.dev834+ga5aea9145 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "dev") {
                 node.classList.add("active");
-                $("#version_switcher_button").text(entry.name);
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
             }
         });
     });
@@ -248,1556 +241,85 @@ function checkPageExistsAndRedirect(event) {
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../data/index.html">
-   data - DL3 data and observations
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.Geom.html">
+   Geom
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.DataStore.html">
-     DataStore
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.EventList.html">
-     EventList
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.FixedPointingInfo.html">
-     FixedPointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.GTI.html">
-     GTI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.HDUIndexTable.html">
-     HDUIndexTable
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.Observation.html">
-     Observation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.ObservationFilter.html">
-     ObservationFilter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.Observations.html">
-     Observations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.ObservationTable.html">
-     ObservationTable
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.PointingInfo.html">
-     PointingInfo
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.data.observatory_locations.html">
-     observatory_locations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../irf/index.html">
-   irf - Instrument response functions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.load_cta_irfs.html">
-     load_cta_irfs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.load_irf_dict_from_file.html">
-     load_irf_dict_from_file
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.Background2D.html">
-     Background2D
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.Background3D.html">
-     Background3D
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EDispKernel.html">
-     EDispKernel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EDispKernelMap.html">
-     EDispKernelMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EDispMap.html">
-     EDispMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EffectiveAreaTable2D.html">
-     EffectiveAreaTable2D
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EnergyDependentMultiGaussPSF.html">
-     EnergyDependentMultiGaussPSF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.EnergyDispersion2D.html">
-     EnergyDispersion2D
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.FoVAlignment.html">
-     FoVAlignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.IRFMap.html">
-     IRFMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.ParametricPSF.html">
-     ParametricPSF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.PSF3D.html">
-     PSF3D
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.PSFKernel.html">
-     PSFKernel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.PSFKing.html">
-     PSFKing
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.PSFMap.html">
-     PSFMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.irf.IRF_REGISTRY.html">
-     IRF_REGISTRY
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../makers/index.html">
-   makers - Data reduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.AdaptiveRingBackgroundMaker.html">
-     AdaptiveRingBackgroundMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.DatasetsMaker.html">
-     DatasetsMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.FoVBackgroundMaker.html">
-     FoVBackgroundMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.Maker.html">
-     Maker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.MapDatasetMaker.html">
-     MapDatasetMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.PhaseBackgroundMaker.html">
-     PhaseBackgroundMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.ReflectedRegionsBackgroundMaker.html">
-     ReflectedRegionsBackgroundMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.ReflectedRegionsFinder.html">
-     ReflectedRegionsFinder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.RegionsFinder.html">
-     RegionsFinder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.RingBackgroundMaker.html">
-     RingBackgroundMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.SafeMaskMaker.html">
-     SafeMaskMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.SpectrumDatasetMaker.html">
-     SpectrumDatasetMaker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.WobbleRegionsFinder.html">
-     WobbleRegionsFinder
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.MAKER_REGISTRY.html">
-     MAKER_REGISTRY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_counts_rad_max.html">
-     make_counts_rad_max
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_edisp_kernel_map.html">
-     make_edisp_kernel_map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_edisp_map.html">
-     make_edisp_map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_map_background_irf.html">
-     make_map_background_irf
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_map_exposure_true_energy.html">
-     make_map_exposure_true_energy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_psf_map.html">
-     make_psf_map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.makers.utils.make_theta_squared_table.html">
-     make_theta_squared_table
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets/index.html">
-   datasets - Reduced datasets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.create_map_dataset_geoms.html">
-     create_map_dataset_geoms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.Dataset.html">
-     Dataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.Datasets.html">
-     Datasets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.FluxPointsDataset.html">
-     FluxPointsDataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.MapDataset.html">
-     MapDataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.MapDatasetEventSampler.html">
-     MapDatasetEventSampler
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.MapDatasetOnOff.html">
-     MapDatasetOnOff
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.SpectrumDataset.html">
-     SpectrumDataset
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.SpectrumDatasetOnOff.html">
-     SpectrumDatasetOnOff
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.datasets.DATASET_REGISTRY.html">
-     DATASET_REGISTRY
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../maps/index.html">
-   maps - Sky maps
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.Geom.html">
-     Geom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.HpxGeom.html">
-     HpxGeom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.HpxMap.html">
-     HpxMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.HpxNDMap.html">
-     HpxNDMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.LabelMapAxis.html">
-     LabelMapAxis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.Map.html">
-     Map
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.MapAxes.html">
-     MapAxes
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     MapAxis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.MapCoord.html">
-     MapCoord
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.Maps.html">
-     Maps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.RegionGeom.html">
-     RegionGeom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.RegionNDMap.html">
-     RegionNDMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.TimeMapAxis.html">
-     TimeMapAxis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.WcsGeom.html">
-     WcsGeom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.WcsMap.html">
-     WcsMap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.maps.WcsNDMap.html">
-     WcsNDMap
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../modeling/index.html">
-   modeling - Models and fitting
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.Covariance.html">
-     Covariance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.Fit.html">
-     Fit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.Parameter.html">
-     Parameter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.Parameters.html">
-     Parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.create_cosmic_ray_spectral_model.html">
-     create_cosmic_ray_spectral_model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.create_crab_spectral_model.html">
-     create_crab_spectral_model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.create_fermi_isotropic_diffuse_model.html">
-     create_fermi_isotropic_diffuse_model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.integrate_spectrum.html">
-     integrate_spectrum
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.scale_plot_flux.html">
-     scale_plot_flux
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.BrokenPowerLawSpectralModel.html">
-     BrokenPowerLawSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.CompoundSpectralModel.html">
-     CompoundSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ConstantFluxSpatialModel.html">
-     ConstantFluxSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ConstantSpatialModel.html">
-     ConstantSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ConstantSpectralModel.html">
-     ConstantSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ConstantTemporalModel.html">
-     ConstantTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.DatasetModels.html">
-     DatasetModels
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.DiskSpatialModel.html">
-     DiskSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.EBLAbsorptionNormSpectralModel.html">
-     EBLAbsorptionNormSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ExpCutoffPowerLaw3FGLSpectralModel.html">
-     ExpCutoffPowerLaw3FGLSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ExpCutoffPowerLawNormSpectralModel.html">
-     ExpCutoffPowerLawNormSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ExpCutoffPowerLawSpectralModel.html">
-     ExpCutoffPowerLawSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ExpDecayTemporalModel.html">
-     ExpDecayTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.FoVBackgroundModel.html">
-     FoVBackgroundModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.GaussianSpatialModel.html">
-     GaussianSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.GaussianSpectralModel.html">
-     GaussianSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.GaussianTemporalModel.html">
-     GaussianTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.GeneralizedGaussianSpatialModel.html">
-     GeneralizedGaussianSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.GeneralizedGaussianTemporalModel.html">
-     GeneralizedGaussianTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.LightCurveTemplateTemporalModel.html">
-     LightCurveTemplateTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.LinearTemporalModel.html">
-     LinearTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.LogParabolaNormSpectralModel.html">
-     LogParabolaNormSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.LogParabolaSpectralModel.html">
-     LogParabolaSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.MeyerCrabSpectralModel.html">
-     MeyerCrabSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.Model.html">
-     Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.Models.html">
-     Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ModelBase.html">
-     ModelBase
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.NaimaSpectralModel.html">
-     NaimaSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PiecewiseNormSpectralModel.html">
-     PiecewiseNormSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PointSpatialModel.html">
-     PointSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PowerLaw2SpectralModel.html">
-     PowerLaw2SpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PowerLawNormSpectralModel.html">
-     PowerLawNormSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PowerLawSpectralModel.html">
-     PowerLawSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.PowerLawTemporalModel.html">
-     PowerLawTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ScaleSpectralModel.html">
-     ScaleSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.Shell2SpatialModel.html">
-     Shell2SpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.ShellSpatialModel.html">
-     ShellSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SineTemporalModel.html">
-     SineTemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SkyModel.html">
-     SkyModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SmoothBrokenPowerLawSpectralModel.html">
-     SmoothBrokenPowerLawSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SpatialModel.html">
-     SpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SpectralModel.html">
-     SpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SuperExpCutoffPowerLaw3FGLSpectralModel.html">
-     SuperExpCutoffPowerLaw3FGLSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SuperExpCutoffPowerLaw4FGLDR3SpectralModel.html">
-     SuperExpCutoffPowerLaw4FGLDR3SpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SuperExpCutoffPowerLaw4FGLSpectralModel.html">
-     SuperExpCutoffPowerLaw4FGLSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TemplateSpatialModel.html">
-     TemplateSpatialModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TemplateSpectralModel.html">
-     TemplateSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TemplateNDSpectralModel.html">
-     TemplateNDSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TemplateNPredModel.html">
-     TemplateNPredModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TemporalModel.html">
-     TemporalModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.MODEL_REGISTRY.html">
-     MODEL_REGISTRY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SPATIAL_MODEL_REGISTRY.html">
-     SPATIAL_MODEL_REGISTRY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.SPECTRAL_MODEL_REGISTRY.html">
-     SPECTRAL_MODEL_REGISTRY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.modeling.models.TEMPORAL_MODEL_REGISTRY.html">
-     TEMPORAL_MODEL_REGISTRY
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../estimators/index.html">
-   estimators - High level estimators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.ASmoothMapEstimator.html">
-     ASmoothMapEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.Estimator.html">
-     Estimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.ExcessMapEstimator.html">
-     ExcessMapEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.FluxMaps.html">
-     FluxMaps
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.FluxPoints.html">
-     FluxPoints
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.FluxPointsEstimator.html">
-     FluxPointsEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.FluxProfileEstimator.html">
-     FluxProfileEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.ImageProfile.html">
-     ImageProfile
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.ImageProfileEstimator.html">
-     ImageProfileEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.LightCurveEstimator.html">
-     LightCurveEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.SensitivityEstimator.html">
-     SensitivityEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.TSMapEstimator.html">
-     TSMapEstimator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.ESTIMATOR_REGISTRY.html">
-     ESTIMATOR_REGISTRY
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.utils.estimate_exposure_reco_energy.html">
-     estimate_exposure_reco_energy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.utils.find_peaks.html">
-     find_peaks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.estimators.utils.resample_energy_edges.html">
-     resample_energy_edges
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../analysis/index.html">
-   analysis - High level interface
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.analysis.Analysis.html">
-     Analysis
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.analysis.AnalysisConfig.html">
-     AnalysisConfig
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../catalog/index.html">
-   catalog - Source catalogs
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog.html">
-     SourceCatalog
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog2FHL.html">
-     SourceCatalog2FHL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog2HWC.html">
-     SourceCatalog2HWC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog3FGL.html">
-     SourceCatalog3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog3FHL.html">
-     SourceCatalog3FHL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog3HWC.html">
-     SourceCatalog3HWC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalog4FGL.html">
-     SourceCatalog4FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogGammaCat.html">
-     SourceCatalogGammaCat
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogHGPS.html">
-     SourceCatalogHGPS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogLargeScaleHGPS.html">
-     SourceCatalogLargeScaleHGPS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject.html">
-     SourceCatalogObject
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject2FHL.html">
-     SourceCatalogObject2FHL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject2HWC.html">
-     SourceCatalogObject2HWC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject3FGL.html">
-     SourceCatalogObject3FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject3FHL.html">
-     SourceCatalogObject3FHL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject3HWC.html">
-     SourceCatalogObject3HWC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObject4FGL.html">
-     SourceCatalogObject4FGL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObjectGammaCat.html">
-     SourceCatalogObjectGammaCat
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObjectHGPS.html">
-     SourceCatalogObjectHGPS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.SourceCatalogObjectHGPSComponent.html">
-     SourceCatalogObjectHGPSComponent
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.catalog.CATALOG_REGISTRY.html">
-     CATALOG_REGISTRY
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../astro/index.html">
-   astro - Astrophysics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.darkmatter.DarkMatterAnnihilationSpectralModel.html">
-     DarkMatterAnnihilationSpectralModel
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.darkmatter.JFactory.html">
-     JFactory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.darkmatter.PrimaryFlux.html">
-     PrimaryFlux
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.add_observed_parameters.html">
-     add_observed_parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.add_pulsar_parameters.html">
-     add_pulsar_parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.add_pwn_parameters.html">
-     add_pwn_parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.add_snr_parameters.html">
-     add_snr_parameters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.make_base_catalog_galactic.html">
-     make_base_catalog_galactic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.make_catalog_random_positions_cube.html">
-     make_catalog_random_positions_cube
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.make_catalog_random_positions_sphere.html">
-     make_catalog_random_positions_sphere
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.CaseBattacharya1998.html">
-     CaseBattacharya1998
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.Exponential.html">
-     Exponential
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.FaucherKaspi2006.html">
-     FaucherKaspi2006
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.FaucherKaspi2006VelocityBimodal.html">
-     FaucherKaspi2006VelocityBimodal
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.FaucherKaspi2006VelocityMaxwellian.html">
-     FaucherKaspi2006VelocityMaxwellian
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.FaucherSpiral.html">
-     FaucherSpiral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.LogSpiral.html">
-     LogSpiral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.Lorimer2006.html">
-     Lorimer2006
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.Paczynski1990.html">
-     Paczynski1990
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.Paczynski1990Velocity.html">
-     Paczynski1990Velocity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.ValleeSpiral.html">
-     ValleeSpiral
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.YusifovKucuk2004.html">
-     YusifovKucuk2004
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.YusifovKucuk2004B.html">
-     YusifovKucuk2004B
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.radial_distributions.html">
-     radial_distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.population.velocity_distributions.html">
-     velocity_distributions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.source.Pulsar.html">
-     Pulsar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.source.PWN.html">
-     PWN
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.source.SimplePulsar.html">
-     SimplePulsar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.source.SNR.html">
-     SNR
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.astro.source.SNRTrueloveMcKee.html">
-     SNRTrueloveMcKee
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../stats/index.html">
-   stats - Statistics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.cash.html">
-     cash
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.cash_sum_cython.html">
-     cash_sum_cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.cstat.html">
-     cstat
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.f_cash_root_cython.html">
-     f_cash_root_cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.get_wstat_gof_terms.html">
-     get_wstat_gof_terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.get_wstat_mu_bkg.html">
-     get_wstat_mu_bkg
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.norm_bounds_cython.html">
-     norm_bounds_cython
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.wstat.html">
-     wstat
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.CashCountsStatistic.html">
-     CashCountsStatistic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.stats.WStatCountsStatistic.html">
-     WStatCountsStatistic
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../scripts/index.html">
-   scripts - Command line tools
+  <a class="reference internal" href="gammapy.maps.HpxGeom.html">
+   HpxGeom
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../visualization/index.html">
-   visualization - Plotting features
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.HpxMap.html">
+   HpxMap
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.annotate_heatmap.html">
-     annotate_heatmap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.colormap_hess.html">
-     colormap_hess
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.colormap_milagro.html">
-     colormap_milagro
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.plot_contour_line.html">
-     plot_contour_line
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.plot_heatmap.html">
-     plot_heatmap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.plot_spectrum_datasets_off_regions.html">
-     plot_spectrum_datasets_off_regions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.plot_theta_squared_table.html">
-     plot_theta_squared_table
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.visualization.MapPanelPlotter.html">
-     MapPanelPlotter
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../utils/index.html">
-   utils - Utilities
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.HpxNDMap.html">
+   HpxNDMap
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.cartesian.html">
-     cartesian
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.fov_to_sky.html">
-     fov_to_sky
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.galactic.html">
-     galactic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.motion_since_birth.html">
-     motion_since_birth
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.polar.html">
-     polar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.sky_to_fov.html">
-     sky_to_fov
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.velocity_glon_glat.html">
-     velocity_glon_glat
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.coordinates.D_SUN_TO_GALACTIC_CENTER.html">
-     D_SUN_TO_GALACTIC_CENTER
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.integrate.trapz_loglog.html">
-     trapz_loglog
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.interpolation.interpolate_profile.html">
-     interpolate_profile
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.interpolation.interpolation_scale.html">
-     interpolation_scale
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.interpolation.ScaledRegularGridInterpolator.html">
-     ScaledRegularGridInterpolator
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.fits.earth_location_from_dict.html">
-     earth_location_from_dict
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.fits.LazyFitsData.html">
-     LazyFitsData
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.fits.HDULocation.html">
-     HDULocation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.draw.html">
-     draw
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.get_random_state.html">
-     get_random_state
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.normalize.html">
-     normalize
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.pdf.html">
-     pdf
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.sample_powerlaw.html">
-     sample_powerlaw
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.sample_sphere.html">
-     sample_sphere
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.sample_sphere_distance.html">
-     sample_sphere_distance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.sample_times.html">
-     sample_times
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.random.InverseCDFSampler.html">
-     InverseCDFSampler
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.regions.compound_region_to_regions.html">
-     compound_region_to_regions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.regions.make_concentric_annulus_sky_regions.html">
-     make_concentric_annulus_sky_regions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.regions.make_orthogonal_rectangle_sky_regions.html">
-     make_orthogonal_rectangle_sky_regions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.regions.regions_to_compound_region.html">
-     regions_to_compound_region
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_images_paths.html">
-     get_images_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.get_notebooks_paths.html">
-     get_notebooks_paths
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.make_path.html">
-     make_path
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.read_yaml.html">
-     read_yaml
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.recursive_merge_dicts.html">
-     recursive_merge_dicts
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.scripts.write_yaml.html">
-     write_yaml
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.table.hstack_columns.html">
-     hstack_columns
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.table.table_from_row_data.html">
-     table_from_row_data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.table.table_row_to_dict.html">
-     table_row_to_dict
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.table.table_standardise_units_copy.html">
-     table_standardise_units_copy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.table.table_standardise_units_inplace.html">
-     table_standardise_units_inplace
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.assert_quantity_allclose.html">
-     assert_quantity_allclose
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.assert_skycoord_allclose.html">
-     assert_skycoord_allclose
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.assert_time_allclose.html">
-     assert_time_allclose
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.mpl_plot_check.html">
-     mpl_plot_check
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.requires_data.html">
-     requires_data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.requires_dependency.html">
-     requires_dependency
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.testing.Checker.html">
-     Checker
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.time.absolute_time.html">
-     absolute_time
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.time.time_ref_from_dict.html">
-     time_ref_from_dict
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.time.time_ref_to_dict.html">
-     time_ref_to_dict
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.time.time_relative_to_ref.html">
-     time_relative_to_ref
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.units.standardise_unit.html">
-     standardise_unit
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gammapy.utils.units.unit_from_fits_image_hdu.html">
-     unit_from_fits_image_hdu
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.LabelMapAxis.html">
+   LabelMapAxis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.Map.html">
+   Map
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.MapAxes.html">
+   MapAxes
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   MapAxis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.MapCoord.html">
+   MapCoord
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.Maps.html">
+   Maps
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.RegionGeom.html">
+   RegionGeom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.RegionNDMap.html">
+   RegionNDMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.TimeMapAxis.html">
+   TimeMapAxis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.WcsGeom.html">
+   WcsGeom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.WcsMap.html">
+   WcsMap
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gammapy.maps.WcsNDMap.html">
+   WcsNDMap
+  </a>
  </li>
 </ul>
 
@@ -1838,11 +360,11 @@ function checkPageExistsAndRedirect(event) {
               
               <div>
                 
-  <div class="section" id="mapaxis">
-<h1>MapAxis<a class="headerlink" href="#mapaxis" title="Permalink to this headline">¶</a></h1>
+  <section id="mapaxis">
+<h1>MapAxis<a class="headerlink" href="#mapaxis" title="Permalink to this headline">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.maps.</span></span><span class="sig-name descname"><span class="pre">MapAxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gammapy.maps.</span></span><span class="sig-name descname"><span class="pre">MapAxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'lin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Class representing an axis of a map.</p>
 <p>Provides methods for
@@ -1855,7 +377,7 @@ the first bin is (-0.5,0.5).</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>nodes</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Array of node values.  These will be interpreted as either bin
+<dt><strong>nodes</strong><span class="classifier"><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.22)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Array of node values.  These will be interpreted as either bin
 edges or centers according to <code class="docutils literal notranslate"><span class="pre">node_type</span></code>.</p>
 </dd>
 <dt><strong>interp</strong><span class="classifier">str</span></dt><dd><p>Interpolation method used to transform between axis and pixel
@@ -1877,7 +399,7 @@ counts histogram).</p>
 </dd>
 </dl>
 <p class="rubric">Attributes Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -1943,7 +465,7 @@ counts histogram).</p>
 </tbody>
 </table>
 <p class="rubric">Methods Summary</p>
-<table class="longtable table autosummary">
+<table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -2028,10 +550,10 @@ counts histogram).</p>
 <td><p>Return MapAxis copy chaning its node type to node_type.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxis.to_table" title="gammapy.maps.MapAxis.to_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table</span></code></a>([format])</p></td>
-<td><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p></td>
+<td><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#gammapy.maps.MapAxis.to_table_hdu" title="gammapy.maps.MapAxis.to_table_hdu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_table_hdu</span></code></a>([format])</p></td>
-<td><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p></td>
+<td><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#gammapy.maps.MapAxis.upsample" title="gammapy.maps.MapAxis.upsample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upsample</span></code></a>(factor)</p></td>
 <td><p>Upsample map axis by a given factor.</p></td>
@@ -2041,121 +563,121 @@ counts histogram).</p>
 <p class="rubric">Attributes Documentation</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.as_plot_center">
-<span class="sig-name descname"><span class="pre">as_plot_center</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_center" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_plot_center</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_center" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot center</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.as_plot_edges">
-<span class="sig-name descname"><span class="pre">as_plot_edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_edges" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_plot_edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_edges" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot edges</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.as_plot_labels">
-<span class="sig-name descname"><span class="pre">as_plot_labels</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_labels" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_plot_labels</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_labels" title="Permalink to this definition">#</a></dt>
 <dd><p>Return list of axis plot labels</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.as_plot_scale">
-<span class="sig-name descname"><span class="pre">as_plot_scale</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_scale" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_plot_scale</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_scale" title="Permalink to this definition">#</a></dt>
 <dd><p>Plot axis scale</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.as_plot_xerr">
-<span class="sig-name descname"><span class="pre">as_plot_xerr</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_xerr" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_plot_xerr</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.as_plot_xerr" title="Permalink to this definition">#</a></dt>
 <dd><p>Return tuple of xerr to be used with plt.errorbar()</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.bin_width">
-<span class="sig-name descname"><span class="pre">bin_width</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.bin_width" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bin_width</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.bin_width" title="Permalink to this definition">#</a></dt>
 <dd><p>Array of bin widths.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.bounds">
-<span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.bounds" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">bounds</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.bounds" title="Permalink to this definition">#</a></dt>
 <dd><p>Bounds of the axis (~astropy.units.Quantity)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.center">
-<span class="sig-name descname"><span class="pre">center</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.center" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">center</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.center" title="Permalink to this definition">#</a></dt>
 <dd><p>Return array of bin centers.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.edges">
-<span class="sig-name descname"><span class="pre">edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges" title="Permalink to this definition">#</a></dt>
 <dd><p>Return array of bin edges.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.edges_max">
-<span class="sig-name descname"><span class="pre">edges_max</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges_max" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edges_max</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges_max" title="Permalink to this definition">#</a></dt>
 <dd><p>Return array of bin edges min values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.edges_min">
-<span class="sig-name descname"><span class="pre">edges_min</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges_min" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">edges_min</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.edges_min" title="Permalink to this definition">#</a></dt>
 <dd><p>Return array of bin edges max values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.interp">
-<span class="sig-name descname"><span class="pre">interp</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.interp" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">interp</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.interp" title="Permalink to this definition">#</a></dt>
 <dd><p>Interpolation scale of the axis.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.is_energy_axis">
-<span class="sig-name descname"><span class="pre">is_energy_axis</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.is_energy_axis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_energy_axis</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.is_energy_axis" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.iter_by_edges">
-<span class="sig-name descname"><span class="pre">iter_by_edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.iter_by_edges" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">iter_by_edges</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.iter_by_edges" title="Permalink to this definition">#</a></dt>
 <dd><p>Iterate by intervals defined by the edges</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.name" title="Permalink to this definition">#</a></dt>
 <dd><p>Name of the axis.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.nbin">
-<span class="sig-name descname"><span class="pre">nbin</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.nbin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">nbin</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.nbin" title="Permalink to this definition">#</a></dt>
 <dd><p>Return number of bins.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.nbin_per_decade">
-<span class="sig-name descname"><span class="pre">nbin_per_decade</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.nbin_per_decade" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">nbin_per_decade</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.nbin_per_decade" title="Permalink to this definition">#</a></dt>
 <dd><p>Return number of bins.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.node_type">
-<span class="sig-name descname"><span class="pre">node_type</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.node_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">node_type</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.node_type" title="Permalink to this definition">#</a></dt>
 <dd><p>Return node type (‘center’ or ‘edge’).</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.unit">
-<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.unit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">unit</span></span><a class="headerlink" href="#gammapy.maps.MapAxis.unit" title="Permalink to this definition">#</a></dt>
 <dd><p>Return coordinate axis unit.</p>
 </dd></dl>
 
 <p class="rubric">Methods Documentation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.append" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.append" title="Permalink to this definition">#</a></dt>
 <dd><p>Append another map axis to this axis</p>
 <p>Name, interp type and node type must agree between the axes. If the node
 type is “edges”, the edges must be contiguous and non-overlapping.</p>
@@ -2177,7 +699,7 @@ type is “edges”, the edges must be contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.assert_name">
-<span class="sig-name descname"><span class="pre">assert_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.assert_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.assert_name" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">assert_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">required_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.assert_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.assert_name" title="Permalink to this definition">#</a></dt>
 <dd><p>Assert axis name if a specific one is required.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -2191,7 +713,7 @@ type is “edges”, the edges must be contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.coord_to_idx">
-<span class="sig-name descname"><span class="pre">coord_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.coord_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.coord_to_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">coord_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.coord_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.coord_to_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Transform from axis coordinate to bin index.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2215,7 +737,7 @@ range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.coord_to_pix">
-<span class="sig-name descname"><span class="pre">coord_to_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.coord_to_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.coord_to_pix" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">coord_to_pix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.coord_to_pix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.coord_to_pix" title="Permalink to this definition">#</a></dt>
 <dd><p>Transform from axis to pixel coordinates.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2235,7 +757,7 @@ range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.copy">
-<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.copy" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.copy" title="Permalink to this definition">#</a></dt>
 <dd><p>Copy <a class="reference internal" href="#gammapy.maps.MapAxis" title="gammapy.maps.MapAxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MapAxis</span></code></a> instance and overwrite given attributes.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2255,7 +777,7 @@ range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.downsample">
-<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.downsample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.downsample" title="Permalink to this definition">#</a></dt>
 <dd><p>Downsample map axis by a given factor.</p>
 <p>When down-sampling each n-th (given by the factor) bin is selected from
 the axis while preserving the axis limits. For node type “edges” this
@@ -2279,7 +801,7 @@ requires nbin - 1 to be dividable by the factor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.format_plot_xaxis">
-<span class="sig-name descname"><span class="pre">format_plot_xaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.format_plot_xaxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.format_plot_xaxis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">format_plot_xaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.format_plot_xaxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.format_plot_xaxis" title="Permalink to this definition">#</a></dt>
 <dd><p>Format plot axis</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2299,7 +821,7 @@ requires nbin - 1 to be dividable by the factor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.format_plot_yaxis">
-<span class="sig-name descname"><span class="pre">format_plot_yaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.format_plot_yaxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.format_plot_yaxis" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">format_plot_yaxis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.format_plot_yaxis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.format_plot_yaxis" title="Permalink to this definition">#</a></dt>
 <dd><p>Format plot axis</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2319,7 +841,7 @@ requires nbin - 1 to be dividable by the factor.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_bounds">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lo_bnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi_bnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbin</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lo_bnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hi_bnd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbin</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_bounds" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate an axis object from a lower/upper bound and number of bins.</p>
 <p>If node_type = ‘edge’ then bounds correspond to the
 lower and upper bound of the first and last bin.  If node_type
@@ -2344,7 +866,7 @@ coordinates.  Default: ‘lin’.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_edges">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_edges" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_edges" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate an axis object from a sequence of bin edges.</p>
 <p>This method should be used to construct an axis where the bin
 edges should lie at specific values (e.g. a histogram).  The
@@ -2364,18 +886,18 @@ coordinates.  Default: ‘lin’.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_energy_bounds">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_energy_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_decade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_energy_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_energy_bounds" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_energy_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_decade</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'edges'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_energy_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_energy_bounds" title="Permalink to this definition">#</a></dt>
 <dd><p>Make an energy axis.</p>
 <p>Used frequently also to make energy grids, by making
 the axis, and then using <code class="docutils literal notranslate"><span class="pre">axis.center</span></code> or <code class="docutils literal notranslate"><span class="pre">axis.edges</span></code>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a>, float</span></dt><dd><p>Energy range</p>
+<dt><strong>energy_min, energy_max</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a>, float</span></dt><dd><p>Energy range</p>
 </dd>
 <dt><strong>nbin</strong><span class="classifier">int</span></dt><dd><p>Number of bins</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></span></dt><dd><p>Energy unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></span></dt><dd><p>Energy unit</p>
 </dd>
 <dt><strong>per_decade</strong><span class="classifier">bool</span></dt><dd><p>Whether <a class="reference internal" href="#gammapy.maps.MapAxis.nbin" title="gammapy.maps.MapAxis.nbin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbin</span></code></a> is given per decade.</p>
 </dd>
@@ -2394,14 +916,14 @@ the axis, and then using <code class="docutils literal notranslate"><span class=
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_energy_edges">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_energy_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_energy_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_energy_edges" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_energy_edges</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_edges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_energy_edges"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_energy_edges" title="Permalink to this definition">#</a></dt>
 <dd><p>Make an energy axis from adjacent edges.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>energy_edges</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a>, float</span></dt><dd><p>Energy edges</p>
+<dt><strong>energy_edges</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a>, float</span></dt><dd><p>Energy edges</p>
 </dd>
-<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></span></dt><dd><p>Energy unit</p>
+<dt><strong>unit</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Unit.html#astropy.units.Unit" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Unit</span></code></a></span></dt><dd><p>Energy unit</p>
 </dd>
 <dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>Name of the energy axis, either ‘energy’ or ‘energy_true’</p>
 </dd>
@@ -2420,7 +942,7 @@ the axis, and then using <code class="docutils literal notranslate"><span class=
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_nodes">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_nodes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_nodes" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate an axis object from a sequence of nodes (bin centers).</p>
 <p>This will create a sequence of bins with edges half-way
 between the node values.  This method should be used to
@@ -2441,7 +963,7 @@ coordinates.  Default: ‘lin’.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_stack">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_stack" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_stack" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a map axis by merging a list of other map axes.</p>
 <p>If the node type is “edges” the bin edges in the provided axes must be
 contiguous and non-overlapping.</p>
@@ -2463,12 +985,12 @@ contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_table">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_table" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Instantiate MapAxis from table HDU</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table</p>
 </dd>
 <dt><strong>format</strong><span class="classifier">{“ogip”, “ogip-arf”, “fgst-ccube”, “fgst-template”, “gadf”, “gadf-dl3”}</span></dt><dd><p>Format specification</p>
 </dd>
@@ -2489,12 +1011,12 @@ contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.from_table_hdu">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_table_hdu" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.from_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.from_table_hdu" title="Permalink to this definition">#</a></dt>
 <dd><p>Instantiate MapAxis from table HDU</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Table HDU</p>
+<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Table HDU</p>
 </dd>
 <dt><strong>format</strong><span class="classifier">{“ogip”, “ogip-arf”, “fgst-ccube”, “fgst-template”}</span></dt><dd><p>Format specification</p>
 </dd>
@@ -2513,18 +1035,18 @@ contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.group_table">
-<span class="sig-name descname"><span class="pre">group_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.group_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.group_table" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">group_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edges</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.group_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.group_table" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute bin groups table for the map axis, given coarser bin edges.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>edges</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Group bin edges.</p>
+<dt><strong>edges</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Group bin edges.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>groups</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Map axis group table.</p>
+<dt><strong>groups</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Map axis group table.</p>
 </dd>
 </dl>
 </dd>
@@ -2533,7 +1055,7 @@ contiguous and non-overlapping.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.is_aligned">
-<span class="sig-name descname"><span class="pre">is_aligned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.is_aligned"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.is_aligned" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">is_aligned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.is_aligned"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.is_aligned" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if other map axis is aligned.</p>
 <p>Two axes are aligned if their center coordinate values map to integers
 on the other axes as well and if the interpolation modes are equivalent.</p>
@@ -2557,7 +1079,7 @@ on the other axes as well and if the interpolation modes are equivalent.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.pad">
-<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pad" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pad_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pad" title="Permalink to this definition">#</a></dt>
 <dd><p>Pad axis by a given number of pixels</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2578,7 +1100,7 @@ which number of bins to pad at the low and high edge of the axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.pix_to_coord">
-<span class="sig-name descname"><span class="pre">pix_to_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pix_to_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pix_to_coord" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pix_to_coord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pix_to_coord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pix_to_coord" title="Permalink to this definition">#</a></dt>
 <dd><p>Transform from pixel to axis coordinates.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2598,7 +1120,7 @@ which number of bins to pad at the low and high edge of the axis.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.pix_to_idx">
-<span class="sig-name descname"><span class="pre">pix_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pix_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pix_to_idx" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">pix_to_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.pix_to_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.pix_to_idx" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert pix to idx</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2622,12 +1144,12 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.round">
-<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.round"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.round" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.round"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.round" title="Permalink to this definition">#</a></dt>
 <dd><p>Round coord to nearest axis edge.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>coord</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Coordinates</p>
+<dt><strong>coord</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Coordinates</p>
 </dd>
 <dt><strong>clip</strong><span class="classifier">bool</span></dt><dd><p>Choose whether to clip indices to the valid range of the axis.</p>
 </dd>
@@ -2635,7 +1157,7 @@ the axi range will be set -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>coord</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Rounded coordinates</p>
+<dt><strong>coord</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a></span></dt><dd><p>Rounded coordinates</p>
 </dd>
 </dl>
 </dd>
@@ -2644,7 +1166,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.slice">
-<span class="sig-name descname"><span class="pre">slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.slice" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">slice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.slice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.slice" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a new axis object by extracting a slice from this axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2664,7 +1186,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.squash">
-<span class="sig-name descname"><span class="pre">squash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.squash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.squash" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">squash</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.squash"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.squash" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a new axis object by squashing the axis into one bin.</p>
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
@@ -2678,7 +1200,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.to_header">
-<span class="sig-name descname"><span class="pre">to_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_header" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_header" title="Permalink to this definition">#</a></dt>
 <dd><p>Create FITS header</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2691,7 +1213,7 @@ the axi range will be set -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>header</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Header</span></code></a></span></dt><dd><p>Header to extend.</p>
+<dt><strong>header</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/headers.html#astropy.io.fits.Header" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Header</span></code></a></span></dt><dd><p>Header to extend.</p>
 </dd>
 </dl>
 </dd>
@@ -2700,7 +1222,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.to_node_type">
-<span class="sig-name descname"><span class="pre">to_node_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_node_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_node_type" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">to_node_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_node_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_node_type" title="Permalink to this definition">#</a></dt>
 <dd><p>Return MapAxis copy chaning its node type to node_type.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -2720,8 +1242,8 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.to_table">
-<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p>
+<span class="sig-name descname"><span class="pre">to_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_table" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p>
 <p>See <a class="reference external" href="https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/docs/memos/cal_gen_92_002/cal_gen_92_002.html#tth_sEc3.2">https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/docs/memos/cal_gen_92_002/cal_gen_92_002.html#tth_sEc3.2</a></p>
 <p>The ‘ogip-sherpa’ format is equivalent to ‘ogip’ but uses keV energy units.</p>
 <dl class="field-list">
@@ -2733,7 +1255,7 @@ the axi range will be set -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table HDU</p>
+<dt><strong>table</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.table.Table.html#astropy.table.Table" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Table</span></code></a></span></dt><dd><p>Table HDU</p>
 </dd>
 </dl>
 </dd>
@@ -2742,8 +1264,8 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.to_table_hdu">
-<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_table_hdu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p>
+<span class="sig-name descname"><span class="pre">to_table_hdu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ogip'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.to_table_hdu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.to_table_hdu" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert <a class="reference external" href="https://docs.astropy.org/en/latest/api/astropy.units.Quantity.html#astropy.units.Quantity" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Quantity</span></code></a> to OGIP <code class="docutils literal notranslate"><span class="pre">EBOUNDS</span></code> extension.</p>
 <p>See <a class="reference external" href="https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/docs/memos/cal_gen_92_002/cal_gen_92_002.html#tth_sEc3.2">https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/docs/memos/cal_gen_92_002/cal_gen_92_002.html#tth_sEc3.2</a></p>
 <p>The ‘ogip-sherpa’ format is equivalent to ‘ogip’ but uses keV energy units.</p>
 <dl class="field-list">
@@ -2755,7 +1277,7 @@ the axi range will be set -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Table HDU</p>
+<dt><strong>hdu</strong><span class="classifier"><a class="reference external" href="https://docs.astropy.org/en/latest/io/fits/api/tables.html#astropy.io.fits.BinTableHDU" title="(in Astropy v5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BinTableHDU</span></code></a></span></dt><dd><p>Table HDU</p>
 </dd>
 </dl>
 </dd>
@@ -2764,7 +1286,7 @@ the axi range will be set -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="gammapy.maps.MapAxis.upsample">
-<span class="sig-name descname"><span class="pre">upsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.upsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.upsample" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">upsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">factor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gammapy/maps/axes.html#MapAxis.upsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gammapy.maps.MapAxis.upsample" title="Permalink to this definition">#</a></dt>
 <dd><p>Upsample map axis by a given factor.</p>
 <p>When up-sampling for each node specified in the axis, the corresponding
 number of sub-nodes are introduced and preserving the initial nodes. For
@@ -2788,7 +1310,7 @@ node type “edges” this results in nbin * factor new bins. For node type
 
 </dd></dl>
 
-</div>
+</section>
 
 
               </div>
@@ -2796,20 +1318,6 @@ node type “edges” this results in nbin * factor new bins. For node type
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="gammapy.maps.MapAxes.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">MapAxes</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="gammapy.maps.MapCoord.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MapCoord</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
               
           </main>
@@ -2818,8 +1326,9 @@ node type “edges” this results in nbin * factor new bins. For node type
       </div>
     </div>
   
-    <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-  <footer class="footer mt-5 mt-md-0">
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
   <div class="container">
     
     <div class="footer-item">
@@ -2830,7 +1339,7 @@ node type “edges” this results in nbin * factor new bins. For node type
     
     <div class="footer-item">
       <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
 </p>
     </div>
     

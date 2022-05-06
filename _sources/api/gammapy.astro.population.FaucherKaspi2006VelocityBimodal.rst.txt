@@ -65,6 +65,7 @@ FaucherKaspi2006VelocityBimodal
       ~FaucherKaspi2006VelocityBimodal.get_bounding_box
       ~FaucherKaspi2006VelocityBimodal.has_inverse
       ~FaucherKaspi2006VelocityBimodal.input_shape
+      ~FaucherKaspi2006VelocityBimodal.output_units
       ~FaucherKaspi2006VelocityBimodal.prepare_inputs
       ~FaucherKaspi2006VelocityBimodal.prepare_outputs
       ~FaucherKaspi2006VelocityBimodal.rename
@@ -130,6 +131,7 @@ FaucherKaspi2006VelocityBimodal
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

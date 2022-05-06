@@ -64,6 +64,7 @@ Paczynski1990
       ~Paczynski1990.get_bounding_box
       ~Paczynski1990.has_inverse
       ~Paczynski1990.input_shape
+      ~Paczynski1990.output_units
       ~Paczynski1990.prepare_inputs
       ~Paczynski1990.prepare_outputs
       ~Paczynski1990.rename
@@ -128,6 +129,7 @@ Paczynski1990
    .. automethod:: get_bounding_box
    .. automethod:: has_inverse
    .. automethod:: input_shape
+   .. automethod:: output_units
    .. automethod:: prepare_inputs
    .. automethod:: prepare_outputs
    .. automethod:: rename

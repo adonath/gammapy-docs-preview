@@ -27,6 +27,7 @@ CashCountsStatistic
       ~CashCountsStatistic.compute_errp
       ~CashCountsStatistic.compute_upper_limit
       ~CashCountsStatistic.n_sig_matching_significance
+      ~CashCountsStatistic.sum
 
    .. rubric:: Attributes Documentation
 
@@ -45,3 +46,4 @@ CashCountsStatistic
    .. automethod:: compute_errp
    .. automethod:: compute_upper_limit
    .. automethod:: n_sig_matching_significance
+   .. automethod:: sum

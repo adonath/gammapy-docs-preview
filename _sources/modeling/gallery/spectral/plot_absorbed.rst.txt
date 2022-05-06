@@ -157,22 +157,27 @@ Here is an example YAML file using the model:
                 parameters:
                 -   name: index
                     value: 3.53
+                    is_norm: false
                 -   name: amplitude
                     value: 1.81e-12
                     unit: cm-2 s-1 TeV-1
+                    is_norm: true
                 -   name: reference
                     value: 1.0
                     unit: TeV
                     frozen: true
+                    is_norm: false
             model2:
                 type: EBLAbsorptionNormSpectralModel
                 parameters:
                 -   name: alpha_norm
                     value: 1.0
                     frozen: true
+                    is_norm: false
                 -   name: redshift
                     value: 0.117
                     frozen: true
+                    is_norm: false
                 filename: /Users/adonath/github/gammapy/gammapy-data/ebl/ebl_dominguez11.fits.gz
             operator: mul
 
